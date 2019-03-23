@@ -3,7 +3,7 @@ layout: post
 title: Fireworks
 ---
 
-Click or tap anywhere to launch a firework! :fireworks:
+Click or tap anywhere to launch a firework!
 
 <div id="sketch-holder"></div>
 
