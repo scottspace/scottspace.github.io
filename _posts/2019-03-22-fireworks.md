@@ -156,3 +156,7 @@ class Firework extends Particle {
 	}
 }
 </script>
+
+Here's the source code I used:
+
+<script src="https://gist.github.com/scottspace/fa9369288518febec8617e471a2af745.js"></script>
