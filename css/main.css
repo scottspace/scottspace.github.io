@@ -350,6 +350,15 @@ footer .theme-by {
   font-weight: 300;
   margin-bottom: 10px;
 }
+
+img.post-img {
+    width: 100%;
+    max-width: 350px;
+    max-height: 245px;
+    border: 1px solid #999;
+    margin-bottom: 12px;
+}
+
 .post-preview .post-meta,
 .post-heading .post-meta {
   color: #808080;
@@ -787,3 +796,4 @@ td.gutter {
     max-height: 300px; // Any height
     overflow-y: visible;
 }
+
