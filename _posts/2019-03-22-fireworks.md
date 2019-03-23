@@ -9,8 +9,7 @@ Click or tap anywhere to launch a firework!
 <div id="sketch-holder"></div>
 
 ---
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script> -->
 <script>
 let particles = [];
 const gravity = .25;
