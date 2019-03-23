@@ -7,10 +7,11 @@ thumb: https://28oa9i1t08037ue3m1l0i861-wpengine.netdna-ssl.com/wp-content/uploa
 Click or tap anywhere to launch a firework!
 
 <div id="sketch-holder">
-  <div class="sketch-controls">
-    <button class="reset">RESET</button>
-    <button class="pause">PAUSE</button>
-  </div>
+  <canvas data-processing-sources="//scott.ai/js/fireworks.pde"></canvas>
+</div>
+<div class="sketch-controls">
+  <button class="reset">RESET</button>
+  <button class="pause">PAUSE</button>
 </div>
 
 ---
