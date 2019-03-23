@@ -797,3 +797,19 @@ td.gutter {
     overflow-y: visible;
 }
 
+/* p5.js stuff */
+
+.sketch-controls .reset {
+    background-color: #404383;
+}
+
+.sketch-controls .pause {
+    background-color: #408448;
+}
+
+.sketch-controls button {
+    border: 0;
+    color: white;
+    padding: 5px 8px;
+    font-size: 100%;
+}
