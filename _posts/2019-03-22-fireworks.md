@@ -6,10 +6,18 @@ thumb: https://28oa9i1t08037ue3m1l0i861-wpengine.netdna-ssl.com/wp-content/uploa
 
 Click or tap anywhere to launch a firework!
 
-<div id="sketch-holder"></div>
+<div id="sketch-holder">
+  <canvas data-processing-sources="/_code/fireworks.pde">
+  <p>Your browser does not support the canvas tag.</p>
+  </canvas>
+  <div class="sketch-controls">
+    <button class="reset">RESET</button>
+    <button class="pause">PAUSE</button>
+  </div>
+</div>
 
 ---
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script> 
 <script>
 let particles = [];
 const gravity = .25;
@@ -156,6 +164,7 @@ class Firework extends Particle {
 	}
 }
 </script>
+-->
 
 Here's the source code I used:
 
