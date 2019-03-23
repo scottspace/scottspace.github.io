@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fireworks
-img: https://28oa9i1t08037ue3m1l0i861-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/FEATURE-768x521.png
+thumb: https://28oa9i1t08037ue3m1l0i861-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/FEATURE-768x521.png
 ---
 
 Click or tap anywhere to launch a firework!
