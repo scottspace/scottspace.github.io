@@ -14,7 +14,10 @@ Click or tap anywhere to launch a firework!
 </div>
 
 ---
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script> 
+<script src="//scott.ai/js/fireworks.pde"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+
 <script>
 let particles = [];
 const gravity = .25;
