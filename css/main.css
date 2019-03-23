@@ -782,3 +782,8 @@ td.gutter {
   font-style: italic;
   font-size: 16px;
 }
+
+.gist-data {
+    max-height: 300px; // Any height
+    overflow-y: visible;
+}
