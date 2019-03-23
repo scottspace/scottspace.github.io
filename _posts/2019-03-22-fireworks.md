@@ -7,7 +7,7 @@ thumb: https://28oa9i1t08037ue3m1l0i861-wpengine.netdna-ssl.com/wp-content/uploa
 Click or tap anywhere to launch a firework!
 
 <div id="sketch-holder">
-  <canvas data-processing-sources="/_code/fireworks.pde">
+  <canvas data-processing-sources="/js/fireworks.pde">
   <p>Your browser does not support the canvas tag.</p>
   </canvas>
   <div class="sketch-controls">
