@@ -50,8 +50,7 @@ Artificial Intelligence Laboratory.
 
 i spent the next 4 years working in the ai lab, teaching, and building robots in the summer.
 many years later, my PhD would payoff.  i started at google in 2016 doing ai fulltime,
-after a career of webly things.  a year after that i met nasa, and began a relationship
-that will last a lifetime.
+after a career of webly things.  a year after that i met nasa.  for reals.
 
 i'm unbelievably excited to help nasa and their 30-year mission.  i'm starting
 from within google, where i do "applied ai."  that's business speak for modeling
