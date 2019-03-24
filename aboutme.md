@@ -27,7 +27,7 @@ seriously.  we have a government agency whose mission is star trek!
 smd
 sketched an architecture to explore solar bodies, starting with the earth, then 
 the moon, followed by mars, europa, and asteroids.  i'm 
-excited to be part of that at google!
+excited to be part of it!
 
 the apollo mission relied on telemetry and humans.  artificial intelligence
 and its autonomous robots, vehicles, prediction powers, and imagination powers
@@ -59,7 +59,7 @@ after a career of webly things.
 
 a year later i met nasa, this time for reals.
 
-i'm unbelievably excited to help nasa and their 30-year mission.  i'm starting
+pinch me.  i actually get to help nasa and their 30-year mission.  i'm starting
 from within google, where i do "applied ai."  that's business speak for modeling
 phenomena with tensor calculus and computational graphs, optimized through
 deep learning, reinforcement learning, generative adversarial networks, and more.
