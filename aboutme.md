@@ -29,7 +29,7 @@ sketched an architecture to explore solar bodies, starting with the earth, then
 the moon, followed by mars, europa, and asteroids.  i'm 
 excited to be part of that at google!
 
-the apollo mission relied on telemetry and humans.  artificial intelligece
+the apollo mission relied on telemetry and humans.  artificial intelligence
 and its autonomous robots, vehicles, prediction powers, and imagination powers
 will propel future missions.
 
