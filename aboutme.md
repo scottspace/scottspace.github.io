@@ -26,7 +26,7 @@ seriously.  we have a government agency whose mission sounds like star trek!
 
 smd
 sketched an architecture to explore solar bodies, starting with the earth, then 
-the moon (again), before venturing to mars, europa, and asteroids.  i'm 
+the moon, followed by mars, europa, and asteroids.  i'm 
 excited to be part of that at google!
 
 the apollo mission relied on telemetry and humans.  artificial intelligece
