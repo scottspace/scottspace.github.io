@@ -17,13 +17,13 @@ what else do you need?
 <iframe width="280" height="160" src="https://www.youtube.com/embed/4pptCGR9N4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 i started this site after ingesting NASA's 30-year plan.  technically, its called
-the NASA Science Mission Directorate (SMD) Astrophysics'
-[Enduring Quests and Daring Visions](https://arxiv.org/pdf/1401.3741).  The SMD's
+the NASA Science Mission Directorate (SMD)
+[Astrophysics 30 year plan: Enduring Quests and Daring Visions](https://arxiv.org/pdf/1401.3741).  the SMD's
 mission is to "discover how the universe works,
 explore how it began and evolved, and search for life on planets around other stars."
 
 seriously.  we have a government agency whose mission sounds like the
-[opening lines of StarTrek](https://www.youtube.com/watch?v=4pptCGR9N4g) from the 60s.
+[opening lines of star trek](https://www.youtube.com/watch?v=4pptCGR9N4g) from the 60s.
 
 nasa scientists
 sketched an architecture to explore solar bodies, starting with the earth, then 
