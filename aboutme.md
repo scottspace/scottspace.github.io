@@ -22,24 +22,23 @@ the NASA Science Mission Directorate (SMD)
 mission is to "discover how the universe works,
 explore how it began and evolved, and search for life on planets around other stars."
 
-seriously.  we have a government agency whose mission sounds like the
-[opening lines of star trek](https://www.youtube.com/watch?v=4pptCGR9N4g) from the 60s.
+seriously.  we have a government agency whose mission sounds like star trek.
 
-nasa scientists
+nasa 
 sketched an architecture to explore solar bodies, starting with the earth, then 
 practicing on our moon, before venturing to mars, europa, asteroids and more.  i'm 
 excited to be part of that at Google!
 
-the original apollo mission relied on telemtry and humans.  artificial intelligece (ai)
+the apollo mission relied on telemtry and humans.  artificial intelligece (ai)
 and its autonomous robots, vehicles, prediction powers, and more are needed for
 our next stage of exploration.  lucky for me, i studied ai for my phd.
 
-this site is dedicated to things i'll learn along the 30-year journey.  i hope to share
+this site is dedicated to things i'll learn along our 30-year journey.  i hope to share
 them with you, so that we can enjoy them together.
 
 ### my history
 
-i was born 4 years before man walked on the moon.  i spent my childhood obsessed with
+i was born four years before man walked on the moon.  i spent my childhood obsessed with
 nasa, writing computer programs that simulated star trek games, apollo 11 launches, 
 the lunar landar, and interstellar communications (uh, online chat, before the
 internet).
@@ -58,3 +57,5 @@ i'm unbelievably excited to help nasa and their 30-year mission.  i'm starting
 from within google, where i do "applied ai."  that's business speak for modeling
 phenomena with tensor calculus and computational graphs, optimized through
 deep learning, reinforcement learning, generative adversarial networks, and more.
+
+if that sounds like mumbo jumbo, don't worry. we'll get to it.  :-)
