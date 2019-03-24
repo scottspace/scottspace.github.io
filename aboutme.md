@@ -15,27 +15,27 @@ what else do you need?
 ### this site
 <iframe width="420" height="240" src="https://www.youtube.com/embed/4pptCGR9N4g?rel=0;&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-i started this site after ingesting NASA's 30-year plan.  technically, its called
-the NASA Science Mission Directorate (SMD),
-"[Astrophysics 30 year plan: Enduring Quests and Daring Visions](https://arxiv.org/pdf/1401.3741)."  the SMD's
+i started [scott.ai](https://scott.ai)
+after ingesting 
+NASA Science Mission Directorate's (smd),
+"[Astrophysics 30 year plan: Enduring Quests and Daring Visions](https://arxiv.org/pdf/1401.3741)."  smd's
 mission is to "discover how the universe works,
 explore how it began and evolved, and search for life on planets around other stars."
 
-seriously.  we have a government agency whose mission sounds like star trek.
+seriously.  we have a government agency whose mission sounds like star trek!
 
-nasa 
+smd
 sketched an architecture to explore solar bodies, starting with the earth, then 
 the moon (again), before venturing to mars, europa, and asteroids.  i'm 
 excited to be part of that at google!
 
 the apollo mission relied on telemetry and humans.  artificial intelligece
-and its autonomous robots, vehicles, prediction powers, imagination powers, 
+and its autonomous robots, vehicles, prediction powers, and imagination powers
 will propel future missions.
 
-lucky for me, i studied ai in school. i still do.
-
-this site is dedicated to things i'll learn along our 30-year journey.  i hope to share
-them with you, so that we can enjoy them together.
+lucky for me, i studied ai in school. i still do. this site is dedicated
+to things i'll learn along our 30-year journey.  i'll share them with you,
+so we can both learn and have some fun.
 
 ### my history
 
