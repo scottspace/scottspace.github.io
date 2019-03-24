@@ -14,7 +14,7 @@ science communicator. i have the following qualities:
 what else do you need?
 
 ### this site
-<iframe width="280" height="160" src="https://www.youtube.com/embed/4pptCGR9N4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="420" height="240" src="https://www.youtube.com/embed/4pptCGR9N4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 i started this site after ingesting NASA's 30-year plan.  technically, its called
 the NASA Science Mission Directorate (SMD)
