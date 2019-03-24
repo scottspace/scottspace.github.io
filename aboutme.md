@@ -25,7 +25,7 @@ seriously.  we have a government agency whose mission sounds like star trek.
 
 nasa 
 sketched an architecture to explore solar bodies, starting with the earth, then 
-practicing on our moon, before venturing to mars, europa, asteroids and more.  i'm 
+the moon (again), before venturing to mars, europa, and asteroids.  i'm 
 excited to be part of that at google!
 
 the apollo mission relied on telemetry and humans.  artificial intelligece (ai)
