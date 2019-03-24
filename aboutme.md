@@ -34,8 +34,7 @@ and its autonomous robots, vehicles, prediction powers, and imagination powers
 will propel future missions.
 
 lucky for me, i studied ai in school. i still do. this site is dedicated
-to things i'll learn along our 30-year journey.  i'll share them with you,
-so we can both learn and have some fun.
+to things i'll learn along our 30-year journey.  i'll share them with you.
 
 ### my history
 
