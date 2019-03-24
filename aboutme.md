@@ -44,14 +44,16 @@ nasa, writing computer programs that simulated star trek games, apollo 11 launch
 the lunar landar, and interstellar communications (uh, online chat, before the
 internet).
 
-i went to mit at 16 to become an astronaut.  i failed out of naval flight program
+i went to mit at 16 to become an astronaut.  i failed out of mit rotc's
+naval flight program
 after 2 months... my eyesight
-wasn't perfect. sigh.  depressed and realizing my life was
+was imperfect. sigh.  depressed and realizing my life was
 completely over (sounds like a teenager,
 doesn't it?), i sulked across campus.  there i ran into an open house for the mit
-artificial intelligence laboratory.  what the hell, i gave it a look.
+artificial intelligence laboratory.  what the hell, i gave it a look.  
 
-i spent the next 4 years working in the ai lab, teaching, and building robots in the summer.
+i fell in love. i spent the next 4 years working in the ai lab, teaching, and
+building robots in the summer.
 many years later, my PhD would payoff.  i started at google in 2016 doing ai fulltime,
 after a career of webly things.
 
