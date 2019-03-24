@@ -28,11 +28,14 @@ sketched an architecture to explore solar bodies, starting with the earth, then
 practicing on our moon, before venturing to mars, europa, asteroids and more.  i'm 
 excited to be part of that at google!
 
-the apollo mission relied on telemtry and humans.  artificial intelligece (ai)
-and its autonomous robots, vehicles, prediction powers, and more are needed for
-our next stage of exploration.  lucky for me, i studied ai for my phd.
+the apollo mission relied on telemetry and humans.  artificial intelligece (ai)
+and its autonomous robots, vehicles, prediction powers, imagination powers, 
+and more are needed for
+our next stage of exploration.
 
-this site is dedicated to things i'll learn along our 30-year journey.  i hope to share
+lucky for me, i studied ai for my phd. i still do.
+
+this site is dedicated to things i'll learn along nasa's 30-year journey.  i hope to share
 them with you, so that we can enjoy them together.
 
 ### my history
