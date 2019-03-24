@@ -4,8 +4,7 @@ title: about me
 subtitle: because, science.
 ---
 
-i'm scott penberthy, or dr. scott to my kid's friends. i'm an ai nerd and
-science communicator. i have the following qualities:
+i'm scott penberthy, or dr. scott to friends. i have the following qualities:
 
 - i believe in science.
 - i like building cool things.
