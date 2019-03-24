@@ -22,7 +22,7 @@ NASA Science Mission Directorate's (smd),
 mission is to "discover how the universe works,
 explore how it began and evolved, and search for life on planets around other stars."
 
-seriously.  we have a government agency whose mission sounds like star trek!
+seriously.  we have a government agency whose mission is star trek!
 
 smd
 sketched an architecture to explore solar bodies, starting with the earth, then 
