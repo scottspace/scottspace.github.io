@@ -39,7 +39,7 @@ to things i'll learn along our 30-year journey.  i'll share them with you.
 
 i was born four years before man walked on the moon.  i spent my childhood obsessed with
 nasa, writing computer programs that simulated star trek games, apollo 11 launches, 
-the lunar landar, and interstellar communications (actually online chat, before the
+the lunar landar, and interstellar communications (online chat, before the
 internet).
 
 i went to mit at 16 to become an astronaut.  i failed out of mit rotc's
