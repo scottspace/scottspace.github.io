@@ -6,7 +6,6 @@ thumb: /img/hello_color.jpg
 
 Spin through 16,277,216 colors with your mouse in this simple, modernist abstract art.
 
----
 <script src="//scott.ai/js/hello_color.js"></script>
 <div id="hello-color-canvas">
 </div>
