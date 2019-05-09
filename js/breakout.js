@@ -134,7 +134,7 @@ function collision() {
     }
 
     // Canvas Side Contact
-    if (bX == bD / 2 or bX == cW - bD / 2) {
+    if (bX == bD / 2 || bX == cW - bD / 2) {
         bVX = -bVX;
     }
     
