@@ -104,7 +104,7 @@ function score() {
 }
 
 function enemy() {
-    for (key of enemies) {
+    for (var key of enemies) {
         if (enemies[key].living == true) {
             fill(enemies[key].color[0], enemies[key].color[1], enemies[key].color[2], enemies[key].color[3]);
             rect(enemies[key].location[0], enemies[key].location[1], eW, eH);
@@ -139,19 +139,19 @@ function collision() {
     }
     
     // Contact with Enemy box
-    for (key of enemies) {
+    for (var key of enemies) {
         if (enemies[key].living) {
             // Side of eBox
-            if (bY < enemies[key].location[1] + eH and bY > enemies[key].location[1]) {
-                if (bX > enemies[key].location[0] and bX < enemies[key].location[0] + eW) {
+            if (bY < enemies[key].location[1] + eH && bY > enemies[key].location[1]) {
+                if (bX > enemies[key].location[0] && bX < enemies[key].location[0] + eW) {
                     bVX = -bVX;
                     enemies[key].living = false;
                     pScore++;
 		}
 	    }
             // Bottom of Box
-            if (bY < enemies[key].location[1] + eH + bD / 2 and bY > enemies[key].location[1] + eH) {
-                if (bX > enemies[key].location[0] and bX < enemies[key].location[0] + eW) {
+            if (bY < enemies[key].location[1] + eH + bD / 2 && bY > enemies[key].location[1] + eH) {
+                if (bX > enemies[key].location[0] && bX < enemies[key].location[0] + eW) {
                     bVY = -bVY;
                     enemies[key].living = false;
                     pScore++;
@@ -159,7 +159,7 @@ function collision() {
 	    }
             // Top of Box
             if (bY > enemies[key].location[1] - bD / 2 && bY < enemies[key].location[1]) {
-                if (bX > enemies[key].location[0] and bX < enemies[key].location[0] + eW) {
+                if (bX > enemies[key].location[0] && bX < enemies[key].location[0] + eW) {
                     bVY = -bVY;
                     enemies[key].living = false;
                     pScore++;
@@ -169,7 +169,7 @@ function collision() {
     }                           
 
     // Contact with Player
-    if (bX > pX and bX < pX + pW) {
+    if (bX > pX && bX < pX + pW) {
         if (bY > pY - bD / 2 - 2) {
             bY = cH - pH - bD - 2;
             bVY = -abs(bVY + bIncrease);
