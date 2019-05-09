@@ -10,7 +10,7 @@ Spin through 16,277,216 colors with your mouse in this simple, modernist abstrac
 <div id="hello-color-canvas">
 </div>
 
-The ability to influence 16,277,216 colors gives users an amazing freedom.   Simultaneous contract -- without
+The ability to influence 16,277,216 colors gives users an amazing freedom.   Simultaneous contrast -- without
 which it would be impossible to perceive colors -- is illustrated here by juxtaposing a number of color
 combinations.  Our perception of color is affected by colors near it. 
 
