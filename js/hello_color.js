@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(400,400);
+    const canvas = createCanvas(400,400);
     canvas.parent("hello-color-canvas")
     noCursor();
   
