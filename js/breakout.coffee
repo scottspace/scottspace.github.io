@@ -62,7 +62,8 @@ generateEnemy = (rows) ->
 
 setup = ->
     generateEnemy(rowCount)
-    createCanvas(cW, cH)
+    const canvas = createCanvas(cW, cH)
+    canvas.parent('breakout-canvas')
     frameRate(30)
     
 draw = ->
