@@ -196,7 +196,97 @@ function collision() {
     }   
   
     if (sY != 1 || sX != 1) {
+	// play sound here
 	bVY = sY*bVY;
 	bVX = sX*bVX;
     }
 
+    // Contact with Player
+    if (bX > pX && bX < pX + pW) {
+        if (bY > pY - bD / 2 - 2) {
+            bY = cH - pH - bD - 2;
+            bVY = -abs(bVY + bIncrease);
+            // Right Half of paddle
+            if (bX > pX + pW / 2) {
+                if (bX > pX + pW * 0.9) {
+		    bVX = 7;
+		}
+                else if (bX > pX + pW * 0.8) {
+                    bVX = 6;
+		}
+                else if (bX > pX + pW * 0.7) {
+                    bVX = 4;
+		}
+                else if (bX > pX + pW * 0.6) {
+                    bVX = 3;
+		}
+                else {
+                    bVX = 2;
+		}
+	    }
+            // Left Half of paddle
+            if (bX < pX + pW / 2) {
+                if (bX < pX + pW * 0.1) {
+                    bVX = -7;
+		}
+		else if (bX < pX + pW * 0.2) {
+		    bVX = -6;
+		}
+		else if (bX < pX + pW * 0.3) {
+                    bVX = -4;
+		}
+                else if (bX < pX + pW * 0.4) {
+                    bVX = -3;
+		}
+                else {
+                    bVX = -2;
+		}
+	    }
+	}
+    }
+}
+
+function keyPressed() {
+    if (key == 'p') {
+        paused = !paused;
+        if (paused) {
+            console.log('Paused the game');
+            noLoop();
+	}
+        else {
+            console.log('Unpaused the game');
+            loop();
+	}
+    }
+    if (key == ' ' && pScore == Object.keys(enemies).length) {
+        reset();
+	loop();
+    }
+}
+
+function reset() {
+    // Player
+    pScore = 0;
+    pLives = 3;
+    pX = cW / 2 - pW / 2;
+    pY = cH - pH - 7;
+
+    // Ball
+    bX = cW / 2 - bD / 2;
+    bY = cH - pH - bD / 2 - 10;
+    if (Math.round(Math.random()) == 0) {
+        bVX = -Math.random() * 7;
+    }
+    else {
+        bVX = Math.random() * 7;
+    }
+    bVY = -7;
+    generateEnemy(rowCount);
+}
+
+function win() {
+    noLoop();
+    background(255);
+    fill(0);
+    text("YOU WIN!", cW / 2, cH / 2);
+}
