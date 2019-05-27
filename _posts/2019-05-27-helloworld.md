@@ -7,13 +7,18 @@ title: Hello world!
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
   <style>
-      .wrapper {
+       .outer {
+        margin: 0;
         background: #000;
         color: #fff;
         font-family: 'Press Start 2P', cursive;
         line-height: 1.8;
         display: flex;
         align-items: center;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+      }
+      .wrapper {
         text-align: center;
         margin:  auto;
       }
@@ -56,6 +61,7 @@ title: Hello world!
       }
     </style>
 <br>
+<div class="outer">
 <div class="wrapper">
  <div class="title">BREAKOUT</div>
  <div class="score">
@@ -69,6 +75,7 @@ title: Hello world!
  Observable notebooks</a>. It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
  notebook source</a>.
  </div>
+</div>
 </div>
  <script type="module">
       import {Runtime} from "https://unpkg.com/@observablehq/runtime@4/dist/runtime.js";
