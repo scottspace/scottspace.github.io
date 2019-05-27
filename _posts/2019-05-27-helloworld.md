@@ -18,6 +18,4 @@ new Runtime().module(notebook, name => {
   }
 });
 
-});
-
 </script>
