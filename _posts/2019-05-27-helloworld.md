@@ -13,6 +13,10 @@ import notebook from "https://api.observablehq.com/@jashkenas/breakout.js?v=3"
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 /* import notebook from "https://api.observablehq.com/@tmcw/hello-world.js?v=3"; */
 
-new Runtime().module(notebook, Inspector.into(document.querySelector("#clip")));
+new Runtime().module(notebook, name => {
+  if (name === "c") {
+    return new Inspector(document.querySelector("#clip"));
+  }
+});
 
 </script>
