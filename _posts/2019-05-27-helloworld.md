@@ -1,12 +1,19 @@
 ---
 layout: post
-title: Observable Breakout!
+title: Breakout!
 ---
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/helloworld.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
+
+This is a simple demonstration of
+<a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
+Observable notebooks</a>.
+It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
+notebook source</a>.
+
 <div class="outer">
 <div class="wrapper">
  <div class="score">
@@ -15,13 +22,6 @@ title: Observable Breakout!
 </div>
 <div id="game"></div>
 <div id="newgame"></div>
-<div class="explanation">
- This is a simple demonstration of
- <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
- Observable notebooks</a>.
- It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
- notebook source</a>.
- </div>
 </div>
 </div>
  <script type="module">
