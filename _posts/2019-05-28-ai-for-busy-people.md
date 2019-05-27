@@ -7,7 +7,7 @@ thumb: /img/ai_hurry.jpg
 Video and slides from my talk at SIFMA 2019 in Ft. Lauderdale, Florida in May, 2019.
 
 <h3>Video</h3>
-<div style="position:relative;padding-top:56.25%;">
+<div style="position:relative;padding-top:56.25%;max-width:600px">
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/YY0xCkQ79O0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
