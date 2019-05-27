@@ -17,4 +17,3 @@ combinations.  Our perception of color is affected by colors near it.
 Place your mouse over the red rectangle.  Moving left or right controls
 the size of the color field.  Moving up and down shifts the hue.
 
-
