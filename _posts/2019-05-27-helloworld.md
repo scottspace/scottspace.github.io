@@ -60,5 +60,5 @@ notebook source</a>.
       });
       
       // work on mobile, too
-      main.redefine("w", 400);
+      runtime.redefine("w", 400);
 </script>
