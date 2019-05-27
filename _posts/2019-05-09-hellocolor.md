@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Hello, color.
+title: Hello, p5.
 thumb: /img/hello_color.jpg
 ---
 
-Spin through 16,277,216 colors with your mouse in this simple, modernist abstract art.
+Using the p5.js library, we'll spin through 16,277,216 colors with your mouse in this simple, modernist abstract art.
 
 <script src="//scott.ai/js/hello_color.js"></script>
 <div id="hello-color-canvas">
