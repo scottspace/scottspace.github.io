@@ -4,10 +4,9 @@ title: ObervableHQ Breakout
 thumb: /img/o_breakout.png
 ---
 This is a simple demonstration of
-
 <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
-Observable notebooks</a>.
-It pulls the game code live from the <a href="https://observablehq.com/@scottp/breakout">original
+Observable notebooks</a>. It pulls the game code live from
+the <a href="https://observablehq.com/@scottp/breakout">original
 notebook source</a>.
 
 <meta charset="utf-8">
