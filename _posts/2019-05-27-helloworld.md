@@ -58,4 +58,7 @@ notebook source</a>.
           return true;
         }
       });
+      
+      // work on mobile, too
+      main.redefine("w", 400);
 </script>
