@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ObervableHQ Breakout
+thumbnail: /img/o_breakout.png
 ---
 This is a simple demonstration of
 <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
