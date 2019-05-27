@@ -5,53 +5,8 @@ title: Observable Breakout!
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/helloworld.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
-  <style>
-       .outer {
-        margin: 0;
-        font-family: 'Press Start 2P', cursive;
-        line-height: 1.8;
-        align-items: center;
-        top: 0; left: 0; right: 0; bottom: 0;
-      }
-      .wrapper {
-        text-align: center;
-        margin:  auto;
-      }
-      #game {
-        min-height: 350px;
-        margin: 10px auto 40px;
-      }
-      .left {
-        float: left;
-      }
-      .right {
-        float: right;
-      }
-      .score {
-        overflow: hidden;
-        margin: 15px auto 0;
-        font-size: 14px;
-        max-width: 700px;
-      }
-      #newgame input {
-        color: #fff;
-        background: #000;
-        cursor: pointer;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        padding: 10px 15px;
-        font: 15px 'Press Start 2P', cursive;
-        outline: none;
-      }
-      .explanation {
-        margin: 40px auto;
-        font-size: 12px;
-        text-align: left;
-        max-width: 550px;
-      }
-    </style>
-<br>
 <div class="outer">
 <div class="wrapper">
  <div class="score">
@@ -61,8 +16,10 @@ title: Observable Breakout!
 <div id="game"></div>
 <div id="newgame"></div>
 <div class="explanation">
- This is a simple demonstration of <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
- Observable notebooks</a>. It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
+ This is a simple demonstration of
+ <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
+ Observable notebooks</a>.
+ It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
  notebook source</a>.
  </div>
 </div>
