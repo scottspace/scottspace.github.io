@@ -9,13 +9,9 @@ title: Hello world!
   <style>
        .outer {
         margin: 0;
-        background: #000;
-        color: #fff;
         font-family: 'Press Start 2P', cursive;
         line-height: 1.8;
-        display: flex;
         align-items: center;
-        position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
       }
       .wrapper {
