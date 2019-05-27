@@ -4,9 +4,10 @@ title: ObervableHQ Breakout
 thumb: /img/o_breakout.png
 ---
 This is a simple demonstration of
+
 <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
 Observable notebooks</a>.
-It pulls the game code live from the <a href="https://beta.observablehq.com/@jashkenas/breakout">original
+It pulls the game code live from the <a href="https://observablehq.com/@scottp/breakout">original
 notebook source</a>.
 
 <meta charset="utf-8">
@@ -27,7 +28,7 @@ notebook source</a>.
 </div>
  <script type="module">
       import {Runtime} from "https://unpkg.com/@observablehq/runtime@4/dist/runtime.js";
-      import notebook from "https://api.observablehq.com/@jashkenas/breakout.js?v=3";
+      import notebook from "https://api.observablehq.com/@scottp/breakout.js?v=3";
       const renders = {
         "viewof c": "#game",
         "score": "#score",
