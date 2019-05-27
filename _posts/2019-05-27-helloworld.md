@@ -14,7 +14,7 @@ import notebook from "https://api.observablehq.com/@tmcw/hello-world.js?v=3";
 
 new Runtime().module(notebook, name => {
   if (name === "my_import") {
-    return new Inspector(document.querySelector("#my_import"));
+    return new Inspector.into(document.querySelector("#my_import"));
   }
 });
 
