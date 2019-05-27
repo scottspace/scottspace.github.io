@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello world!
+title: Observable Breakout!
 ---
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,11 +17,6 @@ title: Hello world!
       .wrapper {
         text-align: center;
         margin:  auto;
-      }
-      .title {
-        font-size: 40px;
-        margin-bottom: 50px;
-        letter-spacing: 12px;
       }
       #game {
         min-height: 350px;
@@ -59,7 +54,6 @@ title: Hello world!
 <br>
 <div class="outer">
 <div class="wrapper">
- <div class="title">BREAKOUT</div>
  <div class="score">
  <div class="left">Score: <span id="score"></span></div>
  <div class="right">High Score: <span id="highscore"></span></div>
