@@ -12,10 +12,6 @@ Hi there!  We're importing a notebook in the div below:
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 import notebook from "https://api.observablehq.com/@tmcw/hello-world.js?v=3";
 
-new Runtime().module(notebook, name => {
-  if (name === "my_import") {
-    return new Inspector.into(document.querySelector("#my_import"));
-  }
-});
+new Runtime().module(notebook, Inspector.into(document.querySelector("#my_import")));
 
 </script>
