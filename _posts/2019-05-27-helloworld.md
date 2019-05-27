@@ -61,4 +61,5 @@ notebook source</a>.
       
       // work on mobile, too
       main.redefine("w", 400);
+      main.redefine("paddleLength", 60);
 </script>
