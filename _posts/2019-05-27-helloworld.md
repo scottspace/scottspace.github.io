@@ -84,7 +84,7 @@ don't do that, as they propagate changes in one cell to another.  Mike's "Observ
 actually create dataflow graphs (common in compiled languages).  From there, his notebooks use
 these dataflow graphs to propagate changes from one cell to all others.  I think that's so cool!
 
-A second problem is share individual cells of a notebook.  In Observable, every cell can be exported
+A second problem is sharing individual cells of a notebook.  In Observable, every cell can be exported
 as a standalone, reactive javascript application for inclusion inside websites.  I wanted to give
 that a go.
 
