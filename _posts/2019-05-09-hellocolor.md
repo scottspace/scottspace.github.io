@@ -4,8 +4,9 @@ title: Hello, p5.
 thumb: /img/hello_color.jpg
 ---
 
-I'd like to add code to this site.  I've been playing with p5.js lately, a javascript
-implementation of Processing.  Or, as I like to call it, "computer science poets."  P5 lets
+I'd like to add code to this site.  I've been playing with [p5.js](https://p5js.org) lately, a javascript
+implementation of [Processing](https://processing.org/).
+Or, as I like to call it, "computer science for poets."  P5 lets
 creative minds use computer software as a paintbrush, generating art that combines the
 best of humans and machines.
 
