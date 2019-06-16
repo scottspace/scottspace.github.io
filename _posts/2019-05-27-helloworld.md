@@ -6,18 +6,22 @@ thumb: /img/o_breakout.png
 I've been toying with the idea of putting live code on this website of mine, so that
 people can not only watch videos, but perhaps play with AIs as they mature.
 
-Mike Bostock created a beautiful library in D3 for visualizing data with javascript.  He
-later built a community for sharing these visualizations, which as since evolved into
+Mike Bostock ([@bostock](https://twitter.com/mbostock))
+created a beautiful library in [D3](https://d3js.org/) for visualizing data with javascript.  He
+later built a community for sharing these visualizations as code [blocks](https://bl.ocks.org/),
+which has since matured into entire
 JavaScript notebooks.
 
 What I particularly like about Mike's latest work is that he's addressed two of the screwy
-problerms with notebooks today.  First, we have the "broken state" problem.  Notebook users
-can change the value of data variables in once cell, which are not shown in other cells.  Spreadsheets
-don't do that, as they propoagate changes in one cell to another.  Mike's "Observerable" notebooks
-actually create dataflow graphs, which are typical in compiled languages.  From there, his notebooks
-propagate changes in one cell to all others.  I think that's so cool!
+problems with notebooks today.
 
-Next, its cumbersome to share pieces of a notebook.  In Observable, every cell can be exported
+First, we have the "broken state" problem.  Notebook users
+can change the value of data variables in one cell, which are not shown in other cells.  Spreadsheets
+don't do that, as they propagate changes in one cell to another.  Mike's "Observerable" notebooks
+actually create dataflow graphs (common in compiled languages).  From there, his notebooks use
+these dataflow graphs to propagate changes from one cell to all others.  I think that's so cool!
+
+A second problem is share individual cells of a notebook.  In Observable, every cell can be exported
 as a standalone, reactive javascript application for inclusion inside websites.  I wanted to give
 that a go.
 
