@@ -3,35 +3,7 @@ layout: post
 title: ObervableHQ Breakout
 thumb: /img/o_breakout.png
 ---
-I've been toying with the idea of putting live code on this website of mine, so that
-people can not only watch videos, but perhaps play with AIs as they mature.
-
-Mike Bostock ([@bostock](https://twitter.com/mbostock))
-created a beautiful library in [D3](https://d3js.org/) for visualizing data with javascript.  He
-later built a community for sharing these visualizations as code [blocks](https://bl.ocks.org/),
-which has since matured into entire
-JavaScript notebooks.
-
-What I particularly like about Mike's latest work is that he's addressed two of the screwy
-problems with notebooks today.
-
-First, we have the "broken state" problem.  Notebook users
-can change the value of data variables in one cell, which are not shown in other cells.  Spreadsheets
-don't do that, as they propagate changes in one cell to another.  Mike's "Observerable" notebooks
-actually create dataflow graphs (common in compiled languages).  From there, his notebooks use
-these dataflow graphs to propagate changes from one cell to all others.  I think that's so cool!
-
-A second problem is share individual cells of a notebook.  In Observable, every cell can be exported
-as a standalone, reactive javascript application for inclusion inside websites.  I wanted to give
-that a go.
-
-Given that my interest in deep learning was first spawned by Demis' work on Atari, I thought it'd be
-fun to try and include an Atari simulator from an Observable notebook as a cell on my own feed.  After
-a bit of tinkering I got it to work.
-
-Now... what will I do with his newfound magic?  Thinking a lot about that these days.
-
-Here's a demonstration of what Mike calls
+Here's a demonstration of what Mike Bostock calls
 <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embeddable
 Observable notebooks</a>. Game code is pulled live from a larger, more comprehensive notebook
 seen here with the <a href="https://observablehq.com/@scottp/breakout">original
@@ -91,3 +63,33 @@ notebook source</a>.
       main.redefine("w", 400);
       main.redefine("paddleLength", 60);
 </script>
+
+Wait. That's so random, Scott, why is a game stuck on your site about AI?
+
+Well, I've been toying with the idea of putting live code on this website of mine, so that
+people can not only watch videos, but perhaps play with AIs as they mature.
+
+Mike ([@bostock](https://twitter.com/mbostock))
+created a beautiful library in [D3](https://d3js.org/) for visualizing data with javascript.  He
+later built a community for sharing these visualizations as code [blocks](https://bl.ocks.org/),
+which has since matured into entire
+JavaScript notebooks.
+
+What I particularly like about Mike's latest work is that he's addressed two of the screwy
+problems with notebooks today.
+
+First, we have the "broken state" problem.  Notebook users
+can change the value of data variables in one cell, which are not shown in other cells.  Spreadsheets
+don't do that, as they propagate changes in one cell to another.  Mike's "Observerable" notebooks
+actually create dataflow graphs (common in compiled languages).  From there, his notebooks use
+these dataflow graphs to propagate changes from one cell to all others.  I think that's so cool!
+
+A second problem is share individual cells of a notebook.  In Observable, every cell can be exported
+as a standalone, reactive javascript application for inclusion inside websites.  I wanted to give
+that a go.
+
+Given that my interest in deep learning was first spawned by Demis' work on Atari, I thought it'd be
+fun to try and include an Atari simulator from an Observable notebook as a cell on my own feed.  After
+a bit of tinkering I got it to work.
+
+Now... what will I do with his newfound magic?  Thinking a lot about that these days.
