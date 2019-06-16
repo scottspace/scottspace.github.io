@@ -3,10 +3,34 @@ layout: post
 title: ObervableHQ Breakout
 thumb: /img/o_breakout.png
 ---
-This is a simple demonstration of
-<a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embedding
-Observable notebooks</a>. It pulls the game code live from
-the <a href="https://observablehq.com/@scottp/breakout">original
+I've been toying with the idea of putting live code on this website of mine, so that
+people can not only watch videos, but perhaps play with AIs as they mature.
+
+Mike Bostock created a beautiful library in D3 for visualizing data with javascript.  He
+later built a community for sharing these visualizations, which as since evolved into
+JavaScript notebooks.
+
+What I particularly like about Mike's latest work is that he's addressed two of the screwy
+problerms with notebooks today.  First, we have the "broken state" problem.  Notebook users
+can change the value of data variables in once cell, which are not shown in other cells.  Spreadsheets
+don't do that, as they propoagate changes in one cell to another.  Mike's "Observerable" notebooks
+actually create dataflow graphs, which are typical in compiled languages.  From there, his notebooks
+propagate changes in one cell to all others.  I think that's so cool!
+
+Next, its cumbersome to share pieces of a notebook.  In Observable, every cell can be exported
+as a standalone, reactive javascript application for inclusion inside websites.  I wanted to give
+that a go.
+
+Given that my interest in deep learning was first spawned by Demis' work on Atari, I thought it'd be
+fun to try and include an Atari simulator from an Observable notebook as a cell on my own feed.  After
+a bit of tinkering I got it to work.
+
+Now... what will I do with his newfound magic?  Thinking a lot about that these days.
+
+Here's a demonstration of what Mike calls
+<a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks">embeddable
+Observable notebooks</a>. Game code is pulled live from a larger, more comprehensive notebook
+seen here with the <a href="https://observablehq.com/@scottp/breakout">original
 notebook source</a>.
 
 <meta charset="utf-8">
