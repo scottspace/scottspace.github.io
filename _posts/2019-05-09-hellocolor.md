@@ -4,7 +4,14 @@ title: Hello, p5.
 thumb: /img/hello_color.jpg
 ---
 
-Using the p5.js library, we'll spin through 16,277,216 colors with your mouse in this simple, modernist abstract art.
+I'd like to add code to this site.  I've been playing with p5.js lately, a javascript
+implementation of Processing.  Or, as I like to call it, "computer science poets."  P5 lets
+creative minds use computer software as a paintbrush, generating art that combines the
+best of humans and machines.
+
+I yanked one of the simple demo's for p5 and wondered if I could get it working
+with the github.io website framework.  Using the p5.js library, you can
+now spin through 16,277,216 colors with your mouse in this simple, modernist abstract art.
 
 <script src="//scott.ai/js/hello_color.js"></script>
 <div id="hello-color-canvas">
