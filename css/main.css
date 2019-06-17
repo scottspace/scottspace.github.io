@@ -214,6 +214,8 @@ img {
 .container-fluid  {
   padding-left: max(15px, env(safe-area-inset-left));
   padding-right: max(15px, env(safe-area-inset-right));
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* Multi-level navigation links */
