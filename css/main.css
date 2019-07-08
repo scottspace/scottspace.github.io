@@ -355,8 +355,8 @@ footer .theme-by {
 
 img.post-thumb {
     width: 100%;
-    max-width: 350px;
-    max-height: 245px;
+    max-width: 480px;
+    max-height: 336px;
     border: 1px solid #999;
     margin-bottom: 12px;
 }
