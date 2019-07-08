@@ -1,5 +1,4 @@
 # --- General options --- #
-
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
@@ -24,6 +23,8 @@ description: Scott's thoughts on Space and AI
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
+  Newsletter: "https://mailchi.mp/720c2edf57cd/scottspace"
+  Contact: "contact"
 #  Author's home: "https://scott.ai"
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -68,7 +69,7 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "scott@scott.ai"
+#  email: "scott@scott.ai"
   facebook: scottpenberthy
   github: scottspace
   twitter: scottpenberthy
@@ -78,7 +79,7 @@ social-network-links:
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-#  instagram: deanat78
+  instagram: siliconvalleyscott
 #  youtube: user/deanat78
 #  spotify: yourname
 #  telephone: +14159998888
@@ -92,6 +93,7 @@ share-links-active:
   facebook: true
   google: false
   linkedin: true
+  instagram: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
