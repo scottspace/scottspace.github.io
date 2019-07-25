@@ -4,12 +4,14 @@ title: Stanford's AI in Real Life
 thumb: /img/ai_in_real_life.png
 ---
 
-Karen Matthys and I had an idea.  We wanted to host a neutral forum where government, industry
+Karen Matthys of Stanford's Institute for Computational Mathematics and Engineering (ICME)
+and I had an idea.  We wanted to host a neutral forum where government, industry
 and academia could come together to discuss issues in deploying AI in real life scenarios.  Thanks
 to some funding from Google, we put together our inaugural speaker series as a graduate level 
-course.  Students and visitors packed the auditorium!  We were delighted with the outcome.
+course.  Students and visitors packed the auditorium!  We were delighted with the outcome, as
+well as the incredible speakers.
 
-Here's the blurb we used to advertise the series:
+Here's the blurb we used to advertise the [series](https://icme.stanford.edu/artificial-intelligence-ai-real-life-seminar-series):
 
 This new series of seminars, called "AI in Real Life,"
 features leaders from industry and academia sharing insights into the world of artificial intelligence.  Each week,
