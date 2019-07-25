@@ -19,3 +19,6 @@ of public cloud vendors.  We had chosen Google Cloud, moving from IBM Lotus Note
 Google App Suite in 2015.  I think we were the first financial institution to embrace the public
 cloud so loudly, a first for the industry.  Google asked if I'd say a few words, captured
 here.
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/vy-pL8duVPA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
