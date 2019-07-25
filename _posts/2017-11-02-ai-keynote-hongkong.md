@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hong Kong AI Society 
-thumb: /img/thumb_ai_hk.png
+thumb: /img/thumb_ai_hk.jpg
 ---
 
 The Artificial Intelligence Society of Hong Kong invited me to
