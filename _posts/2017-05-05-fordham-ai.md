@@ -6,7 +6,7 @@ thumb: /img/fordham_ai.jpg
 
 Fordam University is located a few miles from Google NYC, a rising voice in applying
 computer science to business and finance.  An undergraduate student contacted me on
-LinkedIn and wondered if I'd stop by and deliver a keynote on applying AI to the world
+LinkedIn and wondered if I'd stop by and deliver a [keynote](https://www.gabelliconnect.com/featured-events/fordham-fintech-conference-future-innovation/) on applying AI to the world
 of fintech.
 
 Many years ago at MIT I remember calling an illustrious professor at a top university,
