@@ -4,8 +4,9 @@ title: IBM WebExplorer
 thumb: /img/webexplorer.gif
 ---
 
-__Ed: This is a reproduction of an article from 1994, for when I want to walk down memory lane.  I love how he mentions
-NASA, which is where I apend my time in 2019.__
+__This is a reproduction of an article from 1994, for when I want to walk down memory lane.  I love how he mentions
+NASA, which is where I
+spend my time in 2019.__
 
 The [IBM WebExplorer](https://wikivisually.com/wiki/IBM_WebExplorer)
 began in June of 1994 when the World-Wide Web was beginning to gain mass appeal. IBM was developing OS/2 Warp and
