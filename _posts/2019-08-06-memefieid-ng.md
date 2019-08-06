@@ -442,7 +442,7 @@ helps isolate root causes of failure.
 
 ### 55 General case of error attribution
 
-Walk your ML pipeline into a directed acyclic graph, then walk it once
+Draw your ML pipeline as a directed acyclic graph, then walk it once
 to get a linear order of pipeline parts for error analysis. 
 
 <img alt="Meme 55" width="400" src="https://scott.ai/img/ng/chap_55.png">
@@ -463,7 +463,7 @@ is still failing, your pipeline design is flawed.  Change it.
 
 ### 58 Building a superhero team - Get your teammates to read this
 
-Share Andrew Ng's document and this blog post to help
-build your own, superhero ML team!  Thanks for your time today.
+Share the joy of this blog post and Andrew's wonderful book
+with your own, superhero ML team!
 
 <img alt="Meme 58" width="400" src="https://scott.ai/img/ng/chap_58.png">
