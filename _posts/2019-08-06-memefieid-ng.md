@@ -4,16 +4,19 @@ title: Machine Learning Yearning, Memeified.
 thumb: /img/ng/chap_1.png
 ---
 
-Welcome to the first edition of Memeified AI!  This edition translates
+Welcome to the first edition of Memeified AI!  
+Memefieid AI summarizes important works in the AI field as
+memes and tweets, so that busy people can get a sense of what's
+inside. This edition translates
 Andrew Ng's wonderful, free, online book of
 ["Machine Learning Yearning"](https://www.deeplearning.ai/machine-learning-yearning/) into
 fun memes, tweets, and isms.  Whatever an ism, is.
 
-Memefieid AI summarizes important works in the AI field as
-memes and tweets, so that busy people can get a sense of what's
-inside. 
+The titles shown in bold are straight from Andrew's book.  The memes
+and tweetish summaries are mine, so any errors are clearly me just thinking
+unclearly.
 
-I also provide a 20-minute talk with Q&A if you'd like me to
+For the curious, I also provide a 20-minute talk with Q&A if you'd like me to
 speak at your event.  I can extend it to 45 minutes if you're really
 into that sort of thing (and can sit that long). I also have a professional
 "immersion" version that lasts an entire day, including hands-on
@@ -25,13 +28,13 @@ I thought I'd share a personal story about how these came about.
 I've long been a fan of Carl Sagan, Richard Feynamnn, and Neil de
 Grasse Tyson.  They're superb communicators who transform the most
 complex mathematics, physics and science into fun, approachable
-lectures, speeches, and quips.  I grew up with Carl's Cosmos on PBS,
-studied Richard in college, and am in awe of Neil.
+lectures, speeches, and sound-bites.  I grew up with Carl's Cosmos on PBS,
+studied Richard in college and last week, and am in awe of Neil.
 
 A few weeks ago I sat down with my friend Paul Magnone, who've I've
 known for quite a long time. He asked me what Feynmann might have done
 today, were he to rebuild his famous lectures on science.  How might
-apply his infamous wit and sense of humor to heady, complex subjects?
+he apply his infamous wit and sense of humor to heady, complex subjects?
 Surely he'd give lectures on YouTube.  But what else?
 
 We had the benefit (or impairment) of a nice bottle of wine, and one
@@ -349,7 +352,7 @@ Try to understand why your dev set doesn't represent the same distribution as yo
 training set.  Once you do, realign the data sets and add more data where needed to
 better represent the real world.
 
-<img alt="Meme 42" width="400" src="https://scott.ai/img/ng/chap_42.png">
+<img alt="Meme 42" width="400" src="https://scott.ai/img/ng/chap_42.jpg">
 
 ### 43 Artificial data synthesis
 
