@@ -70,8 +70,9 @@ Like a tip?  Share the 1-2 pages of text with your colleagues to spread the word
 
 ### 3. Prerequisites and Notation
 
-You need to know a little about machine learning (ML),
-supervised learning,  and deep learning to get
+You need to know a little about
+[machine learning (ML)](https://ml-class.org),
+supervised learning, and deep learning to get
 the most out of this book.
 
 <img alt="Meme 3" width="400" src="https://scott.ai/img/ng/chap_3.png">
