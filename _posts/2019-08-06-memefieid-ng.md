@@ -18,8 +18,13 @@ and tweetish summaries are mine, so any errors are clearly me just thinking
 unclearly.  For the curious, I also provide a 20-minute talk with Q&A
 if your group is into that sort of thing.
 
+## Machine Learning Yearning
+#### written by Andrew Ng, memefied by me
+
+### 0 Unofficial Forward
+
 Before we get started, I thought I'd share a personal story about how
-these came about, so you can understand the source of my madness.
+these memefieid posts came about, so you can understand the source of my madness.
 
 I've long been a fan of Carl Sagan, Richard Feynamnn, and Neil de
 Grasse Tyson.  They're superb communicators who transform the most
@@ -50,10 +55,6 @@ So that's how I spent an August vacation
 back East in 2019.  You're seeing the inaugural launch of Memeified AI.
 They'll get better.  Maybe.  I hope you like it, and have as much fun
 viewing it as I did putting it together.
-
-## Machine Learning Yearning
-#### written by Andrew Ng
-#### memeified by me
 
 ### 1. Why Machine Learning Strategy
 
