@@ -5,25 +5,21 @@ thumb: /img/ng/chap_1.png
 ---
 
 Welcome to the first edition of Memeified AI!  
-Memefieid AI summarizes important works in the AI field as
-memes and tweets, so that busy people can get a sense of what's
-inside. This edition translates
-Andrew Ng's wonderful, free, online book of
-["Machine Learning Yearning"](https://www.deeplearning.ai/machine-learning-yearning/) into
-fun memes, tweets, and isms.  Whatever an ism, is.
+
+Memefieid AI summarizes important works in the AI field as memes and
+tweets, so that busy people can get a sense of what's inside. This
+edition translates Andrew Ng's wonderful, free, online book of
+["Machine Learning
+Yearning"](https://www.deeplearning.ai/machine-learning-yearning/)
+into fun memes, tweets, and isms.  Whatever an ism, is.
 
 The titles shown in bold are straight from Andrew's book.  The memes
 and tweetish summaries are mine, so any errors are clearly me just thinking
-unclearly.
+unclearly.  For the curious, I also provide a 20-minute talk with Q&A
+if your group is into that sort of thing.
 
-For the curious, I also provide a 20-minute talk with Q&A if you'd like me to
-speak at your event.  I can extend it to 45 minutes if you're really
-into that sort of thing (and can sit that long). I also have a professional
-"immersion" version that lasts an entire day, including hands-on
-workshops.  Stay tuned for updates
-this Fall from the universities where I'm an adjunct faculty.
-
-I thought I'd share a personal story about how these came about.
+Before we get started, I thought I'd share a personal story about how
+these came about, so you can understand the source of my madness.
 
 I've long been a fan of Carl Sagan, Richard Feynamnn, and Neil de
 Grasse Tyson.  They're superb communicators who transform the most
@@ -31,7 +27,7 @@ complex mathematics, physics and science into fun, approachable
 lectures, speeches, and sound-bites.  I grew up with Carl's Cosmos on PBS,
 studied Richard in college and last week, and am in awe of Neil.
 
-A few weeks ago I sat down with my friend Paul Magnone, who've I've
+A few weeks ago I sat down with my friend Paul Magnone, who I've
 known for quite a long time. He asked me what Feynmann might have done
 today, were he to rebuild his famous lectures on science.  How might
 he apply his infamous wit and sense of humor to heady, complex subjects?
@@ -48,8 +44,10 @@ drive us to focus on sound-bites.  Could we actually extract something
 fun, lighthearted but meaningful from such dense material?  The wine
 and friendship bravado gave us (over) confidence.
 
-"OK, you first," said Paul.  So that's how I spent an August vacation
-back East.  You're seeing the inaugural launch of Memeified AI.
+"OK, you first," said Paul.  Smart.  He'd wait and see.
+
+So that's how I spent an August vacation
+back East in 2019.  You're seeing the inaugural launch of Memeified AI.
 They'll get better.  Maybe.  I hope you like it, and have as much fun
 viewing it as I did putting it together.
 
