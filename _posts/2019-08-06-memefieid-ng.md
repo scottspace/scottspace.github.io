@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Machine Learning Yearning, Memeified.
-thumb: /img/ng/chap_1.png
+thumb: /img/ng/chap_3.png
 ---
 
 Welcome to the first edition of Memeified AI!  
@@ -50,6 +50,10 @@ So that's how I spent an August vacation
 back East in 2019.  You're seeing the inaugural launch of Memeified AI.
 They'll get better.  Maybe.  I hope you like it, and have as much fun
 viewing it as I did putting it together.
+
+## Machine Learning Yearning
+#### written by Andrew Ng
+#### memeified by me
 
 ### 1. Why Machine Learning Strategy
 
