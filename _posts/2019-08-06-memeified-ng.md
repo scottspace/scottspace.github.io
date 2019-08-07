@@ -64,6 +64,9 @@ to years of development time.
 
 <img alt="Meme 1" width="400" src="https://scott.ai/img/ng/chap_1.png">
 
+<a href="https://twitter.com/intent/tweet?button_hashtag=tweet" class="twitter-hashtag-button" data-text="This book will help you spot clues in your machine learning system, saving you months
+to years of development time.\nhttps://pbs.twimg.com/media/EBZ0UOKVAAAcODD?format=jpg&name=medium" data-show-count="false">Retweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ### 2. How to use this book to help your team
 
 Like a tip?  Share the 1-2 pages of text with your colleagues to spread the word.
