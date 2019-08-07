@@ -2,6 +2,7 @@
 layout: post
 title: Machine Learning Yearning, Memeified.
 thumb: /img/ng/chap_3.png
+share-img: https://scott.ai/img/ng/chap_3.png
 ---
 
 Welcome to the first edition of Memeified AI!  
