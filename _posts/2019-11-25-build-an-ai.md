@@ -8,20 +8,17 @@ share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 I have a mental model for AI. I find the model
 useful for understanding deeply complex,
 mathematical techniques as well as abstract, high-level
-coding in AI programs.  The analogy helps me work
-with clients to build massive data pipelines that drive
-billion-dollar businesses.  If you've never really understood
+coding in AI programs.  If you've never really understood
 what a "tensor" was, or how "TensorFlow" got its name,
-this post is for you.  To me, "tensors" in AI are as important
+this post is for you. To me, "tensors" in AI are as important
 as "records" in the database world.
 <!--more-->
 
-I disagree with 
+A quick note on mental models before I start.  I disagree with 
 naysayers who dismiss analogies to brain function. I personally
 find these analogies _very_ helpful.  After all, they inspired original research
 into AI back in the 1940s.  Further, today's deep learning systems borrow a lot from
-_biological architectures_ of the brain.  But your mileage may vary, and that's 
-cool.
+_biological architectures_ of the brain.  With that, onward!
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
