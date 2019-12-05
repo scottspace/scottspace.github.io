@@ -127,26 +127,24 @@ output tensors just like our bodies do.
 
 <img alt="i6" width="500" src="https://scott.ai/img/build_an_ai/ai_6a.jpg">
 
-Shockingly, this works.  Not only does it work, it works _extremely_ well when
-run billions of operations per second (the speed of your phone).  The performance
-is often super human. This major breakthrough in 2012 led to the world's Nobel prize in
-computing.
+Shockingly, this works.  Not only does it work, it works _extremely_ at 
+billions of operations per second (e.g. at tthe speed of your phone).  The performance
+is  super human. This major breakthrough in 2012 led to the world's Nobel prize in
+computing!
 
-The _computational graphs_ consiste of _artificial_ neurons, which are simple
-math equations of tensor values.  The most popular equation
+The _computational graphs_ consist of _artificial_ neurons, which are just
+math equations with tensor values.  The most popular equation
 multiplies input values
 by constants called _weights_, then adds constants called _biases_ to yield
-outputs.  You may vaguely recall this from 8th grade,
+outputs.  You may vaguely recall this equation of a line from 8th grade,
 
 y = m * x  + b
 
-The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  
-The value "b" is a _bias_.  
+The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  The value "b" is a _bias_.  
 
 You may do this (or have teams who do this) with stock prices and inventory levels,
 often using single numbers (0-d tensors).  Computers do the same thing, except they
-can use 500,000-d tensors.  Half a million D.  That's insane.  But its still
-the same math in the end.  Computers are good at numbers.
+can use more dimensions.
 
 A major advance in AI added a "fire" macro, like you'd use on a spreadsheet,
 to mimic neurons.  Instead of just
