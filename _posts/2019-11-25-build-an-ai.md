@@ -6,9 +6,9 @@ excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/astrodock.png
 ---
 
-Mental models help us conquer complexity.  But there's complexity, 
+Mental models conquer complexity.  But there's complexity, 
 then there's the face-melting, mind-blowing complexity in 
-mathematically intense AI.  Diff eq and quantum physics, anyone?
+AI.  Differential equations and quantum physics, anyone?
 
 I have a mental model for AI.  I find this
 immensely useful for sleeping peacefully in the
@@ -73,20 +73,16 @@ or "1-d" tensor.  1-d is just a vertical list.
 
 We can put battery levels in a spreadsheet, making sure
 to fill every row and column in a nice rectangle, without missing a spot. 
-That's a "2-d" tensor.   2-d is like a stock plot, with two dimensions "time" and "price."
+That's a "2-d" tensor.   2-d is like a stock chart, with two dimensions "time" and "stock price."
 
 We can copy that sheet to another, and another.  Mess the
 numbers up a bunch, but still keep them between 0.0 and 1.0.  Then
 we'd have _sheets_ of tensors, or a "3-d" tensor.  A common 3-d tensor
 is a digital image, one sheet each for the pixel values of red, green and blue.
 
-Now you know what a Tensor is.  Not so scary is it?
-
-Know what's cool?  Bert represents _everything_ as a tensor.  So
-do you.  
-
-Look at all
-the amazing things Bert can hold in his head as a tensor.  Instructions
+Now you know what a Tensor is.  Not so scary is it?  Bert represents _everything_ as a tensor.
+So do you.  Imagine all
+the amazing things Bert holds in his head as tensors.  Instructions
 for driving a car, the taste of his martini from last night, a picture
 of a bunny, or words he's reading are just... tensors.
 
@@ -94,29 +90,32 @@ of a bunny, or words he's reading are just... tensors.
 
 Bert's brain is a _tensor processor_.  Tensors in, tensors out.  Tensors flow
 to think. Tensors
-flow through the graph sitting in the napkin folded in his skull.   
-Indeed, the most popular tool among AI nerds today is... _Tensorflow_.
+flow through the graph sitting in the napkin folded in his skull.   Indeed, the
+most popular tool among AI nerds today is... _Tensorflow_.
 
 We can reframe a lot of what humans do as tensor activity.  We can map
 sensory experience into tensors.  We flow
-those tensors through our brain's computational graph.  Out come other tensors, which
-our bodies interpret by moving, speaking, writing, drawing or doing burpees.
+those tensors through the brain's computational graph, producing more
+tensors.  Our bodies interpret these by moving, speaking, writing, 
+drawing or doing burpees. 
 
-Bert can hear someone speak (a tensor of
+Here are some examples:
+
+ - Bert can hear someone speak (a tensor of
 frequencies over time) and write down words he's heard (a tensor representing
 words in a sequence).  That's called _automated speech recognition_.
 
-Bert can watch (image tensors over time) and listen (sound tensors over tiem), then figure out
+ - Bert can watch (image tensors over time) and listen (sound tensors over tiem), then figure out
 how to turn the steering wheel (a "control" tensor telling us the angle of turn
 and how fast), press the brake (another control tensor), or play with the 
 turn signal (a logical on/off tensor).  That's called _autonomous driving_.
 
-Bert can see a description of a bunny (a sequence of word tensors) and then
+ - Bert can see a description of a bunny (a sequence of word tensors) and then
 draw that bunny (generating an image tensor). That's often done
 by _generative adversarial networks_ that specialize in creating
 big tensors out of smaller ones.
 
-Bert can see a picture of a bunny (an image tensor) and label it with
+ - Bert can see a picture of a bunny (an image tensor) and label it with
 the word "b u n n y," (a label tensor).  
 That's called _logistical regression_. 
 
