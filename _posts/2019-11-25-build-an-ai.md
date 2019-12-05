@@ -6,17 +6,19 @@ excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 ---
 I have a mental model for AI. I find the model
-immensely useful for understanding deeply complex,
+useful for understanding deeply complex,
 mathematical techniques as well as abstract, high-level
 coding in AI programs.  The analogy helps me work
 with clients to build massive data pipelines that drive
-billion-dollar businesses.=
+billion-dollar businesses.
 <!--more-->
 
 I disagree with 
-naysayers who slam analogies to brain function. I personally
+naysayers who dismiss analogies to brain function. I personally
 find these analogies _very_ helpful.  After all, they inspired original research
-into AI back in the 1940s.
+into AI back in the 1940s.  Further, I see today's deep learning systems borrowing a lot from
+_biological architectures_ of the brain.  But your mileage may vary, and that's 
+fine.
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
