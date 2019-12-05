@@ -6,16 +6,18 @@ excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 ---
 
-I have a mental model for AI.  Thought I'd share it :-)
-
-I find the model
+I have a mental model for AI. I find the model
 immensely useful for understanding deeply complex,
 mathematical techniques as well as abstract, high-level
-coding in AI programs.  The analogy also helps me work
+coding in AI programs.  The analogy helps me work
 with clients to build massive data pipelines that drive
-billion-dollar businesses.  I disagree with 
+billion-dollar businesses.
+
+<!--more-->
+I disagree with 
 naysayers who slam analogies to brain function. I personally
-find those analogies _very_ helpful.  
+find these analogies _very_ helpful.  After all, they inspired original research
+into AI back in the 1940s.
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
@@ -29,7 +31,7 @@ with tiny neurons, whose cells look roughly like the figure below
 
 <img alt="i2" width="500" src="https://scott.ai/img/build_an_ai/ai_2a.jpg">
 
-Inside Bert's head you'll see layers of  neurons.  If we
+Inside Bert's head you'll see layers of neurons.  If we
 separated them like we did in 7th grade biology class, we'd see a rich Baklava
 of gray layers all connected by sinews of neurons.
 
@@ -135,8 +137,7 @@ outputs.  You may recall this equation of a line,
 
 y = m * x  + b
 
-The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  
-The value "b" is a _bias_.  
+The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  The value "b" is a _bias_.  
 
 You may bave used this math with stock prices and inventory levels,
 often using single numbers.  Computers do the same thing.  They just use
@@ -189,8 +190,9 @@ to avoid being eaten.  We have some stiff carbon things holding us together,
 letting us move a bit better
 than a jellyfish.  Humans have a long way to go, evolution-wise.
 
-The tensor mental model is powerful.  We can classify the research from thousands of
-teams into four buckets: 
+The tensor mental model is useful for understanding
+the research from thousands of
+teams as four basic ideas: 
 
 1. Some researchers invent clever ways
 to represent the world with tensors.
