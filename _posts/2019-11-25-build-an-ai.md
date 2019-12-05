@@ -14,11 +14,15 @@ this post is for you. To me, "tensors" in AI are as important
 as "records" in the database world.
 <!--more-->
 
+### Disclaimer
+
 A quick note on mental models before I start.  I disagree with 
 naysayers who dismiss analogies to brain function. I personally
 find these analogies _very_ helpful.  After all, they inspired original research
 into AI back in the 1940s.  Further, today's deep learning systems borrow a lot from
 _biological architectures_ of the brain.  With that, onward!
+
+### Tensors and Graphs
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
@@ -86,6 +90,8 @@ the amazing things Bert holds in his head as tensors.  Instructions
 for driving a car, the taste of his martini from last night, a picture
 of a bunny, or words he's reading are all... tensors.
 
+### Tensor Processing
+
 <img alt="i5" width="500" src="https://scott.ai/img/build_an_ai/ai_5a.jpg">
 
 Bert's brain is a _tensor processor_.  Tensors in, tensors out.  Tensors flow
@@ -130,6 +136,8 @@ billions of operations per second (e.g., at the speed of your phone).  The perfo
 is super human. This major breakthrough in 2012 led to the world's Nobel prize in
 computing!
 
+### Weights and Biases
+
 The _computational graphs_ consist of _artificial_ neurons, another name for
 math equations with tensor values.  The most popular neuron
 multiplies input values
@@ -155,6 +163,8 @@ The graph plus all of its constant valus -- m, b, and @fire -- are
 collectively called an AI "model."  The "model"
 tells a computer how to give us an output tensor, y, when given an input 
 tensor "x."
+
+### Learning
 
 Figuring out what to use for "m" and "b" is the process 
 called _machine learning_.  The computer is learning the values
@@ -191,8 +201,11 @@ to avoid being eaten.  We have some stiff carbon things holding us together,
 letting us move a bit better
 than a jellyfish.  Humans have a long way to go, evolution-wise.
 
+### The Future
+
 The tensor mental model is useful for understanding
-the latest research as four basic ideas: 
+the latest research as four basic ideas, propelling
+us forward into an exciting future:
 
 1. Some researchers invent clever ways
 to represent the world with tensors.
@@ -214,7 +227,7 @@ is thus:
 
 5. "And now for something completely different."
 
-## Conclusion
+### Conclusion
 
 The tensor model of tensors in, tensors out, flowing through graphs, is a simple
 yet powerful technique to understand and build AI systems.  
