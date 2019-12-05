@@ -204,9 +204,9 @@ recently they've begun to learn the graph itself, too.
 
 4. The last batch use tensors and graphs to do cool things.
 
-Of course, there's always the brave Monty Python-ic researchers 
-pulling the fifth,
-which doesn't fit my model.  Perhaps you're the lone genius who 
+Of course, there's always the brave Monty Python-ish researcher
+pulling a fifth,
+which doesn't fit my tensor model.  Perhaps you're the lone genius who 
 will figure out what comes next after tensors!  Your bucket
 is thus:
 
@@ -218,10 +218,11 @@ The tensor model of tensors in, tensors out, flowing through graphs, is a simple
 yet powerful technique to understand and build AI systems.  
 
 You're probably wondering
-how exactly we can represent business, web sites, mobile apps, voice assistants,
-and driverless cars with this approach.  How do we protect against hidden biases
-in our tensors?  How do we ensure encoding into tensors maintains our privacy, in things
-like medical and financial systems?
+how exactly we can represent business, documents, web sites, mobile apps, voice assistants,
+customers, inventory, risk, driverless cars and more with this approach.
+How do we protect against hidden biases
+in our tensors?  How do we make tensors that protects our privacy, in areas
+like medicine and finance?
 
 I'll be sharing future posts to help
 you through all that.  I'll also be using techniques that will feel just as easy
