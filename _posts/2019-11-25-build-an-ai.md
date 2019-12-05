@@ -3,20 +3,14 @@ layout: post
 title: How to Build an AI
 thumb: /img/build_an_ai/ai_1a.jpg
 excerpt_separator: <!--more-->
-share-img: https://scott.ai/img/astrodock.png
+share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 ---
-
-Mental models conquer complexity.  But there's complexity, 
-then there's the face-melting, mind-blowing complexity in 
-AI.  Differential equations and quantum physics, anyone?
 
 I have a mental model for AI.  I find this
 immensely useful for sleeping peacefully in the
 AI revolution.  I disagree with 
 naysayers who slam analogies to brain function. I personally
 find the analogy _very_ helpful.  
-
-Time to walk through it.
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
@@ -105,7 +99,7 @@ Here are some examples:
 frequencies over time) and write down words he's heard (a tensor representing
 words in a sequence).  That's called _automated speech recognition_.
 
- - Bert can watch (image tensors over time) and listen (sound tensors over tiem), then figure out
+ - Bert can watch (image tensors over time) and listen (sound tensors over time), then figure out
 how to turn the steering wheel (a "control" tensor telling us the angle of turn
 and how fast), press the brake (another control tensor), or play with the 
 turn signal (a logical on/off tensor).  That's called _autonomous driving_.
@@ -116,8 +110,7 @@ by _generative adversarial networks_ that specialize in creating
 big tensors out of smaller ones.
 
  - Bert can see a picture of a bunny (an image tensor) and label it with
-the word "b u n n y," (a label tensor).  
-That's called _logistical regression_. 
+the word "b u n n y," (a label tensor).  That's called _logistical regression_. 
 
 A modern, _artificial_ intelligence captures this approach in
 software.  Tensors come into our machine,
