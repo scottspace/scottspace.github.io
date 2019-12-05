@@ -190,7 +190,7 @@ letting us move a bit better
 than a jellyfish.  Humans have a long way to go, evolution-wise.
 
 The tensor mental model is powerful.  We can classify the research from thousands of
-teams into four easy buckets: 
+teams into four buckets: 
 
 1. Some researchers invent clever ways
 to represent the world with tensors.
@@ -215,7 +215,9 @@ is thus:
 ## Conclusion
 
 The tensor model of tensors in, tensors out, flowing through graphs, is a simple
-yet powerful technique to understand and build AI systems.  You're probably wondering
+yet powerful technique to understand and build AI systems.  
+
+You're probably wondering
 how exactly we can represent business, web sites, mobile apps, voice assistants,
 and driverless cars with this approach.  I'll be sharing future posts to help
 you through that.  I'll also be using techniques that will feel just as easy
