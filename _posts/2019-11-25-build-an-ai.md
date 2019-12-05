@@ -13,7 +13,7 @@ mathematically intense AI.  Diff eq and quantum physics, anyone?
 I have a mental model for AI.  I find this
 immensely useful for sleeping peacefully in the
 AI revolution.  I disagree with 
-naysayers who slam analogies with mammalian brain function. I personally
+naysayers who slam analogies to brain function. I personally
 find the analogy _very_ helpful.  
 
 Time to walk through it.
@@ -25,17 +25,17 @@ Let's look inside Bert's head, shall we?
 The top, gray layer of Bert's brain is about the size and thickness of a
 large dinner napkin,
 crammed and crunched into a skull.  The nooks and crannies are filled
-with tiny neurons, whose cells look roughly like the figure here on the right
+with tiny neurons, whose cells look roughly like the figure below
 (not drawn to scale).
 
 <img alt="i2" width="500" src="https://scott.ai/img/build_an_ai/ai_2a.jpg">
 
-Inside Bert's head you'll see many layers of these neurons.  If we
-separated them like in 7th grade biology class, we'd see a rich fabric
-of layers, with sinews of white connecting them together.
+Inside Bert's head you'll see layers of  neurons.  If we
+separated them like we did in 7th grade biology class, we'd see a rich Baklava
+of gray layers all connected by sinews of neurons.
 
-Tracing these threads in his nervous system, we'd see them 
-connect directly to Bert's eyes for seeing, ears for hearing,
+Tracing these threads in Bert's nervous system, we'd see the neurons
+connecting directly to Bert's eyes for seeing, ears for hearing,
 and so forth.  Bert thinks or "computes" by detecting subtle chemical charges
 from his senses, propagating charges through his vast, intricate
 network of neurons.
@@ -46,25 +46,19 @@ tickle in his brain, bellowing
 
 "Cat!"
 
-Google's first true AI found cat's in YouTube, too, after months
-and millions.  The board was not, um, "pleased."  I talk about that
-on stage a lot. 
-
 Now for some science.  
 
 Let's
-draw a map of Bert's neurons, kinda like how we'd
+draw a map of Bert's neurons, similar to how we'd
 draw a map of airplane flights.   The bodies of the neurons
 are our "cities," and the long tubes that connect them are our "flights."   In AI we call 
-this a "computational graph."   
-
-Let's _graph_ 9 of Bert's neurons. 
+this a "computational graph."  Let's _graph_ 9 of Bert's neurons. 
 
 <img alt="i3" width="500" src="https://scott.ai/img/build_an_ai/ai_3a.jpg">
 
 Time for a new science word...  "Tensor."
 
-Neurons in Bert's head carry a little electrical charge.  Imagine if we could see
+Neurons in Bert's head carry a tiny electrical charge.  Imagine if we could see
 this charge as a battery level. We can write down the battery
 levels for all 9 Neurons.  We'll use 0.0 to mean a dead battery, 1.0 to mean a full
 battery.  0.50 is half-charged, 0.25 is a quarter charge, and so on.  You get the idea.
@@ -73,11 +67,11 @@ battery.  0.50 is half-charged, 0.25 is a quarter charge, and so on.  You get th
 
 The list of battery levels is called a "tensor."  
 
-We can be super fancy here.  We can list them in a column in Excel, 
+We can be super fancy here.  We can list battery levels in a column in Excel, 
 and call it a "1-dimensional"
 or "1-d" tensor.  1-d is just a vertical list.
 
-We can list a bunch in a spreadsheet, making sure
+We can put battery levels in a spreadsheet, making sure
 to fill every row and column in a nice rectangle, without missing a spot. 
 That's a "2-d" tensor.   2-d is like a stock plot, with two dimensions "time" and "price."
 
