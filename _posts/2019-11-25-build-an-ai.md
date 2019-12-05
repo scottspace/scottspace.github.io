@@ -174,15 +174,15 @@ the output tensor we expect, then ask the AI to guess.
 <img alt="i7" width="500" src="https://scott.ai/img/build_an_ai/ai_7a.jpg">
 
 The next major way machines learn reminds me of "Marco, Polo!" we played
-on the swim team. If a AI guesses close to the answer, we say they're "warmer" 
+on the swim team. If an AI guesses close to the answer, we say they're "warmer" 
 and the AI keeps moving forward.  If the AI guesses farther from the answer, 
 we say they're "colder" and the 
 AI switches direction.
 
 <img alt="i8" width="500" src="https://scott.ai/img/build_an_ai/ai_8a.jpg">
 
-What?  Were you expecting something more exotic?  
-Elementary school teaching, Hide n Seek, and tensors?  Is that all there is?
+What?  Were you expecting something more exotic?   Elementary school teaching,
+Hide n Seek, and tensors?  Is that all there is?
 
 Yes.
 
@@ -192,11 +192,11 @@ to avoid being eaten.  We have some stiff carbon things holding us together,
 letting us move a bit better
 than a jellyfish.  Humans have a long way to go, evolution-wise.
 
-The tensor mental model is powerful.  We can classify the research from 10,000 brilliant
-minds and 100s of thousands of papers into four easy buckets: 
+The tensor mental model is powerful.  We can classify the research from thousands of
+teams into four easy buckets: 
 
 1. Some researchers invent clever ways
-to represent our world with tensors.
+to represent the world with tensors.
 
 2. Other scientists invent graphs, or ways to create graphs,
 for turning big tensors into small ones, or small ones into
@@ -208,12 +208,12 @@ recently they've begun to learn the graph itself, too.
 4. The last batch use tensors and graphs to do cool things.
 
 Of course, there's always the brave Python-esque researchers 
-donig a fifth,
+pulling the fifth,
 which doesn't fit my model.  Perhaps you're the lone genius who 
-will figure out what comes next after tensors!  Your path bucket
+will figure out what comes next after tensors!  Your bucket
 is thus:
 
-5. And now for something completely different.
+5. "And now for something completely different."
 
 ## Conclusion
 
