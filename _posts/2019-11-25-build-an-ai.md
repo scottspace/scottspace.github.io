@@ -136,7 +136,7 @@ billions of operations per second (e.g., at the speed of your phone).  The perfo
 is super human. This major breakthrough in 2012 led to the world's Nobel prize in
 computing!
 
-### Weights and Biases
+### Tensor Models
 
 The _computational graphs_ consist of _artificial_ neurons, another name for
 math equations with tensor values.  The most popular neuron
@@ -171,29 +171,30 @@ called _machine learning_.  The computer is learning the values
 that cause it to behave correctly, turning input tensors into the outputs
 we expect.
 
-Computers do this by guessing.  If they guess
+Computers do this by guessing.  They usually start with random values,
+all slightly above 0. If they guess
 too low, they tweak "m" and "b" a bit so the answer nudges higher.  If their guess
 is too high, they do the reverse, nudging lower.
 
-The first way a machine learns was inspired by teaching from a supervisor. 
-We give the AI concrete examples.  We show an input tensor,
+The first way a machine learns was inspired by teaching from an
+educated supervisor.  We give the AI concrete examples.  We show an input tensor,
 the output tensor we expect, then ask the AI to guess.  This is called
 _supervised_ learning.
 
 <img alt="i7" width="500" src="https://scott.ai/img/build_an_ai/ai_7a.jpg">
 
-The next major way machines learn reminds me of "Marco, Polo!" we played
-on the swim team. If an AI guesses close to the answer, we say they're "warmer" 
+Machines also learn by plaing a variant of "Marco, Polo!" we played
+as kids in the pool. If an AI guesses close to the answer, we say they're "warmer" 
 and the AI keeps moving forward.  If the AI guesses farther from the answer, 
 we say they're "colder" and the 
-AI switches direction.  This is called _reinforcement_ learning.
+AI changes direction.  This is called _reinforcement_ learning.
 
 <img alt="i8" width="500" src="https://scott.ai/img/build_an_ai/ai_8a.jpg">
 
 What?  Were you expecting something more exotic?   Elementary school teaching,
-Hide n Seek, and tensors?  Is that all there is?
+Marco Polo, and tensors?  Is that all there is?
 
-Yes.
+Yes.  Pretty much.
 
 Don't forget, we're basically
 a bag of water with a worm in the middle for energy, plus some gray jelly up top
@@ -203,9 +204,9 @@ than a jellyfish.  Humans have a long way to go, evolution-wise.
 
 ### The Future
 
-The tensor mental model is useful for understanding
-the latest research as four basic ideas, propelling
-us forward into an exciting future:
+The tensor model is useful for understanding
+the latest research as four basic ideas.  These simple
+ideas are propelling us forward into an exciting future:
 
 1. Some researchers invent clever ways
 to represent the world with tensors.
