@@ -5,15 +5,14 @@ thumb: /img/build_an_ai/ai_1a.jpg
 excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 ---
-
 I have a mental model for AI. I find the model
 immensely useful for understanding deeply complex,
 mathematical techniques as well as abstract, high-level
 coding in AI programs.  The analogy helps me work
 with clients to build massive data pipelines that drive
-billion-dollar businesses.
-
+billion-dollar businesses.=
 <!--more-->
+
 I disagree with 
 naysayers who slam analogies to brain function. I personally
 find these analogies _very_ helpful.  After all, they inspired original research
@@ -137,13 +136,12 @@ outputs.  You may recall this equation of a line,
 
 y = m * x  + b
 
-The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  The value "b" is a _bias_.  
-
-You may bave used this math with stock prices and inventory levels,
+The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  The value "b" is a _bias_.  You may have used this math with stock prices and inventory levels,
 often using single numbers.  Computers do the same thing.  They just use
 use more dimensions.  A lot more.
 
-A major advance in AI added a "fire" macro, like the @macro's you've  used
+A major advance in AI introduced a radically simple "fire" macro, 
+like the @macro's you've  used
 on a spreadsheet, 
 to mimic neurons.  Instead of 
 using the output tensor Y, we can send the result of "firing" an artificial
@@ -158,16 +156,17 @@ tensor "x."
 
 Figuring out what to use for "m" and "b" is the process 
 called _machine learning_.  The computer is learning the values
-that cause it behave correctly, turning input tensors into the outputs
+that cause it to behave correctly, turning input tensors into the outputs
 we expect.
 
-Computers do it by guessing.  If they guess
+Computers do this by guessing.  If they guess
 too low, they tweak "m" and "b" a bit so the answer nudges higher.  If their guess
 is too high, they do the reverse, nudging lower.
 
-The first way a machine learns was inspired by teaching and parenting. 
+The first way a machine learns was inspired by teaching from a supervisor. 
 We give the AI concrete examples.  We show an input tensor,
-the output tensor we expect, then ask the AI to guess.
+the output tensor we expect, then ask the AI to guess.  This is called
+_supervised_ learning.
 
 <img alt="i7" width="500" src="https://scott.ai/img/build_an_ai/ai_7a.jpg">
 
@@ -175,7 +174,7 @@ The next major way machines learn reminds me of "Marco, Polo!" we played
 on the swim team. If an AI guesses close to the answer, we say they're "warmer" 
 and the AI keeps moving forward.  If the AI guesses farther from the answer, 
 we say they're "colder" and the 
-AI switches direction.
+AI switches direction.  This is called _reinforcement_ learning.
 
 <img alt="i8" width="500" src="https://scott.ai/img/build_an_ai/ai_8a.jpg">
 
@@ -191,8 +190,7 @@ letting us move a bit better
 than a jellyfish.  Humans have a long way to go, evolution-wise.
 
 The tensor mental model is useful for understanding
-the research from thousands of
-teams as four basic ideas: 
+the latest research as four basic ideas: 
 
 1. Some researchers invent clever ways
 to represent the world with tensors.
@@ -206,7 +204,7 @@ recently they've begun to learn the graph itself, too.
 
 4. The last batch use tensors and graphs to do cool things.
 
-Of course, there's always the brave Python-esque researchers 
+Of course, there's always the brave Monty Python-ic researchers 
 pulling the fifth,
 which doesn't fit my model.  Perhaps you're the lone genius who 
 will figure out what comes next after tensors!  Your bucket
@@ -221,13 +219,14 @@ yet powerful technique to understand and build AI systems.
 
 You're probably wondering
 how exactly we can represent business, web sites, mobile apps, voice assistants,
-and driverless cars with this approach.  I'll be sharing future posts to help
-you through that.  I'll also be using techniques that will feel just as easy
-as spreadsheet macro's, leveraging the most popular language of the Web -- javascript.
+and driverless cars with this approach.  How do we protect against hidden biases
+in our tensors?  How do we ensure encoding into tensors maintains our privacy, in things
+like medical and financial systems?
 
-Thanks for tuning in.  If you enjoy this, please follow me on twitter,
+I'll be sharing future posts to help
+you through all that.  I'll also be using techniques that will feel just as easy
+as spreadsheet @macro's, leveraging the most popular scripting languages of the Web.
+
+Thanks for tuning in!  If you enjoy this, please follow me on twitter,
 connect on LinkedIn, or give me a shout out.  That way we can stay in touch
 through humanity's incredible journey forward.
-
-
-
