@@ -10,15 +10,18 @@ useful for understanding deeply complex,
 mathematical techniques as well as abstract, high-level
 coding in AI programs.  The analogy helps me work
 with clients to build massive data pipelines that drive
-billion-dollar businesses.
+billion-dollar businesses.  If you've never really understood
+what a "tensor" was, or how "TensorFlow" got its name,
+this post is for you.  To me, "tensors" in AI are as important
+as "records" in the database world.
 <!--more-->
 
 I disagree with 
 naysayers who dismiss analogies to brain function. I personally
 find these analogies _very_ helpful.  After all, they inspired original research
-into AI back in the 1940s.  Further, I see today's deep learning systems borrowing a lot from
+into AI back in the 1940s.  Further, today's deep learning systems borrow a lot from
 _biological architectures_ of the brain.  But your mileage may vary, and that's 
-fine.
+cool.
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
