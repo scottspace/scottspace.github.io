@@ -6,11 +6,16 @@ excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/build_an_ai/ai_1a.jpg
 ---
 
-I have a mental model for AI.  I find this
-immensely useful for sleeping peacefully in the
-AI revolution.  I disagree with 
+I have a mental model for AI.  Thought I'd share it :-)
+
+I find the model
+immensely useful for understanding deeply complex,
+mathematical techniques as well as abstract, high-level
+coding in AI programs.  The analogy also helps me work
+with clients to build massive data pipelines that drive
+billion-dollar businesses.  I disagree with 
 naysayers who slam analogies to brain function. I personally
-find the analogy _very_ helpful.  
+find those analogies _very_ helpful.  
 
 <img alt="i1" width="500" src="https://scott.ai/img/build_an_ai/ai_1a.jpg">
 
@@ -50,47 +55,44 @@ this a "computational graph."  Let's _graph_ 9 of Bert's neurons.
 
 <img alt="i3" width="500" src="https://scott.ai/img/build_an_ai/ai_3a.jpg">
 
-Time for a new science word...  "Tensor."
-
 Neurons in Bert's head carry a tiny electrical charge.  Imagine if we could see
 this charge as a battery level. We can write down the battery
-levels for all 9 Neurons.  We'll use 0.0 to mean a dead battery, 1.0 to mean a full
+levels for all 9 neurons in the graph.  We'll use 0.0 to mean a dead battery, 1.0 to mean a full
 battery.  0.50 is half-charged, 0.25 is a quarter charge, and so on.  You get the idea.
 
 <img alt="i4" width="500" src="https://scott.ai/img/build_an_ai/ai_4a.jpg">
 
-The list of battery levels is called a "tensor."  
+The list of battery levels is called a "tensor."  We can be super fancy here, and
+use "higher order" math:
 
-We can be super fancy here.  We can list battery levels in a column in Excel, 
+ - We can list battery levels in a column in Excel, 
 and call it a "1-dimensional"
 or "1-d" tensor.  1-d is just a vertical list.
 
-We can put battery levels in a spreadsheet, making sure
+- We can put battery levels in a spreadsheet, making sure
 to fill every row and column in a nice rectangle, without missing a spot. 
 That's a "2-d" tensor.   2-d is like a stock chart, with two dimensions "time" and "stock price."
 
-We can copy that sheet to another, and another.  Mess the
+- We can copy that sheet to another, and another.  Mess the
 numbers up a bunch, but still keep them between 0.0 and 1.0.  Then
 we'd have _sheets_ of tensors, or a "3-d" tensor.  A common 3-d tensor
 is a digital image, one sheet each for the pixel values of red, green and blue.
 
-Now you know what a Tensor is.  Not so scary is it?  Bert represents _everything_ as a tensor.
-So do you.  Imagine all
+Bert represents _everything_ as a tensor.  Imagine all
 the amazing things Bert holds in his head as tensors.  Instructions
 for driving a car, the taste of his martini from last night, a picture
-of a bunny, or words he's reading are just... tensors.
+of a bunny, or words he's reading are all... tensors.
 
 <img alt="i5" width="500" src="https://scott.ai/img/build_an_ai/ai_5a.jpg">
 
 Bert's brain is a _tensor processor_.  Tensors in, tensors out.  Tensors flow
-to think. Tensors
-flow through the graph sitting in the napkin folded in his skull.   Indeed, the
+to think.  Interestingly enough, the
 most popular tool among AI nerds today is... _Tensorflow_.
 
-We can reframe a lot of what humans do as tensor activity.  We can map
+We can reframe human thinking as tensor activity.  We map
 sensory experience into tensors.  We flow
-those tensors through the brain's computational graph, producing more
-tensors.  Our bodies interpret these by moving, speaking, writing, 
+those tensors through the brain's graph, producing more
+tensors.  Our bodies interpret those tensors by moving, speaking, writing, 
 drawing or doing burpees. 
 
 Here are some examples:
@@ -120,33 +122,35 @@ output tensors just like our bodies do.
 
 <img alt="i6" width="500" src="https://scott.ai/img/build_an_ai/ai_6a.jpg">
 
-Shockingly, this works.  Not only does it work, it works _extremely_ at 
-billions of operations per second (e.g. at tthe speed of your phone).  The performance
-is  super human. This major breakthrough in 2012 led to the world's Nobel prize in
+Shockingly, this works.  Not only does it work, it works _extremely_ well at 
+billions of operations per second (e.g., at the speed of your phone).  The performance
+is super human. This major breakthrough in 2012 led to the world's Nobel prize in
 computing!
 
-The _computational graphs_ consist of _artificial_ neurons, which are just
-math equations with tensor values.  The most popular equation
+The _computational graphs_ consist of _artificial_ neurons, another name for
+math equations with tensor values.  The most popular neuron
 multiplies input values
-by constants called _weights_, then adds constants called _biases_ to yield
-outputs.  You may vaguely recall this equation of a line from 8th grade,
+by constants called _weights_, then adds constants called _biases_, to yield
+outputs.  You may recall this equation of a line,
 
 y = m * x  + b
 
-The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  The value "b" is a _bias_.  
+The input tensor is "x." The output tensor is "y." The value "m" is a _weight_.  
+The value "b" is a _bias_.  
 
-You may do this (or have teams who do this) with stock prices and inventory levels,
-often using single numbers (0-d tensors).  Computers do the same thing, except they
-can use more dimensions.
+You may bave used this math with stock prices and inventory levels,
+often using single numbers.  Computers do the same thing.  They just use
+use more dimensions.  A lot more.
 
-A major advance in AI added a "fire" macro, like you'd use on a spreadsheet,
-to mimic neurons.  Instead of just
-using the output tensor Y, we can send the result of "firing" an artificail
+A major advance in AI added a "fire" macro, like the @macro's you've  used
+on a spreadsheet, 
+to mimic neurons.  Instead of 
+using the output tensor Y, we can send the result of "firing" an artificial
 neuron like this:
 
-y = fire(m * x + b)
+y = @fire(m * x + b)
 
-The graph plus all of its constant valus -- m, b, and fire -- are 
+The graph plus all of its constant valus -- m, b, and @fire -- are 
 collectively called an AI "model."  The "model"
 tells a computer how to give us an output tensor, y, when given an input 
 tensor "x."
@@ -157,8 +161,8 @@ that cause it behave correctly, turning input tensors into the outputs
 we expect.
 
 Computers do it by guessing.  If they guess
-too low, they tweak "m" and "b" a bit so the answer is higher.  If the guess
-is too high, they do the reverse.
+too low, they tweak "m" and "b" a bit so the answer nudges higher.  If their guess
+is too high, they do the reverse, nudging lower.
 
 The first way a machine learns was inspired by teaching and parenting. 
 We give the AI concrete examples.  We show an input tensor,
