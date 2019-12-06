@@ -183,18 +183,15 @@ _supervised_ learning.
 
 <img alt="i7" width="500" src="https://scott.ai/img/build_an_ai/ai_7a.jpg">
 
-Machines also learn by plaing a variant of "Marco, Polo!" we played
-as kids in the pool. If an AI guesses close to the answer, we say they're "warmer" 
-and the AI keeps moving forward.  If the AI guesses farther from the answer, 
-we say they're "colder" and the 
-AI changes direction.  This is called _reinforcement_ learning.
+Machines also learn by playing a variant of "Warmer, Colder!". If an AI guesses close to the answer, we say they're "warmer" and the AI keeps moving forward.  If the AI guesses farther from the answer, 
+we say they're "colder" and the AI changes direction.  This is called _reinforcement_ learning.
 
 <img alt="i8" width="500" src="https://scott.ai/img/build_an_ai/ai_8a.jpg">
 
 What?  Were you expecting something more exotic?   Elementary school teaching,
-Marco Polo, and tensors?  Is that all there is?
+Warmer Colder, and Tensors?  Is that all there is?
 
-Yes.  Pretty much.
+Yes.  Well, pretty much.
 
 Don't forget, we're basically
 a bag of water with a worm in the middle for energy, plus some gray jelly up top
@@ -205,7 +202,7 @@ than a jellyfish.  Humans have a long way to go, evolution-wise.
 ### The Future
 
 The tensor model is useful for understanding
-the latest research as four basic ideas.  These simple
+the latest AI research, too!  Four simple
 ideas are propelling us forward into an exciting future:
 
 1. Some researchers invent clever ways
