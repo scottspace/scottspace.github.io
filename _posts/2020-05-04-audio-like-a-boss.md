@@ -91,7 +91,7 @@ both input and output.  Click back so that you can see the "input" screen.
 its off. 
 
 12. Press the "48V" and "Air" buttons below the left volume knob.  They should light up. Now your mic is online.  Adjust the volume next to the XLR jack so that the knob flashes green whenever you speak, but is
-off othwerwise.  You should see sound bars on the System Preferences, too, indicating  its the right level.
+off otherwise.  You should see sound bars on the System Preferences, too, indicating  its the right level.
 
 13. Press the "Direct Monitor" button above the headphone jack on the FocusRite.  Now your headphones are online, and you can adjust the volume with the knob next to the headphone jack.
 
