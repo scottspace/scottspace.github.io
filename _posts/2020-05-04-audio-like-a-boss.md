@@ -10,18 +10,18 @@ I asked him about the equipment, and he shared information on the headphones and
 
 A few days later I had a meeting with a vice chairwoman of a major bank.  She couldn't hear me, and we were talking about responses to Covid, and tracking the impact to global economies.  I sounded like I was underwater, my Mac was whirring away.  I was so embarrassed.
 
-Then I realized.  The microphone might be the new suit, the new dress, that we wear to work.  I put the items in my Amazon cart, but didn't pull the trigger.  A few more days went by, as I stared at that balance.  $800!?  Was I crazy.  More meetings went on, shelter in place was issued.  Fine. I pulled the trigger in early March, justifying the expense as a new "work outfit."
+Then I realized that the microphone might be the new suit, the new dress, that we wear to work.  I put the items in my Amazon cart but didn't pull the trigger.  A few more days went by as I continued to stare at that cart balance.  $800!?  Was I crazy.  More meetings went on, shelter in place was issued.  Fine. I pulled the trigger in early March, justifying the expense as a new "work outfit."
 
 Fast forward to today.  Everyone loves how my setup sounds.  I can speak plainly, effortlessly and it sounds like a radio DJ.  The headphones are super comfortable and stay on all day.  They're the choice of audio professionals everywhere.
 
-Here's the shopping list and some basic instructions.  First, get yourself the mic of microophones, the Shure SM7B.  It's on sale on Amazon, but also on Sweetwater.  The microphone comes with a built-i pop shield, a rough, black foam cover to the microphone to prevent lip smacks and breathing noises.
+Here's the shopping list and some basic instructions.  First, get yourself the mic of microphones, the Shure SM7B.  It's on sale on Amazon, but also on Sweetwater.  The microphone comes with a built-in pop shield, a rough, black foam cover to the microphone to prevent lip smacks and breathing noises.
 
 ![Shure Mic](https://scott.ai/img/boss_audio_mic.jpg)
 
 Buy on Amazon [here](https://www.amazon.com/gp/product/B0002E4Z8M/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1)
 
-Next, buy the swinging arm stand by Rode. The boom stand has springs in its base that counterbalance the
-heavy microphone. You can effortlessly move the mic almost anywhere in 3D and it stays put.  Audio experts
+Next, buy the swinging arm stand by Rode. The boom stand has springs in its base that perfectly balance the
+Shure mic. You can effortlessly move the mic anywhere in 3D and it stays put.  Audio experts
 will tell you to keep the mic close to your mouth for that DJ sound.  Mount this stand on the right side
 of your desk, with the mic booming into the center where you'll sit or stand.
 
