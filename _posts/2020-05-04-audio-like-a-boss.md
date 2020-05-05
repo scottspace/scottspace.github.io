@@ -2,13 +2,14 @@
 layout: post
 title: Audio like a Boss
 thumb: /img/boss_audio.jpg
+share-img: https://scott.ai/img/boss_audio.jpg
 ---
 
 ![Audio Boss](https://scott.ai/img/boss_audio.jpg)
 
-Shortly before shelter in place restrictions, I was on Hangout with Kelsey Hightower.   He pops onto the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional.  He sounded like a radio DJ, complete with that breathy, deep radio voice.  The rest of us felt like amateurs.  Hey, its Kelsey after all.  He's incredible.
+Shortly before shelter in place restrictions, I was on Hangout with Kelsey Hightower.   He pops onto the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional, over the top.  He sounded like a radio DJ.  The rest of us felt like amateurs. 
 
-I asked him about the equipment, and he shared information on the headphones and microphone.  Oh, dear lord. I looked at the price of his setup. Several hundred dollars! Why should I spend that when the Mac was working fine for me??
+I asked Kelsey about the equipment, and he shared information on the headphones and microphone.  I looked at the price of his setup. Oh, dear lord. Several hundred dollars! Why should I spend that when the Mac was working fine for me??
 
 A few days later I had a meeting with a vice chairwoman of a major bank.  She couldn't hear me, and we were talking about responses to Covid, and tracking the impact to global economies.  I sounded like I was underwater, my Mac was whirring away.  I was so embarrassed.
 
