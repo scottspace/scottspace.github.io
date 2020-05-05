@@ -5,11 +5,11 @@ thumb: /img/boss_audio.jpg
 share-img: https://scott.ai/img/boss_audio.jpg
 ---
 
+Shortly before shelter in place restrictions, I was on Hangout with Kelsey Hightower.   He pops onto the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional, over the top.  He sounded like a radio DJ.  I wanted that!
+
 ![Audio Boss](https://scott.ai/img/boss_audio.jpg)
 
-Shortly before shelter in place restrictions, I was on Hangout with Kelsey Hightower.   He pops onto the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional, over the top.  He sounded like a radio DJ.  The rest of us felt like amateurs. 
-
-I asked Kelsey about the equipment, and he shared information on the headphones and microphone.  I looked at the price of his setup. Oh, dear lord. Several hundred dollars! Why should I spend that when the Mac was working fine for me??
+Afterwards I asked Kelsey about the equipment, which he gladly shared.  Apparently he's an audiophile and enjoyed chatting with a fellow (budding) audio and video engineer. I looked at the price of his setup. Oh, dear lord. Several hundred dollars! Why should I spend that when the Mac was working fine for me??
 
 A few days later I had a meeting with a vice chairwoman of a major bank.  She couldn't hear me, and we were talking about responses to Covid, and tracking the impact to global economies.  I sounded like I was underwater, my Mac was whirring away.  I was so embarrassed.
 
