@@ -22,7 +22,7 @@ Here's the shopping list and some basic instructions.  First, get yourself the m
 
 ![Shure Mic](https://scott.ai/img/boss_audio_mic.jpg)
 
-Buy on Amazon [here](https://www.amazon.com/gp/product/B0002E4Z8M/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1)
+Buy on Amazon [here.](https://www.amazon.com/gp/product/B0002E4Z8M/ref=ox_sc_act_title_1?smid=ATVPDKIKX0DER&psc=1)
 
 Next, buy the swinging arm stand by Rode. The boom stand has springs in its base that perfectly balance the
 Shure mic. You can effortlessly move the mic anywhere in 3D and it stays put.  Audio experts
@@ -31,7 +31,7 @@ of your desk, with the mic booming into the center where you'll sit or stand.
 
 ![Rode Stand](https://scott.ai/img/boss_audio_arm.jpg)
 
-Buy on SweetWater [here](https://www.sweetwater.com/store/detail/PSA1Rode--rode-psa1-professional-studio-boom-arm)
+Buy on SweetWater [here.](https://www.sweetwater.com/store/detail/PSA1Rode--rode-psa1-professional-studio-boom-arm)
 
 The Shure mic is super sensitive.  You're literally talking into a fine ribbon, inspired by top line speakers and our eardrum. That sensor doesn't throw off a lot  of signal.  You will need to increase its level
 and filter out some high frequency noise. For that, buy the CloudLifter.  This device gets its power from
@@ -40,13 +40,13 @@ the Shure mic and Rode stand.
 
 ![CloudLifter Filter](https://scott.ai/img/boss_audio_filter.jpg)
 
-Buy on Amazon [here](https://www.amazon.com/Cloud-Microphones-CL-1-Cloudlifter-1-channel/dp/B004MQSV04/ref=sr_1_1?dchild=1&keywords=cloud+lifter&qid=1588636762&s=musical-instruments&sr=1-1)
+Buy on Amazon [here.](https://www.amazon.com/Cloud-Microphones-CL-1-Cloudlifter-1-channel/dp/B004MQSV04/ref=sr_1_1?dchild=1&keywords=cloud+lifter&qid=1588636762&s=musical-instruments&sr=1-1)
 
 Now you need a short 3' XLR cable for our next device.  I bought these, have a spare now.
 
 ![XLR Cables](https://scott.ai/img/boss_audio_xlr.jpg)
 
-Buy on Amazon [here](https://www.amazon.com/gp/product/B00KO8VY4O/ref=ox_sc_act_image_2?smid=A1AMUYYA3CT6HJ&psc=1)
+Buy on Amazon [here.](https://www.amazon.com/gp/product/B00KO8VY4O/ref=ox_sc_act_image_2?smid=A1AMUYYA3CT6HJ&psc=1)
 
 Next, buy the FocusRight Solo "pre-amplifier."  This device blends your microphone with an optional
 second device -- I use my guitar. It also provides an output for your studio headphones.  The FocusRight
@@ -54,14 +54,14 @@ has a USB-C outlet that you can connect to your laptop.
 
 ![FocusRight Pre-amp](https://scott.ai/img/boss_audio_amp.jpg)
 
-Buy on Amazon [here](https://www.amazon.com/Focusrite-Scarlett-Audio-Interface-Tools/dp/B07QR6Z1JB/ref=sr_1_1?crid=2OOWXAB3PYIH1&dchild=1&keywords=focusrite+scarlett+solo&qid=1588636673&s=musical-instruments&sprefix=foc%2Cmi%2C217&sr=1-1)
+Buy on Amazon [here.](https://www.amazon.com/Focusrite-Scarlett-Audio-Interface-Tools/dp/B07QR6Z1JB/ref=sr_1_1?crid=2OOWXAB3PYIH1&dchild=1&keywords=focusrite+scarlett+solo&qid=1588636673&s=musical-instruments&sprefix=foc%2Cmi%2C217&sr=1-1)
 
 Finally, purchase a set of these headphones.  They plug into the FocusRight pre-amp, and are the
 go-to device for most audio engineers I've met. I've met a lot from public speaking, too.
 
 ![Sony Headphones](https://scott.ai/img/boss_audio_headphones.jpg)
 
-Buy on Amazon [here](https://www.amazon.com/Sony-MDR7506-Professional-Diaphragm-Headphone/dp/B000AJIF4E/ref=sr_1_2?dchild=1&keywords=sony+headphones&qid=1588638571&s=musical-instruments&sr=1-2)
+Buy on Amazon [here.](https://www.amazon.com/Sony-MDR7506-Professional-Diaphragm-Headphone/dp/B000AJIF4E/ref=sr_1_2?dchild=1&keywords=sony+headphones&qid=1588638571&s=musical-instruments&sr=1-2)
 
 Finally, get a USB-C to USB-C male to male cable from Apple for you Mac fans.  I hear there are similar cables for Chrome and Windows users.  To set it up, follow these instructions.  First unbox everything.
 
