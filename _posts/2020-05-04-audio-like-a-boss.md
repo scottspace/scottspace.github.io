@@ -18,7 +18,7 @@ Amazon cart, taunting me. $800!?  Was I crazy??  More video meetings went on, sh
 
 Fast forward to today.  Everyone loves how my setup sounds.  I can speak plainly, effortlessly and it sounds like a radio DJ.  The headphones are super comfortable and stay on all day.  They're the choice of audio professionals everywhere.
 
-Here's the shopping list and some basic instructions.  First, get yourself the mic of microphones, the Shure SM7B.  It's on sale on Amazon, but also on Sweetwater.  The microphone comes with a built-in pop shield, a rough, black foam cover to the microphone to prevent lip smacks and breathing noises.
+Here's the shopping list and some basic instructions.  First, get yourself the mic of microphones, the Shure SM7B.  It's frequently on sale on Amazon, but also on Sweetwater.  The microphone comes with a built-in pop shield, a rough, black foam cover to the microphone to prevent lip smacks and breathing noises.
 
 ![Shure Mic](https://scott.ai/img/boss_audio_mic.jpg)
 
