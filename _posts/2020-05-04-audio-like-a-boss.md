@@ -4,7 +4,7 @@ title: Audio like a Boss
 thumb: /img/boss_audio.jpg
 ---
 
-Shortly before shelter in place restrictions, I was on Google Hangout with Kelsey Hightower.   He pops onto  the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional.  He sounded like a radio DJ, complete with that breathy, deep radio voice.  The rest of us looked like and felt like amateurs.  Hey, its Kelsey after all.  He's incredible.
+Shortly before shelter in place restrictions, I was on Hangout with Kelsey Hightower.   He pops onto the call with a podcast microphone, those fancy audio headsets, and amazing lighting.  The sound quality was professional.  He sounded like a radio DJ, complete with that breathy, deep radio voice.  The rest of us felt like amateurs.  Hey, its Kelsey after all.  He's incredible.
 
 I asked him about the equipment, and he shared information on the headphones and microphone.  Oh, dear lord. I looked at the price of his setup. Several hundred dollars! Why should I spend that when the Mac was working fine for me??
 
@@ -33,8 +33,6 @@ The Shure mic is super sensitive.  You're literally talking into a fine ribbon, 
 and filter out some high frequency noise. For that, buy the CloudLifter.  This device gets its power from
 the active XLR cable going to the microphone.  The device ships with a 6' XLR cable that's perfect for
 the Shure mic and Rode stand.
-
-cloudlifter filter
 
 ![CloudLifter Filter](https://scott.ai/img/boss_audio_filter.jpg)
 
