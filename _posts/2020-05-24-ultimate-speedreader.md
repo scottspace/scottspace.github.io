@@ -44,7 +44,7 @@ model the impending economic shock wave. The CDC had over 9,000
 inbound emails with unread, detailed medical papers and commentary. My
 inbox problems were Lilliputian by comparison. Heck, the White House
 and the Office of Science and Technology Policy (OSTP) even got
-involved, working with the machine learning company Kaggle, the Gates
+involved, working with the our Kaggle team at Google, the Gates
 Foundation and others to make 40,000 publications available for AI
 researchers to mine.
 
