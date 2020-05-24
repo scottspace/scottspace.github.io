@@ -4,7 +4,7 @@ title: The Ultimate Speed Reader
 thumb: /img/bert_image3.gif
 ---
 
-##The Ultimate Speed Reader
+## The Ultimate Speed Reader
 
 Why speed read this, you ask?
 
@@ -13,13 +13,13 @@ Why speed read this, you ask?
 Learn how AI can plow through an inbox at superhuman speeds. Let an AI
 summarize and help you focus. That’s what I need.
 
-[ed. This is my first joint blog post with Chris Mattmann, a fellow AI
-nerd who happens to work in the CTO office of the Jet Propulsion
+[ed. This is my first joint blog post with [@chrissmattman](https://twitter.com/chrismattmann), 
+a fellow AI nerd who happens to work in the CTO office of the Jet Propulsion
 Laboratory, California Institute of Technology (NASA JPL).  We’re
 trying to figure out what “I” and “we” means in a co-authored post, so
 bear with us.  Now, onto the story.]
 
-###The Full Inbox Problem
+### The Full Inbox Problem
 
 My inbox is full. No, like really full. Really, really, really full.
 
@@ -37,7 +37,7 @@ respirators and masks to helping with data.  Soon I bumped into teams
 from the CDC, several US states, the MITRE Covid Coalition, and a few
 top banks.
 
-![That's not an inbox. This is an inbox!(/img/bert_image2.png)
+![That's not an inbox. This is an inbox!](/img/bert_image2.png)
 
 Banks wanted to process 70 million articles written about Covid-19 to
 model the impending economic shock wave. The CDC had over 9,000
@@ -50,7 +50,7 @@ researchers to mine.
 
 Now we’re really going to need Google scale help.
 
-###Bert to the Rescue
+### Bert to the Rescue
 
 Google recently installed an AI technology called Bert to help with
 search. Bert reads superhuman fast and helps Google understand our
@@ -84,7 +84,7 @@ tensor. Bert “simply” turns our language into tensors, uses math to
 model the shapes it sees, then turns those shapes back into language,
 like our brains do. Well, sorta.
 
-###How Bert Works
+### How Bert Works
 
 The first thing Bert does is collect a sample of human language for
 training. Hey, it’s Google, and we grabbed Wikipedia and Google News
@@ -122,7 +122,7 @@ or prefix. Now, when you feed a word into Bert, the first thing he
 does is lookup word parts in the list, then list out the numbers he
 found, in order.
 
-###One Hot Encodings
+### One Hot Encodings
 
 “My Inbox is replete” becomes the sequence 1, 4, 5, 6, 7. But Bert
 wants tensors. He first makes a tensor with 60,000 elements, one for
@@ -147,7 +147,6 @@ entire document into a single tensor… of the same size. Moby Dick?
 think. We recall large books we’ve read, or even the smell of a rose,
 as a tensor. One-hot is a crude way to represent words we’ve seen.
 
-
 We can do better.
 
 While small compared to our brains, one-hot encodings are unwieldy for
@@ -162,12 +161,10 @@ abstract and conclusions in a research paper, while skimming the
 insides, gives you a sense for what’s inside. This is how Bert speed
 reads.
 
-
 Bert represents its “thought” for each layer as…. 32 floating point 
 numbers. A word in
 memory. If you stack all these up--which we can do, we’re folding
 tensors--we get 768 numbers (24*32).
-
 
 So now Bert wants to reason with 768-dimensional tensors. How do we
 cram a one-hot tensor of 60,000 dimensions into a paltry 768? You
@@ -175,15 +172,14 @@ guessed it, we build a graph. AI has come up with three ways to do
 this, all within the last five years. Like Goldilocks, Bert chose the
 third.
 
-
-...1. Predicting the Next Word.  Bert researchers first tried building a
+  - 1. Predicting the Next Word.  Bert researchers first tried building a
 graph that would guess the next word in a sentence. The input tensor
 would put two words side-by-side, for 120,000 values. The output
 tensor would be the next word, also 60,000 values. Bert squeezed
 tensors through an hourglass shaped graph, where the narrow part could
 be 768-elements wide. This was… meh, soooooo 2015.
 
-...2. Predicting the Middle Word.  Bert tried an alternate approach,
+  - 2. Predicting the Middle Word.  Bert tried an alternate approach,
 where the input was also two words, but his graph would guess the
 middle word. The remarkable innovation here was adding parts of the
 graph to pay attention to words on the left or right. Word meanings
@@ -195,7 +191,7 @@ could go out and enjoy those lovely summers after finishing your
 coding in a nice restaurant. We’ll get back there. And Bert will help
 us.
 
-...3. Playing Mad Libs.  The real breakthrough came when Bert decided to
+  - 3. Playing Mad Libs.  The real breakthrough came when Bert decided to
 play Mad Libs in 2018. In this classic game, you take a paragraph of
 text and blank out a few nouns, verbs and modifiers. You ask friends
 to guess the blanks, reading out the result, much to the delight at
@@ -216,4 +212,6 @@ easily tell us because Bert already knows.
 In our next post we’ll delve into how Bert knows by explaining how he
 reads. Like realfast reading.
 
--Scott and Chris
+Please follow us to see what else we have coming!
+
+- ([@scottpenberthy](https://twitter.com/scottpenberthy)) and [@chrismattmann](https://twitter.com/chrismattmann))
