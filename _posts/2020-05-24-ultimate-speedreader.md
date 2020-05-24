@@ -14,7 +14,7 @@ summarize and help you focus. That’s what I need.
 
 ![How fast can you read?](/img/bert_image3.gif)
 
-[ed. This is my first joint blog post with [@chrissmattman](https://twitter.com/chrismattmann), 
+[ed. This is my first joint blog post with [@chrissmattmann](https://twitter.com/chrismattmann), 
 a fellow AI nerd who happens to work in the CTO office of [NASA JPL](https://twitter.com/NASAJPL).  We’re
 trying to figure out what “I” and “we” means in a co-authored post, so
 bear with us.  Now, onto the story.]
