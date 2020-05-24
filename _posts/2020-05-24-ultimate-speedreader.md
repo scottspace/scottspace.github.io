@@ -52,7 +52,9 @@ Now we’re really going to need Google scale help.
 
 ### Bert to the Rescue
 
-Google recently installed an AI technology called Bert to help with
+Google recently installed an AI technology called 
+[Bert](https://arxiv.org/abs/1810.04805) from [GoogleAI](https://twitter.com/GoogleAI)
+to help with
 search. Bert reads superhuman fast and helps Google understand our
 searches. We use Bert-like inferences over one billion times a
 second. That can help us read fast! Bert uses tensors, like I
@@ -212,7 +214,9 @@ regulatory person and associated organization to contact? Bert can
 easily tell us because Bert already knows.
 
 In our next post we’ll delve into how Bert knows by explaining how he
-reads. Like really fast reading.
+reads. Like really fast reading.  There are dozens, if not hundreds, of
+improvements on Bert from the research community.  We'll discuss a few
+of our favorites, too. 
 
 Please follow us to see what else we have coming!
 
