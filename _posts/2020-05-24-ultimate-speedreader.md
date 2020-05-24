@@ -2,6 +2,7 @@
 layout: post
 title: The Ultimate Speed Reader
 thumb: /img/bert_image3.gif
+share-img: https://scott.ai/img/bert_image3.gif
 ---
 
 ## The Ultimate Speed Reader
@@ -14,8 +15,7 @@ Learn how AI can plow through an inbox at superhuman speeds. Let an AI
 summarize and help you focus. That’s what I need.
 
 [ed. This is my first joint blog post with [@chrissmattman](https://twitter.com/chrismattmann), 
-a fellow AI nerd who happens to work in the CTO office of the Jet Propulsion
-Laboratory, California Institute of Technology (NASA JPL).  We’re
+a fellow AI nerd who happens to work in the CTO office of [NASA JPL](https://twitter.com/NASAJPL).  We’re
 trying to figure out what “I” and “we” means in a co-authored post, so
 bear with us.  Now, onto the story.]
 
@@ -37,7 +37,7 @@ respirators and masks to helping with data.  Soon I bumped into teams
 from the CDC, several US states, the MITRE Covid Coalition, and a few
 top banks.
 
-<img src="/img/bert_image2.png" width="500px">
+<img src="/img/bert_image2.png" width="420px">
 
 Banks wanted to process 70 million articles written about Covid-19 to
 model the impending economic shock wave. The CDC had over 9,000
@@ -77,7 +77,7 @@ have shown that similar words often activate the same physical
 location in our brains. I encourage you to visit their site; peeking
 inside our brains is fun. More links for your full inbox!
 
-![Our brains store information spacially.](/img/bert_image4.png)
+![Our brains store information spacially.](/img/bert_image4.gif)
 
 As you recall, we can write down the charge in every brain neuron as a
 tensor. Bert “simply” turns our language into tensors, uses math to
@@ -130,9 +130,8 @@ each word part in his list. That’s still tiny compared to our brains!
 Next, he puts a full charge “1” whenever we use a word, and an empty
 charge of “0” everywhere else.
 
-This is called a one-hot encoding. A “hot” neuron is 1, a “not” is
-0. Here’s ours, which is 60,000 elements wide, mainly 0’s with a few
-1’s up front.
+This is called a one-hot encoding. A “hot” neuron is 1, a “not” is 0. Here’s 
+ours, which is 60,000 elements wide, mainly 0’s with a few 1’s up front.
 
 ```javascript
 [1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -218,4 +217,5 @@ reads. Like really fast reading.
 Please follow us to see what else we have coming!
 
 Enjoy,
+
 [@scottpenberthy](https://twitter.com/scottpenberthy) and [@chrismattmann](https://twitter.com/chrismattmann)
