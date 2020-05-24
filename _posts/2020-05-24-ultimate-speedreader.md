@@ -2,15 +2,17 @@
 layout: post
 title: The Ultimate Speed Reader
 thumb: /img/bert_image3.gif
+excerpt_separator: <!--more-->
 share-img: https://scott.ai/img/bert_image3.gif
 ---
 
-Why speed read this, you ask?
-
-![How fast can you read?](/img/bert_image3.gif)
+Why speed read this, you ask?  
 
 Learn how AI can plow through an inbox at superhuman speeds. Let an AI
 summarize and help you focus. That’s what I need.
+<!--more-->
+
+![How fast can you read?](/img/bert_image3.gif)
 
 [ed. This is my first joint blog post with [@chrissmattman](https://twitter.com/chrismattmann), 
 a fellow AI nerd who happens to work in the CTO office of [NASA JPL](https://twitter.com/NASAJPL).  We’re
