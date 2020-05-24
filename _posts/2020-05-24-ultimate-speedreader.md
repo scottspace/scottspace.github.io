@@ -180,13 +180,14 @@ graph that would guess the next word in a sentence. The input tensor
 would put two words side-by-side, for 120,000 values. The output
 tensor would be the next word, also 60,000 values. Bert squeezed
 tensors through an hourglass shaped graph, where the narrow part could
-be 768-elements wide. This was… meh, soooooo 2015.
+be 768-elements wide. This was… meh, [soooooo 2015](https://en.wikipedia.org/wiki/Word2vec).
 
 
   - *Predicting the Middle Word*.  Bert tried an alternate approach,
 where the input was also two words, but his graph would guess the
 middle word. The remarkable innovation here was adding parts of the
-graph to pay attention to words on the left or right. Word meanings
+graph to [pay attention](https://arxiv.org/abs/1706.03762) to 
+words on the left or right. Word meanings
 are more contextual, so this was a big step up from guessing the next
 word. For example, “bank” means one thing in “I deposited cash at the
 bank” and something else entirely in “the Hudson River bank is lovely
@@ -197,7 +198,8 @@ us.
 
 
   - *Playing Mad Libs*.  The real breakthrough came when Bert decided to
-play Mad Libs in 2018. In this classic game, you take a paragraph of
+play [Mad Libs](http://www.madlibs.com/) in 2018. In this 
+[classic game](https://en.wikipedia.org/wiki/Mad_Libs), you take a paragraph of
 text and blank out a few nouns, verbs and modifiers. You ask friends
 to guess the blanks, reading out the result, much to the delight at
 dinner parties. By playing billions of Mad Libs games with Wikipedia,
