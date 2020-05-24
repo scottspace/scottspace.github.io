@@ -180,7 +180,11 @@ graph that would guess the next word in a sentence. The input tensor
 would put two words side-by-side, for 120,000 values. The output
 tensor would be the next word, also 60,000 values. Bert squeezed
 tensors through an hourglass shaped graph, where the narrow part could
-be 768-elements wide. This was… meh, [soooooo 2015](https://en.wikipedia.org/wiki/Word2vec).
+be 768-elements wide. That tight layer in the middle of the graph would
+"embed" the information contained within the larger, 60,000 dimensional
+tensor. Neat trick.  The graph distills information into a tighter, more
+easily handled representation.  Still, this was… meh, 
+[soooooo 2015](https://en.wikipedia.org/wiki/Word2vec).
 
 
   - *Predicting the Middle Word*.  Bert tried an alternate approach,
