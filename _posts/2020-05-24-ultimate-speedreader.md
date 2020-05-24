@@ -37,7 +37,7 @@ respirators and masks to helping with data.  Soon I bumped into teams
 from the CDC, several US states, the MITRE Covid Coalition, and a few
 top banks.
 
-![That's not an inbox. This is an inbox!](/img/bert_image2.png)
+<img src="/img/bert_image2.png" width="500px">
 
 Banks wanted to process 70 million articles written about Covid-19 to
 model the impending economic shock wave. The CDC had over 9,000
@@ -172,14 +172,16 @@ guessed it, we build a graph. AI has come up with three ways to do
 this, all within the last five years. Like Goldilocks, Bert chose the
 third.
 
-  - 1. Predicting the Next Word.  Bert researchers first tried building a
+
+  - *Predicting the Next Word*.  Bert researchers first tried building a
 graph that would guess the next word in a sentence. The input tensor
 would put two words side-by-side, for 120,000 values. The output
 tensor would be the next word, also 60,000 values. Bert squeezed
 tensors through an hourglass shaped graph, where the narrow part could
 be 768-elements wide. This was… meh, soooooo 2015.
 
-  - 2. Predicting the Middle Word.  Bert tried an alternate approach,
+
+  - *Predicting the Middle Word*.  Bert tried an alternate approach,
 where the input was also two words, but his graph would guess the
 middle word. The remarkable innovation here was adding parts of the
 graph to pay attention to words on the left or right. Word meanings
@@ -191,7 +193,8 @@ could go out and enjoy those lovely summers after finishing your
 coding in a nice restaurant. We’ll get back there. And Bert will help
 us.
 
-  - 3. Playing Mad Libs.  The real breakthrough came when Bert decided to
+
+  - *Playing Mad Libs*.  The real breakthrough came when Bert decided to
 play Mad Libs in 2018. In this classic game, you take a paragraph of
 text and blank out a few nouns, verbs and modifiers. You ask friends
 to guess the blanks, reading out the result, much to the delight at
@@ -199,8 +202,8 @@ dinner parties. By playing billions of Mad Libs games with Wikipedia,
 Bert was able to compress the “contextual meaning” of words into 768
 values better than anyone had done before.
 
-Armed with its compact understanding of Mad Libs, Bert
-applies those to all sorts of cool use cases. Delineating between
+Armed with its compact understanding of text, Bert
+applies his neural math skills to all sorts of cool use cases. Delineating between
 "banks"? That’s child’s play for Bert. How about which emails in my
 tranche of 60,000 have a potential breakthrough understanding of
 Covid-19’s transmissibility? Or which of the 1000s of CDC regulations
@@ -210,8 +213,9 @@ regulatory person and associated organization to contact? Bert can
 easily tell us because Bert already knows.
 
 In our next post we’ll delve into how Bert knows by explaining how he
-reads. Like realfast reading.
+reads. Like really fast reading.
 
 Please follow us to see what else we have coming!
 
-- ([@scottpenberthy](https://twitter.com/scottpenberthy)) and [@chrismattmann](https://twitter.com/chrismattmann))
+Enjoy,
+[@scottpenberthy](https://twitter.com/scottpenberthy) and [@chrismattmann](https://twitter.com/chrismattmann)
