@@ -5,8 +5,6 @@ thumb: /img/bert_image3.gif
 share-img: https://scott.ai/img/bert_image3.gif
 ---
 
-## The Ultimate Speed Reader
-
 Why speed read this, you ask?
 
 ![How fast can you read?](/img/bert_image3.gif)
@@ -44,7 +42,7 @@ model the impending economic shock wave. The CDC had over 9,000
 inbound emails with unread, detailed medical papers and commentary. My
 inbox problems were Lilliputian by comparison. Heck, the White House
 and the Office of Science and Technology Policy (OSTP) even got
-involved, working with the our Kaggle team at Google, the Gates
+involved, working with the the Kaggle team at Google, the Gates
 Foundation and others to make 40,000 publications available for AI
 researchers to mine.
 
@@ -58,7 +56,8 @@ to help with
 search. Bert reads superhuman fast and helps Google understand our
 searches. We use Bert-like inferences over one billion times a
 second. That can help us read fast! Bert uses tensors, like I
-discussed in last week’s post. I mean last quarter’s. Oh, geez, has it
+discussed in [last week’s](https://scott.ai/2019-11-25-build-an-ai/) post. 
+I mean last quarter’s. Oh, geez, has it
 really been that long? With Chris here and other various elements of
 guilt that we’ll cover later, the two of us will minimize future lag
 in the posts.
@@ -76,7 +75,7 @@ Bert threw that out.
 
 Instead, Bert’s based on neuroscience. Studies at Berkeley College
 have shown that similar words often activate the same physical
-location in our brains. I encourage you to visit their site; peeking
+location in our brains. I encourage you to [visit their site](https://www.gallantlab.org/brainviewer/Deniz2019/); peeking
 inside our brains is fun. More links for your full inbox!
 
 ![Our brains store information spacially.](/img/bert_image4.gif)
@@ -89,11 +88,11 @@ like our brains do. Well, sorta.
 ### How Bert Works
 
 The first thing Bert does is collect a sample of human language for
-training. Hey, it’s Google, and we grabbed Wikipedia and Google News
-to train Bert. Like… all of it. The whole Internet, a nice benefit to
+training. Hey, it’s Google, and we grabbed Wikipedia pages
+to train Bert. Like… _all_ of it. The whole Internet, a nice benefit to
 working at Google.
 
-Next, Bert lists all one billion unique words from top to bottom and
+Next, Bert first lists all one billion unique words from top to bottom and
 gives them a number:
 
 ```javascript
@@ -126,14 +125,14 @@ found, in order.
 
 ### One Hot Encodings
 
-“My Inbox is replete” becomes the sequence 1, 4, 5, 6, 7. But Bert
+“My Inbox is replete” becomes the sequence ```1, 4, 5, 6, 7.``` But Bert
 wants tensors. He first makes a tensor with 60,000 elements, one for
 each word part in his list. That’s still tiny compared to our brains!
-Next, he puts a full charge “1” whenever we use a word, and an empty
-charge of “0” everywhere else.
+Next, he puts a full charge “```1```” whenever we use a word, and an empty
+charge of “```0```” everywhere else.
 
-This is called a one-hot encoding. A “hot” neuron is 1, a “not” is 0. Here’s 
-ours, which is 60,000 elements wide, mainly 0’s with a few 1’s up front.
+This is called a one-hot encoding. A “hot” neuron is ```1```, a “not” is ```0```. Here’s 
+ours, which is 60,000 elements wide, mainly ```0```’s with a few ```1```’s up front.
 
 ```javascript
 [1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -164,7 +163,7 @@ reads.
 
 Bert represents its “thought” for each layer as…. 32 floating point 
 numbers. A word in
-memory. If you stack all these up--which we can do, we’re folding
+memory. If you stack all these up--which we can do, we’re just folding
 tensors--we get 768 numbers (24*32).
 
 So now Bert wants to reason with 768-dimensional tensors. How do we
