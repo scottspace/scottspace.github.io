@@ -5,9 +5,9 @@ thumb: /img/dope_image8.png
 ---
 
 Welcome to the second post from my collaboration with [@chrismattman](https://twitter.com/chrismattman).  We
-were both intrigued when Google [announced](https://blog.google/products/search/search-language-understanding-bert/) a significant upgrade to their search algorithm in late 2019.
-A Google Fellow demonstrated how the new version can better understand what
-we intend, serving up results closer to what we want.  Turns out, it's cool.
+were both intrigued when Google [announced](https://blog.google/products/search/search-language-understanding-bert/) a significant upgrade to their search algorithm in late 2019.  The technique
+is super cool, inspired by the human brain, redefining how we search
+for text, images, music, and more.
 
 Here’s one example from Google's post. Let’s say we’re wondering whether we can pick up medicine
 for a friend, who may be sick and cannot enter a pharmacy due to Covid19
