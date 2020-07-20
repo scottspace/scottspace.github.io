@@ -4,17 +4,17 @@ title: The Dope Way to Search Text
 thumb: /img/dope_image8.png
 ---
 
-Google announced a significant upgrade to their search algorithm in late 2019.
-A fine Google Fellow demonstrated how the new version can better understand what
+Google [announced](https://blog.google/products/search/search-language-understanding-bert/) a significant upgrade to their search algorithm in late 2019.
+A Google Fellow demonstrated how the new version can better understand what
 we intend, serving up results closer to what we want.   It's dope.
 
-<img alt="Dope" width="400" src="https://scott.ai/img/dope_image1.png">
+<img alt="Dope" src="https://scott.ai/img/dope_image1.png">
 
 Here’s one example.   Let’s say we’re wondering whether we can pick up medicine
 for a friend, who may be sick and cannot enter a pharmacy due to Covid19
 restrictions.  We Google it:
 
-<img alt="Dope" width="400" src="https://scott.ai/img/dope_image5.jpg">
+<img alt="Dope" src="https://scott.ai/img/dope_image5.jpg">
 
 Before this upgrade, Google would show us information about prescriptions on the
 left.  Old Google would see high overlap between our keywords “get, pharmacy,
@@ -58,7 +58,7 @@ Has anyone seen Bueller?
 
 We have two current favorites, one for scale, one for play.
 
-#### Bert as a Service, for scale.
+### Bert as a Service, for scale.
 
 Han Xiao ([@hxiao](https://twitter.com/hxiao0)) released an open source package in 2019 which takes the
 latest, published version of Bert and encapsulates it in a web service  Han was
@@ -97,7 +97,7 @@ apples = bertify(["Apple shares rose on the news.",
                  "Apple pie is delicious."])
 ```
 
-#### Spacy, for play.
+### Spacy, for play.
 
 Ines Montani ([@_inesmontani](https://twitter.com/inesmontani)) and her co-founder started
 [explosion.ai](https://twitter.com/explosion_ai) in 2016 to
@@ -193,8 +193,8 @@ life ([true story](https://www.nasa.gov/press-release/artificial-intelligence-na
 
 Computer scientists call this the nearest neighbor problem.   
 
-Given an input tensor \\(T_0\\), find the k nearest, neighboring tensors from a larger
-set of tensors T.  \\(T_0\\) is blue in the figure above, along with the 1000 closest
+Given an input tensor T<sub>0</sub>, find the k nearest, neighboring tensors from a larger
+set of tensors T.  T<sub>0</sub> is blue in the figure above, along with the 1000 closest
 tensors (k=1000).  “Nearest” is defined as the shortest line you could draw --
 in 768D -- from one tensor to another.   There’s a bit of math involved to
 calculate this distance, often taking a dozen instructions on a modern computer.
@@ -216,7 +216,7 @@ Comparing the distance from our query to every tensor could take minutes on
 modern distributed computers.  This ensures perfect recall but seemingly takes
 forever in a world expecting instant results.
 
-<img alt="Dope" width="400" src="https://scott.ai/img/dope_image12.png">
+<img alt="Dope" width="400" src="https://scott.ai/img/dope_image6.jpg">
 
 You’re probably scowling right now, as Claude Shannon was in this cropped photo
 from Wikipedia.  Claude was the father of modern _information theory_ which became
