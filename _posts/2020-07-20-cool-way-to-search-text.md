@@ -2,6 +2,7 @@
 layout: post
 title: The Cool Way to Search Text
 thumb: /img/dope_image8.png
+share-img: https://scott.ai/img/dope_image8.png
 ---
 
 Welcome to the second post from my collaboration with [@chrismattman](https://twitter.com/chrismattman).  We
