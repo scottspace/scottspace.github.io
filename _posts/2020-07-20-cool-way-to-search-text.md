@@ -60,8 +60,8 @@ We have two current favorites, one for scale, one for play.
 ### Bert as a Service, for scale.
 
 Han Xiao ([@hxiao](https://twitter.com/hxiao0)) released an open source package in 2019 which takes the
-latest, published version of Bert and encapsulates it in a web service  Han was
-recently a CTO at TenCent, now off on his own building a promising new company
+latest, published version of Bert and encapsulates it in a web service.  Han was
+recently a CTO at TenCent, now building a promising new company
 ([Jina.ai](https://jina.ai)) for semantic search.    
 
 Han applied hardcore, distributed systems engineering and optimizations which
@@ -320,7 +320,7 @@ feeds as we speak!
 
 ### Get Started Now
 
-We have created a free Jupyter notebook for you to play with Bert’s semantic
+We have created a free Jupyter [notebook](https://colab.research.google.com/drive/1r783mP8lcLc4SkMCE4xL-8Jh5chsi8oK?usp=sharing) for you to play with Bert’s semantic
 search capabilities today.  The notebook shows the three steps of semantic
 search:
 
