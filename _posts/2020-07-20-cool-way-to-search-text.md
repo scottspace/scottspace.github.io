@@ -101,7 +101,7 @@ apples = bertify(["Apple shares rose on the news.",
 
 Ines Montani ([@_inesmontani](https://twitter.com/inesmontani)) and her co-founder started
 [explosion.ai](https://twitter.com/explosion_ai) in 2016 to
-make tools for processing human language.  This kick-ass AI woman and her tiny
+make tools for processing human language.  This kick-ass AI leader and her tiny
 German company are having an outsized impact by focusing on simple, easy to use
 tools that have immediate, practical value.  They contribute some of  their best
 work to open source, as part of the "[spaCy](https://spacy.io/)" toolset.  
