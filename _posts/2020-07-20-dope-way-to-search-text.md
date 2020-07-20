@@ -1,15 +1,13 @@
 ﻿---
 layout: post
-title: The Dope Way to Search Text
+title: The Cool Way to Search Text
 thumb: /img/dope_image8.png
 ---
 
 Welcome to the second post from my collaboration with [@chrismattman](https://twitter.com/chrismattman).  We
 were both intrigued when Google [announced](https://blog.google/products/search/search-language-understanding-bert/) a significant upgrade to their search algorithm in late 2019.
 A Google Fellow demonstrated how the new version can better understand what
-we intend, serving up results closer to what we want.  Turns out, it's dope.
-
-<img alt="Dope" src="https://scott.ai/img/dope_image1.png">
+we intend, serving up results closer to what we want.  Turns out, it's cool.
 
 Here’s one example from Google's post. Let’s say we’re wondering whether we can pick up medicine
 for a friend, who may be sick and cannot enter a pharmacy due to Covid19
@@ -37,7 +35,7 @@ stated “medicine,” though these are clearly related, even though they don’
 match.  This new approach is called semantic search and it’s here and widely
 available and easily implemented because of Bert.
 
-Semantic search is dope.  It's all the rage in the scientific community.  We
+Semantic search is cool.  It's all the rage in the scientific community.  We
 have high hopes that this tensor technique will allow us to better search
 through our overfull inboxes, that pile of PDFs waiting to be read, or the
 thousands of customer comments we’d like to process.   
