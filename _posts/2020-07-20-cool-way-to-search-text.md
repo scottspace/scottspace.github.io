@@ -324,19 +324,21 @@ We have created a free Jupyter notebook for you to play with Bert’s semantic
 search capabilities today.  The notebook shows the three steps of semantic
 search:
 
-      1. We download the free, open source King James bible and encode all
-      verses, from all 66 books, as individual tensors.  We store the bible
-      chapters, verses and tensors on BigQuery.
+1. We download the free, open source King James bible and encode all
+verses, from all 66 books, as individual tensors.  We store the bible
+chapters, verses and tensors on BigQuery.
 
-      2. We encode our query “ask and ye shall receive” as a tensor.
+2. We encode our query “ask and ye shall receive” as a tensor.
 
-      3. We load all Bible verse tensors into FAISS, ask the algorithm to
-      “train,” then send in our query.  Then we pray for good results.  What do
-      you think?  You be the judge. Remember,  only the penitent man shall pass.
-      Heck, with Bert, you’ll be as quick as Indy on his way to the Grail like
-      below.
+3. We load all Bible verse tensors into FAISS, ask the algorithm to
+“train,” then send in our query.  Then we pray for good results.  What do
+you think?  You be the judge. Remember,  only the penitent man shall pass.
+Heck, with Bert, you’ll be as quick as Indy on his way to the Grail like
+below.
 
-Ask and Ye Shall Receive
+<img alt="Dope" src="https://scott.ai/img/dope_image7.gif">
+
+### Ask and Ye Shall Receive
 
 ```
 >>> nearest('ask and ye shall receive')
