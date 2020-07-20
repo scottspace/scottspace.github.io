@@ -142,8 +142,7 @@ Absent those excellent databases, Pandas also works fine locally.
 What we really want is a tensor store, optimized for storing, searching and
 retrieving billions of high-dimensional tensors.  [Feature stores](http://featurestore.org/) are a step in
 the right direction, though they’re optimized for smaller vector sizes from
-hand-built statistical features.  True tensor stores don’t yet exist.   [Ahem,
-product people.  Cough.  Cough.  Bueller, are you there?]
+hand-built statistical features.  True tensor stores don’t yet exist. 
 
 ### Encoding query
 
