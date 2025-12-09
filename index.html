@@ -392,10 +392,11 @@
     <div class="contact">
       <h2>Stay in Touch</h2>
       <p class="availability">I share what I'm seeing at the frontier — AI, oncology, where capital is moving. Occasional emails, no noise.</p>
-      <form class="signup-form" id="signup-form">
+      <form class="signup-form" id="signup-form" action="https://buttondown.com/api/emails/embed-subscribe/penberthy" method="post" target="hidden-iframe">
         <input type="email" name="email" placeholder="you@example.com" required class="email-input" id="email-input">
         <button type="submit" class="signup-button">Join</button>
       </form>
+      <iframe name="hidden-iframe" style="display:none;"></iframe>
       <p class="confirmation" id="confirmation" style="display: none;">Check your inbox to confirm your subscription.</p>
       <div class="links">
         <a href="https://linkedin.com/in/scottpenberthy" target="_blank">LinkedIn</a>
@@ -414,25 +415,13 @@
   </div>
 
   <script>
-    document.getElementById('signup-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email-input').value;
+    document.getElementById('signup-form').addEventListener('submit', function() {
       const form = document.getElementById('signup-form');
       const confirmation = document.getElementById('confirmation');
-
-      try {
-        await fetch('https://buttondown.com/api/emails/embed-subscribe/penberthy', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: 'email=' + encodeURIComponent(email),
-          mode: 'no-cors'
-        });
+      setTimeout(function() {
         form.style.display = 'none';
         confirmation.style.display = 'block';
-      } catch (err) {
-        form.style.display = 'none';
-        confirmation.style.display = 'block';
-      }
+      }, 100);
     });
   </script>
 </body>
