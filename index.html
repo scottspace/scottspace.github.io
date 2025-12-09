@@ -1,74 +1,294 @@
 ---
-layout: page
-title: Scott's Space
-subtitle: My thoughts on AI, posted every sometime.
-use-site-title: true
+layout: null
 ---
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-          {% if post.thumb %}
-          <img class="post-thumb" src={{post.thumb}}>
-	  {% endif %}
-	  <h2 class="post-title">{{ post.title }}</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scott Penberthy | Pixels Meet Omics</title>
+  <meta name="description" content="AI strategist advising sovereign wealth funds, pharmaceutical leaders, and boards on the intersection of video AI and cancer research.">
+  <link rel="canonical" href="https://scott.ai">
 
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Scott Penberthy | Pixels Meet Omics">
+  <meta property="og:description" content="The same AI that understands video at planetary scale can transform how we diagnose and treat cancer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scott.ai">
 
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fafafa;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e5e5e5;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #2563eb;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .thesis {
+      font-size: 1.125rem;
+      color: #444;
+      margin-bottom: 48px;
+      border-left: 3px solid #2563eb;
+      padding-left: 20px;
+    }
+
+    .thesis strong {
+      color: #1a1a1a;
+    }
+
+    .current-work {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .availability {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .availability strong {
+      color: #1a1a1a;
+    }
+
+    h2 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666;
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+
+    .credentials {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .credentials li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1rem;
+    }
+
+    .credentials li:last-child {
+      border-bottom: none;
+    }
+
+    .credentials .role {
+      font-weight: 500;
+    }
+
+    .credentials .org {
+      color: #666;
+    }
+
+    .work-with {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .work-with li {
+      padding: 6px 0;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .work-with li::before {
+      content: "→ ";
+      color: #2563eb;
+    }
+
+    .contact {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+
+    .contact h2 {
+      margin-top: 0;
+    }
+
+    .email {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .email:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      margin-top: 24px;
+      display: flex;
+      gap: 24px;
+    }
+
+    .links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .links a:hover {
+      color: #2563eb;
+    }
+
+    .history {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid #eee;
+    }
+
+    .history p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 48px 20px;
+      }
+
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .photo {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="/img/me_speaking.jpg" alt="Scott Penberthy speaking" class="photo">
+      <div>
+        <h1>Scott Penberthy</h1>
+        <p class="tagline">Pixels Meet Omics</p>
+      </div>
+    </div>
+
+    <p class="thesis">
+      I've spent 30 years at the intersection of AI and visual understanding.
+      Now I see something others don't: <strong>the same architectures that understand
+      video at planetary scale can transform how we diagnose and treat cancer.</strong>
+      Spatiotemporal models. Multimodal embeddings. The math is the same. The stakes are different.
     </p>
 
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
-        </a>
-      </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
+    <h2>Currently</h2>
+    <p class="current-work">
+      At Google, I lead a team focused on understanding physics, human emotion, and the observable
+      universe through video — driving cost-to-serve and energy consumption down by three orders
+      of magnitude.
+    </p>
+    <p class="current-work">
+      In parallel, I partner with cancer and healthcare organizations as the technology rapidly improves:
+    </p>
+    <ul class="credentials">
+      <li><span class="role">Board Member</span> <span class="org">— Lustgarten Foundation (pancreatic cancer research)</span></li>
+      <li><span class="role">Advisor</span> <span class="org">— Stanford Medical School Tumor Board</span></li>
+      <li><span class="role">Advisor</span> <span class="org">— Every Cure</span></li>
+      <li><span class="role">Contributor</span> <span class="org">— Pharmacogenomics Standards</span></li>
+    </ul>
+
+    <h2>Previously</h2>
+    <ul class="credentials">
+      <li>300+ keynotes to heads of state, sovereign wealth funds, Fortune 500 executives</li>
+      <li>Built video AI systems serving billions of users</li>
+      <li>Led engineering at Photobucket (1B+ images)</li>
+      <li>PhD in Artificial Intelligence, MIT</li>
+    </ul>
+
+    <h2>I Work With</h2>
+    <ul class="work-with">
+      <li>Sovereign wealth funds shaping national AI strategy</li>
+      <li>Pharmaceutical leaders navigating AI + drug discovery</li>
+      <li>Boards seeking AI governance expertise</li>
+      <li>Healthcare investors validating technical theses</li>
+    </ul>
+
+    <div class="contact">
+      <h2>Speaking & Advisory</h2>
+      <p class="availability">Earliest availability: <strong>September 2025</strong></p>
+      <a href="mailto:scott@scott.ai" class="email">scott@scott.ai</a>
+      <div class="links">
+        <a href="https://linkedin.com/in/scottpenberthy" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/scottpenberthy" target="_blank">X / Twitter</a>
       </div>
     </div>
 
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
+    <div class="history">
+      <p>
+        Photobucket → Google Video AI → Cancer Research. The through-line took 30 years to see.
+        The same models that track a car chase can track tumor progression.
+        The same embeddings that understand a movie scene can understand tissue over time.
+      </p>
     </div>
-    {% endif %}
-
-   </article>
-  {% endfor %}
-</div>
-
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+  </div>
+</body>
+</html>
