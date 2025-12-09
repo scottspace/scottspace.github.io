@@ -277,6 +277,14 @@
       background: #1a1a1a;
     }
 
+    .confirmation {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1rem;
+      color: #2c2c2c;
+      font-style: italic;
+      margin-top: 16px;
+    }
+
     .history {
       margin-top: 64px;
       padding-top: 48px;
@@ -384,10 +392,11 @@
     <div class="contact">
       <h2>Stay in Touch</h2>
       <p class="availability">I share what I'm seeing at the frontier — AI, oncology, where capital is moving. Occasional emails, no noise.</p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/penberthy" method="post" target="popupwindow" class="signup-form">
-        <input type="email" name="email" placeholder="you@example.com" required class="email-input">
+      <form class="signup-form" id="signup-form">
+        <input type="email" name="email" placeholder="you@example.com" required class="email-input" id="email-input">
         <button type="submit" class="signup-button">Join</button>
       </form>
+      <p class="confirmation" id="confirmation" style="display: none;">Check your inbox to confirm your subscription.</p>
       <div class="links">
         <a href="https://linkedin.com/in/scottpenberthy" target="_blank">LinkedIn</a>
         <a href="https://twitter.com/scottpenberthy" target="_blank">X / Twitter</a>
@@ -403,5 +412,28 @@
       </p>
     </div>
   </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      const form = document.getElementById('signup-form');
+      const confirmation = document.getElementById('confirmation');
+
+      try {
+        await fetch('https://buttondown.com/api/emails/embed-subscribe/penberthy', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email),
+          mode: 'no-cors'
+        });
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+      } catch (err) {
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
