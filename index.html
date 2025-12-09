@@ -1,17 +1,14 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scott Penberthy | Pixels Meet Omics</title>
+  <title>Scott Penberthy | Cat Memes to Cancer</title>
   <meta name="description" content="AI strategist advising sovereign wealth funds, pharmaceutical leaders, and boards on the intersection of video AI and cancer research.">
   <link rel="canonical" href="https://scott.ai">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Scott Penberthy | Pixels Meet Omics">
+  <meta property="og:title" content="Scott Penberthy | Cat Memes to Cancer">
   <meta property="og:description" content="The same AI that understands video at planetary scale can transform how we diagnose and treat cancer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://scott.ai">
@@ -19,7 +16,7 @@ layout: null
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -30,82 +27,116 @@ layout: null
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #fafafa;
+      line-height: 1.7;
+      color: #2c2c2c;
+      background: #fcfcfc;
     }
 
     .container {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 100px 32px;
     }
 
     h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
       font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
+      font-weight: 400;
+      margin-bottom: 0;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
     }
 
     .header {
       display: flex;
       align-items: center;
-      gap: 24px;
-      margin-bottom: 48px;
+      gap: 28px;
+      margin-bottom: 56px;
     }
 
     .photo {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #e5e5e5;
+      border: 2px solid #e8e8e8;
+      filter: grayscale(15%);
     }
 
-    .tagline {
-      font-size: 1.25rem;
-      color: #2563eb;
-      font-weight: 500;
+    .subtitle {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.05rem;
+      color: #666;
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 4px;
       margin-bottom: 0;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-wrapper {
+      margin-bottom: 56px;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      filter: grayscale(20%) contrast(1.02);
+    }
+
+    .hero-caption {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 12px;
+      font-style: italic;
+      letter-spacing: 0.01em;
     }
 
     .thesis {
-      font-size: 1.125rem;
-      color: #444;
-      margin-bottom: 48px;
-      border-left: 3px solid #2563eb;
-      padding-left: 20px;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.15rem;
+      color: #3a3a3a;
+      margin-bottom: 56px;
+      line-height: 1.85;
+      border-left: 2px solid #c9c9c9;
+      padding-left: 24px;
     }
 
     .thesis strong {
       color: #1a1a1a;
+      font-weight: 500;
     }
 
     .current-work {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      margin-bottom: 18px;
+      line-height: 1.75;
     }
 
     .availability {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #666;
       margin-bottom: 12px;
     }
 
     .availability strong {
       color: #1a1a1a;
+      font-weight: 500;
     }
 
     h2 {
-      font-size: 0.875rem;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #666;
-      margin-bottom: 16px;
-      margin-top: 48px;
+      letter-spacing: 0.12em;
+      color: #888;
+      margin-bottom: 20px;
+      margin-top: 56px;
     }
 
     .credentials {
@@ -114,9 +145,10 @@ layout: null
     }
 
     .credentials li {
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 1rem;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+      color: #4a4a4a;
     }
 
     .credentials li:last-child {
@@ -125,10 +157,11 @@ layout: null
 
     .credentials .role {
       font-weight: 500;
+      color: #2c2c2c;
     }
 
     .credentials .org {
-      color: #666;
+      color: #707070;
     }
 
     .work-with {
@@ -137,22 +170,27 @@ layout: null
     }
 
     .work-with li {
-      padding: 6px 0;
-      font-size: 1rem;
-      color: #444;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      color: #4a4a4a;
     }
 
     .work-with li::before {
-      content: "→ ";
-      color: #2563eb;
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background: #c0c0c0;
+      margin-right: 12px;
+      vertical-align: middle;
     }
 
     .contact {
       background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      padding: 32px;
-      margin-top: 48px;
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      padding: 36px;
+      margin-top: 56px;
     }
 
     .contact h2 {
@@ -160,47 +198,55 @@ layout: null
     }
 
     .email {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: #2563eb;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #2c2c2c;
       text-decoration: none;
+      border-bottom: 1px solid #d0d0d0;
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
     }
 
     .email:hover {
-      text-decoration: underline;
+      border-color: #2c2c2c;
     }
 
     .links {
-      margin-top: 24px;
+      margin-top: 28px;
       display: flex;
-      gap: 24px;
+      gap: 28px;
     }
 
     .links a {
-      color: #666;
+      color: #888;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
     }
 
     .links a:hover {
-      color: #2563eb;
+      color: #2c2c2c;
     }
 
     .history {
-      margin-top: 48px;
+      margin-top: 64px;
       padding-top: 48px;
       border-top: 1px solid #eee;
     }
 
     .history p {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: #707070;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      font-style: italic;
     }
 
     @media (max-width: 600px) {
       .container {
-        padding: 48px 20px;
+        padding: 64px 24px;
       }
 
       .header {
@@ -214,11 +260,19 @@ layout: null
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
       }
 
       .tagline {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+      }
+
+      .thesis {
+        font-size: 1.25rem;
+      }
+
+      .hero-caption {
+        text-align: center;
       }
     }
   </style>
@@ -226,11 +280,16 @@ layout: null
 <body>
   <div class="container">
     <div class="header">
-      <img src="/img/me_speaking.jpg" alt="Scott Penberthy speaking" class="photo">
+      <img src="img/me_speaking.jpg" alt="Scott Penberthy speaking" class="photo">
       <div>
         <h1>Scott Penberthy</h1>
-        <p class="tagline">Pixels Meet Omics</p>
+        <p class="subtitle">Cat Memes to Cancer</p>
       </div>
+    </div>
+
+    <div class="hero-wrapper">
+      <img src="images/hero.png" alt="Scott Penberthy speaking at Google Cancer Forum with Lee Hood" class="hero-image">
+      <p class="hero-caption">Presenting with Lee Hood at the Google Cancer AI Symposium, which I co-founded</p>
     </div>
 
     <p class="thesis">
@@ -242,9 +301,7 @@ layout: null
 
     <h2>Currently</h2>
     <p class="current-work">
-      At Google, I lead a team focused on understanding physics, human emotion, and the observable
-      universe through video — driving cost-to-serve and energy consumption down by three orders
-      of magnitude.
+      At Google, I lead an engineering team building models that understand physics and emotion — trained on billions of hours of entertainment video. As costs plummet, these same models become viable for oncology and drug discovery.
     </p>
     <p class="current-work">
       In parallel, I partner with cancer and healthcare organizations as the technology rapidly improves:
@@ -259,6 +316,7 @@ layout: null
     <ul class="credentials">
       <li>300+ keynotes to heads of state, sovereign wealth funds, Fortune 500 executives</li>
       <li>CTO Office, Google Cloud (8 years)</li>
+      <li>Co-founded Google Cloud's fast-growing Biopharma unit</li>
       <li>Built video AI systems serving billions of users</li>
       <li>Led engineering at Photobucket (1B+ images)</li>
       <li>PhD in AI (MIT → UW), 2 MS, BS in Computer Science — MIT at 16</li>
