@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scott Penberthy</title>
-  <meta name="description" content="Scott Penberthy — AI practitioner. Writing daily case studies on where AI is actually delivering results." />
+  <meta name="description" content="Scott Penberthy — AI practitioner. I teach myself things by building." />
   <link rel="canonical" href="https://scott.ai" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Scott Penberthy" />
-  <meta property="og:description" content="AI practitioner. Writing daily case studies on where AI is actually delivering results." />
+  <meta property="og:description" content="AI practitioner. I teach myself things by building." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scott.ai" />
 
@@ -159,6 +159,18 @@
 
     .lines li:first-child{ border-top:none; }
 
+    .lines a{
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(0,0,0,0.25);
+      transition: text-decoration-color .15s ease;
+    }
+
+    .lines a:hover{
+      text-decoration-color: rgba(0,0,0,0.6);
+    }
+
     /* CTA */
     .cta{
       display:flex;
@@ -253,13 +265,13 @@
     <div class="hero">
       <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum / Google Cancer AI Symposium" />
       <div class="caption">
-        With Lee Hood at the AI Cancer Forum I started — where clinicians and scientists began applying these ideas daily.
+        With Lee Hood at the AI Cancer Forum I started. Clinicians and scientists applying these ideas daily.
       </div>
     </div>
 
     <div class="lede">
       In 1960, Katherine Johnson replaced Newtonian equations with raw compute to put astronauts in orbit.
-      AI is the same idea, generalized — a universal approximator that learns from data
+      AI is the same idea, generalized. A universal approximator that learns from data
       what symbolic math can't express.
       I've spent thirty years applying that to finance, entertainment, video, science, and medicine.
     </div>
@@ -273,25 +285,41 @@
 
     <div id="about" class="section-title">Background</div>
     <div class="body">
-      PhD in AI from MIT. The common thread across everything below is the same:
+      MIT at 16. PhD in AI. The common thread across everything below is the same:
       use computation to approximate what we can’t solve analytically,
       then put it in production at scale.
     </div>
 
     <ul class="lines">
-      <li><strong>IBM</strong> — Technical Assistant to CEO; early web infrastructure</li>
-      <li><strong>Photobucket</strong> — scaled photo platform to 1B+ images</li>
-      <li><strong>PwC</strong> — Chief Technology Advisor</li>
-      <li><strong>Google</strong> — founded Applied AI; Cloud CTO office (8 yrs): NASA, multiomics, video</li>
-      <li><strong>Lustgarten Foundation</strong> — board, pancreatic cancer research</li>
-      <li><strong>Stanford Medicine</strong> — tumor board advisor</li>
+      <li><strong>IBM</strong> Technical Assistant to CEO. Early web infrastructure.</li>
+      <li><strong>Photobucket</strong> Scaled photo platform to 1B+ images.</li>
+      <li><strong>PwC</strong> Chief Technology Advisor.</li>
+      <li><strong>Google</strong> Founded Applied AI. Cloud CTO office (8 yrs): NASA, multiomics, video.</li>
+      <li><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</li>
+      <li><strong>Stanford Medicine</strong> Tumor board advisor.</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <div class="section-title">Current Project</div>
+    <div class="body">
+      I analyzed SEC filings from 3,227 US public companies to find where AI is actually
+      deployed, not just announced. 4,398 verified use cases. Evenings and weekends, me plus AI.
+      The findings are in three essays and a daily video series.
+    </div>
+
+    <ul class="lines">
+      <li><a href="https://www.linkedin.com/posts/tensordoc_move-to-the-edge-an-analysis-of-4398-ai-activity-7444899395021643776-NcPY" target="_blank" rel="noopener"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
+      <li><strong>Watts, Tokens, Money</strong> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
+      <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
+      <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
     </ul>
 
     <hr class="rule" />
 
     <div id="subscribe" class="section-title">AI Money Moves</div>
     <div class="body">
-      A daily case study of an AI deployment that moved a number — revenue, cost, or capability.
+      A daily case study of an AI deployment that moved a number: revenue, cost, or capability.
       One per day, sourced from earnings calls, filings, and published results.
     </div>
 
