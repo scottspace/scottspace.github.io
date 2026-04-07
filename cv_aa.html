@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board Candidate Overview — Dr. Scott Penberthy</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --navy: #0a2240;
+        --navy-light: #1a3a5c;
+        --gold: #c9a84c;
+        --gold-soft: rgba(201,168,76,0.12);
+        --text: #1a1a1a;
+        --text-secondary: #4a4a4a;
+        --text-muted: #777;
+        --bg: #ffffff;
+        --bg-warm: #fafaf8;
+        --border: rgba(0,0,0,0.08);
+        --radius: 6px;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 48px 64px 40px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Header */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+        border-bottom: 2px solid var(--navy);
+      }
+
+      .header-left { flex: 1; }
+
+      .doc-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+
+      .candidate-name {
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.15;
+        margin-bottom: 6px;
+      }
+
+      .contact-info {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .contact-info a {
+        color: var(--text-muted);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        transition: color 0.15s, border-color 0.15s;
+      }
+
+      .contact-info a:hover {
+        color: var(--navy);
+        border-color: var(--navy);
+      }
+
+      .confidential-badge {
+        border: 1.5px solid var(--gold);
+        color: var(--gold);
+        padding: 4px 10px;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-radius: var(--radius);
+        white-space: nowrap;
+        margin-top: 4px;
+      }
+
+      /* Tagline */
+      .tagline {
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-style: italic;
+        font-size: 15.5px;
+        line-height: 1.55;
+        color: var(--navy-light);
+        margin-bottom: 36px;
+        max-width: 640px;
+      }
+
+      /* Sections */
+      section { margin-bottom: 28px; }
+
+      h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--navy);
+        margin-bottom: 14px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--gold);
+        display: inline-block;
+      }
+
+      section > p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        max-width: 660px;
+        margin-bottom: 0;
+      }
+
+      /* Career Grid */
+      .career-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .career-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+        align-items: baseline;
+      }
+
+      .career-item:last-child { border-bottom: none; }
+
+      .company-name {
+        font-weight: 600;
+        color: var(--navy);
+        font-size: 14px;
+      }
+
+      .career-details {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Relevance List */
+      .relevance-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .relevance-list li {
+        position: relative;
+        padding: 10px 0 10px 20px;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .relevance-list li:last-child { border-bottom: none; }
+
+      .relevance-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 16px;
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 1px;
+      }
+
+      .relevance-list li strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      /* Board Value Grid */
+      .board-value-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .board-value-item {
+        background: var(--bg-warm);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        color: var(--text-secondary);
+        line-height: 1.55;
+        font-size: 13.5px;
+        border-left: 3px solid var(--gold);
+      }
+
+      /* Governance */
+      .governance-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 24px;
+      }
+
+      .governance-list li {
+        padding: 6px 0;
+        color: var(--text-secondary);
+        font-size: 13.5px;
+      }
+
+      .governance-list li strong {
+        color: var(--text-muted);
+        font-weight: 500;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Quick Facts Bar */
+      .quick-facts {
+        background: var(--navy);
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 28px;
+        margin-top: 36px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+      }
+
+      .quick-facts .divider {
+        color: var(--gold);
+        font-weight: 400;
+        opacity: 0.5;
+      }
+
+      /* Footer */
+      .doc-footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 11px;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+      }
+
+      /* Print */
+      @media print {
+        body { padding: 24px 40px; font-size: 10pt; }
+        .quick-facts { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        body { padding: 28px 20px; }
+        .header { flex-direction: column; gap: 12px; }
+        .candidate-name { font-size: 26px; }
+        .career-item { grid-template-columns: 1fr; gap: 2px; }
+        .board-value-grid { grid-template-columns: 1fr; }
+        .governance-list { grid-template-columns: 1fr; }
+        .quick-facts { flex-direction: column; gap: 8px; text-align: center; }
+        .quick-facts .divider { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="header-left">
+        <div class="doc-label">Board Candidate Overview</div>
+        <h1 class="candidate-name">Dr. Scott Penberthy</h1>
+        <div class="contact-info"><a href="mailto:scott@scott.ai">scott@scott.ai</a></div>
+      </div>
+      <div class="confidential-badge">Confidential</div>
+    </div>
+
+    <div class="tagline">
+      Silicon Valley operator with a demonstrated record of identifying major technology
+      shifts — and building the commercial infrastructure to capture them at scale.
+    </div>
+
+    <section>
+      <h2>Professional Distinction</h2>
+      <p>
+        A rare operator-strategist — not an advisor who theorizes, but a builder who has
+        scaled platforms from zero to enterprise-grade across four distinct technology eras:
+        the internet, consumer media, enterprise cloud, and applied AI. A demonstrated
+        pattern of translating frontier technology into measurable commercial and operational
+        impact. Trusted by CEOs, boards, and government institutions alike.
+      </p>
+    </section>
+
+    <section>
+      <h2>Career at a Glance</h2>
+      <div class="career-grid">
+        <div class="career-item">
+          <div class="company-name">IBM</div>
+          <div class="career-details">
+            Built early internet platforms; grew technical team from 3 to 200+.
+            Contributed to ~$4B hosting business and IBM WebSphere (~$11B).
+            Served as Technical Assistant to CEO Lou Gerstner.
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="company-name">Photobucket</div>
+          <div class="career-details">
+            Scaled consumer media platform to 50M users. Acquired for $300M.
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="company-name">PwC</div>
+          <div class="career-details">
+            Led enterprise cloud transformation globally. Closed first financial services
+            deal for Google Cloud; deployed Google Workspace worldwide.
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="company-name">Google Cloud</div>
+          <div class="career-details">
+            Built AI as a commercial platform across NASA (~30+ projects), healthcare
+            (Tempus, Elevance), and genomics — growing a multi-billion-dollar business.
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="company-name">Alphabet (Current)</div>
+          <div class="career-details">
+            Leading next-generation AI systems. Contributed to video AI platform now at
+            ~$10B run rate. Focus: AI systems that model and optimize real-world environments.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Relevance to American Airlines</h2>
+      <ul class="relevance-list">
+        <li>
+          <strong>Autonomous revenue management</strong> — AI that continuously optimizes
+          pricing, inventory, and yield across the entire network in real time, replacing
+          rules-based systems with learned models that capture demand signals humans miss
+        </li>
+        <li>
+          <strong>AI agents across the service chain</strong> — rebooking, disruption
+          recovery, and customer service handled by AI agents that act, not just recommend —
+          reducing cost per interaction while improving resolution speed and satisfaction
+        </li>
+        <li>
+          <strong>Unified network optimization</strong> — fleet routing, crew scheduling,
+          gate assignment, and maintenance windows solved as a single continuously-optimizing
+          system rather than siloed tools, unlocking billions in efficiency
+        </li>
+        <li>
+          <strong>Safety &amp; regulatory AI governance</strong> — as the FAA develops AI
+          oversight frameworks, AA needs board-level fluency in AI safety, risk, and policy;
+          direct experience with NASA and federal AI programs
+        </li>
+        <li>
+          <strong>Proprietary AI as competitive moat</strong> — the carriers that build
+          (not just buy) AI infrastructure on their own operational data will structurally
+          outperform; has built exactly this at Google-scale
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Board Value</h2>
+      <div class="board-value-grid">
+        <div class="board-value-item">Identifies inflection points before they become consensus</div>
+        <div class="board-value-item">Scales businesses from concept to commercial infrastructure</div>
+        <div class="board-value-item">Converts AI strategy into operational and economic advantage</div>
+        <div class="board-value-item">Proven boardroom translator between technology and enterprise leadership</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Governance &amp; Advisory</h2>
+      <ul class="governance-list">
+        <li><strong>Advisory</strong> — Stanford Medicine</li>
+        <li><strong>Advisory</strong> — Marconi Foundation (AI)</li>
+        <li><strong>Advisory</strong> — NASA Frontier Development Lab</li>
+        <li><strong>Board</strong> — Lustgarten Foundation</li>
+      </ul>
+    </section>
+
+    <div class="quick-facts">
+      <span>$20B+ Business Impact</span>
+      <span class="divider">|</span>
+      <span>50M+ Users Scaled</span>
+      <span class="divider">|</span>
+      <span>Multiple 0&#8594;$B AI Businesses</span>
+      <span class="divider">|</span>
+      <span>Active CEO/Board Briefings</span>
+    </div>
+
+    <div class="doc-footer">American Airlines Board Affairs · April 2026</div>
+
+  </body>
+</html>
