@@ -229,6 +229,25 @@
       font-style: italic;
     }
 
+    .photo-tooltip{
+      position: fixed;
+      pointer-events: none;
+      z-index: 1000;
+      width: 440px;
+      border-radius: 12px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      overflow: hidden;
+      transform: translate(-50%, -105%);
+    }
+
+    .photo-tooltip img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .bio-details{
       display: grid;
       grid-template-columns: 150px 1fr;
@@ -439,8 +458,9 @@
     </div>
 
     <div class="lede">
-      I learn by building. At Google I saw how AI worked for a few hundred companies.
-      I wanted to see all of them.
+      I learn by building. At Google I helped 300 companies deploy AI,
+      initiated $2B in healthcare deals, and ran projects for NASA.
+      I wanted to see what all 3,338 public companies were doing.
     </div>
 
     <div class="radar" id="radar">
@@ -475,7 +495,11 @@
       computation to work where analytical solutions fall short.
     </div>
 
-    <div class="bio-photo">
+    <div class="photo-tooltip" id="photoTooltip">
+      <img src="images/hero.png" alt="" />
+    </div>
+
+    <div class="bio-photo" id="bioPhoto">
       <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
       <div class="bio-photo-bar">
         <div class="bio-caption">With Lee Hood at the AI Cancer Forum I started.</div>
@@ -514,6 +538,21 @@
   </div>
 
   <script>
+    (function(){
+      var tip = document.getElementById('photoTooltip');
+      var photo = document.getElementById('bioPhoto');
+      photo.addEventListener('mouseenter', function(){
+        tip.style.opacity = '1';
+      });
+      photo.addEventListener('mouseleave', function(){
+        tip.style.opacity = '0';
+      });
+      photo.addEventListener('mousemove', function(e){
+        tip.style.left = e.clientX + 'px';
+        tip.style.top = e.clientY + 'px';
+      });
+    })();
+
     function handleRadar(e){
       e.preventDefault();
       var email = e.target.querySelector('input').value;
