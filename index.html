@@ -198,28 +198,49 @@
       line-height: 1.5;
     }
 
-    /* Inline photo */
-    .photo-inline{
-      display:flex;
-      gap: 20px;
+    /* Bio row: photo + highlights */
+    .bio-row{
+      display: flex;
+      gap: 24px;
       align-items: flex-start;
       margin-top: 16px;
+      margin-bottom: 8px;
     }
 
-    .photo-inline img{
-      width: 200px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    .bio-photo{
       flex-shrink: 0;
+      width: 240px;
     }
 
-    .photo-inline .photo-caption{
+    .bio-photo img{
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+
+    .bio-details{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 2px;
+    }
+
+    .bio-highlight{
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .bio-highlight strong{
+      color: #111;
+    }
+
+    .bio-caption{
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-style: italic;
-      line-height: 1.55;
-      padding-top: 4px;
+      margin-top: 4px;
     }
 
     /* Typography blocks */
@@ -355,9 +376,8 @@
     @media (max-width: 560px){
       .lede{ font-size: 1.02rem; }
       .wrap{ padding: 36px 16px 68px; }
-      .photo-inline{ flex-direction: column; }
-      .photo-inline img{ width: 100%; max-width: 280px; }
-      .radar iframe{ height: 500px; }
+      .bio-row{ flex-direction: column; }
+      .bio-photo{ width: 100%; max-width: 280px; }
     }
   </style>
 </head>
@@ -378,10 +398,9 @@
     </div>
 
     <div class="lede">
-      In 1960, Katherine Johnson replaced Newtonian equations with raw compute to put astronauts in orbit.
-      AI is the same idea, generalized. A universal approximator that learns from data
-      what symbolic math can’t express.
-      I’ve spent thirty years applying that to finance, entertainment, video, science, and medicine.
+      Everyone is talking about AI. I wanted to know where it’s actually working.
+      So I read the SEC filings and earnings calls of 3,338 US public companies
+      and built a tool to track every verified deployment.
     </div>
 
     <div class="radar" id="radar">
@@ -418,27 +437,28 @@
 
     <div id="about" class="section-title">Background</div>
     <div class="body">
-      MIT at 16. PhD in AI. The common thread across everything below is the same:
-      use computation to approximate what we can’t solve analytically,
-      then put it in production at scale.
+      MIT at 16. PhD in AI. Thirty years building things that put computation
+      to work where analytical solutions fall short.
+    </div>
+
+    <div class="bio-row">
+      <div class="bio-photo">
+        <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
+      </div>
+      <div class="bio-details">
+        <div class="bio-highlight"><strong>Google Cloud</strong> Founded Applied AI. CTO office (8 yrs). NASA, multiomics, video.</div>
+        <div class="bio-highlight"><strong>Alphabet</strong> (current) Engineering lead for emergent AI. Video, music, writing, art.</div>
+        <div class="bio-highlight"><strong>Stanford Medicine</strong> Tumor board advisor.</div>
+        <div class="bio-highlight"><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</div>
+        <div class="bio-caption">With Lee Hood at the AI Cancer Forum I started.</div>
+      </div>
     </div>
 
     <ul class="lines">
       <li><strong>IBM</strong> Technical Assistant to CEO. Early web infrastructure.</li>
       <li><strong>Photobucket</strong> Scaled photo platform to 1B+ images.</li>
       <li><strong>PwC</strong> Chief Technology Advisor.</li>
-      <li><strong>Google Cloud</strong> Founded Applied AI. CTO office (8 yrs): NASA, multiomics, video.</li>
-      <li><strong>Alphabet</strong> (current) Leading engineering for emergent AI. Enabling creators to tell stories through video, music, writing, and art.</li>
-      <li><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</li>
-      <li><strong>Stanford Medicine</strong> Tumor board advisor.</li>
     </ul>
-
-    <div class="photo-inline">
-      <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
-      <div class="photo-caption">
-        With Lee Hood at the AI Cancer Forum I started. Clinicians and scientists applying these ideas daily.
-      </div>
-    </div>
 
     <hr class="rule" />
 
