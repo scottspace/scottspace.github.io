@@ -229,23 +229,40 @@
       font-style: italic;
     }
 
-    .photo-tooltip{
+    .hover-tooltip{
       position: fixed;
       pointer-events: none;
       z-index: 1000;
-      width: 440px;
-      border-radius: 12px;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      border-radius: 6px;
       opacity: 0;
       transition: opacity 0.2s ease;
       overflow: hidden;
       transform: translate(-50%, -105%);
+      border: 4px solid #fff;
+      outline: 1px solid rgba(0,0,0,0.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
     }
 
-    .photo-tooltip img{
+    .hover-tooltip img{
+      display: block;
+    }
+
+    .hover-tooltip.photo{
+      width: 220px;
+    }
+
+    .hover-tooltip.photo img{
       width: 100%;
       height: auto;
-      display: block;
+    }
+
+    .hover-tooltip.pdf{
+      width: 180px;
+    }
+
+    .hover-tooltip.pdf img{
+      width: 100%;
+      height: auto;
     }
 
     .bio-details{
@@ -481,7 +498,7 @@
     </div>
 
     <ul class="lines">
-      <li><a href="/edge.pdf" target="_blank"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
+      <li><a href="/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
       <li><strong>Watts, Tokens, Money</strong> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
       <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
       <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
@@ -495,8 +512,12 @@
       computation to work where analytical solutions fall short.
     </div>
 
-    <div class="photo-tooltip" id="photoTooltip">
+    <div class="hover-tooltip photo" id="photoTooltip">
       <img src="images/hero.png" alt="" />
+    </div>
+
+    <div class="hover-tooltip pdf" id="pdfTooltip">
+      <img src="images/edge-cover.png" alt="" />
     </div>
 
     <div class="bio-photo" id="bioPhoto">
@@ -538,20 +559,19 @@
   </div>
 
   <script>
-    (function(){
-      var tip = document.getElementById('photoTooltip');
-      var photo = document.getElementById('bioPhoto');
-      photo.addEventListener('mouseenter', function(){
-        tip.style.opacity = '1';
-      });
-      photo.addEventListener('mouseleave', function(){
-        tip.style.opacity = '0';
-      });
-      photo.addEventListener('mousemove', function(e){
+    function attachTooltip(triggerId, tipId){
+      var trigger = document.getElementById(triggerId);
+      var tip = document.getElementById(tipId);
+      if(!trigger || !tip) return;
+      trigger.addEventListener('mouseenter', function(){ tip.style.opacity = '1'; });
+      trigger.addEventListener('mouseleave', function(){ tip.style.opacity = '0'; });
+      trigger.addEventListener('mousemove', function(e){
         tip.style.left = e.clientX + 'px';
         tip.style.top = e.clientY + 'px';
       });
-    })();
+    }
+    attachTooltip('bioPhoto', 'photoTooltip');
+    attachTooltip('edgeLink', 'pdfTooltip');
 
     function handleRadar(e){
       e.preventDefault();
