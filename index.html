@@ -217,6 +217,7 @@
       height: auto;
       border-radius: 14px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      margin-bottom: 8px;
     }
 
     .bio-details{
@@ -251,6 +252,18 @@
       color:#222;
       max-width: 66ch;
       margin-bottom: 16px;
+    }
+
+    .lede a{
+      color: #222;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(0,0,0,0.3);
+      transition: text-decoration-color .15s;
+    }
+
+    .lede a:hover{
+      text-decoration-color: rgba(0,0,0,0.7);
     }
 
     .rule{
@@ -398,9 +411,10 @@
     </div>
 
     <div class="lede">
-      Everyone is talking about AI. I wanted to know where it’s actually working.
-      So I read the SEC filings and earnings calls of 3,338 US public companies
-      and built a tool to track every verified deployment.
+      I teach myself things by building. My latest hobby: I used
+      <a href="https://openclaw.ai" target="_blank" rel="noopener">Open Claw</a>
+      to read the SEC filings and earnings calls of 3,338 US public companies
+      and find where AI is actually working.
     </div>
 
     <div class="radar" id="radar">
@@ -412,18 +426,11 @@
           <input type="email" placeholder="your@email.com" required />
           <button type="submit">Get access</button>
         </form>
-        <div class="radar-thanks" id="radarThanks">Thanks. You'll hear from me soon.</div>
+        <div class="radar-thanks" id="radarThanks">Thanks. You’ll hear from me soon.</div>
       </div>
       <div class="radar-caption">
         AI Radar. 3,338 companies. 4,332 verified AI use cases. Built from SEC filings and earnings calls.
       </div>
-    </div>
-
-    <div class="section-title">Current Project</div>
-    <div class="body">
-      I analyzed SEC filings from 3,338 US public companies to find where AI is actually
-      deployed, not just announced. Evenings and weekends, me plus AI.
-      The findings are in three essays and a daily video series.
     </div>
 
     <ul class="lines">
@@ -435,30 +442,27 @@
 
     <hr class="rule" />
 
-    <div id="about" class="section-title">Background</div>
+    <div id="about" class="section-title">About</div>
     <div class="body">
-      MIT at 16. PhD in AI. Thirty years building things that put computation
-      to work where analytical solutions fall short.
+      MIT at 16. PhD in AI. I’ve spent thirty years building things that put
+      computation to work where analytical solutions fall short.
     </div>
 
     <div class="bio-row">
       <div class="bio-photo">
         <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
-      </div>
-      <div class="bio-details">
-        <div class="bio-highlight"><strong>Google Cloud</strong> Founded Applied AI. CTO office (8 yrs). NASA, multiomics, video.</div>
-        <div class="bio-highlight"><strong>Alphabet</strong> (current) Engineering lead for emergent AI. Video, music, writing, art.</div>
-        <div class="bio-highlight"><strong>Stanford Medicine</strong> Tumor board advisor.</div>
-        <div class="bio-highlight"><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</div>
         <div class="bio-caption">With Lee Hood at the AI Cancer Forum I started.</div>
       </div>
+      <div class="bio-details">
+        <div class="bio-highlight"><strong>Alphabet</strong> (current) Engineering lead for emergent AI. Video, music, writing, art.</div>
+        <div class="bio-highlight"><strong>Google Cloud</strong> Founded Applied AI. CTO office (8 yrs). NASA, multiomics, video.</div>
+        <div class="bio-highlight"><strong>Stanford Medicine</strong> Tumor board advisor.</div>
+        <div class="bio-highlight"><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</div>
+        <div class="bio-highlight"><strong>PwC</strong> Chief Technology Advisor.</div>
+        <div class="bio-highlight"><strong>Photobucket</strong> Scaled photo platform to 1B+ images.</div>
+        <div class="bio-highlight"><strong>IBM</strong> Technical Assistant to CEO. Early web infrastructure.</div>
+      </div>
     </div>
-
-    <ul class="lines">
-      <li><strong>IBM</strong> Technical Assistant to CEO. Early web infrastructure.</li>
-      <li><strong>Photobucket</strong> Scaled photo platform to 1B+ images.</li>
-      <li><strong>PwC</strong> Chief Technology Advisor.</li>
-    </ul>
 
     <hr class="rule" />
 
