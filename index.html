@@ -460,13 +460,40 @@
 
     .footer{
       margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(0,0,0,0.10);
+      padding-top: 18px;
+      border-top: 2px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.82rem;
       color: var(--muted);
-      font-style: italic;
+    }
+
+    .footer a{
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer a:hover{
+      color: var(--ink);
+    }
+
+    .footer-left{
       font-family:'Libre Baskerville',Georgia,serif;
-      line-height:1.8;
-      max-width: 78ch;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-links{
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+    }
+
+    .footer-sep{
+      opacity: 0.3;
     }
 
     @media (max-width: 560px){
@@ -578,7 +605,14 @@
     </div>
 
     <div class="footer">
-      scott@scott.ai
+      <div class="footer-left">Scott Penberthy <span class="footer-sep">/</span> MIT. PhD in AI. Building since 1993.</div>
+      <div class="footer-links">
+        <a href="mailto:scott@scott.ai">scott@scott.ai</a>
+        <span class="footer-sep">/</span>
+        <a href="https://linkedin.com/in/scottpenberthy" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="footer-sep">/</span>
+        <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener">@tensordoc</a>
+      </div>
     </div>
 
   </div>
