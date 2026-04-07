@@ -49,13 +49,25 @@
       padding: 46px 22px 76px;
     }
 
-    /* Top bar */
+    /* Sticky header */
     .top{
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      margin-bottom: 16px;
+      padding: 16px 22px;
+      margin: 0 -22px 8px;
+      background: var(--bg);
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .top.stuck{
+      border-bottom-color: var(--ink);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
 
     .name{
@@ -572,6 +584,17 @@
   </div>
 
   <script>
+    (function(){
+      var top = document.querySelector('.top');
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 10){
+          top.classList.add('stuck');
+        } else {
+          top.classList.remove('stuck');
+        }
+      });
+    })();
+
     function attachTooltip(triggerId, tipId){
       var trigger = document.getElementById(triggerId);
       var tip = document.getElementById(tipId);
