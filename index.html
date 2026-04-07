@@ -83,8 +83,8 @@
       transform: translateY(-1px);
     }
 
-    /* Hero image */
-    .hero{
+    /* Live radar embed */
+    .radar{
       border-radius: var(--radius);
       overflow:hidden;
       box-shadow: var(--shadow);
@@ -93,21 +93,55 @@
       margin: 14px 0 26px;
     }
 
-    .hero img{
+    .radar iframe{
       width:100%;
-      height: auto;
+      height: 680px;
       display:block;
-      filter: saturate(1.02) contrast(1.03);
+      border:0;
     }
 
-    .caption{
-      padding: 12px 14px 14px;
+    .radar-caption{
+      padding: 10px 14px;
       background: var(--panel);
       border-top: 1px solid rgba(0,0,0,0.06);
       color: var(--muted);
-      font-size: 0.95rem;
-      font-style: italic;
+      font-size: 0.88rem;
       line-height: 1.5;
+    }
+
+    .radar-caption a{
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(0,0,0,0.25);
+    }
+
+    .radar-caption a:hover{
+      color: var(--ink);
+    }
+
+    /* Inline photo */
+    .photo-inline{
+      display:flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 16px;
+    }
+
+    .photo-inline img{
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      flex-shrink: 0;
+    }
+
+    .photo-inline .photo-caption{
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-style: italic;
+      line-height: 1.55;
+      padding-top: 4px;
     }
 
     /* Typography blocks */
@@ -243,6 +277,9 @@
     @media (max-width: 560px){
       .lede{ font-size: 1.02rem; }
       .wrap{ padding: 36px 16px 68px; }
+      .photo-inline{ flex-direction: column; }
+      .photo-inline img{ width: 100%; max-width: 280px; }
+      .radar iframe{ height: 500px; }
     }
   </style>
 </head>
@@ -262,24 +299,33 @@
       </div>
     </div>
 
-    <div class="hero">
-      <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum / Google Cancer AI Symposium" />
-      <div class="caption">
-        With Lee Hood at the AI Cancer Forum I started. Clinicians and scientists applying these ideas daily.
-      </div>
-    </div>
-
     <div class="lede">
       In 1960, Katherine Johnson replaced Newtonian equations with raw compute to put astronauts in orbit.
       AI is the same idea, generalized. A universal approximator that learns from data
-      what symbolic math can't express.
-      I've spent thirty years applying that to finance, entertainment, video, science, and medicine.
+      what symbolic math can’t express.
+      I’ve spent thirty years applying that to finance, entertainment, video, science, and medicine.
     </div>
 
-    <div class="cta">
-      <a class="btn primary" href="#subscribe">Subscribe</a>
-      <a class="btn secondary" href="#about">About</a>
+    <div class="radar">
+      <iframe src="https://radar.scott.ai" title="AI Radar" loading="lazy" allow="clipboard-write"></iframe>
+      <div class="radar-caption">
+        <a href="https://radar.scott.ai" target="_blank">AI Radar</a>. 3,338 companies. 4,332 verified AI use cases. Built from SEC filings and earnings calls.
+      </div>
     </div>
+
+    <div class="section-title">Current Project</div>
+    <div class="body">
+      I analyzed SEC filings from 3,227 US public companies to find where AI is actually
+      deployed, not just announced. Evenings and weekends, me plus AI.
+      The findings are in three essays and a daily video series.
+    </div>
+
+    <ul class="lines">
+      <li><a href="/edge.pdf" target="_blank"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
+      <li><strong>Watts, Tokens, Money</strong> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
+      <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
+      <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
+    </ul>
 
     <hr class="rule" />
 
@@ -300,21 +346,12 @@
       <li><strong>Stanford Medicine</strong> Tumor board advisor.</li>
     </ul>
 
-    <hr class="rule" />
-
-    <div class="section-title">Current Project</div>
-    <div class="body">
-      I analyzed SEC filings from 3,227 US public companies to find where AI is actually
-      deployed, not just announced. 4,398 verified use cases. Evenings and weekends, me plus AI.
-      The findings are in three essays and a daily video series.
+    <div class="photo-inline">
+      <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
+      <div class="photo-caption">
+        With Lee Hood at the AI Cancer Forum I started. Clinicians and scientists applying these ideas daily.
+      </div>
     </div>
-
-    <ul class="lines">
-      <li><a href="/edge.pdf" target="_blank"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
-      <li><strong>Watts, Tokens, Money</strong> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
-      <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
-      <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
-    </ul>
 
     <hr class="rule" />
 
