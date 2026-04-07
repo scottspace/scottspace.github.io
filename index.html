@@ -198,50 +198,67 @@
       line-height: 1.5;
     }
 
-    /* Bio row: photo + highlights */
+    /* Bio section */
     .bio-row{
       display: flex;
-      gap: 24px;
+      gap: 28px;
       align-items: flex-start;
-      margin-top: 16px;
+      margin-top: 20px;
       margin-bottom: 8px;
     }
 
     .bio-photo{
       flex-shrink: 0;
-      width: 240px;
+      width: 220px;
     }
 
     .bio-photo img{
       width: 100%;
       height: auto;
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-      margin-bottom: 8px;
-    }
-
-    .bio-details{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding-top: 2px;
-    }
-
-    .bio-highlight{
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #333;
-    }
-
-    .bio-highlight strong{
-      color: #111;
+      margin-bottom: 10px;
     }
 
     .bio-caption{
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-style: italic;
-      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .bio-details{
+      flex: 1;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0;
+    }
+
+    .bio-co, .bio-desc{
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .bio-co{
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .bio-desc{
+      color: #444;
+    }
+
+    .bio-tag{
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.82rem;
+    }
+
+    .bio-details .bio-co:last-of-type,
+    .bio-details .bio-desc:last-of-type{
+      border-bottom: none;
     }
 
     /* Typography blocks */
@@ -398,6 +415,9 @@
       .wrap{ padding: 36px 16px 68px; }
       .bio-row{ flex-direction: column; }
       .bio-photo{ width: 100%; max-width: 280px; }
+      .bio-details{ grid-template-columns: 1fr; }
+      .bio-co{ padding-bottom: 0; border-bottom: none; }
+      .bio-desc{ padding-top: 2px; }
     }
   </style>
 </head>
@@ -460,13 +480,20 @@
         <div class="bio-caption">With Lee Hood at the AI Cancer Forum I started.</div>
       </div>
       <div class="bio-details">
-        <div class="bio-highlight"><strong>Alphabet</strong> (current) Engineering lead for emergent AI. Video, music, writing, art.</div>
-        <div class="bio-highlight"><strong>Google Cloud</strong> Founded Applied AI. CTO office (8 yrs). NASA, multiomics, video.</div>
-        <div class="bio-highlight"><strong>Stanford Medicine</strong> Tumor board advisor.</div>
-        <div class="bio-highlight"><strong>Lustgarten Foundation</strong> Board member. Pancreatic cancer research.</div>
-        <div class="bio-highlight"><strong>PwC</strong> Chief Technology Advisor.</div>
-        <div class="bio-highlight"><strong>Photobucket</strong> Scaled photo platform to 1B+ images.</div>
-        <div class="bio-highlight"><strong>IBM</strong> Technical Assistant to CEO. Early web infrastructure.</div>
+        <div class="bio-co">Alphabet <span class="bio-tag">(current)</span></div>
+        <div class="bio-desc">Engineering lead, emergent AI. Video, music, writing, art.</div>
+        <div class="bio-co">Google Cloud</div>
+        <div class="bio-desc">Founded Applied AI. CTO office (8 yrs). NASA, multiomics, video.</div>
+        <div class="bio-co">Stanford Medicine</div>
+        <div class="bio-desc">Tumor board advisor.</div>
+        <div class="bio-co">Lustgarten</div>
+        <div class="bio-desc">Board member. Pancreatic cancer research.</div>
+        <div class="bio-co">PwC</div>
+        <div class="bio-desc">Chief Technology Advisor.</div>
+        <div class="bio-co">Photobucket</div>
+        <div class="bio-desc">Scaled photo platform to 1B+ images.</div>
+        <div class="bio-co">IBM</div>
+        <div class="bio-desc">Technical Assistant to CEO. Early web infrastructure.</div>
       </div>
     </div>
 
