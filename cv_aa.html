@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Board Candidate Overview — Dr. Scott Penberthy</title>
+    <title>Chairman Brief — Scott Penberthy</title>
     <meta name="robots" content="noindex, nofollow" />
 
     <!-- Fonts -->
@@ -43,193 +43,80 @@
 
       /* Header */
       .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 32px;
+        margin-bottom: 36px;
         padding-bottom: 28px;
         border-bottom: 2px solid var(--navy);
       }
 
-      .header-left { flex: 1; }
-
-      .doc-label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 8px;
-      }
-
       .candidate-name {
         font-family: 'Libre Baskerville', Georgia, serif;
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 700;
         color: var(--navy);
         line-height: 1.15;
-        margin-bottom: 6px;
+        margin-bottom: 10px;
       }
 
-      .contact-info {
-        font-size: 13px;
-        color: var(--text-muted);
-      }
-
-      .contact-info a {
-        color: var(--text-muted);
-        text-decoration: none;
-        border-bottom: 1px solid var(--border);
-        transition: color 0.15s, border-color 0.15s;
-      }
-
-      .contact-info a:hover {
-        color: var(--navy);
-        border-color: var(--navy);
-      }
-
-      .confidential-badge {
-        border: 1.5px solid var(--gold);
-        color: var(--gold);
-        padding: 4px 10px;
-        font-size: 9px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        border-radius: var(--radius);
-        white-space: nowrap;
-        margin-top: 4px;
-      }
-
-      /* Tagline */
-      .tagline {
+      .buck-slip {
         font-family: 'Libre Baskerville', Georgia, serif;
         font-style: italic;
         font-size: 15.5px;
-        line-height: 1.55;
+        line-height: 1.5;
         color: var(--navy-light);
-        margin-bottom: 36px;
-        max-width: 640px;
       }
 
-      /* Sections */
-      section { margin-bottom: 28px; }
+      /* Narrative body */
+      .narrative {
+        margin-bottom: 36px;
+      }
 
-      h2 {
+      .narrative p {
+        color: var(--text-secondary);
+        line-height: 1.75;
+        margin-bottom: 20px;
+        font-size: 14.5px;
+      }
+
+      .narrative p:last-child {
+        margin-bottom: 0;
+      }
+
+      .narrative p strong {
+        color: var(--navy);
+        font-weight: 700;
+      }
+
+      /* Governance footer */
+      .governance {
+        margin-top: 36px;
+        padding-top: 20px;
+        border-top: 1px solid var(--gold);
+      }
+
+      .governance-label {
         font-family: 'Inter', sans-serif;
         font-size: 11px;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 2px;
         color: var(--navy);
-        margin-bottom: 14px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid var(--gold);
-        display: inline-block;
+        margin-bottom: 12px;
       }
 
-      section > p {
-        color: var(--text-secondary);
-        line-height: 1.7;
-        max-width: 660px;
-        margin-bottom: 0;
-      }
-
-      /* Career Grid */
-      .career-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .career-item {
-        display: grid;
-        grid-template-columns: 140px 1fr;
-        gap: 16px;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--border);
-        align-items: baseline;
-      }
-
-      .career-item:last-child { border-bottom: none; }
-
-      .company-name {
-        font-weight: 600;
-        color: var(--navy);
-        font-size: 14px;
-      }
-
-      .career-details {
-        color: var(--text-secondary);
-        line-height: 1.6;
-      }
-
-      /* Relevance List */
-      .relevance-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .relevance-list li {
-        position: relative;
-        padding: 10px 0 10px 20px;
-        border-bottom: 1px solid var(--border);
-        color: var(--text-secondary);
-        line-height: 1.6;
-      }
-
-      .relevance-list li:last-child { border-bottom: none; }
-
-      .relevance-list li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 16px;
-        width: 6px;
-        height: 6px;
-        background: var(--gold);
-        border-radius: 1px;
-      }
-
-      .relevance-list li strong {
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      /* Board Value Grid */
-      .board-value-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .board-value-item {
-        background: var(--bg-warm);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 16px 18px;
-        color: var(--text-secondary);
-        line-height: 1.55;
-        font-size: 13.5px;
-        border-left: 3px solid var(--gold);
-      }
-
-      /* Governance */
       .governance-list {
         list-style: none;
         padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 6px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 28px;
       }
 
       .governance-list li {
-        padding: 6px 0;
         color: var(--text-secondary);
         font-size: 13.5px;
       }
 
-      .governance-list li strong {
+      .governance-list li span {
         color: var(--text-muted);
         font-weight: 500;
         font-size: 10px;
@@ -237,30 +124,9 @@
         letter-spacing: 0.5px;
       }
 
-      /* Quick Facts Bar */
-      .quick-facts {
-        background: var(--navy);
-        color: #ffffff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px 28px;
-        margin-top: 36px;
-        border-radius: var(--radius);
-        font-weight: 600;
-        font-size: 12px;
-        letter-spacing: 0.3px;
-      }
-
-      .quick-facts .divider {
-        color: var(--gold);
-        font-weight: 400;
-        opacity: 0.5;
-      }
-
       /* Footer */
       .doc-footer {
-        margin-top: 20px;
+        margin-top: 28px;
         text-align: center;
         font-size: 11px;
         color: var(--text-muted);
@@ -270,152 +136,60 @@
       /* Print */
       @media print {
         body { padding: 24px 40px; font-size: 10pt; }
-        .quick-facts { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       }
 
       /* Mobile */
       @media (max-width: 600px) {
         body { padding: 28px 20px; }
-        .header { flex-direction: column; gap: 12px; }
         .candidate-name { font-size: 26px; }
-        .career-item { grid-template-columns: 1fr; gap: 2px; }
-        .board-value-grid { grid-template-columns: 1fr; }
-        .governance-list { grid-template-columns: 1fr; }
-        .quick-facts { flex-direction: column; gap: 8px; text-align: center; }
-        .quick-facts .divider { display: none; }
+        .governance-list { flex-direction: column; gap: 6px; }
       }
     </style>
   </head>
   <body>
 
     <div class="header">
-      <div class="header-left">
-        <div class="doc-label">Board Candidate Overview</div>
-        <h1 class="candidate-name">Dr. Scott Penberthy</h1>
-        <div class="contact-info"><a href="mailto:scott@scott.ai">scott@scott.ai</a></div>
-      </div>
-      <div class="confidential-badge">Confidential</div>
+      <h1 class="candidate-name">Scott Penberthy</h1>
+      <div class="buck-slip">Trusted advisor to CEOs and boards on how technology reshapes their business, and what to do about it.</div>
     </div>
 
-    <div class="tagline">
-      MIT at 16. PhD in AI. Builds commercial infrastructure around
-      major technology shifts, and has done so repeatedly at scale.
-    </div>
-
-    <section>
-      <h2>Professional Distinction</h2>
+    <div class="narrative">
       <p>
-        A rare operator-strategist who has scaled platforms from zero to enterprise-grade
-        across four distinct technology eras: the internet, social media, enterprise cloud,
-        and applied AI. Demonstrated pattern of translating frontier technology into
-        measurable commercial and operational impact. Trusted by CEOs, boards, and
-        government institutions alike.
+        <strong>IBM. The Internet.</strong>
+        Scott advised CEO Lou Gerstner during IBM's existential pivot to the web. He led how IBM engaged boards and customers on internet technologies, helping leadership understand where it would matter and how to act. This work contributed to a $4B hosting business and the middleware platform IBM WebSphere, which grew to $11B. It repositioned IBM for the internet era.
       </p>
-    </section>
 
-    <section>
-      <h2>Career at a Glance</h2>
-      <div class="career-grid">
-        <div class="career-item">
-          <div class="company-name">IBM</div>
-          <div class="career-details">
-            Built early internet platforms; grew technical team from 3 to 200+.
-            Contributed to ~$4B hosting business and IBM WebSphere (~$11B).
-            Served as Technical Assistant to CEO Lou Gerstner.
-          </div>
-        </div>
-        <div class="career-item">
-          <div class="company-name">Photobucket</div>
-          <div class="career-details">
-            Scaled social media platform to 50M users. Acquired for $300M.
-          </div>
-        </div>
-        <div class="career-item">
-          <div class="company-name">PwC</div>
-          <div class="career-details">
-            Led enterprise cloud transformation globally. Closed first financial services
-            deal for Google Cloud; deployed Google Workspace worldwide.
-          </div>
-        </div>
-        <div class="career-item">
-          <div class="company-name">Google Cloud</div>
-          <div class="career-details">
-            Built AI as a commercial platform across NASA (~30+ projects), healthcare
-            (Tempus, Elevance), and genomics. Grew to a multi-billion-dollar business.
-          </div>
-        </div>
-        <div class="career-item">
-          <div class="company-name">Alphabet (Current)</div>
-          <div class="career-details">
-            Leading next-generation AI systems. Contributed to video AI platform now at
-            ~$10B run rate. Focus: AI systems that model and optimize real-world environments.
-          </div>
-        </div>
-      </div>
-    </section>
+      <p>
+        <strong>PwC. The Millennial Workforce.</strong>
+        Scott advised CEO Bob Moritz on a generational workforce and technology shift. He aligned 160 territories and 6,000 partners to move from fragmented, locally controlled systems to public cloud. He addressed trust, control, and data governance at scale. He closed the first financial services deal for Google Cloud and enabled a broader transformation of how the firm operated and collaborated.
+      </p>
 
-    <section>
-      <h2>Relevance to American Airlines</h2>
-      <ul class="relevance-list">
-        <li>
-          <strong>Autonomous revenue management.</strong> AI that continuously optimizes
-          pricing, inventory, and yield across the network in real time. Replaces
-          rules-based systems with learned models that capture demand signals humans miss
-        </li>
-        <li>
-          <strong>AI agents across the service chain.</strong> Rebooking, disruption
-          recovery, and customer service handled by AI agents that act, not just recommend.
-          Lower cost per interaction. Faster resolution
-        </li>
-        <li>
-          <strong>Unified network optimization.</strong> Fleet routing, crew scheduling,
-          gate assignment, and maintenance windows solved as one continuously-optimizing
-          system instead of siloed tools. Billions in efficiency at stake
-        </li>
-        <li>
-          <strong>Safety and regulatory AI governance.</strong> The FAA is developing AI
-          oversight frameworks. AA needs board-level fluency in AI safety, risk, and policy.
-          Direct experience with NASA and federal AI programs
-        </li>
-        <li>
-          <strong>Proprietary AI as competitive moat.</strong> Carriers that build
-          AI infrastructure on their own operational data will structurally outperform
-          those that buy. Has built exactly this at Google scale
-        </li>
-      </ul>
-    </section>
+      <p>
+        <strong>Google Cloud. AI in Regulated Industries.</strong>
+        Scott built an AI partnership with NASA, delivering over two dozen projects and demonstrating practical applications in government environments. He then moved into healthcare and pharma, advising on how AI could improve patient and payer systems. He identified a new opportunity in genomics and drug discovery. This became one of the fastest-growing segments in Google Cloud, alongside securing the first multi-billion-dollar AI-driven contracts in pharma.
+      </p>
 
-    <section>
-      <h2>Board Value</h2>
-      <div class="board-value-grid">
-        <div class="board-value-item">Identifies inflection points before they become consensus</div>
-        <div class="board-value-item">Scales businesses from concept to commercial infrastructure</div>
-        <div class="board-value-item">Converts AI strategy into operational and economic advantage</div>
-        <div class="board-value-item">Proven boardroom translator between technology and enterprise leadership</div>
-      </div>
-    </section>
+      <p>
+        <strong>Alphabet. AI and the Creator Economy.</strong>
+        Scott advises on the impact of generative AI on content, advertising, and creative ecosystems. He helps leadership determine positioning, investment priorities, and responses to disruption as AI reshapes how content is created and monetized.
+      </p>
 
-    <section>
-      <h2>Governance &amp; Advisory</h2>
-      <ul class="governance-list">
-        <li><strong>Advisory,</strong> Stanford Medicine (tumor board, pharmacogenomics)</li>
-        <li><strong>Advisory,</strong> Marconi Foundation (AI)</li>
-        <li><strong>Advisory,</strong> NASA Frontier Development Lab</li>
-        <li><strong>Board,</strong> Lustgarten Foundation</li>
-      </ul>
-    </section>
-
-    <div class="quick-facts">
-      <span>$20B+ Business Impact</span>
-      <span class="divider">|</span>
-      <span>50M+ Users Scaled</span>
-      <span class="divider">|</span>
-      <span>Multiple 0&#8594;$B AI Businesses</span>
-      <span class="divider">|</span>
-      <span>Active CEO/Board Briefings</span>
+      <p>
+        <strong>Boards. Decisions Under Uncertainty.</strong>
+        Scott is frequently selected to work directly with boards and CEOs in moments of uncertainty. He clarifies what is real versus noise, where technology creates advantage, and how to move from concept to execution in large, complex organizations. He is typically engaged when leadership teams face irreversible decisions and need someone who has seen the pattern before.
+      </p>
     </div>
 
-    <div class="doc-footer">American Airlines Board Affairs · April 2026</div>
+    <div class="governance">
+      <div class="governance-label">Governance</div>
+      <ul class="governance-list">
+        <li><span>Advisory</span> Stanford Medicine</li>
+        <li><span>Board</span> Lustgarten Foundation</li>
+        <li><span>Advisory</span> Marconi Society</li>
+      </ul>
+    </div>
+
+    <div class="doc-footer">Chairman Brief &middot; April 2026</div>
 
   </body>
 </html>
