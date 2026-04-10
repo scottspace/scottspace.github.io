@@ -559,8 +559,8 @@
     </div>
 
     <ul class="lines">
-      <li><a href="/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
-      <li><strong>Watts, Tokens, Money</strong> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
+      <li><a href="/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
+      <li><a href="/insights/watts.pdf" target="_blank" id="wattsLink"><strong>Watts, Tokens &amp; Money</strong></a> Everyone is deploying AI. The winners are investing in what's underneath it.</li>
       <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
       <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" id="tiktokLink"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
     </ul>
@@ -579,6 +579,10 @@
 
     <div class="hover-tooltip pdf" id="pdfTooltip">
       <img src="images/edge-cover.png" alt="" />
+    </div>
+
+    <div class="hover-tooltip pdf" id="wattsTooltip">
+      <img src="images/watts-cover.png" alt="" />
     </div>
 
     <div class="hover-tooltip tiktok" id="tiktokTooltip">
@@ -655,6 +659,7 @@
     }
     attachTooltip('bioPhoto', 'photoTooltip');
     attachTooltip('edgeLink', 'pdfTooltip');
+    attachTooltip('wattsLink', 'wattsTooltip');
     attachTooltip('tiktokLink', 'tiktokTooltip');
 
     function handleRadar(e){
