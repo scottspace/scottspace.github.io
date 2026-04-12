@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scott Penberthy</title>
-  <meta name="description" content="Scott Penberthy — AI practitioner. I teach myself things by building." />
+  <title>Scott Penberthy — The Approximation Era</title>
+  <meta name="description" content="Scott Penberthy — Trusted advisor to CEOs and boards on technology shifts. The Approximation Era." />
   <link rel="canonical" href="https://scott.ai" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Scott Penberthy" />
-  <meta property="og:description" content="AI practitioner. I teach myself things by building." />
+  <meta property="og:title" content="Scott Penberthy — The Approximation Era" />
+  <meta property="og:description" content="AI is a universal approximator and generator. A new tool for science and business. This is not a tech trend. It's a phase change." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scott.ai" />
 
@@ -105,7 +105,32 @@
       transform: translateY(-1px);
     }
 
-    /* Radar hero */
+    /* Full-bleed visuals */
+    .visual{
+      margin: 28px -22px;
+      overflow: hidden;
+    }
+
+    .visual img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .visual-rounded{
+      margin: 28px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-rounded img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Radar */
     .radar{
       position: relative;
       border-radius: var(--radius);
@@ -352,6 +377,16 @@
       text-decoration-color: rgba(0,0,0,0.7);
     }
 
+    .prose{
+      font-size: 1.0rem;
+      line-height: 1.8;
+      color:#2f2f2f;
+      max-width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .prose strong{ color:#111; }
+
     .rule{
       border: none;
       border-top: 1px solid var(--hair);
@@ -401,56 +436,6 @@
 
     .lines a:hover{
       text-decoration-color: rgba(0,0,0,0.6);
-    }
-
-    /* CTA */
-    .cta{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-      margin-top: 10px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 11px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,0.14);
-      text-decoration:none;
-      font-weight:600;
-      font-size:0.95rem;
-      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-      user-select:none;
-    }
-
-    .btn.primary{
-      background:#111;
-      color:#fff;
-      border-color:#111;
-    }
-
-    .btn.primary:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
-    }
-
-    .btn.secondary{
-      background:#fff;
-      color:#111;
-    }
-
-    .btn.secondary:hover{
-      transform: translateY(-1px);
-      border-color: rgba(0,0,0,0.20);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    }
-
-    .micro{
-      color: var(--muted);
-      font-size: 0.95rem;
     }
 
     .subscribe-link{
@@ -509,6 +494,7 @@
     @media (max-width: 560px){
       .lede{ font-size: 1.02rem; }
       .wrap{ padding: 36px 16px 68px; }
+      .visual{ margin: 20px -16px; }
       .bio-photo img{ height: 160px; }
       .bio-details{ grid-template-columns: 1fr; }
       .bio-co{ padding-bottom: 0; border-bottom: none; }
@@ -523,7 +509,7 @@
     <div class="top">
       <div class="name-block">
         <div class="name">Scott Penberthy</div>
-        <div class="tagline-sm">MIT. PhD in AI. Alphabet.</div>
+        <div class="tagline-sm">The Approximation Era</div>
       </div>
       <div class="icons" aria-label="Social links">
         <a href="https://www.linkedin.com/in/tensordoc/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -535,10 +521,66 @@
       </div>
     </div>
 
+    <!-- Hero visual -->
+    <div class="visual">
+      <img src="images/hero-chalkboard.png" alt="Chalkboard covered in orbital trajectory equations and Euler's method" />
+    </div>
+
+    <!-- The thesis -->
     <div class="lede">
-      I learn by building. At Google I helped 300 companies deploy AI,
-      initiated $2B in healthcare deals, and ran projects for <a href="https://www.youtube.com/watch?v=RtAtsEyAWA4" target="_blank" rel="noopener">NASA</a>.
-      I wanted to see what all 3,338 public companies were doing.
+      In 1962 John Glenn refused to board his rocket until Katherine Johnson
+      checked the numbers. She approximated his re-entry trajectory by hand,
+      one calculation per second, using Euler's method. It saved his life.
+      Today we run that same math trillions of times per second, across
+      thousands of processors, on trillions of times more data. We have
+      built a universal approximator and a universal generator. Two new
+      tools for science and business.
+    </div>
+
+    <!-- The insight -->
+    <div class="prose">
+      Feed a model enough low-level data over time and something remarkable
+      happens. Pixels over time, and it learns physics, fluid motion,
+      lighting, emotion, cinema. Nucleotides over time, and it learns how
+      proteins fold, how genes express, how cancer progresses. The same
+      architecture, the same math, working across physics, biology, and
+      creativity. That's astonishing.
+    </div>
+
+    <div class="prose">
+      But it shouldn't be. Differential equations did the same thing.
+      Newton's laws were wrong. They were approximations. But they were
+      close enough to build bridges, predict tides, and send Katherine
+      Johnson's calculations into orbit. We traded pen and paper for
+      calculus, and it gave us the modern world.
+    </div>
+
+    <div class="prose">
+      Now we're making the same trade again. Calculus for compute. The
+      answers are still wrong. But they're less wrong, and getting less
+      wrong fast. Less wrong enough to generate photorealistic video.
+      Less wrong enough to predict protein structures that won a Nobel
+      Prize. Less wrong enough to redesign how drugs are discovered.
+      This is what a phase change looks like.
+    </div>
+
+    <div class="prose">
+      Most leadership teams don't yet understand what this means for
+      their business.
+    </div>
+
+    <!-- Mid-break visual -->
+    <div class="visual">
+      <img src="images/midbreak.png" alt="Data streams converging" />
+    </div>
+
+    <!-- The evidence -->
+    <div class="prose">
+      I scanned 3,338 public companies to find out who actually gets this.
+      I pointed AI agents at every earnings call, every 10-K, every press
+      release, and extracted 4,332 verified AI deployments. The gap between
+      the companies that understand this phase change and the ones doing
+      window dressing is enormous.
     </div>
 
     <div class="radar" id="radar">
@@ -551,27 +593,42 @@
           <input type="email" placeholder="your@email.com" required />
           <button type="submit">Get access</button>
         </form>
-        <div class="radar-thanks" id="radarThanks">Thanks. You’ll hear from me soon.</div>
+        <div class="radar-thanks" id="radarThanks">Thanks. You'll hear from me soon.</div>
       </div>
       <div class="radar-caption">
         AI Radar. 3,338 companies. 4,332 use cases. Extracted by AI agents.
       </div>
     </div>
 
+    <!-- What the data tells me -->
+    <div class="prose">Here's what the data tells me.</div>
+
     <ul class="lines">
-      <li><a href="https://scott.ai/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> Where AI is eating the middle of every job, and what survives.</li>
-      <li><a href="https://scott.ai/insights/watts.pdf" target="_blank" id="wattsLink"><strong>Watts, Tokens &amp; Money</strong></a> Value flows downward in the AI economy. Energy wins. Pure software loses.</li>
-      <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing.</li>
-      <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" id="tiktokLink"><strong>@tensordoc</strong></a> Daily video case studies on TikTok, YouTube, and Instagram.</li>
+      <li><a href="https://scott.ai/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
+      <li><a href="https://scott.ai/insights/watts.pdf" target="_blank" id="wattsLink"><strong>Watts, Tokens &amp; Money</strong></a> Value flows downward in the AI economy. Energy wins. Pure software loses. The companies that control watts and silicon will own the next decade.</li>
+      <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing. They automate the periphery and leave the core business untouched.</li>
     </ul>
 
     <hr class="rule" />
 
-    <div id="about" class="section-title">About</div>
-    <div class="body">
-      MIT at 16. PhD in AI. I’ve spent thirty years building things that put
-      computation to work where analytical solutions fall short.
+    <!-- The canon -->
+    <div class="prose">
+      AGI is arriving. We are the last feral humans, the last generation
+      that grew up without machine intelligence as a daily companion.
+      Someone should be documenting this.
     </div>
+
+    <ul class="lines">
+      <li><a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener"><strong>AI Money Moves</strong></a> One AI deployment that moved a number. Every day.
+        <a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener" class="subscribe-link">Subscribe</a>
+      </li>
+      <li><a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" id="tiktokLink"><strong>@tensordoc</strong></a> Daily video documenting the transition. TikTok, YouTube, Instagram.</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <!-- About -->
+    <div id="about" class="section-title">About</div>
 
     <div class="hover-tooltip photo" id="photoTooltip">
       <img src="images/hero.png" alt="" />
@@ -596,29 +653,40 @@
       </div>
     </div>
 
+    <div class="prose" style="margin-top: 20px;">
+      I've been in the room for four of these shifts. I advised Lou Gerstner
+      as IBM bet the company on the internet. That work grew into a $15B
+      business. I was Chief Technology Advisor to Bob Moritz as PwC moved
+      6,000 partners and 160 territories to cloud. I built Google Cloud's AI
+      business from <a href="https://www.youtube.com/watch?v=RtAtsEyAWA4" target="_blank" rel="noopener">NASA</a>
+      to healthcare to genomics, growing it into one of
+      Cloud's fastest segments. Now at Alphabet I work on generative AI,
+      where the same pattern is playing out in content and advertising.
+    </div>
+
+    <div class="prose">
+      Every time, I go hands-on first. I learn the technology deeply,
+      figure out where it's headed, and bring what I find to CEOs and
+      boards. That's what I do.
+    </div>
+
     <div class="bio-details">
       <div class="bio-co">Alphabet <span class="bio-tag">(current)</span></div>
-      <div class="bio-desc">Engineering lead, emergent AI. Video, music, writing, art.</div>
+      <div class="bio-desc">Advises leadership on generative AI, content, and advertising.</div>
       <div class="bio-co">Google Cloud</div>
-      <div class="bio-desc">Founded Applied AI. CTO office (9 yrs). NASA, multiomics, video.</div>
+      <div class="bio-desc">Founded Applied AI. NASA, healthcare, genomics. Multi-billion-dollar business.</div>
+      <div class="bio-co">PwC</div>
+      <div class="bio-desc">Chief Technology Advisor to CEO Bob Moritz. Global cloud transformation.</div>
       <div class="bio-co">Stanford Medicine</div>
       <div class="bio-desc">Tumor board and pharmacogenomics advisor.</div>
       <div class="bio-co">Lustgarten</div>
       <div class="bio-desc">Board member. Pancreatic cancer research.</div>
-      <div class="bio-co">PwC</div>
-      <div class="bio-desc">Chief Technology Advisor.</div>
+      <div class="bio-co">Marconi Foundation</div>
+      <div class="bio-desc">Advisory board.</div>
       <div class="bio-co">Photobucket</div>
-      <div class="bio-desc">Scaled photo platform to 1B+ images.</div>
+      <div class="bio-desc">Scaled platform to 50M users. Acquired for $300M.</div>
       <div class="bio-co">IBM</div>
-      <div class="bio-desc">Technical Assistant to CEO. Early web infrastructure.</div>
-    </div>
-
-    <hr class="rule" />
-
-    <div id="subscribe" class="section-title">AI Money Moves</div>
-    <div class="body">
-      A daily case study of an AI deployment that moved a number.
-      <a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener" class="subscribe-link">Subscribe</a>
+      <div class="bio-desc">Advised CEO Lou Gerstner. Internet infrastructure. $15B impact.</div>
     </div>
 
     <div class="footer">
@@ -665,7 +733,6 @@
     function handleRadar(e){
       e.preventDefault();
       var email = e.target.querySelector('input').value;
-      // Send to your endpoint when ready. For now, mailto fallback.
       window.location.href = 'mailto:scott@scott.ai?subject=AI Radar Access&body=Please add me: ' + encodeURIComponent(email);
       document.getElementById('radarForm').style.display = 'none';
       document.getElementById('radarThanks').style.display = 'block';
