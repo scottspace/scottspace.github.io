@@ -105,26 +105,15 @@
       transform: translateY(-1px);
     }
 
-    /* Full-bleed visuals */
+    /* Visuals */
     .visual{
-      margin: 28px -22px;
-      overflow: hidden;
-    }
-
-    .visual img{
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .visual-rounded{
       margin: 28px 0;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
-    .visual-rounded img{
+    .visual img{
       width: 100%;
       height: auto;
       display: block;
@@ -494,7 +483,7 @@
     @media (max-width: 560px){
       .lede{ font-size: 1.02rem; }
       .wrap{ padding: 36px 16px 68px; }
-      .visual{ margin: 20px -16px; }
+      .visual{ margin: 20px 0; }
       .bio-photo img{ height: 160px; }
       .bio-details{ grid-template-columns: 1fr; }
       .bio-co{ padding-bottom: 0; border-bottom: none; }
@@ -521,23 +510,27 @@
       </div>
     </div>
 
-    <!-- Hero visual -->
-    <div class="visual">
-      <img src="images/hero-chalkboard.png" alt="Chalkboard covered in orbital trajectory equations and Euler's method" />
-    </div>
-
-    <!-- The thesis -->
+    <!-- Beat 1: The story -->
     <div class="lede">
       In 1962 John Glenn refused to board his rocket until Katherine Johnson
       checked the numbers. She approximated his re-entry trajectory by hand,
       one calculation per second, using Euler's method. It saved his life.
+    </div>
+
+    <!-- Beat 2: The scale -->
+    <div class="prose">
       Today we run that same math trillions of times per second, across
       thousands of processors, on trillions of times more data. We have
       built a universal approximator and a universal generator. Two new
       tools for science and business.
     </div>
 
-    <!-- The insight -->
+    <!-- Hero visual -->
+    <div class="visual">
+      <img src="images/hero-chalkboard.png" alt="Chalkboard covered in orbital trajectory equations and Euler's method" />
+    </div>
+
+    <!-- Beat 3: The trick -->
     <div class="prose">
       Feed a model enough low-level data over time and something remarkable
       happens. Pixels over time, and it learns physics, fluid motion,
@@ -547,38 +540,34 @@
     </div>
 
     <!-- Cat memes to cancer -->
-    <div class="visual-rounded">
+    <div class="visual">
       <img src="images/catmemes-cancer.png" alt="Cat memes and cancer research connected by the same mathematics" />
     </div>
 
+    <!-- Beat 4: The precedent -->
     <div class="prose">
-      Differential equations did the same thing. Newton was wrong. But he
-      was close enough to build bridges and predict tides. We traded pen
-      and paper for calculus, and it gave us the modern world. Now we're
-      making that trade again. Calculus for compute. The answers are still
-      wrong, but less wrong, and getting less wrong fast. Less wrong enough
-      to generate photorealistic video, predict protein structures that won
-      a Nobel Prize, and redesign how drugs are discovered. This is what a
-      phase change looks like.
+      Differential equations did the same thing. Newton was wrong, but close
+      enough to build bridges and predict tides. We traded pen and paper for
+      calculus, and it gave us the modern world. Now we're making that trade
+      again. Calculus for compute. The answers are still wrong, but less
+      wrong, and getting less wrong fast. Less wrong enough to generate
+      photorealistic video, predict protein structures that won a Nobel
+      Prize, and redesign how drugs are discovered.
     </div>
 
-    <!-- Mid-break visual -->
+    <!-- Beat 5: The stakes -->
     <div class="visual">
       <img src="images/midbreak.png" alt="Data streams converging" />
     </div>
 
     <div class="prose">
-      Most leadership teams don't yet understand what this means for
-      their business.
-    </div>
-
-    <!-- The evidence -->
-    <div class="prose">
-      I scanned 3,338 public companies to find out who actually gets this.
-      I pointed AI agents at every earnings call, every 10-K, every press
-      release, and extracted 4,332 verified AI deployments. The gap between
-      the companies that understand this phase change and the ones doing
-      window dressing is enormous.
+      This is what a phase change looks like. Most leadership teams don't
+      yet understand what it means for their business. I scanned 3,338
+      public companies to find out who actually gets this. I pointed AI
+      agents at every earnings call, every 10-K, every press release, and
+      extracted 4,332 verified AI deployments. The gap between the companies
+      that understand this shift and the ones doing window dressing is
+      enormous.
     </div>
 
     <div class="radar" id="radar">
@@ -597,9 +586,6 @@
         AI Radar. 3,338 companies. 4,332 use cases. Extracted by AI agents.
       </div>
     </div>
-
-    <!-- What the data tells me -->
-    <div class="prose">Here's what the data tells me.</div>
 
     <ul class="lines">
       <li><a href="https://scott.ai/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
