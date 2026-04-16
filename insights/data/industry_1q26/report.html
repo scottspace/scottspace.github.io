@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The 1Q26 Industry AI Report</title>
+  <style>
+    /* --------------------- page setup --------------------- */
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Charter", "Iowan Old Style", "Georgia", serif;
+      font-size: 14pt;
+      line-height: 1.55;
+      color: #1b1d24;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1, h2, h3, .sans {
+      font-family: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    /* --------------------- cover page --------------------- */
+    .cover {
+      page: cover;
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      page-break-after: always;
+    }
+    .cover .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("images/cover.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .cover .veil {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(10, 14, 28, 0.25) 0%,
+          rgba(10, 14, 28, 0.35) 45%,
+          rgba(10, 14, 28, 0.92) 100%);
+    }
+    .cover .frame {
+      position: absolute;
+      inset: 0.45in;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      pointer-events: none;
+    }
+    .cover .content {
+      position: absolute;
+      inset: 0;
+      padding: 0.85in 0.9in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover .eyebrow {
+      font-family: "Inter", sans-serif;
+      font-size: 11pt;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: #f1c65b;
+      font-weight: 600;
+    }
+    .cover .rule {
+      width: 72px;
+      height: 3px;
+      background: #f1c65b;
+      margin: 18pt 0 28pt 0;
+    }
+    .cover h1 {
+      font-size: 56pt;
+      line-height: 1.02;
+      font-weight: 800;
+      margin: 0 0 18pt 0;
+      color: #fff;
+      max-width: 6.6in;
+    }
+    .cover h1 .amp {
+      color: #f1c65b;
+      font-style: italic;
+      font-weight: 700;
+    }
+    .cover .subtitle {
+      font-family: "Charter", "Georgia", serif;
+      font-size: 20pt;
+      line-height: 1.35;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 6.0in;
+      font-weight: 400;
+    }
+    .cover .attribution {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20pt;
+    }
+    .cover .attribution .byline {
+      font-family: "Inter", sans-serif;
+    }
+    .cover .attribution .byline .name {
+      font-size: 17pt;
+      font-weight: 600;
+      color: #fff;
+    }
+    .cover .attribution .byline .handle {
+      font-size: 12pt;
+      color: #f1c65b;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 4pt;
+    }
+    .cover .attribution .meta {
+      text-align: right;
+      font-family: "Inter", sans-serif;
+      font-size: 10pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.8;
+    }
+
+    /* --------------------- content pages --------------------- */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+    .page-inner {
+      padding: 0.65in 0.75in 0.7in 0.75in;
+      height: 100%;
+    }
+
+    /* Methodology / intro page */
+    .intro .kicker {
+      font-family: "Inter", sans-serif;
+      font-size: 11pt;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #b58414;
+      font-weight: 600;
+      margin-bottom: 8pt;
+    }
+    .intro h2 {
+      font-size: 30pt;
+      font-weight: 800;
+      line-height: 1.12;
+      margin: 0 0 18pt 0;
+      color: #0a0e1c;
+      max-width: 6.2in;
+    }
+    .intro .lede {
+      font-size: 16pt;
+      line-height: 1.5;
+      color: #2b2f3a;
+      margin: 0 0 22pt 0;
+      max-width: 6.4in;
+    }
+    .intro h3 {
+      font-size: 15pt;
+      font-weight: 700;
+      margin: 24pt 0 8pt 0;
+      color: #0a0e1c;
+    }
+    .intro p {
+      margin: 0 0 12pt 0;
+    }
+    .intro .tier-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16pt;
+      margin: 18pt 0 0 0;
+    }
+    .intro .tier {
+      padding: 16pt 18pt;
+      border-radius: 10pt;
+      border: 1px solid rgba(10,14,28,0.08);
+    }
+    .intro .tier.winners {
+      background: #f4faf4;
+      border-color: #c8e4cc;
+    }
+    .intro .tier.losers {
+      background: #fbf5ec;
+      border-color: #ebd6b3;
+    }
+    .intro .tier .label {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 10pt;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 6pt;
+    }
+    .intro .tier.winners .label { color: #1f6b3a; }
+    .intro .tier.losers  .label { color: #9a5a12; }
+    .intro .tier p { margin: 0; font-size: 13pt; }
+
+    .intro .intent-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14pt;
+      margin: 14pt 0 0 0;
+    }
+    .intro .intent {
+      padding: 16pt 16pt 14pt 16pt;
+      border-radius: 10pt;
+      background: #f4f6fb;
+      border: 1px solid rgba(10,14,28,0.08);
+    }
+    .intro .intent .label {
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 11pt;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #b58414;
+      margin-bottom: 6pt;
+    }
+    .intro .intent .name {
+      font-family: "Charter", "Georgia", serif;
+      font-size: 14pt;
+      font-weight: 700;
+      color: #0a0e1c;
+      margin-bottom: 6pt;
+    }
+    .intro .intent p {
+      font-size: 12pt;
+      line-height: 1.45;
+      margin: 0;
+      color: #2b2f3a;
+    }
+
+    .intro .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16pt;
+      margin: 10pt 0 22pt 0;
+      padding: 16pt 0;
+      border-top: 1px solid rgba(10,14,28,0.12);
+      border-bottom: 1px solid rgba(10,14,28,0.12);
+    }
+    .intro .stat .num {
+      font-family: "Inter", sans-serif;
+      font-size: 26pt;
+      font-weight: 800;
+      color: #0a0e1c;
+      line-height: 1;
+      margin-bottom: 4pt;
+    }
+    .intro .stat .lbl {
+      font-family: "Inter", sans-serif;
+      font-size: 10pt;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6b6f7b;
+      font-weight: 600;
+    }
+
+    .intro .disclaimer {
+      margin-top: 18pt;
+      padding-top: 10pt;
+      border-top: 1px solid rgba(10,14,28,0.14);
+    }
+    .intro .disclaimer p {
+      font-family: "Inter", sans-serif;
+      font-size: 9pt;
+      line-height: 1.45;
+      margin: 0 0 6pt 0;
+      color: #6b6f7b;
+    }
+    .intro .disclaimer p:last-child { margin-bottom: 0; }
+    .intro .disclaimer .lbl {
+      font-weight: 700;
+      color: #36394a;
+    }
+
+    /* Industry section — McKinsey-style editorial layout */
+    .section .number {
+      font-family: "Inter", sans-serif;
+      font-size: 11pt;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: #b58414;
+      font-weight: 700;
+    }
+
+    .section .header-row {
+      display: grid;
+      grid-template-columns: 1fr 3.6in;
+      gap: 28pt;
+      align-items: start;
+      margin-bottom: 22pt;
+    }
+    .section .header-row .heading h2 {
+      font-size: 28pt;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 4pt 0 10pt 0;
+      color: #0a0e1c;
+    }
+    .section h2 .accent { color: #b58414; }
+    .section .header-row .heading .lede {
+      font-size: 14pt;
+      line-height: 1.5;
+      color: #36394a;
+      margin: 0;
+      font-family: "Charter", "Georgia", serif;
+    }
+
+    .section .exhibit {
+      margin: 0;
+      border: 1px solid rgba(10,14,28,0.10);
+      border-radius: 6pt;
+      overflow: hidden;
+      background: #fdfdfd;
+      box-shadow: 0 3pt 10pt rgba(10,14,28,0.08);
+    }
+    .section .exhibit .frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+    .section .exhibit .frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .section .exhibit .caption {
+      font-family: "Inter", sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.4;
+      color: #6b6f7b;
+      margin: 0;
+      padding: 8pt 12pt 10pt 12pt;
+      border-top: 1px solid rgba(10,14,28,0.10);
+      letter-spacing: 0.02em;
+      background: #fdfdfd;
+    }
+    .section .exhibit .caption .tag {
+      font-weight: 700;
+      color: #b58414;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 8.5pt;
+      margin-right: 6pt;
+    }
+
+    .section .delta {
+      font-family: "Charter", "Georgia", serif;
+      font-style: italic;
+      font-size: 16pt;
+      line-height: 1.4;
+      color: #1b1d24;
+      border-left: 3px solid #f1c65b;
+      padding: 4pt 0 4pt 16pt;
+      margin: 0 0 20pt 0;
+    }
+    .section .delta .label {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 10pt;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #b58414;
+      display: block;
+      margin-bottom: 4pt;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16pt;
+    }
+    .card {
+      border-radius: 10pt;
+      padding: 18pt 20pt;
+      break-inside: avoid;
+    }
+    .card .role {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 10pt;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 4pt;
+    }
+    .card h3 {
+      font-size: 17pt;
+      font-weight: 700;
+      margin: 0 0 10pt 0;
+      color: #0a0e1c;
+    }
+    .card p {
+      font-size: 13pt;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .card.winners {
+      background: #f3faf4;
+      border: 1px solid #c6e3ca;
+    }
+    .card.winners .role { color: #1f6b3a; }
+    .card.losers {
+      background: #fbf4ea;
+      border: 1px solid #ebd2a8;
+    }
+    .card.losers .role { color: #9a5a12; }
+
+    /* Back page — verdict */
+    .verdict h2 {
+      font-size: 30pt;
+      font-weight: 800;
+      line-height: 1.12;
+      color: #0a0e1c;
+      margin: 0 0 18pt 0;
+      max-width: 6.2in;
+    }
+    .verdict .callout {
+      background: linear-gradient(135deg, #0a0e1c 0%, #1a2242 100%);
+      color: #fff;
+      padding: 36pt 40pt;
+      border-radius: 12pt;
+      margin: 16pt 0 26pt 0;
+    }
+    .verdict .callout .eyebrow {
+      font-family: "Inter", sans-serif;
+      font-size: 10pt;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: #f1c65b;
+      font-weight: 600;
+      margin-bottom: 10pt;
+    }
+    .verdict .callout .big {
+      font-size: 22pt;
+      line-height: 1.35;
+      font-weight: 400;
+      font-family: "Charter", "Georgia", serif;
+      margin: 0;
+    }
+    .verdict .callout .big strong {
+      color: #f1c65b;
+      font-weight: 700;
+    }
+    .verdict p {
+      font-size: 13pt;
+      line-height: 1.55;
+      margin: 0 0 12pt 0;
+    }
+    .verdict .source {
+      margin-top: 22pt;
+      padding-top: 14pt;
+      border-top: 1px solid rgba(10,14,28,0.14);
+      font-family: "Inter", sans-serif;
+      font-size: 10pt;
+      color: #6b6f7b;
+      letter-spacing: 0.04em;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== COVER =============== -->
+  <section class="cover">
+    <div class="bg"></div>
+    <div class="veil"></div>
+    <div class="frame"></div>
+    <div class="content">
+      <div>
+        <div class="eyebrow">April 2026</div>
+        <div class="rule"></div>
+      </div>
+      <div>
+        <h1>The 1Q26 Industry<br/>AI Report</h1>
+        <div class="subtitle">The Global AI Divide. How the market rewards Value Creators and punishes Margin Defenders across six industries.</div>
+      </div>
+      <div class="attribution">
+        <div class="byline">
+          <div class="name">Scott Penberthy</div>
+          <div class="handle">scott.ai</div>
+        </div>
+        <div class="meta">
+          <div>4,198 Public Companies</div>
+          <div>6,103 AI Use Cases</div>
+          <div>Quarterly Series</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== METHODOLOGY =============== -->
+  <section class="page intro">
+    <div class="page-inner">
+      <div class="kicker">Methodology</div>
+      <h2>The Alpha / Delta Correlation</h2>
+      <p class="lede">A cross-sectional analysis of risk-adjusted performance. We correlate each company's score with the <em>business focus</em> of its AI portfolio and the <em>occupations</em> that portfolio is aimed at. The goal is to isolate the behaviors the market is actively rewarding.</p>
+      <p style="font-family:'Charter','Georgia',serif;font-style:italic;font-size:12pt;color:#6b6f7b;margin:-10pt 0 18pt 0;">In this report, "we" and "our" refer to the author working in partnership with his AI collaborators.</p>
+
+      <p>Our core performance metric is the <strong>Information Ratio (IR)</strong>. IR equals relative return divided by volatility. Relative return is the stock's return over its own index benchmark (SPY, MDY, IJR, or IWM). Volatility is its 3-month annualized standard deviation. IR separates companies generating genuine Alpha from those riding market waves or carrying excess risk. Companies with <strong>IR &gt; 0.5</strong> are classified as Winners. Those with <strong>IR &lt; −0.5</strong> are classified as Dogs.</p>
+
+      <p>Against those performance tiers, we classify each AI application on two axes. The first is the <strong>business focus</strong> it serves. The options are RUN, BUILD, or GROW. The second is the <strong>target occupation</strong> it augments or replaces.</p>
+
+      <h3>Business Focus: Run, Build, Grow</h3>
+      <div class="intent-list">
+        <div class="intent">
+          <div class="label">Run</div>
+          <div class="name">Operate the Existing Business</div>
+          <p>AI applied to today's processes. It automates workflows, cuts unit costs, and reduces headcount in repetitive tasks. Defensive. Margin-preserving.</p>
+        </div>
+        <div class="intent">
+          <div class="label">Build</div>
+          <div class="name">Create New Capability</div>
+          <p>AI used to invent new products, models, or proprietary assets. Think molecules, algorithms, and autonomous systems. Offensive. Moat-creating.</p>
+        </div>
+        <div class="intent">
+          <div class="label">Grow</div>
+          <div class="name">Expand the Top Line</div>
+          <p>AI deployed to deepen customer relationships, unlock pricing power, or open new markets. Revenue-accretive rather than cost-reductive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== SCOPE & DISCLAIMER =============== -->
+  <section class="page intro">
+    <div class="page-inner">
+      <div class="kicker">Scope &amp; Definitions</div>
+      <h2>The Sample Universe</h2>
+      <p class="lede">The analysis spans publicly traded companies across six industry pillars, with a global scope enabled by their presence on U.S. exchanges.</p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">4,198</div>
+          <div class="lbl">Public Companies</div>
+        </div>
+        <div class="stat">
+          <div class="num">6,103</div>
+          <div class="lbl">AI Use Cases</div>
+        </div>
+        <div class="stat">
+          <div class="num">244</div>
+          <div class="lbl">International ADRs</div>
+        </div>
+      </div>
+
+      <h3>Geographic Coverage</h3>
+      <p>The sample is anchored in U.S.-listed equities but extends globally through <strong>American Depositary Receipts (ADRs)</strong>. 244 international companies trading as ADRs on NYSE, Nasdaq, and OTC markets are included alongside domestic issuers. This provides cross-border visibility into European, Asian, and Latin American champions. It avoids the data-quality compromises of off-exchange analysis.</p>
+
+      <h3>Occupation Taxonomy</h3>
+      <p>Each AI application is mapped to the occupations it targets using the <strong>U.S. Standard Occupational Classification (SOC)</strong>, administered by the Bureau of Labor Statistics. SOC provides a consistent, government-maintained vocabulary for roles. Examples range from "Radiologists (29-1224)" to "Heavy Truck Drivers (53-3032)". This common vocabulary enables like-for-like comparison of how companies deploy AI across the same labor categories.</p>
+
+      <div class="disclaimer">
+        <p><span class="lbl">Personal work.</span> These are the author's personal observations. They do not represent the views of his employer or any advisory boards he serves on. This is a quarterly personal research project. The author maintains it to stay hands-on with modern AI practice, including short-form video creation, driving attention, and building agentic pipelines.</p>
+        <p><span class="lbl">Not investing advice.</span> This report is a technical analysis of 1Q26 risk-adjusted performance correlated with observed AI application patterns by business focus (Run / Build / Grow) and by SOC-coded occupation. Nothing herein constitutes a recommendation to buy, sell, or hold any security. Past performance is not indicative of future results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 1. HEALTHCARE =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar One</div>
+          <h2><span class="accent">Healthcare</span><br/>Discovery vs. Administration</h2>
+          <p class="lede">The companies generating Alpha in healthcare are not the ones making doctors type faster. They are the ones compressing a decade of drug discovery into a handful of quarters.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/01_healthcare.jpg" alt="AI-designed molecular structures"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 1</span>Generative platforms have collapsed the molecular-design cycle from years to months.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between inventing tomorrow's cures and managing today's paperwork.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Innovators</div>
+          <h3>Silicon Scientists</h3>
+          <p>Top performers build proprietary generative platforms to design new medicines and identify drug targets in months rather than years. One major player saved over <strong>$1 billion in 2025</strong> by using AI to accelerate its design cycle.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Optimizers</div>
+          <h3>Paperwork Band-Aids</h3>
+          <p>Underperformers reduce headcount in pathology or save 15 minutes of doctor typing time. Efficient, but commodity tools with no competitive moat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 2. FINANCIAL SERVICES =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar Two</div>
+          <h2><span class="accent">Financial Services</span><br/>Alpha Algorithms vs. Process Patching</h2>
+          <p class="lede">In finance, the market no longer pays for AI that lowers unit costs. It pays for AI that generates a proprietary information edge. That edge moves benchmark-beating basis points.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/02_financial.jpg" alt="Alpha algorithms vs. back-office"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 2</span>One asset manager reports 94% of AI-backed strategies outperforming benchmarks.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between making more money and spending less money.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Alpha Seekers</div>
+          <h3>Attack the Market</h3>
+          <p>Top performers use AI for proprietary trading and pricing edges. One asset manager reports <strong>94% of AI-backed strategies outperforming benchmarks</strong>. They use data as an offensive weapon.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Paperwork Patchers</div>
+          <h3>Defend the Balance Sheet</h3>
+          <p>Struggling firms use AI to untangle their own legacy. They automate claims and save back-office hours. They use data to defend, not to attack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 3. CREATIVE =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar Three</div>
+          <h2><span class="accent">Creative Industries</span><br/>Audience Lock-in vs. Tool Peddling</h2>
+          <p class="lede">Generative AI has commoditized the act of making creative output. The premium now accrues to the companies that own the <em>relationship</em> between the output and the audience.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/03_creative.jpg" alt="Vertical AI agents own the audience"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 3</span>A leading global newspaper grew digital revenue 20% through AI-matched advertising.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between owning the customer result and building a better brush.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Vertical Agents</div>
+          <h3>Monetize the Result</h3>
+          <p>Winners solve the "last mile" of user experience. A leading global newspaper uses AI to match ads so precisely that <strong>digital revenue grew 20%</strong>.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Tool Peddlers</div>
+          <h3>Race to the Bottom</h3>
+          <p>Underperformers bolt AI features onto website builders and design software. Every competitor has access to the same models. Margins compress fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 4. RETAIL =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar Four</div>
+          <h2><span class="accent">Retail</span><br/>Real-Time Flow vs. Legacy Patching</h2>
+          <p class="lede">Retail Alpha is now a function of velocity. Every minute a product sits unshelved, uncounted, or misrouted is a minute of margin lost. AI has become the primary tool for closing that gap.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/04_retail.jpg" alt="Real-time inventory flow"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 4</span>AI-driven demand forecasting has become a board-level capability at top retailers.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between accelerating the sale and lowering the cost of a slow store.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Velocity Kings</div>
+          <h3>Speed of Commerce</h3>
+          <p>Top retailers eliminate physical inventory friction. A major discount retailer uses AI for <strong>"game-changing" demand forecasting</strong> so shelves are never empty.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Legacy Patches</div>
+          <h3>Yesterday's Mistakes</h3>
+          <p>Underperformers manage organizational dead weight such as labor scheduling and delivery routing. They patch the past instead of driving today's sales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 5. TRANSPORTATION =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar Five</div>
+          <h2><span class="accent">Transportation</span><br/>Network Velocity vs. Booking Band-Aids</h2>
+          <p class="lede">The physical world is where durable AI advantage is being built. A chatbot can be swapped out by a competitor in a quarter. An autonomous route network compounds for a decade.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/05_transportation.jpg" alt="Autonomous logistics at dawn"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 5</span>One logistics leader has surpassed 50,000 autonomous miles with zero accidents.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between moving the world and answering the phone.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Network Masters</div>
+          <h3>Fluid Physical Assets</h3>
+          <p>High-performers tackle the "dirty" work of the physical world. One logistics giant has surpassed <strong>50,000 autonomous miles with zero accidents</strong>.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Support Squeezers</div>
+          <h3>Chatbots &amp; Booking</h3>
+          <p>Underperformers optimize booking engines and customer service chatbots. Lower cost-to-serve, but ships and planes don't move any more reliably.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== 6. ENERGY =============== -->
+  <section class="page section">
+    <div class="page-inner">
+      <div class="header-row">
+        <div class="heading">
+          <div class="number">Pillar Six</div>
+          <h2><span class="accent">Energy</span><br/>Resource Creation vs. Infrastructure Protection</h2>
+          <p class="lede">Energy is the sharpest expression of the winner/loser split. The same technology that unlocks new barrels of production for one company is used to patch transmission faults for another. The market knows the difference.</p>
+        </div>
+        <figure class="exhibit">
+          <div class="frame"><img src="images/06_energy.jpg" alt="AI sees into the subsurface"></div>
+          <figcaption class="caption"><span class="tag">Exhibit 6</span>Subsurface AI cut drilling costs by 12% at one major producer. Pure value creation.</figcaption>
+        </figure>
+      </div>
+      <div class="delta">
+        <span class="label">The Delta</span>
+        The split between unlocking new power and defending a decaying grid.
+      </div>
+      <div class="cards">
+        <div class="card winners">
+          <div class="role">The Winners · The Resource Unlockers</div>
+          <h3>Create More Energy</h3>
+          <p>Winning companies master the physical subsurface. A major energy producer reduced drilling costs by <strong>12%</strong> by using AI to "see" into the earth.</p>
+        </div>
+        <div class="card losers">
+          <div class="role">The Losers · The Grid Patchers</div>
+          <h3>Defensive Plays</h3>
+          <p>Regulated utilities deploy AI against wildfires and storms. Vital for safety, but the savings flow to ratepayers, not shareholders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== VERDICT / BACK =============== -->
+  <section class="page verdict">
+    <div class="page-inner">
+      <h2>The Final Verdict</h2>
+
+      <div class="callout">
+        <div class="eyebrow">Steel &amp; Silicon</div>
+        <p class="big">Across all sectors, the maximum reward goes to the players who <strong>bridge the digital brain to a physical or proprietary result</strong>. Not those who merely patch the margins of the old enterprise.</p>
+      </div>
+
+      <p>The pattern is consistent across all six pillars. Where AI is deployed to <strong>create</strong>, the market assigns durable premium multiples. Creation means new molecules, new alpha, new audience relationships, new velocity, new autonomous capacity, and new resources.</p>
+
+      <p>Where AI is deployed only to <strong>defend</strong>, the market gives credit once and then moves on. Defense means trimming admin cost, patching legacy process, or squeezing the cost of an existing service. The tools are commoditized the moment a competitor buys the same vendor.</p>
+
+      <p>For executives setting 2026 AI strategy, the question is no longer "where can we automate?" It is "where can our AI portfolio compound into an asset the market will pay for?"</p>
+
+      <div class="source">
+        <div>Source: Proprietary analysis, 1Q26</div>
+        <div>Scott Penberthy · scott.ai · 2026-04-16</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
