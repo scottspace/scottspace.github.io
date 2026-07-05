@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Approximation Era — Scott Penberthy</title>
+  <meta name="description" content="AI is a universal approximator and generator. Not a tech trend. A phase change. The full thesis, with the evidence." />
+  <link rel="canonical" href="https://scott.ai/era" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Approximation Era" />
+  <meta property="og:description" content="The math that brought John Glenn home is now writing the treatments for cancer. AI is a universal approximator and generator. This is a phase change." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://scott.ai/era" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-dark:#0a0a0a;
+      --bg-surface:#141414;
+      --paper:#faf8f3;
+      --paper-2:#f2efe6;
+      --ink:#1c1a17;
+      --ink-soft:#3d3a34;
+      --ink-mute:#6b665c;
+      --line:#e2ddd0;
+      --line-dark:rgba(255,255,255,0.08);
+      --cream:#e8e6e0;
+      --accent:#b8912f;       /* decorative gold: borders, underlines (not for small text on light) */
+      --accent-ink:#7d6218;   /* AA-contrast gold for text on the light paper */
+      --accent-dim:#c9a84c;
+      --measure:65ch;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    html{ scroll-behavior:smooth; }
+
+    body{
+      font-family:'EB Garamond', Charter, 'Bitstream Charter', Georgia, 'Times New Roman', serif;
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* ---------- Shared dark nav ---------- */
+    .site-nav{
+      position:sticky; top:0; z-index:120;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 28px;
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--line-dark);
+    }
+    .site-nav .brand{
+      font-family:'EB Garamond',Georgia,serif;
+      font-weight:500; font-size:1.15rem; color:#f0efe9;
+      text-decoration:none; letter-spacing:-0.01em; white-space:nowrap;
+    }
+    .site-nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav .links a{
+      font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:500;
+      color:rgba(240,239,233,0.62); text-decoration:none; letter-spacing:0.01em;
+      transition:color .15s ease; white-space:nowrap;
+    }
+    .site-nav .links a:hover,
+    .site-nav .links a[aria-current="page"]{ color:#fff; }
+    .site-nav .links a.sub{
+      color:var(--accent-dim);
+    }
+    .site-nav .links a.sub:hover{ color:#f4e6b8; }
+
+    /* ---------- Dark hero band ---------- */
+    .hero{
+      position:relative; overflow:hidden;
+      background:radial-gradient(120% 140% at 20% 0%, #17171a 0%, #0a0a0a 60%);
+      color:#efeee8;
+      border-bottom:1px solid var(--line-dark);
+      padding:70px 28px 74px;
+    }
+    #heroCanvas{
+      position:absolute; inset:0; width:100%; height:100%;
+      display:block; opacity:0.55; pointer-events:none;
+    }
+    .hero-inner{
+      position:relative; z-index:2;
+      max-width:760px; margin:0 auto;
+    }
+    .day-line{
+      font-family:'Inter',ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--accent-dim); margin-bottom:22px; font-weight:500;
+    }
+    .hero h1{
+      font-weight:500; font-size:clamp(2.1rem,5.2vw,3.5rem);
+      line-height:1.08; letter-spacing:-0.015em; margin-bottom:22px;
+      max-width:16ch;
+    }
+    .hero .subline{
+      font-family:'Inter',sans-serif; font-weight:400;
+      font-size:clamp(1rem,2.2vw,1.18rem); line-height:1.6;
+      color:rgba(239,238,232,0.78); max-width:52ch;
+    }
+    .hero .subline b{ color:#fff; font-weight:600; }
+
+    /* ---------- Essay body ---------- */
+    .essay{ padding:0 28px; }
+    .measure{ max-width:var(--measure); margin:0 auto; }
+
+    section{ padding:54px 0 8px; scroll-margin-top:70px; }
+    section:first-of-type{ padding-top:60px; }
+
+    .eyebrow{
+      font-family:'Inter',sans-serif;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--accent-ink); margin-bottom:14px;
+    }
+    .essay h2{
+      font-weight:500; font-size:clamp(1.7rem,3.4vw,2.15rem);
+      line-height:1.15; letter-spacing:-0.01em; margin-bottom:26px; color:var(--ink);
+    }
+    .essay h3{
+      font-weight:600; font-size:1.28rem; line-height:1.25;
+      margin:36px 0 14px; color:var(--ink);
+    }
+    .essay p{
+      font-size:1.24rem; line-height:1.72; color:var(--ink-soft);
+      margin-bottom:22px;
+    }
+    .essay p .lead-in{ color:var(--ink); font-weight:600; }
+    .essay p b{ color:var(--ink); font-weight:600; }
+    .essay a{
+      color:var(--ink); text-decoration:underline;
+      text-decoration-color:rgba(184,145,47,0.5); text-underline-offset:3px;
+      transition:text-decoration-color .15s;
+    }
+    .essay a:hover{ text-decoration-color:var(--accent); }
+
+    .figure{ margin:34px 0; }
+    .figure img{
+      width:100%; height:auto; display:block;
+      border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      background:#111;
+    }
+    .figure figcaption{
+      font-style:italic; font-size:1.0rem; line-height:1.5;
+      color:var(--ink-mute); margin-top:12px; max-width:60ch;
+    }
+
+    /* Evidence count callout */
+    .count-callout{
+      margin:30px 0 8px; padding:30px 32px;
+      background:var(--paper-2); border:1px solid var(--line);
+      border-radius:12px; text-align:center;
+    }
+    .count-callout .big{
+      font-weight:500; font-size:clamp(1.8rem,4.5vw,2.6rem);
+      line-height:1.1; color:var(--ink); letter-spacing:-0.01em;
+    }
+    .count-callout .big [data-count]{ color:var(--accent-ink); }
+    .count-callout .sub{
+      font-family:'Inter',sans-serif; font-size:0.82rem; letter-spacing:0.02em;
+      color:var(--ink-mute); margin-top:10px;
+    }
+    .count-callout .asof{
+      display:block; font-size:0.74rem; text-transform:uppercase;
+      letter-spacing:0.14em; color:var(--ink-mute); margin-top:6px;
+    }
+
+    /* What-this-means table */
+    .means{
+      width:100%; border-collapse:collapse; margin:20px 0 8px;
+      font-family:'Inter',sans-serif;
+    }
+    .means th, .means td{
+      text-align:left; padding:14px 16px; border-bottom:1px solid var(--line);
+      font-size:0.92rem; line-height:1.45; vertical-align:top;
+    }
+    .means th{
+      font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+      color:var(--ink-mute); font-weight:600;
+    }
+    .means td:first-child{ font-weight:600; color:var(--ink); white-space:nowrap; }
+    .means td{ color:var(--ink-soft); }
+
+    .divider{ border:none; border-top:1px solid var(--line); margin:8px 0; }
+
+    /* The promise — the heart of the mission */
+    .promise-block{
+      margin:34px 0; padding:30px 34px;
+      background:var(--paper-2); border-left:3px solid var(--accent);
+      border-radius:0 12px 12px 0;
+    }
+    .promise-block p{
+      font-size:clamp(1.3rem,3vw,1.55rem); line-height:1.5; color:var(--ink);
+      margin:0; font-weight:500;
+    }
+
+    /* ---------- Sticky footer CTA bar ---------- */
+    .cta-bar{
+      position:sticky; bottom:0; z-index:110;
+      background:rgba(10,10,10,0.95);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-top:1px solid var(--line-dark);
+      padding:13px 28px;
+      display:flex; align-items:center; justify-content:center; gap:14px;
+      flex-wrap:wrap; text-align:center;
+    }
+    .cta-bar a.primary{
+      font-family:'Inter',sans-serif; font-size:0.92rem; font-weight:600;
+      color:#0a0a0a; background:var(--accent-dim);
+      padding:10px 20px; border-radius:8px; text-decoration:none;
+      transition:transform .15s, box-shadow .15s; white-space:nowrap;
+    }
+    .cta-bar a.primary:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(201,168,76,0.25); }
+
+    /* ---------- End matter ---------- */
+    .endmatter{
+      background:var(--bg-surface); color:rgba(240,239,233,0.65);
+      border-top:1px solid var(--line-dark);
+      padding:48px 28px 60px; font-family:'Inter',sans-serif;
+    }
+    .endmatter .measure{ max-width:640px; }
+    .endmatter p{ font-size:0.9rem; line-height:1.65; margin-bottom:14px; }
+    .endmatter a{ color:var(--accent-dim); text-decoration:none; }
+    .endmatter a:hover{ text-decoration:underline; }
+    .pdf-link{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:0.95rem; font-weight:600; color:#efeee8 !important;
+      border:1px solid var(--line-dark); border-radius:8px; padding:10px 18px;
+      margin-top:8px;
+    }
+    .pdf-link:hover{ border-color:var(--accent-dim); text-decoration:none !important; }
+    .endmatter .foot-links{ margin-top:22px; font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .endmatter .foot-links a{ color:rgba(240,239,233,0.55); }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+    }
+    @media (max-width:600px){
+      .hero{ padding:48px 20px 52px; }
+      .site-nav{ padding:12px 18px; }
+      .site-nav .brand{ font-size:1.02rem; }
+      .site-nav .links{ gap:15px; }
+      .site-nav .links a{ font-size:0.78rem; }
+      .essay, .endmatter, .cta-bar{ padding-left:20px; padding-right:20px; }
+      .essay p{ font-size:1.14rem; }
+      .count-callout{ padding:24px 18px; }
+      .cta-bar{ padding:11px 16px; }
+      .cta-bar a.primary{
+        white-space:normal; font-size:0.84rem; padding:10px 16px;
+        line-height:1.35; width:100%; text-align:center;
+      }
+      .means th, .means td{ padding:10px 9px; font-size:0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Shared dark nav ===== -->
+  <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="/">Scott Penberthy</a>
+    <div class="links">
+      <a href="/era" aria-current="page">The Era</a>
+      <a href="/insights/">The Ledger</a>
+      <a href="/speaking">Speaking</a>
+      <a href="/aboutme">About</a>
+      <a class="sub" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- ===== Dark hero band ===== -->
+  <header class="hero">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="day-line" data-day-counter>Day 247 of documenting the Approximation Era.</div>
+      <h1>Know what's real in AI before you bet on it.</h1>
+      <p class="subline">AI is a universal approximator and generator. This is not a tech trend. It's a phase change. <b>Here's the evidence.</b></p>
+    </div>
+  </header>
+
+  <main class="essay">
+
+    <!-- ============ THE CHALKBOARD ============ -->
+    <section id="chalkboard">
+      <div class="measure">
+        <div class="eyebrow">The Thesis</div>
+        <h2>The math that brought John Glenn home is now writing the treatments for cancer.</h2>
+
+        <p><span class="lead-in">Compute is replacing calculus.</span> Not everybody believes this. I have been working through the thesis for about a decade. I call it the Approximation Era because that is what it actually is. Walk through it with me and make up your own mind.</p>
+
+        <p>The core claim is simple. A large enough neural network is a universal approximator of any relationship in the observable universe. A large enough generative model is a universal generator of any sequence in that universe. Together, they let us trade differential equations for GPUs. We compute our way to answers that used to require closed-form solutions, across creativity, science, biology, and physics, all with the same underlying machinery.</p>
+
+        <p>If that is true, then AGI and ASI are not the destination. They are checkpoints on a much longer route, where every discipline becomes computable through observation rather than derivation.</p>
+
+        <h3>Katherine Johnson and the Euler method</h3>
+
+        <p>The pattern starts in 1960, with a human computer named Katherine Johnson trying to keep John Glenn from burning up on reentry.</p>
+
+        <p>Nobody could find a closed-form solution for the path from orbit through the atmosphere. The calculus was beyond us. Johnson reached for an old technique, the Euler method. She did not know the equation either. Instead, every second or so, she figured out where the capsule was, adjusted, and stepped forward. Zero, one, two, three. Each step a small straight line approximating a curve she could not write down.</p>
+
+        <p>The real equation lived in four dimensions: three of space plus time. Her approximation was piecewise and linear. Wrong in the sense that Newtonian physics is wrong. Right in the sense that John Glenn came home. The technique she developed brought Gemini home too, and was carried forward into Apollo. I imagine John asking, before he climbed into the capsule, whether Katherine had run the numbers.</p>
+
+        <figure class="figure">
+          <img src="/images/era/hero-chalkboard.jpg" alt="A chalkboard covered in handwritten orbital reentry equations and Euler's method curves" loading="lazy" />
+          <figcaption>Euler's method. The true curve is unknowable in closed form. The piecewise approximation is computable. John Glenn came home on the second one.</figcaption>
+        </figure>
+
+        <p>Hold that image. Compute and small linear pieces, replacing a closed-form solution we could not derive. That is the whole story. Everything since is scale.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE MECHANISM ============ -->
+    <section id="mechanism">
+      <div class="measure">
+        <div class="eyebrow">The Mechanism</div>
+        <h2>Approximation, then reasoning, then generation.</h2>
+
+        <p><span class="lead-in">The reason approximation works at all</span> is that the universe we can see is unreasonably friendly to it. Three properties make this true.</p>
+
+        <p><b>Low dimensionality.</b> Energy is mass times c squared, not mass to the hundredth power. Gravity falls off as the inverse square of distance. Fluids and rockets and trips to Mars are governed by Navier-Stokes, third degree. Most of what built the industrial revolution is third degree or lower. Not correct, but good enough.</p>
+
+        <p><b>Locality of reference.</b> We can reason about Palo Alto without worrying about a butterfly in Japan or a rock on the moon. Quantum mechanics says everything is connected. For what we observe, we can ignore that and still get along.</p>
+
+        <p><b>Composability.</b> We reason about nucleotides, then DNA, then RNA, then cells, then organs, then bodies, then populations, then disease maps. We do the same for parts, cars, fleets. The universe stacks cleanly across scales.</p>
+
+        <h3>The universal approximator</h3>
+
+        <p>In 2010, Ilya Sutskever joined Geoffrey Hinton and told him he was not thinking big enough. Not thousands of neurons. Millions.</p>
+
+        <p>The first big result was the convolutional neural network. Take a photo of a dog in a pile of laundry. Pixels feed a grid. The grid feeds a smaller grid, then smaller, like layers of the optic nerve. The connections start as noise. At the top, two idiot lights: cat, dog. Show the photo. The cat light comes on. Wrong. Nudge the weights backward through the network. Do it a few million times. The cat function and the dog function are now in the weights.</p>
+
+        <p>That is more than a clever classifier. That is a universal approximator. Any relationship in the observable universe, the theory says, can be approximated by a sufficiently deep network. Not in four dimensions like Johnson. Try twelve thousand. Each neuron is a small nonlinear piece. The same job, at a scale Johnson could not have imagined. The work won a Nobel Prize.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-approximator.jpg" alt="A deep neural network rendered as layered grids of light resolving a photograph into two indicator lights" loading="lazy" />
+          <figcaption>The universal approximator. Same technique as Katherine Johnson's chalk, executed in twelve thousand dimensions instead of four.</figcaption>
+        </figure>
+
+        <h3>The universal generator</h3>
+
+        <p>A single shot of cat or dog is one thing. Language, video, biology, an organism through its life, all of these change over time. Two contributions made sequences computable.</p>
+
+        <p>The <b>attention head</b> is a lookup mechanism. Based on what the network is observing right now, it selects which weights to apply in the next step of the computation. Smell pumpkin spice, look up the weights for fall. The same input activates different downstream paths depending on context. This is reasoning built from correlation: context-conditioned weight selection, captured directly through time.</p>
+
+        <p>The <b>diffusion model</b> came from the physics community. Take an image. Add a little Bayesian noise. Do it a thousand times until the image is gone. Then learn to play the tape backwards, like a Beatles album in reverse. If you can reverse the noise, you can generate anything from noise.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-diffusion.jpg" alt="A coherent form emerging out of a storm of fine noise" loading="lazy" />
+          <figcaption>Diffusion in a single still. Order rising from chaos, learned by reversing the destruction.</figcaption>
+        </figure>
+
+        <p>Two sides of the same coin. Together they form a universal generator. Given enough observation, any sequence becomes producible. We now have both pieces: a universal approximator and a universal generator. That is the engine of the Approximation Era.</p>
+
+        <p>The engine is not one fixed architecture. Each new domain has demanded its own innovations. Reinforcement learning from human feedback for language. Equivariant networks for proteins. Latent diffusion for images. Joint action-frame models for robotics. What is universal is the technique, not the wiring. Gradient descent on parameterized nonlinear stacks, scaled until it works, applied to the data of the problem in front of you. The wiring is engineering. The technique is the era.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE EVIDENCE ============ -->
+    <section id="evidence">
+      <div class="measure">
+        <div class="eyebrow">The Evidence</div>
+        <h2>Logging the sky.</h2>
+
+        <p><span class="lead-in">The thesis above is what I think the math is doing.</span> A scanner I built is how I check.</p>
+
+        <p>Like Copernicus with a notebook, I started a daily log. One verified AI deployment per day. No plan for the data, just a willingness to write down what was actually happening as it formed. The notebook would tell me what was real eventually. I ran out of hand-curated examples in three months.</p>
+
+        <figure class="figure">
+          <img src="/images/era/copernicus.jpg" alt="Copernicus recording astronomical observations by candlelight" loading="lazy" />
+          <figcaption>Copernicus wrote down the position of the sun and moon every day. Not to publish. To see. The data told him we were not the center of the universe.</figcaption>
+        </figure>
+
+        <p>So I built a scanner that reads every earnings call and every SEC filing across the S&amp;P 500, MidCap 400, SmallCap 600, Russell 2000, and major international indexes. Every AI mention extracted, validated against independent sources, scored for how real it is.</p>
+
+        <div class="count-callout">
+          <div class="big"><span data-count="verified">5,000+ verified, and counting</span></div>
+          <div class="sub">Verified AI deployments across <span data-count="companies">3,338</span> public companies.</div>
+          <span class="asof" data-count-updated>as of 2026-07-05</span>
+        </div>
+
+        <p>What the scanner shows lines up with what the thesis predicts. Vertical AI wins. Physical AI wins. The places that touch atoms, regulation, time-locked data, costly failure, and scarce expertise are where the returns concentrate. The companies running approximators against problems the universe is structured to allow are the ones the market is rewarding. The quarterly analysis is published as <a href="/insights/">The Ledger</a>. I do not yet know where the next year of logging takes us. I know it will be epic.</p>
+
+        <figure class="figure">
+          <img src="/images/era/radar.jpg" alt="AI Radar visualization of thousands of companies and verified AI use cases" loading="lazy" />
+          <figcaption>The AI Radar. Every AI mention, extracted by agents, validated, and scored for how real it is.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ THE BOUNDARIES ============ -->
+    <section id="boundaries">
+      <div class="measure">
+        <div class="eyebrow">The Boundaries</div>
+        <h2>Where approximation fails.</h2>
+
+        <p><span class="lead-in">There are corners where this breaks.</span> Turbulence resists low-dimensional compression. High-energy physics climbs back into very high dimensions. Some combinatorial problems refuse to be smooth. The thesis here is not that approximation works on every problem in the universe. It is that approximation works on <em>enough</em> of the universe to remake civilization. That is a smaller claim, and a more defensible one.</p>
+
+        <p>The other limit is not mathematical. It is physical. The constraint is not algorithms. It is power. Assume an AGI can be served by an eight-way H100 box: sixty kilograms, the kind of thing they are now talking about putting in satellites. Assume one for every human and one for every robot roaming a warehouse. A billion of each. Each chip pulls about seven hundred watts, the same as a vacuum cleaner. Eight chips per box is roughly fifty-six hundred watts. Two billion users at that draw is around ten terawatts. The planet generates about 9.8.</p>
+
+        <p>This is not theoretical. Inside Google, working on a video project, I could not get enough compute. I was hitting daily limits by ten or eleven in the morning, then bartering for tokens with other teams to keep going. The grid is the bottleneck. Tokens and watts are the currency of the next twenty years.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-power.jpg" alt="A vast dark data center feeding into a distant power grid and turbines" loading="lazy" />
+          <figcaption>The era's hard limit. Algorithms are not the bottleneck. Power is.</figcaption>
+        </figure>
+
+        <!--
+          TODO(scott): The Boundaries section above draws on the "corners where this breaks"
+          and "tokens and watts" material from the PDF. It does not yet make the FALSIFIABILITY
+          case in full. Write ~3 paragraphs here on the limits of the thesis and what would
+          prove it wrong, e.g.:
+            1) The concrete claim and its scope (what "enough of the universe" means, measurably).
+            2) The observations that would falsify it (domains where scaling approximators
+               plateaus or reverses; where derivation still beats computation).
+            3) Your honest prior: where you expect the thesis to hold vs. where you are least sure.
+          Replace this comment with the prose when ready.
+        -->
+      </div>
+    </section>
+
+    <!-- ============ THE STAGES ============ -->
+    <section id="stages">
+      <div class="measure">
+        <div class="eyebrow">The Stages</div>
+        <h2>Language, commerce, robotics, science, medicine.</h2>
+
+        <p><span class="lead-in">One technique moves through domain after domain.</span> It learns language from text. Then it learns commerce, science, and biology from the data of each, in turn, with the same machinery underneath.</p>
+
+        <h3>Commerce</h3>
+        <p>When I pitched a version of the biology idea to a well-known CEO, I got a polite version of "that's theoretical, you're academics." A few years later I bet I could cross the uncanny valley in generated video. The game community said no chance. So I built a proof of concept: take one ad for a car and personalize it nine thousand ways in five minutes. Three hundred cities, two genders, three age groups, five interests. I met a wall of resistance. Not plausible. Nobody is asking for that. Nobody is laughing now. The product ships. You cannot tell the personalized videos are synthetic.</p>
+
+        <figure class="figure">
+          <img src="/images/era/catmemes-cancer.jpg" alt="The same machine spanning from cat memes to cancer" loading="lazy" />
+          <figcaption>Same machine, different inputs. From cat memes to cancer.</figcaption>
+        </figure>
+
+        <h3>Robotics</h3>
+        <p>Another team took the video model and added one input: a joystick. Up, down, left, right, fire. Three bits. Then they trained on video games, asking the model to guess both the next frame and the next button press. That became Genie. Rewire your joystick into the model, and now you are exploring a world the model is imagining frame by frame, consistent with both your inputs and the physics it has learned. Three bits per second of control, and a coherent world appears. Now imagine that with kilobits or megabits of control input instead of three. We are just getting started.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-worldmodel.jpg" alt="A hand on a joystick, a coherent world rendering itself frame by frame" loading="lazy" />
+          <figcaption>Three bits of joystick input. A coherent world rendering itself frame by frame in response.</figcaption>
+        </figure>
+
+        <h3>Science</h3>
+        <p>AlphaFold 3 fused the diffusion model with the transformer and asked: will this protein bind to this ligand? One frame of life. What used to be a five-year PhD thesis runs in two days, across two hundred thousand proteins. A million years of human work, published and given away. Another Nobel Prize, the same techniques. A single frame is the current achievement. The bet that follows is much larger: if we can approximate one moment of a biological interaction in tensor space, the next step is to play it forward. Frame after frame. The whole movie of life, computed instead of observed.</p>
+
+        <h3>Medicine</h3>
+        <p>The same machinery that learns cat-or-not is now learning to read DNA and program cells. Molecules have faces, called antigens. Take a sample of cancerous tissue. Use AI to find the DNA sequence that codes for the antigen on the surface of the cancer cell. Wrap that code in a lipid chassis. Inject it into the arm. The code drains into the lymph nodes, gets expressed on the surface of lymph cells, and the immune system attacks. T cells learn the face. They hunt the cancer. This is in trials for HER2-positive disease right now. That is what an mRNA vaccine actually is. Programmable defense.</p>
+
+        <p>An AI engineer in Australia ran this play when his dog was dying of cancer. Sequenced the dog's DNA. Sequenced the tumor. Found the difference. Targeted it. The dog is in remission. David Fajgenbaum took it further: diagnosed with Castleman disease and given a short prognosis, he went looking for an existing drug with the right shape, found it, and treated his own disease. He now runs EveryCure, scanning for shape similarity in tensor space between known drugs and orphan diseases. Seventy-seven million candidate drug-disease pairs to evaluate.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-defense.jpg" alt="Programmable immune defense: mRNA in a lipid nanoparticle and T-cells hunting a cancer cell" loading="lazy" />
+          <figcaption>Programmable defense. The same machinery that learns cat-or-not is now reading DNA and designing the molecules that hunt cancer.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ THE MISSION ============ -->
+    <section id="mission">
+      <div class="measure">
+        <div class="eyebrow">The Mission</div>
+        <h2>Building toward the treatments.</h2>
+
+        <table class="means" aria-label="What this means, by era">
+          <thead>
+            <tr><th>Era</th><th>Tool</th><th>Limit</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Newtonian</td><td>Closed-form equations</td><td>What humans can derive</td></tr>
+            <tr><td>Approximation</td><td>High-dimensional piecewise nonlinear approximation</td><td>Tokens and watts</td></tr>
+          </tbody>
+        </table>
+
+        <p><span class="lead-in">The Approximation Era is not a more accurate physics.</span> Neither was Newton. It is a better tool, because we are trading calculus for compute, and compute scales. One technique learns cat or dog, renders a personalized ad in three hundred cities, imagines a playable world from three bits of joystick input, designs an mRNA vaccine, docks a protein and a ligand, and finds an existing drug for a disease that has no treatment. Creativity, science, mathematics, and biology, all becoming computable through observation rather than derivation.</p>
+
+        <p><b>If you are an executive,</b> nothing about your industry is safe from the engine. Every domain that exhibits low dimensionality, locality, and composability is now a candidate for approximation. That includes your operations, your supply chain, your customer experience, your R&amp;D pipeline, your products, and the diseases your employees and their families carry. The companies that figure this out first will run a long time.</p>
+
+        <p><b>If you are a researcher,</b> the bottleneck moved. The mathematics is settled. The compute is available. The data is collectable. What remains is the imagination to apply the engine to the problem in front of you, and the will to push through the people who will tell you it is not plausible. They told Sutskever the networks were too small. They told the diffusion crowd it would never converge. They told the AlphaFold team biology was too messy. They were wrong every time, and they will be wrong on the next one.</p>
+
+        <p><b>If you are a patient, or you love one,</b> the implication is the most important. We are not promising cures. We are promising treatments. The distinction matters. Diabetes is not cured. It is managed, and a person with diabetes today lives a full life because of a hundred years of incremental wins. Cancer is on the same trajectory, only faster, because the engine is no longer the bench scientist alone. It is the bench scientist plus the approximator. Pull on enough threads and many cancers stop being lethal even when they are not eliminated. The arc bends from terminal to chronic to managed.</p>
+
+        <p>The science being possible is not the same as the treatment being delivered. Translation through clinical trials, regulatory review, manufacturing, payer adoption, and physician practice takes years on its own clock. The era moves the science. The institutions still have to do their work. I am building toward both.</p>
+
+        <h3>Why I count</h3>
+
+        <p><span class="lead-in">The ledger has a spine and a brain.</span> The spine is Day N, the daily discipline of writing down what is real. The brain is the thesis you just read. But neither is the reason I show up. This is.</p>
+
+        <div class="promise-block">
+          <p>My mother died of cancer at 57. Before she went, she made my brother and me promise to find a better way. He became an oncologist. I became the AI guy. The Approximation Era is how we finally keep the promise.</p>
+        </div>
+
+        <p>That is not an abstraction for me. It is the whole point. My brother treats patients one at a time, at the bedside, on the clock the disease sets. I build the approximator, the thing that reads DNA, designs the molecule, and searches seventy-seven million drug-disease pairs while he sleeps. One disease, two vantage points, the same promise. In the fall of 2026 we take it to a stage in Europe together, the oncologist and the AI guy, for the talk I have waited my whole career to give.</p>
+
+        <p>Lee Hood and I have been circling an idea for how you would actually do this, an approach we call <b>Clearome</b>: the universal approximator pointed squarely at cancer, phenomics stacked through time and read like a movie of the body. It is early. It is a conversation between two people who have been at this a long time, grounded in data and this thesis, not a company and not a plan. But it is the direction the evidence keeps pointing, and the one I care about most.</p>
+
+        <p>Clearome is also a bet on timing, because two cost curves have to cross. Nanophotonics is collapsing the price of testing: a hundred thousand molecules read on a chip smaller than a thumbnail, for about five dollars a run. And video AI, which is the core engine, is falling just as fast. We have already watched it drop an order of magnitude in eighteen months, from fifty cents a second to five. We need it at half a cent. When both curves land, reading the movie of the body stops being a research budget and becomes routine. That is the moment we are building toward.</p>
+
+        <figure class="figure">
+          <img src="/images/era/era-two-eras.jpg" alt="A chalkboard curve continuing unbroken into a hall of AI compute" loading="lazy" />
+          <figcaption>Two eras, same act. The chalk is gone. The work is the same. The promise is the same.</figcaption>
+        </figure>
+
+        <p>Katherine Johnson did the math by hand because there was no other way. We have other ways now. The work is the same. Show up. Take the next step. Keep stepping until John gets home.</p>
+
+        <hr class="divider" />
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== End matter ===== -->
+  <footer class="endmatter">
+    <div class="measure">
+      <p><b style="color:#efeee8;">About this work.</b> The thesis is mine. The Nobel Prizes belong to the people who proved the math. The work ahead belongs to whoever can keep the lights on. The views here are my own and do not represent my employer or any advisory boards I serve on. Nothing here is investing advice.</p>
+      <p>Prefer the formatted PDF? <a class="pdf-link" href="/insights/the-approximation-era.pdf" target="_blank" rel="noopener">Read The Approximation Era (PDF) ↓</a></p>
+      <div class="foot-links">
+        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/insights/">The Ledger</a> · <a href="/speaking">Speaking</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Sticky footer CTA ===== -->
+  <div class="cta-bar">
+    <a class="primary" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Get the weekly patterns before you place your bets →</a>
+  </div>
+
+  <!-- Live count + day counter (single source of truth: /count.json) -->
+  <script src="/js/live.js" defer></script>
+
+  <!-- Hero particle field: a subtle field of points settling onto a smooth curve.
+       Static-safe: the very first paint is already the resolved curve (so a paused/
+       backgrounded tab still shows an elegant visual). When visible, points drift gently
+       and any initial scatter eases onto the curve. Non-autoplaying, respects reduced motion. -->
+  <script>
+    (function(){
+      var c = document.getElementById('heroCanvas');
+      if(!c || !c.getContext) return;
+      var ctx = c.getContext('2d');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var W, H, pts, raf, start = null;
+      var N = 90;
+
+      function curveY(x, w, h){
+        // gentle composite sine: the smooth curve the field rests on
+        var nx = x / w;
+        return h*0.54 + Math.sin(nx*Math.PI*1.6 + 0.4)*h*0.15 + Math.sin(nx*Math.PI*3.1)*h*0.05;
+      }
+      function resize(){
+        W = c.clientWidth; H = c.clientHeight;
+        c.width = W*dpr; c.height = H*dpr;
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        seed();
+        draw(0);            // resolved static paint immediately (survives paused rAF)
+      }
+      function seed(){
+        pts = [];
+        for(var i=0;i<N;i++){
+          var tx = (i/(N-1))*W;
+          pts.push({
+            x: tx,
+            base: curveY(tx, W, H),           // resting position on the curve
+            phase: Math.random()*Math.PI*2,     // per-point drift phase
+            amp: 3 + Math.random()*5,           // subtle drift amplitude (px)
+            r: Math.random()*1.5 + 0.7
+          });
+        }
+      }
+      // Points always rest ON the curve; drift eases in over the first ~1.6s.
+      // draw(0) therefore paints the clean resolved curve (static-safe).
+      function draw(elapsed){
+        var fade = reduce ? 0 : Math.min(1, elapsed/1600);
+        var ease = 1 - Math.pow(1-fade, 3);       // easeOutCubic
+        ctx.clearRect(0,0,W,H);
+        ctx.beginPath();
+        for(var i=0;i<pts.length;i++){
+          var p = pts[i];
+          var drift = Math.sin(elapsed/2600 + p.phase) * p.amp * ease;
+          p.y = p.base + drift;
+          i===0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+        }
+        ctx.strokeStyle = 'rgba(201,168,76,0.16)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        for(var j=0;j<pts.length;j++){
+          ctx.beginPath();
+          ctx.arc(pts[j].x, pts[j].y, pts[j].r, 0, Math.PI*2);
+          ctx.fillStyle = 'rgba(220,196,120,0.65)';
+          ctx.fill();
+        }
+      }
+      function frame(ts){
+        if(start === null) start = ts;
+        draw(ts - start);
+        raf = requestAnimationFrame(frame);
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      if(!reduce){ raf = requestAnimationFrame(frame); }
+    })();
+  </script>
+</body>
+</html>

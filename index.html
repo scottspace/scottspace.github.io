@@ -108,6 +108,87 @@
       transform: translateY(-1px);
     }
 
+    /* Primary nav (top-right) */
+    .site-nav-links{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .site-nav-links a{
+      font-size:0.82rem;
+      font-weight:500;
+      color:var(--muted);
+      text-decoration:none;
+      letter-spacing:0.01em;
+      white-space:nowrap;
+      transition:color .15s ease;
+    }
+    .site-nav-links a:hover,
+    .site-nav-links a[aria-current="page"]{ color:var(--ink); }
+    .site-nav-links a.sub{ color:var(--accent); }
+    .site-nav-links a.sub:hover{ color:#f4e6b8; }
+
+    /* Hero lead (benefit-first) */
+    .hero-lead{
+      padding: 8px 0 30px;
+      border-bottom: 1px solid var(--hair);
+      margin-bottom: 34px;
+    }
+    .day-line{
+      font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .hero-h1{
+      font-family:'EB Garamond',Georgia,serif;
+      font-weight:500;
+      font-size:clamp(2.3rem,6vw,3.6rem);
+      line-height:1.06;
+      letter-spacing:-0.02em;
+      margin-bottom:20px;
+    }
+    .hero-sub{
+      font-size:clamp(1.02rem,2.3vw,1.22rem);
+      line-height:1.6;
+      color:rgba(255,255,255,0.78);
+      max-width:58ch;
+      margin-bottom:24px;
+    }
+    .hero-sub [data-count]{ color:var(--ink); font-weight:600; }
+    .hero-stat{
+      display:inline-flex;
+      align-items:baseline;
+      gap:10px;
+      font-family:'EB Garamond',Georgia,serif;
+      font-size:1.15rem;
+      color:var(--accent);
+      margin-bottom:26px;
+    }
+    .hero-stat::before{
+      content:"";
+      width:7px; height:7px; border-radius:50%;
+      background:var(--accent);
+      display:inline-block;
+      box-shadow:0 0 0 0 rgba(201,168,76,0.5);
+      animation:pulse 2.4s infinite;
+    }
+    @keyframes pulse{
+      0%{ box-shadow:0 0 0 0 rgba(201,168,76,0.45); }
+      70%{ box-shadow:0 0 0 8px rgba(201,168,76,0); }
+      100%{ box-shadow:0 0 0 0 rgba(201,168,76,0); }
+    }
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; }
+    .why-label{ margin-top: 8px; }
+    @media (prefers-reduced-motion: reduce){
+      .hero-stat::before{ animation:none; }
+    }
+
     /* Visuals */
     .visual{
       margin: 32px 0;
@@ -363,7 +444,7 @@
       font-weight:600;
       letter-spacing:0.16em;
       text-transform:uppercase;
-      color: var(--dim);
+      color: var(--muted);
       margin-bottom: 12px;
     }
 
@@ -500,22 +581,36 @@
 <body>
   <div class="wrap">
 
-    <div class="top">
-      <div class="name-block">
+    <header class="top">
+      <a class="name-block" href="/" style="text-decoration:none;color:inherit;">
         <div class="name">Scott Penberthy</div>
         <div class="tagline-sm">The Approximation Era</div>
-      </div>
-      <div class="icons" aria-label="Social links">
-        <a href="https://www.linkedin.com/in/tensordoc/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://twitter.com/scottpenberthy" target="_blank" rel="noopener" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.youtube.com/@scottdotai" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/tensordoc" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="mailto:scott@scott.ai" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-    </div>
+      </a>
+      <nav class="site-nav-links" aria-label="Primary">
+        <a href="/era">The Era</a>
+        <a href="/insights/">The Ledger</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/aboutme">About</a>
+        <a class="sub" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+      </nav>
+    </header>
 
-    <!-- === ACT 1: THE THESIS === -->
+    <!-- === HERO: BENEFIT FIRST (what you get) === -->
+
+    <section class="hero-lead">
+      <div class="day-line" data-day-counter>Day 247 of documenting the Approximation Era.</div>
+      <h1 class="hero-h1">Never fall for AI hype again.</h1>
+      <p class="hero-sub">I verify what's real in AI. <span data-count="plain">5,000+</span> deployments checked against earnings calls, one more every day, so you know what's actually working before you bet money, budget, or your career on it.</p>
+      <div class="hero-stat"><span data-count="verified">5,000+ verified, and counting</span></div>
+      <div class="hero-actions">
+        <a href="/era" class="btn btn-primary">Read the evidence →</a>
+        <a href="/insights/" class="btn btn-secondary">Open The Ledger</a>
+      </div>
+    </section>
+
+    <div class="section-title why-label">Why you can trust this</div>
+
+    <!-- === ACT 1: THE THESIS (the trust layer) === -->
 
     <div class="prose">
       <strong>Katherine Johnson</strong> approximated John Glenn's re-entry
@@ -647,18 +742,18 @@
 
     <div class="prose">
       <strong>So I built the AI Radar.</strong> I pointed AI agents at
-      3,338 public companies, scanning every earnings call, every 10-K,
-      every press release. They extracted 4,332 verified AI deployments.
+      <span data-count="companies">3,338</span> public companies, scanning every earnings call, every 10-K,
+      every press release. They extracted <span data-count="plain">5,000+</span> verified AI deployments.
       Thousands already in production. It blew my mind. The gap between
       the companies that understand this phase change and the ones doing
       window dressing is enormous.
     </div>
 
     <div class="radar" id="radar">
-      <img src="images/radar.png" alt="AI Radar showing 3,338 companies and 4,332 verified AI use cases" />
+      <img src="images/radar.png" alt="AI Radar showing thousands of companies and verified AI use cases" />
       <div class="radar-overlay">
         <h3>AI Radar</h3>
-        <p>3,338 companies. 4,332 verified AI use cases.</p>
+        <p><span data-count="companies">3,338</span> companies. <span data-count="plain">5,000+</span> verified AI use cases.</p>
         <p style="margin-bottom:20px; color:rgba(255,255,255,0.9); font-size:0.88rem;">Get early access</p>
         <form class="radar-form" id="radarForm" onsubmit="return handleRadar(event)">
           <input type="email" placeholder="your@email.com" required />
@@ -667,7 +762,7 @@
         <div class="radar-thanks" id="radarThanks">Thanks. You'll hear from me soon.</div>
       </div>
       <div class="radar-caption">
-        AI Radar. 3,338 companies. 4,332 use cases. Extracted by AI agents.
+        AI Radar. <span data-count="companies">3,338</span> companies. <span data-count="plain">5,000+</span> use cases. Extracted by AI agents.
       </div>
     </div>
 
@@ -683,9 +778,7 @@
 
     <hr class="rule" />
 
-    <div class="prose">
-      <strong>Here's what the data tells me.</strong>
-    </div>
+    <div class="section-title">What the ledger reveals</div>
 
     <ul class="lines">
       <li><a href="https://scott.ai/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
@@ -720,16 +813,28 @@
     <div class="footer">
       <div class="footer-left">Scott Penberthy <span class="footer-sep">/</span> MIT. PhD in AI. Building since 1993.</div>
       <div class="footer-links">
-        <a href="mailto:scott@scott.ai">scott@scott.ai</a>
+        <a href="/era">The Era</a>
         <span class="footer-sep">/</span>
-        <a href="https://www.linkedin.com/in/tensordoc/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/insights/">The Ledger</a>
         <span class="footer-sep">/</span>
-        <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener">@tensordoc</a>
+        <a href="/speaking">Speaking</a>
+        <span class="footer-sep">/</span>
+        <a href="/aboutme">About</a>
       </div>
+    </div>
+
+    <div class="icons" aria-label="Social links" style="justify-content:center; margin-top:24px;">
+      <a href="https://www.linkedin.com/in/tensordoc/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://twitter.com/scottpenberthy" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.youtube.com/@scottdotai" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/tensordoc" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="mailto:scott@scott.ai" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
 
   </div>
 
+  <script src="/js/live.js" defer></script>
   <script>
     (function(){
       var top = document.querySelector('.top');
