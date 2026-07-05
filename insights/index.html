@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Industry AI Report — 1Q26 | Scott Penberthy</title>
-  <meta name="description" content="Quarterly analysis of 4,198 public companies, 6,103 AI use cases, and 1,376 vendors. Which sectors are winning with AI, and why." />
+  <title>The Ledger — Scott Penberthy</title>
+  <meta name="description" content="Dispatches from the Approximation Era. A running log of where AI is actually hitting the economy, verified against filings and earnings calls." />
   <link rel="canonical" href="https://scott.ai/insights/" />
 
-  <meta property="og:title" content="Industry AI Report — 1Q26" />
-  <meta property="og:description" content="We scanned 4,198 companies. The ones not talking about AI are outperforming those that are. Here's why." />
+  <meta property="og:title" content="The Ledger — dispatches from the Approximation Era" />
+  <meta property="og:description" content="A running log of where AI is actually hitting the economy, verified against filings and earnings calls." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scott.ai/insights/" />
 
@@ -68,6 +68,70 @@
       text-transform: uppercase;
     }
     .top .back:hover { color: var(--accent); }
+
+    /* Shared dark nav */
+    .site-nav{
+      position:sticky; top:0; z-index:120;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0; margin-bottom:36px;
+      border-bottom:1px solid var(--hair);
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+    }
+    .site-nav .brand{
+      font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.2rem;
+      color:var(--ink); text-decoration:none; white-space:nowrap;
+    }
+    .site-nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav .links a{
+      font-size:0.82rem; font-weight:500; color:var(--muted); text-decoration:none;
+      transition:color .15s; white-space:nowrap;
+    }
+    .site-nav .links a:hover, .site-nav .links a[aria-current="page"]{ color:var(--ink); }
+    .site-nav .links a.sub{ color:var(--accent); }
+
+    /* Live count strip */
+    .live-strip{
+      display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+      padding:16px 0 0; margin-bottom:44px;
+    }
+    .live-strip .count{
+      font-family:'EB Garamond',Georgia,serif; font-size:1.15rem; color:var(--accent);
+    }
+    .live-strip .day{
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted);
+    }
+
+    /* Dispatch entries (reverse chronological) */
+    .dispatches{ margin-bottom:50px; }
+    .dispatches h2{
+      font-family:'EB Garamond',Georgia,serif; font-size:1.6rem; font-weight:500; margin-bottom:6px;
+    }
+    .dispatches .sub{ color:var(--muted); font-size:0.92rem; margin-bottom:26px; }
+    .entry{
+      display:grid; grid-template-columns:150px 1fr; gap:24px;
+      padding:26px 0; border-bottom:1px solid var(--hair);
+    }
+    .entry:first-of-type{ border-top:1px solid var(--hair); }
+    .entry .meta{ display:flex; flex-direction:column; gap:8px; }
+    .entry .date{ font-size:0.82rem; color:var(--muted); letter-spacing:0.04em; }
+    .day-badge{
+      display:inline-block; align-self:flex-start;
+      font-size:0.66rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--accent); border:1px solid rgba(201,168,76,0.35);
+      padding:3px 9px; border-radius:5px;
+    }
+    .entry .tag{
+      font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); font-weight:600;
+    }
+    .entry .body .title-line{ font-weight:600; font-size:1.05rem; margin-bottom:8px; color:var(--ink); }
+    .entry .body .desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; margin-bottom:12px; }
+    .entry .body .dl{
+      display:inline-block; font-size:0.8rem; font-weight:600; color:var(--accent);
+      text-decoration:none; letter-spacing:0.04em;
+    }
+    .entry .body .dl:hover{ text-decoration:underline; }
 
     /* Hero */
     .hero {
@@ -288,21 +352,36 @@
       .hero h1 { font-size: 2rem; }
       .stats { flex-wrap: wrap; gap: 20px; }
       .report-card { flex-direction: column; }
+      .site-nav .links { gap: 15px; }
+      .site-nav .links a { font-size: 0.78rem; }
+      .entry { grid-template-columns: 1fr; gap: 12px; }
+      .entry .meta { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
 
-    <div class="top">
-      <a href="https://scott.ai">Scott Penberthy</a>
-      <a href="https://scott.ai" class="back">scott.ai</a>
-    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Era</a>
+        <a href="/insights/" aria-current="page">The Ledger</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/aboutme">About</a>
+        <a class="sub" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+    </nav>
 
     <div class="hero">
-      <div class="kicker">Quarterly Research · April 2026</div>
-      <h1>The 1Q26 Industry AI Report</h1>
-      <div class="lede">A personal research project scanning public companies for AI deployments. Where is AI actually hitting the economy, which occupations are being targeted, and what is the market rewarding?</div>
+      <div class="kicker">The Ledger</div>
+      <h1>The Ledger: dispatches from the Approximation Era.</h1>
+      <div class="lede">A running log of where AI is actually hitting the economy. I scan every earnings call and SEC filing, verify each deployment against independent sources, and publish what holds up. Newest first.</div>
+    </div>
+
+    <div class="live-strip">
+      <span class="count" data-count="verified">5,000+ verified, and counting</span>
+      <span class="day" data-day-counter>Day 247 of documenting the Approximation Era.</span>
     </div>
 
     <div class="stats">
@@ -343,37 +422,83 @@
       </div>
     </div>
 
-    <div class="report-section">
-      <h2>The reports</h2>
+    <div class="dispatches">
+      <h2>Dispatches</h2>
+      <div class="sub">Long-form entries in the log. Reverse chronological. Day numbers count from the first entry.</div>
 
-      <div class="report-card free">
-        <div class="badge">New · 9 pages</div>
-        <div class="info">
+      <div class="entry">
+        <div class="meta">
+          <span class="date">May 2026</span>
+          <span class="day-badge" data-day-of="2026-05-01" hidden></span>
+          <span class="tag">Thesis · 9 pages</span>
+        </div>
+        <div class="body">
           <div class="title-line">The Approximation Era</div>
           <div class="desc">The math that brought John Glenn home is now writing the treatments for cancer. The thesis that ties Katherine Johnson's chalkboard to AlphaFold and the post-cancer future.</div>
-          <a href="/insights/the-approximation-era.pdf" class="dl">Download PDF ↓</a>
+          <a href="/era" class="dl">Read the essay →</a>
+          &nbsp;·&nbsp;
+          <a href="/insights/the-approximation-era.pdf" class="dl">PDF ↓</a>
         </div>
       </div>
 
-      <div class="report-card free">
-        <div class="badge">Free · 8 pages</div>
-        <div class="info">
+      <div class="entry">
+        <div class="meta">
+          <span class="date">April 25, 2026</span>
+          <span class="day-badge" data-day-of="2026-04-25" hidden></span>
+          <span class="tag">Report · 8 pages</span>
+        </div>
+        <div class="body">
           <div class="title-line">Where AI Creates Value — Q2 2026</div>
           <div class="desc">5,752 AI deployments. 2,385 companies. Which deployment patterns correlate with market outperformance, and which five attributes separate the winners.</div>
           <a href="/insights/where-ai-creates-value.pdf" class="dl">Download PDF ↓</a>
         </div>
       </div>
 
-      <div class="report-card free">
-        <div class="badge">Free · 10 pages</div>
-        <div class="info">
+      <div class="entry">
+        <div class="meta">
+          <span class="date">April 16, 2026</span>
+          <span class="day-badge" data-day-of="2026-04-16" hidden></span>
+          <span class="tag">Report · 10 pages</span>
+        </div>
+        <div class="body">
           <div class="title-line">Industry AI Report — 1Q26</div>
           <div class="desc">The thesis, methodology, and seven-sector summary. Anonymized. No company names.</div>
           <a href="/insights/industry_1q26.pdf" class="dl">Download PDF ↓</a>
         </div>
       </div>
 
+      <div class="entry">
+        <div class="meta">
+          <span class="date">April 9, 2026</span>
+          <span class="day-badge" data-day-of="2026-04-09" hidden></span>
+          <span class="tag">Note</span>
+        </div>
+        <div class="body">
+          <div class="title-line">Watts, Tokens &amp; Money</div>
+          <div class="desc">Value flows downward in the AI economy. Energy wins, pure software loses. The companies that control watts and silicon will own the next decade.</div>
+          <a href="/insights/watts.pdf" class="dl">Download PDF ↓</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="meta">
+          <span class="date">April 6, 2026</span>
+          <span class="day-badge" data-day-of="2026-04-06" hidden></span>
+          <span class="tag">Note</span>
+        </div>
+        <div class="body">
+          <div class="title-line">Move to the Edge</div>
+          <div class="desc">AI is eating the middle of every job. The value moves to the people closest to the work and the machines doing it. Everything in between gets compressed.</div>
+          <a href="/insights/edge.pdf" class="dl">Download PDF ↓</a>
+        </div>
+      </div>
+
     </div>
+
+    <!-- TODO(scott): as the scanner surfaces individual verified deployments, add them here as
+         short dated entries (newest at top) with their own data-day-of badge. Tag oncology /
+         healthcare entries so they accumulate into a visible mission sub-ledger. -->
+
 
     <div class="cta-block">
       <p>I publish a new AI case study every day. The quarterly report connects the dots. If this research is useful, stay close.</p>
@@ -386,7 +511,7 @@
     <div class="about">
       <p>This is a personal research project. I scan earnings calls and SEC filings for AI deployments, map them to occupations using the U.S. Standard Occupational Classification, and correlate them with risk-adjusted market performance. The goal is to understand where AI is creating value and where it is not.</p>
       <p>The views here are my own. They do not represent my employer or any advisory boards I serve on. This is not investing advice.</p>
-      <p style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.1em; margin-top: 16px;">100+ AI CASE STUDIES · 4,198 COMPANIES SCANNED · SCOTT.AI</p>
+      <p style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.1em; margin-top: 16px;"><span data-count="plain">5,000+</span> VERIFIED DEPLOYMENTS · <span data-count="companies">3,338</span> COMPANIES SCANNED · SCOTT.AI</p>
     </div>
 
     <div class="disclaimer">
@@ -394,5 +519,7 @@
     </div>
 
   </div>
+
+  <script src="/js/live.js" defer></script>
 </body>
 </html>

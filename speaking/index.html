@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaking — Scott Penberthy</title>
+  <meta name="description" content="Keynotes on what's real in AI. Live verdicts from 5,000+ verified deployments, from someone who has watched four computing waves since 1977." />
+  <link rel="canonical" href="https://scott.ai/speaking" />
+
+  <meta property="og:title" content="Speaking — Scott Penberthy" />
+  <meta property="og:description" content="Your audience leaves knowing what's real in AI, and what's theater. Live verdicts from 5,000+ verified deployments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scott.ai/speaking" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-surface:#141414;
+      --bg-surface-2:#1a1a1a;
+      --ink:#e8e8e8;
+      --muted:#9a968c;
+      --dim:#8a857b;
+      --hair:rgba(255,255,255,0.08);
+      --accent:#c9a84c;
+      --radius:14px;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.7;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .wrap{ max-width:900px; margin:0 auto; padding:0 28px 90px; }
+
+    /* Shared dark nav */
+    .site-nav{
+      position:sticky; top:0; z-index:120;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 28px; margin:0 -28px 0;
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--hair);
+    }
+    .site-nav .brand{
+      font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.15rem;
+      color:#f0efe9; text-decoration:none; letter-spacing:-0.01em; white-space:nowrap;
+    }
+    .site-nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav .links a{
+      font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:500;
+      color:rgba(240,239,233,0.62); text-decoration:none; transition:color .15s; white-space:nowrap;
+    }
+    .site-nav .links a:hover, .site-nav .links a[aria-current="page"]{ color:#fff; }
+    .site-nav .links a.sub{ color:var(--accent); }
+    .site-nav .links a.sub:hover{ color:#f4e6b8; }
+
+    /* Hero */
+    .hero{ padding:64px 0 40px; border-bottom:1px solid var(--hair); }
+    .hero .kicker{
+      font-size:0.72rem; letter-spacing:0.24em; text-transform:uppercase;
+      color:var(--accent); font-weight:600; margin-bottom:18px;
+    }
+    .hero h1{
+      font-family:'EB Garamond',Georgia,serif; font-weight:500;
+      font-size:clamp(2.1rem,5vw,3.3rem); line-height:1.1; letter-spacing:-0.015em;
+      margin-bottom:22px; max-width:20ch;
+    }
+    .hero .sub{
+      font-size:clamp(1.02rem,2.2vw,1.2rem); color:var(--muted); line-height:1.6; max-width:60ch;
+    }
+    .hero .sub b{ color:var(--ink); font-weight:600; }
+
+    /* Proof bar */
+    .proofbar{
+      display:flex; flex-wrap:wrap; gap:10px 26px; align-items:center;
+      padding:22px 0; border-bottom:1px solid var(--hair);
+      font-size:0.86rem; color:var(--muted);
+    }
+    .proofbar .lead{ color:var(--accent); font-weight:600; letter-spacing:0.02em; }
+    .proofbar .sep{ opacity:0.3; }
+
+    section{ padding:48px 0 8px; scroll-margin-top:70px; }
+    .section-label{
+      font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--dim); margin-bottom:20px;
+    }
+    h2{ font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.7rem; line-height:1.2; margin-bottom:8px; }
+
+    /* Signature talk */
+    .talk{
+      background:var(--bg-surface); border:1px solid var(--hair); border-radius:var(--radius);
+      padding:32px 30px; margin-bottom:16px;
+    }
+    .talk .tag{
+      font-size:0.66rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent);
+      font-weight:600; margin-bottom:12px;
+    }
+    .talk h3{ font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.5rem; line-height:1.2; margin-bottom:14px; }
+    .talk .promise{ color:var(--muted); font-size:1rem; line-height:1.6; }
+    .talk .promise b{ color:var(--ink); font-weight:600; }
+
+    /* Outcome cards */
+    .angles{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:8px; }
+    .angle{
+      background:var(--bg-surface); border:1px solid var(--hair); border-radius:var(--radius);
+      padding:24px 22px; transition:border-color .2s, transform .2s;
+    }
+    .angle:hover{ border-color:rgba(201,168,76,0.35); transform:translateY(-2px); }
+    .angle .who{
+      font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--dim);
+      font-weight:600; margin-bottom:10px;
+    }
+    .angle .outcome{ font-family:'EB Garamond',Georgia,serif; font-size:1.24rem; line-height:1.25; color:var(--ink); }
+
+    /* Reel placeholder */
+    .reel{
+      margin-top:8px; border:1px dashed var(--hair); border-radius:var(--radius);
+      background:linear-gradient(135deg,#141414,#1a1a1a);
+      aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; color:var(--dim); padding:24px;
+    }
+    .reel .play{
+      width:58px; height:58px; border-radius:50%; border:1px solid var(--hair);
+      display:flex; align-items:center; justify-content:center; margin-bottom:14px; color:var(--muted);
+    }
+    .reel .play svg{ width:20px; height:20px; margin-left:3px; }
+    .reel p{ font-size:0.85rem; }
+
+    /* Contact */
+    .contact-card{
+      background:var(--bg-surface); border:1px solid var(--hair); border-radius:var(--radius);
+      padding:36px 32px; text-align:center; margin-top:8px;
+    }
+    .contact-card p{ color:var(--muted); font-size:0.98rem; line-height:1.6; margin-bottom:22px; max-width:52ch; margin-inline:auto; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:13px 26px; border-radius:10px; text-decoration:none; font-weight:600; font-size:0.94rem;
+      transition:transform .15s, box-shadow .15s;
+    }
+    .btn-primary{ background:var(--accent); color:#0a0a0a; border:none; }
+    .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 24px rgba(201,168,76,0.25); }
+
+    .footer{
+      margin-top:56px; padding-top:20px; border-top:1px solid var(--hair);
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+      font-size:0.82rem; color:var(--dim);
+    }
+    .footer a{ color:var(--dim); text-decoration:none; transition:color .15s; }
+    .footer a:hover{ color:var(--ink); }
+
+    @media (max-width:680px){
+      .angles{ grid-template-columns:1fr; }
+      .site-nav{ padding:12px 18px; }
+      .site-nav .links{ gap:15px; }
+      .site-nav .links a{ font-size:0.78rem; }
+      .wrap{ padding:0 18px 72px; }
+      .site-nav{ margin:0 -18px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Shared dark nav -->
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Era</a>
+        <a href="/insights/">The Ledger</a>
+        <a href="/speaking" aria-current="page">Speaking</a>
+        <a href="/aboutme">About</a>
+        <a class="sub" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="kicker">Keynotes &amp; Main-Stage Talks</div>
+      <h1>Your audience leaves knowing what's real in AI, and what's theater.</h1>
+      <p class="sub">Live verdicts from <b><span data-count="plain">5,000+</span> verified deployments</b>, delivered by someone who has watched four computing waves since 1977.</p>
+    </header>
+
+    <div class="proofbar">
+      <span class="lead">Closing keynote, Deloitte (700 attendees, Sydney)</span>
+      <span class="sep">·</span>
+      <span>300+ keynotes</span>
+      <span class="sep">·</span>
+      <span>Google · PwC · IBM</span>
+    </div>
+
+    <!-- Signature talks -->
+    <section id="signature">
+      <div class="section-label">Signature Talks</div>
+      <div class="talk">
+        <div class="tag">The Flagship Keynote</div>
+        <h3>The Approximation Era: What 5,000+ Verified Deployments Reveal</h3>
+        <p class="promise">The promise: <b>how to spot the real AI winners before the market prices them in.</b> A live tour of the evidence, from Katherine Johnson's chalkboard to the scanner reading every earnings call, ending with the patterns that separate signal from theater.</p>
+      </div>
+      <div class="talk">
+        <div class="tag">The Duo Keynote · Two Brothers On Stage</div>
+        <h3>AI × Cancer: Keeping a Promise</h3>
+        <p class="promise">The oncologist and the AI guy, side by side, on one disease. Our mother made us promise to find a better way. He treats patients; I build the approximator. The promise: <b>your audience sees exactly how the Approximation Era turns cancer from terminal to chronic to managed</b>, told by the two people keeping the promise. The strongest, most human ninety minutes on this program. <a href="/era#mission" style="color:var(--accent);text-decoration:none;">Read the story →</a></p>
+      </div>
+    </section>
+
+    <!-- Outcome angles -->
+    <section id="angles">
+      <div class="section-label">Framed As Audience Outcomes</div>
+      <div class="angles">
+        <div class="angle">
+          <div class="who">For investors</div>
+          <div class="outcome">Place smarter AI bets.</div>
+        </div>
+        <div class="angle">
+          <div class="who">For executives</div>
+          <div class="outcome">Stop funding theater.</div>
+        </div>
+        <div class="angle">
+          <div class="who">For everyone</div>
+          <div class="outcome">See where the era goes next.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight reel -->
+    <section id="reel">
+      <div class="section-label">On Stage</div>
+      <!-- TODO(scott): drop in the highlight reel here. Replace this placeholder div with the
+           embed (YouTube/Vimeo iframe or <video>). Keep aspect-ratio 16/9. Do not autoplay. -->
+      <div class="reel" role="img" aria-label="Highlight reel placeholder">
+        <div class="play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p>Highlight reel coming soon.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-label">Book a Talk</div>
+      <div class="contact-card">
+        <h2>Bring the verdicts to your stage.</h2>
+        <p>Tell me your audience, your date, and what you want them to walk out believing. I'll come back with a tailored version of the talk.</p>
+        <a class="btn btn-primary" href="mailto:scott@scott.ai?subject=Speaking%20inquiry&amp;body=Event%3A%20%0AAudience%3A%20%0ADate%3A%20%0ALocation%3A%20%0AWhat%20you%20want%20them%20to%20leave%20knowing%3A%20">Email scott@scott.ai →</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>Dr. Scott Penberthy · <a href="/">scott.ai</a></div>
+      <div>
+        <a href="/era">The Era</a> ·
+        <a href="/insights/">The Ledger</a> ·
+        <a href="mailto:scott@scott.ai">scott@scott.ai</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/live.js" defer></script>
+</body>
+</html>

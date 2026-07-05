@@ -7,15 +7,18 @@ var main = {
 
   init : function() {
     // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-            $(".navbar-custom .avatar-container").fadeOut(500);
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-            $(".navbar-custom .avatar-container").fadeIn(500);
-        }
-    });
+    // (Guarded: the current site header replaces the legacy .navbar, so skip when absent.)
+    if ($(".navbar").length) {
+      $(window).scroll(function() {
+          if ($(".navbar").offset().top > 50) {
+              $(".navbar").addClass("top-nav-short");
+              $(".navbar-custom .avatar-container").fadeOut(500);
+          } else {
+              $(".navbar").removeClass("top-nav-short");
+              $(".navbar-custom .avatar-container").fadeIn(500);
+          }
+      });
+    }
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {
