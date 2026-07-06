@@ -28,10 +28,13 @@
   /* Pull the legacy page banner up under the new sticky bar. */
   .intro-header{ margin-top: 24px !important; }
   @media (max-width: 600px){
-    .sitehdr{ padding: 11px 16px; }
-    .sitehdr .sitehdr-brand{ font-size: 1rem; }
-    .sitehdr-links{ gap: 14px; }
-    .sitehdr-links a{ font-size: 0.76rem; }
+    .sitehdr{ flex-direction: column; align-items: stretch; gap: 10px; padding: 11px 16px; }
+    .sitehdr .sitehdr-brand{ font-size: 1.05rem; white-space: nowrap; }
+    .sitehdr-links{
+      width: 100%; justify-content: space-between; gap: 6px 10px;
+      padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sitehdr-links a{ font-size: 0.8rem; }
   }
 </style>
 <header class="sitehdr" aria-label="Primary navigation">
