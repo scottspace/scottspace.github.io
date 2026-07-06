@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Scott Penberthy</title>
+  <meta name="description" content="Scott Penberthy has been hands-on for four computing waves since 1977. MIT at 16, PhD in AI. Advised IBM, PwC, and built Google Cloud's AI business. Now documenting the Approximation Era." />
+  <link rel="canonical" href="https://scott.ai/about" />
+
+  <meta property="og:title" content="About — Scott Penberthy" />
+  <meta property="og:description" content="Four computing waves since 1977. Hands-on first, then the boardroom. Now verifying what's real in AI, and keeping a promise about cancer." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://scott.ai/about" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-dark:#0a0a0a;
+      --bg-surface:#141414;
+      --paper:#faf8f3;
+      --paper-2:#f2efe6;
+      --ink:#1c1a17;
+      --ink-soft:#3d3a34;
+      --ink-mute:#6b665c;
+      --line:#e2ddd0;
+      --line-dark:rgba(255,255,255,0.08);
+      --accent:#b8912f;
+      --accent-ink:#7d6218;
+      --accent-dim:#c9a84c;
+      --measure:65ch;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'EB Garamond', Charter, 'Bitstream Charter', Georgia, 'Times New Roman', serif;
+      background:var(--paper); color:var(--ink);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+
+    /* Shared dark nav */
+    .site-nav{
+      position:sticky; top:0; z-index:120;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 28px;
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--line-dark);
+    }
+    .site-nav .brand{
+      font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.15rem;
+      color:#f0efe9; text-decoration:none; letter-spacing:-0.01em; white-space:nowrap;
+    }
+    .site-nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav .links a{
+      font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:500;
+      color:rgba(240,239,233,0.62); text-decoration:none; transition:color .15s; white-space:nowrap;
+    }
+    .site-nav .links a:hover, .site-nav .links a[aria-current="page"]{ color:#fff; }
+    .site-nav .links a.sub{ color:var(--accent-dim); }
+    .site-nav .links a.sub:hover{ color:#f4e6b8; }
+
+    /* Dark hero band */
+    .hero{
+      background:radial-gradient(120% 140% at 20% 0%, #17171a 0%, #0a0a0a 60%);
+      color:#efeee8; border-bottom:1px solid var(--line-dark);
+      padding:66px 28px 64px;
+    }
+    .hero-inner{ max-width:760px; margin:0 auto; }
+    .kicker{
+      font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:600;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-dim); margin-bottom:20px;
+    }
+    .hero h1{
+      font-weight:500; font-size:clamp(2rem,5vw,3.2rem); line-height:1.1;
+      letter-spacing:-0.015em; margin-bottom:22px; max-width:20ch;
+    }
+    .hero .subline{
+      font-family:'Inter',sans-serif; font-size:clamp(1rem,2.2vw,1.16rem);
+      line-height:1.6; color:rgba(239,238,232,0.78); max-width:56ch;
+    }
+    .hero .subline b{ color:#fff; font-weight:600; }
+
+    /* Body */
+    .essay{ padding:0 28px; }
+    .measure{ max-width:var(--measure); margin:0 auto; }
+    section{ padding:50px 0 6px; scroll-margin-top:70px; }
+    section:first-of-type{ padding-top:58px; }
+    .eyebrow{
+      font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:14px;
+    }
+    .essay h2{
+      font-weight:500; font-size:clamp(1.6rem,3.4vw,2.05rem); line-height:1.15;
+      letter-spacing:-0.01em; margin-bottom:22px; color:var(--ink);
+    }
+    .essay p{ font-size:1.24rem; line-height:1.72; color:var(--ink-soft); margin-bottom:22px; }
+    .essay p .lead-in{ color:var(--ink); font-weight:600; }
+    .essay p b{ color:var(--ink); font-weight:600; }
+    .essay a{
+      color:var(--ink); text-decoration:underline;
+      text-decoration-color:rgba(184,145,47,0.5); text-underline-offset:3px; transition:text-decoration-color .15s;
+    }
+    .essay a:hover{ text-decoration-color:var(--accent); }
+
+    .figure{ margin:32px 0; }
+    .figure img{ width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,0.18); background:#111; }
+    .figure figcaption{ font-style:italic; font-size:1rem; line-height:1.5; color:var(--ink-mute); margin-top:12px; max-width:60ch; }
+
+    /* The record */
+    .record{ border-top:1px solid var(--line); margin-top:8px; }
+    .record .row{
+      display:grid; grid-template-columns:200px 1fr; gap:20px;
+      padding:15px 0; border-bottom:1px solid var(--line);
+    }
+    .record .org{ font-weight:600; color:var(--ink); font-size:1.05rem; }
+    .record .org .tag{ display:block; font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-mute); margin-top:3px; }
+    .record .what{ color:var(--ink-soft); font-size:1.02rem; line-height:1.5; }
+
+    .promise-block{
+      margin:32px 0; padding:28px 32px; background:var(--paper-2);
+      border-left:3px solid var(--accent); border-radius:0 12px 12px 0;
+    }
+    .promise-block p{ font-size:clamp(1.28rem,3vw,1.5rem); line-height:1.5; color:var(--ink); margin:0; font-weight:500; }
+
+    .divider{ border:none; border-top:1px solid var(--line); margin:8px 0; }
+
+    /* End matter */
+    .endmatter{
+      background:var(--bg-surface); color:rgba(240,239,233,0.65);
+      border-top:1px solid var(--line-dark); padding:44px 28px 56px; font-family:'Inter',sans-serif;
+    }
+    .endmatter .measure{ max-width:640px; }
+    .endmatter h3{ font-family:'EB Garamond',Georgia,serif; color:#efeee8; font-size:1.4rem; font-weight:500; margin-bottom:8px; }
+    .endmatter p{ font-size:0.95rem; line-height:1.6; margin-bottom:18px; }
+    .end-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; padding:12px 22px; border-radius:9px; text-decoration:none; font-weight:600; font-size:0.92rem; transition:transform .15s, box-shadow .15s; }
+    .btn-primary{ background:var(--accent-dim); color:#0a0a0a; }
+    .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(201,168,76,0.25); }
+    .btn-secondary{ background:transparent; color:#efeee8; border:1px solid var(--line-dark); }
+    .btn-secondary:hover{ transform:translateY(-1px); border-color:var(--accent-dim); }
+    .foot-links{ font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .foot-links a{ color:rgba(240,239,233,0.55); text-decoration:none; }
+    .foot-links a:hover{ color:#fff; }
+    .icons{ display:flex; gap:16px; margin-top:18px; }
+    .icons a{ color:rgba(240,239,233,0.5); font-size:1.05rem; text-decoration:none; transition:color .15s; }
+    .icons a:hover{ color:#fff; }
+
+    @media (max-width:600px){
+      .hero{ padding:46px 20px 48px; }
+      .essay, .endmatter{ padding-left:20px; padding-right:20px; }
+      .essay p{ font-size:1.14rem; }
+      .record .row{ grid-template-columns:1fr; gap:4px; }
+      .site-nav{ flex-direction:column; align-items:stretch; gap:10px; padding:12px 18px; }
+      .site-nav .brand{ white-space:nowrap; }
+      .site-nav .links{ width:100%; justify-content:space-between; gap:6px 10px; padding-top:10px; border-top:1px solid var(--line-dark); }
+      .site-nav .links a{ font-size:0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="/">Scott Penberthy</a>
+    <div class="links">
+      <a href="/era">The Era</a>
+      <a href="/insights/">The Ledger</a>
+      <a href="/speaking">Speaking</a>
+      <a href="/about" aria-current="page">About</a>
+      <a class="sub" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">About</div>
+      <h1>I find out what's real, then I bring it to the people who have to bet on it.</h1>
+      <p class="subline">I am Scott Penberthy. I have been hands-on for four computing waves since 1977, from the early internet to the cloud to generative AI. <b>Every time, I learn the technology myself before I advise anyone about it.</b></p>
+    </div>
+  </header>
+
+  <main class="essay">
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">The throughline</div>
+        <h2>The job has never really changed.</h2>
+        <p><span class="lead-in">I go hands-on first.</span> I learn a new technology deeply, figure out where it is headed, and carry what I find to CEOs and boards so they can move before the market does. The technology keeps changing. The discipline does not. Right now that technology is AI, and I am more convinced by it than by anything I have worked on before.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">Where it started</div>
+        <h2>I went to MIT at sixteen to become an astronaut.</h2>
+        <p>Two months into the Navy ROTC flight program, my eyesight washed me out. I was certain my life was over, the way a teenager is certain of things. Then I wandered into an open house at the MIT Artificial Intelligence Laboratory, and I fell in love. I spent the next four years there, teaching and building robots, and eventually earned a PhD in AI.</p>
+        <p>It took decades for that training to become the center of the story. It finally has. Everything I learned about approximation, computation, and learning machines turned out to be the foundation of the era we are now living through.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">The rooms</div>
+        <h2>I have been in the room for four of these shifts.</h2>
+        <p>I advised <b>Lou Gerstner</b> as IBM bet the company on the internet; that work grew into a $15B business. I was Chief Technology Advisor to <b>Bob Moritz</b> as PwC moved 6,000 partners and 160 territories to the cloud. I founded Google Cloud's Applied AI business and grew it across NASA, healthcare, and genomics into one of Cloud's fastest segments. I scaled Photobucket to 50 million users before it was acquired for $300M. Today, at Alphabet, I work on generative AI, where the same pattern is playing out in content and advertising.</p>
+
+        <div class="record">
+          <div class="row"><div class="org">Alphabet <span class="tag">Current</span></div><div class="what">Working on generative AI across content and advertising.</div></div>
+          <div class="row"><div class="org">Google Cloud</div><div class="what">Founded Applied AI. NASA, healthcare, genomics. Grew into a multi-billion-dollar business.</div></div>
+          <div class="row"><div class="org">PwC</div><div class="what">Chief Technology Advisor to CEO Bob Moritz. Global cloud transformation of 6,000 partners across 160 territories.</div></div>
+          <div class="row"><div class="org">IBM</div><div class="what">Advised CEO Lou Gerstner as the company bet on the internet. Grew into a $15B business.</div></div>
+          <div class="row"><div class="org">Photobucket</div><div class="what">Scaled the platform to 50 million users. Acquired for $300M.</div></div>
+          <div class="row"><div class="org">Stanford Medicine</div><div class="what">Tumor board and pharmacogenomics advisor.</div></div>
+          <div class="row"><div class="org">Lustgarten Foundation</div><div class="what">Board member. Pancreatic cancer research.</div></div>
+          <div class="row"><div class="org">Marconi Foundation</div><div class="what">Advisory board.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">What I do now</div>
+        <h2>Every day I write down one thing AI actually did.</h2>
+        <p>One verified deployment that moved a real number. When I ran out of hand-picked examples, I built a scanner that reads every earnings call and SEC filing across the major indexes and validates each deployment against independent sources. That became <a href="/insights/">The Ledger</a>: <span data-count="plain">5,000+</span> verified deployments and counting.</p>
+        <p>The pattern underneath the data became a thesis I have spent a decade working through. I call it <a href="/era">the Approximation Era</a>. The short version: AI is a universal approximator, we are trading calculus for compute, and one industry after another is becoming computable. It is not a tech trend. It is a phase change.</p>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="measure">
+        <div class="eyebrow">The reason</div>
+        <h2>Why I count.</h2>
+        <p><span class="lead-in">All of it points at one thing.</span></p>
+
+        <div class="promise-block">
+          <p>My mother died of cancer at 57. Before she went, she made my brother and me promise to find a better way. He became an oncologist. I became the AI guy. The Approximation Era is how we finally keep the promise.</p>
+        </div>
+
+        <p>That promise is why I sit on the tumor board at Stanford Medicine, why I serve on the board of the Lustgarten Foundation for pancreatic cancer research, and why I started the AI Cancer Forum with my mentor Lee Hood. Lee and I have been circling an idea we call <b>Clearome</b>: the same approximation engine pointed squarely at cancer, phenomics read like a movie of the body. It is early. It is a conversation between two people who have been at this a long time, not a company and not a plan. But it is the direction the evidence keeps pointing, and the one I care about most.</p>
+
+        <div class="figure">
+          <img src="/images/hero.png" alt="Scott Penberthy on stage with Lee Hood at the AI Cancer Forum" loading="lazy" />
+          <figcaption>With Lee Hood at the AI Cancer Forum I started.</figcaption>
+        </div>
+
+        <p>Katherine Johnson did the math by hand because there was no other way. We have other ways now. The work is the same. Show up. Take the next step. Keep stepping.</p>
+        <hr class="divider" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="endmatter">
+    <div class="measure">
+      <h3>Stay close to the work.</h3>
+      <p>One email a week: the verified deployments that moved a number, and what they mean for where the money is going.</p>
+      <div class="end-actions">
+        <a class="btn btn-primary" href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">Join the list →</a>
+        <a class="btn btn-secondary" href="/era">Read the thesis</a>
+        <a class="btn btn-secondary" href="/speaking">Book a talk</a>
+      </div>
+      <div class="foot-links">Dr. Scott Penberthy · <a href="/">scott.ai</a> · MIT · PhD in AI · Building since 1977</div>
+      <div class="icons" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/tensordoc/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/scottpenberthy" target="_blank" rel="noopener" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@scottdotai" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="mailto:scott@scott.ai" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="/js/live.js" defer></script>
+</body>
+</html>
