@@ -565,6 +565,53 @@
       opacity: 0.3;
     }
 
+    /* Landing sections */
+    .lede-block{ margin: 12px 0 8px; }
+    .lede-block .big{
+      font-family:'EB Garamond',Georgia,serif;
+      font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+      line-height: 1.3;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .lede-block .big em{ color: var(--accent); font-style: normal; }
+
+    .proof-line{
+      font-size: 0.86rem; color: var(--muted); line-height: 1.65; margin-top: 22px;
+    }
+    .proof-line a{
+      color: var(--ink); text-decoration: underline; text-underline-offset: 3px;
+      text-decoration-color: rgba(255,255,255,0.25);
+    }
+    .proof-line a:hover{ text-decoration-color: rgba(255,255,255,0.6); }
+
+    .inline-link{
+      color: var(--ink); text-decoration: underline; text-underline-offset: 3px;
+      text-decoration-color: rgba(201,168,76,0.5); font-weight: 600;
+    }
+    .inline-link:hover{ text-decoration-color: var(--accent); }
+
+    /* Email signup */
+    .signup-form{ display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; }
+    .signup-form input{
+      flex:1; min-width:200px; padding:13px 16px; border-radius:10px;
+      border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.06);
+      color:#fff; font-size:0.95rem; font-family:'Inter',sans-serif; outline:none;
+      transition:border-color .15s;
+    }
+    .signup-form input::placeholder{ color:rgba(255,255,255,0.4); }
+    .signup-form input:focus{ border-color:rgba(201,168,76,0.6); }
+    .signup-form button{
+      padding:13px 22px; border-radius:10px; border:none; background:var(--accent);
+      color:#0a0a0a; font-weight:600; font-size:0.95rem; font-family:'Inter',sans-serif;
+      cursor:pointer; white-space:nowrap; transition:transform .15s, box-shadow .15s;
+    }
+    .signup-form button:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(201,168,76,0.28); }
+    .signup-thanks{ color:#fff; font-size:0.98rem; margin-top:16px; display:none; }
+    .signup-alt{ margin-top:16px; font-size:0.82rem; color:var(--muted); }
+    .signup-alt a{ color:var(--accent); text-decoration:none; }
+    .signup-alt a:hover{ text-decoration:underline; }
+
     @media (max-width: 560px){
       .wrap{ padding: 20px 16px 68px; }
       .top{ padding: 14px 16px 12px; margin: 0 -16px 16px; }
@@ -608,206 +655,77 @@
       </div>
     </section>
 
-    <div class="section-title why-label">Why you can trust this</div>
-
-    <!-- === ACT 1: THE THESIS (the trust layer) === -->
-
-    <div class="prose">
-      <strong>Katherine Johnson</strong> approximated John Glenn's re-entry
-      trajectory by hand, one calculation per second, using Euler's method.
-      Glenn refused to board the rocket until she checked the numbers. She
-      got it right. He came home alive.
-    </div>
-
-    <div class="visual">
-      <img src="images/hero-chalkboard.png" alt="Chalkboard covered in orbital trajectory equations and Euler's method" />
-    </div>
-
-    <div class="prose">
-      <strong>Today</strong> we run that same math trillions of times per
-      second, across thousands of processors, on trillions of times more
-      data. We have built a universal approximator and a universal generator.
-      Two new tools for science and business.
-    </div>
-
-    <div class="prose">
-      <strong>Feed a model</strong> enough low-level data over time and
-      something remarkable happens. Pixels over time, and it learns physics,
-      fluid motion, emotion, cinema. Nucleotides over time, and it learns
-      how proteins fold, how genes express, how cancer progresses. The same
-      architecture, the same math, working across physics, biology, and
-      creativity.
-    </div>
-
-    <div class="visual">
-      <img src="images/cinema-to-bio.png" alt="Cinematic video and biological systems connected by the same mathematics" />
-    </div>
-
-    <div class="prose">
-      <strong>That shouldn't be surprising.</strong> We've been approximating
-      the world for centuries. Newton was wrong, but close enough to build
-      bridges and predict tides. We traded pen and paper for calculus, and
-      it gave us the modern world.
-    </div>
-
-    <div class="prose">
-      <strong>Now we're doing it again,</strong> at a scale Katherine Johnson
-      couldn't have imagined. Instead of one equation solved by hand, these
-      models use high-dimensional functions with billions of parameters to
-      approximate the observable universe. They're still wrong. Newton was
-      wrong too. But they're less wrong than anything we've had before, and
-      getting less wrong fast.
-    </div>
-
-    <div class="prose">
-      <strong>A healthy life</strong> is a path through the space of valid
-      lives. The edges are illness and death. A gorgeous video is a path
-      through time, with characters, places, things, and emotions. A drug
-      binding to its receptor is one shape fitting into another. The math
-      doesn't know which one it's solving. It just finds the path.
-    </div>
-
-    <div class="visual">
-      <img src="images/midbreak.png" alt="High-dimensional convex hulls with a trajectory path" />
-    </div>
-
-    <!-- === ACT 2: WHO I AM === -->
-
-    <div class="prose">
-      <strong>I've been in the room</strong> for four of these shifts. I
-      advised Lou Gerstner as IBM bet the company on the internet. That
-      work grew into a $15B business. I was Chief Technology Advisor to
-      Bob Moritz as PwC moved 6,000 partners and 160 territories to cloud.
-      I built Google Cloud's AI business
-      from <a href="https://www.youtube.com/watch?v=RtAtsEyAWA4" target="_blank" rel="noopener">NASA</a>
-      to healthcare to genomics, growing it into one of Cloud's fastest
-      segments. Now at Alphabet I work on generative AI, where the same
-      pattern is playing out in content and advertising.
-    </div>
-
-    <div class="bio-photo" id="bioPhoto">
-      <img src="images/hero.png" alt="Scott Penberthy and Lee Hood on stage at the AI Cancer Forum" />
-      <div class="bio-photo-bar">
-        <div class="bio-caption">With Lee Hood at the AI Cancer Forum I started.</div>
-      </div>
-    </div>
-
-    <div class="prose" style="margin-top: 24px;">
-      <strong>Every time,</strong> I go hands-on first. I learn the
-      technology deeply, figure out where it's headed, and bring what I find
-      to CEOs and boards. That's what I do.
-    </div>
-
-    <div class="bio-details">
-      <div class="bio-co">Alphabet <span class="bio-tag">(current)</span></div>
-      <div class="bio-desc">Advises leadership on generative AI, content, and advertising.</div>
-      <div class="bio-co">Google Cloud</div>
-      <div class="bio-desc">Founded Applied AI. NASA, healthcare, genomics. Multi-billion-dollar business.</div>
-      <div class="bio-co">PwC</div>
-      <div class="bio-desc">Chief Technology Advisor to CEO Bob Moritz. Global cloud transformation.</div>
-      <div class="bio-co">Stanford Medicine</div>
-      <div class="bio-desc">Tumor board and pharmacogenomics advisor.</div>
-      <div class="bio-co">Lustgarten</div>
-      <div class="bio-desc">Board member. Pancreatic cancer research.</div>
-      <div class="bio-co">Marconi Foundation</div>
-      <div class="bio-desc">Advisory board.</div>
-      <div class="bio-co">Photobucket</div>
-      <div class="bio-desc">Scaled platform to 50M users. Acquired for $300M.</div>
-      <div class="bio-co">IBM</div>
-      <div class="bio-desc">Advised CEO Lou Gerstner. Internet infrastructure. $15B impact.</div>
-    </div>
+    <p class="proof-line">
+      By Scott Penberthy. MIT at 16, PhD in AI, four computing waves since 1977.
+      Built Google Cloud's AI business, advised IBM's Lou Gerstner and PwC's Bob Moritz,
+      now working on generative AI at Alphabet. <a href="/aboutme">About →</a>
+    </p>
 
     <hr class="rule" />
 
-    <!-- === ACT 3: THE CANON === -->
+    <!-- === THE PROBLEM === -->
 
+    <div class="section-title">The problem</div>
     <div class="prose">
-      <strong>Copernicus</strong> wrote down the position of the sun and
-      moon every day. Not to publish. To see. The data told him we weren't
-      the center of the universe.
+      <strong>Every company says it is "doing AI."</strong> Almost none of it moves a number.
+      The press releases, the demos, the hype cycles: most of it is theater. And you are being
+      asked to bet real money, budget, and reputation on which parts are real.
     </div>
 
-    <div class="visual">
-      <img src="images/copernicus.png" alt="Copernicus recording astronomical observations by candlelight" />
-    </div>
+    <!-- === HOW IT WORKS === -->
 
+    <div class="section-title">How it works</div>
     <div class="prose">
-      <strong>I started doing the same thing</strong> with AI. Every day I
-      document one deployment that moved a number. A short-form video. One
-      data point. I started with the hyperscalers and ran out after a few
-      hundred. The well ran dry. I needed a bigger lens.
-    </div>
-
-    <!-- === ACT 4: THE EVIDENCE === -->
-
-    <div class="prose">
-      <strong>So I built the AI Radar.</strong> I pointed AI agents at
-      <span data-count="companies">3,338</span> public companies, scanning every earnings call, every 10-K,
-      every press release. They extracted <span data-count="plain">5,000+</span> verified AI deployments.
-      Thousands already in production. It blew my mind. The gap between
-      the companies that understand this phase change and the ones doing
-      window dressing is enormous.
+      <strong>So I built a scanner.</strong> It reads every earnings call and SEC filing across
+      the major indexes, extracts every AI deployment, and validates each one against independent
+      sources. What survives goes in the ledger:
+      <span data-count="plain">5,000+</span> verified deployments across
+      <span data-count="companies">3,338</span> public companies, one more every day. A running,
+      checkable map of where AI is actually working, and where it is just window dressing.
     </div>
 
     <div class="radar" id="radar">
-      <img src="images/radar.png" alt="AI Radar showing thousands of companies and verified AI use cases" />
-      <div class="radar-overlay">
-        <h3>AI Radar</h3>
-        <p><span data-count="companies">3,338</span> companies. <span data-count="plain">5,000+</span> verified AI use cases.</p>
-        <p style="margin-bottom:20px; color:rgba(255,255,255,0.9); font-size:0.88rem;">Get early access</p>
-        <form class="radar-form" id="radarForm" onsubmit="return handleRadar(event)">
-          <input type="email" placeholder="your@email.com" required />
-          <button type="submit">Get access</button>
-        </form>
-        <div class="radar-thanks" id="radarThanks">Thanks. You'll hear from me soon.</div>
-      </div>
+      <img src="images/radar.png" alt="AI Radar visualization of thousands of companies and verified AI use cases" />
       <div class="radar-caption">
-        AI Radar. <span data-count="companies">3,338</span> companies. <span data-count="plain">5,000+</span> use cases. Extracted by AI agents.
+        The AI Radar. <span data-count="companies">3,338</span> companies. <span data-count="plain">5,000+</span> use cases. Extracted and scored by AI agents.
       </div>
     </div>
 
-    <div class="prose">
-      <strong>Now I document</strong> the most interesting and impactful
-      examples daily, looking for the patterns. Hundreds of data points so
-      far. Thousands to come.
-      <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" id="tiktokLink"><strong>AI Money Moves</strong></a>
-      is the daily log. One AI deployment, one number, one video. The weekly
-      <a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">newsletter</a>
-      pulls back and connects the dots.
+    <div class="lede-block">
+      <p class="big">The pattern underneath has a name: <em>the Approximation Era.</em>
+      AI is a universal approximator, and it is remaking one industry after another.</p>
+    </div>
+    <div class="prose" style="margin-top:16px;">
+      <a href="/era" class="inline-link">Read the full thesis →</a>
     </div>
 
     <hr class="rule" />
+
+    <!-- === EXAMPLES === -->
 
     <div class="section-title">What the ledger reveals</div>
 
     <ul class="lines">
-      <li><a href="https://scott.ai/insights/edge.pdf" target="_blank" id="edgeLink"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
-      <li><a href="https://scott.ai/insights/watts.pdf" target="_blank" id="wattsLink"><strong>Watts, Tokens &amp; Money</strong></a> Value flows downward in the AI economy. Energy wins. Pure software loses. The companies that control watts and silicon will own the next decade.</li>
+      <li><a href="/insights/edge.pdf" target="_blank"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
+      <li><a href="/insights/watts.pdf" target="_blank"><strong>Watts, Tokens &amp; Money</strong></a> Value flows downward in the AI economy. Energy wins. Pure software loses. The companies that control watts and silicon will own the next decade.</li>
       <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing. They automate the periphery and leave the core business untouched.</li>
     </ul>
 
-    <!-- === CTA === -->
-
-    <div class="cta-block">
-      <p>AGI is arriving. We are the last feral humans. Someone should be paying attention.</p>
-      <div class="cta-buttons">
-        <a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary">Subscribe to the newsletter</a>
-        <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener" class="btn btn-secondary">Watch the daily log</a>
-      </div>
+    <div class="prose" style="margin-top:20px;">
+      <a href="/insights/" class="inline-link">See the full ledger →</a>
     </div>
 
-    <!-- Tooltips -->
-    <div class="hover-tooltip photo" id="photoTooltip">
-      <img src="images/hero.png" alt="" />
-    </div>
-    <div class="hover-tooltip pdf" id="pdfTooltip">
-      <img src="images/edge-cover.png" alt="" />
-    </div>
-    <div class="hover-tooltip pdf" id="wattsTooltip">
-      <img src="images/watts-cover.png" alt="" />
-    </div>
-    <div class="hover-tooltip tiktok" id="tiktokTooltip">
-      <img src="images/tiktok.png" alt="" />
+    <!-- === CTA: JOIN THE LIST === -->
+
+    <div class="cta-block" id="join">
+      <p style="font-family:'EB Garamond',Georgia,serif; font-size:1.5rem; color:var(--ink); margin-bottom:10px;">Get the patterns before you bet.</p>
+      <p>One email a week. The verified deployments that moved a number, and what they mean for where the money is going. No hype.</p>
+      <form class="signup-form" id="signupForm" onsubmit="return handleSignup(event)">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit">Join the list</button>
+      </form>
+      <div class="signup-thanks" id="signupThanks">Thanks. Confirm your subscription in the tab that just opened.</div>
+      <div class="signup-alt">Prefer to browse first? <a href="https://aimoneymoves.substack.com/subscribe" target="_blank" rel="noopener">See the newsletter</a> · <a href="https://www.tiktok.com/@tensordoc" target="_blank" rel="noopener">Watch the daily log</a></div>
     </div>
 
     <div class="footer">
@@ -847,28 +765,15 @@
       });
     })();
 
-    function attachTooltip(triggerId, tipId){
-      var trigger = document.getElementById(triggerId);
-      var tip = document.getElementById(tipId);
-      if(!trigger || !tip) return;
-      trigger.addEventListener('mouseenter', function(){ tip.style.opacity = '1'; });
-      trigger.addEventListener('mouseleave', function(){ tip.style.opacity = '0'; });
-      trigger.addEventListener('mousemove', function(e){
-        tip.style.left = e.clientX + 'px';
-        tip.style.top = e.clientY + 'px';
-      });
-    }
-    attachTooltip('bioPhoto', 'photoTooltip');
-    attachTooltip('edgeLink', 'pdfTooltip');
-    attachTooltip('wattsLink', 'wattsTooltip');
-    attachTooltip('tiktokLink', 'tiktokTooltip');
-
-    function handleRadar(e){
+    // Email capture -> Substack subscribe (prefilled), then confirm inline.
+    function handleSignup(e){
       e.preventDefault();
-      var email = e.target.querySelector('input').value;
-      window.location.href = 'mailto:scott@scott.ai?subject=AI Radar Access&body=Please add me: ' + encodeURIComponent(email);
-      document.getElementById('radarForm').style.display = 'none';
-      document.getElementById('radarThanks').style.display = 'block';
+      var email = e.target.querySelector('input').value.trim();
+      var url = 'https://aimoneymoves.substack.com/subscribe';
+      if(email){ url += '?email=' + encodeURIComponent(email); }
+      window.open(url, '_blank', 'noopener');
+      document.getElementById('signupForm').style.display = 'none';
+      document.getElementById('signupThanks').style.display = 'block';
       return false;
     }
   </script>
