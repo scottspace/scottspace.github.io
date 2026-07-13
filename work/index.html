@@ -145,16 +145,19 @@
       .site-nav .links a{ font-size:0.8rem; }
     }
   </style>
+  <link rel="stylesheet" href="/css/site-nav.css" />
 </head>
 <body>
 
   <nav class="site-nav" aria-label="Primary">
-    <a class="brand" href="/">Scott Penberthy</a>
-    <div class="links">
-      <a href="/era">The Idea</a>
-      <a href="/work" aria-current="page">The Work</a>
-      <a href="/insights/">The Ledger</a>
-      <a href="/about">About</a>
+    <div class="site-nav-inner">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Idea</a>
+        <a href="/work" aria-current="page">The Work</a>
+        <a href="/insights/">The Ledger</a>
+        <a href="/about">About</a>
+      </div>
     </div>
   </nav>
 
@@ -223,5 +226,14 @@
     </div>
   </footer>
 
+  <script>
+    (function(){
+      var nav = document.querySelector('.site-nav');
+      if(!nav) return;
+      window.addEventListener('scroll', function(){
+        nav.classList.toggle('stuck', window.scrollY > 10);
+      }, {passive:true});
+    })();
+  </script>
 </body>
 </html>
