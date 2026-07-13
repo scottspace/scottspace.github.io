@@ -160,6 +160,64 @@
       max-width: 640px;
     }
 
+    /* Moved landing sections (formerly on the homepage) */
+    .section-title{
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .prose{
+      font-size:1.0rem;
+      line-height:1.85;
+      color:rgba(255,255,255,0.75);
+      margin-bottom:24px;
+    }
+    .prose strong{ color:var(--ink); font-weight:600; }
+    .prose a{
+      color:var(--ink); text-decoration:underline; text-underline-offset:3px;
+      text-decoration-color:rgba(255,255,255,0.2); transition:text-decoration-color .15s;
+    }
+    .prose a:hover{ text-decoration-color:rgba(255,255,255,0.6); }
+    .lines{
+      margin:12px 0 44px;
+      padding-left:0;
+      list-style:none;
+    }
+    .lines li{
+      padding:12px 0;
+      border-top:1px solid var(--hair);
+      color:rgba(255,255,255,0.65);
+      line-height:1.6;
+      font-size:0.95rem;
+    }
+    .lines li:first-child{ border-top:none; }
+    .lines li strong{ color:var(--ink); }
+    .lines a{
+      color:var(--ink); text-decoration:underline; text-underline-offset:3px;
+      text-decoration-color:rgba(255,255,255,0.2);
+    }
+    .lines a:hover{ text-decoration-color:rgba(255,255,255,0.6); }
+    .radar{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--hair);
+      background:#0b1020;
+      margin:10px 0 44px;
+      box-shadow:0 16px 50px rgba(0,0,0,0.5);
+    }
+    .radar img{ width:100%; height:auto; display:block; }
+    .radar-caption{
+      padding:10px 14px;
+      background:var(--bg-surface);
+      border-top:1px solid var(--hair);
+      color:var(--muted);
+      font-size:0.85rem;
+      line-height:1.5;
+    }
+
     /* Stats */
     .stats {
       display: flex;
@@ -370,11 +428,10 @@
     <nav class="site-nav" aria-label="Primary">
       <a class="brand" href="/">Scott Penberthy</a>
       <div class="links">
-        <a href="/era">The Era</a>
+        <a href="/era">The Idea</a>
+        <a href="/work">The Work</a>
         <a href="/insights/" aria-current="page">The Ledger</a>
-        <a href="/speaking">Speaking</a>
         <a href="/about">About</a>
-        <a class="sub" href="https://scottpenberthy.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a>
       </div>
     </nav>
 
@@ -385,8 +442,33 @@
     </div>
 
     <div class="live-strip">
-      <span class="count" data-count="verified">5,000+ verified, and counting</span>
+      <span class="count" data-count="verified">9,000+ verified, and counting</span>
       <span class="day" data-day-counter>Day 247 of documenting the Approximation Era.</span>
+    </div>
+
+    <!-- Moved from the homepage: the problem and how the scanner works -->
+    <div class="section-title">The problem</div>
+    <div class="prose">
+      <strong>Every company says it is "doing AI."</strong> Almost none of it moves a number.
+      The press releases, the demos, the hype cycles: most of it is theater. And you are being
+      asked to bet real money, budget, and reputation on which parts are real.
+    </div>
+
+    <div class="section-title">How it works</div>
+    <div class="prose">
+      <strong>So I built a scanner.</strong> It reads every earnings call and SEC filing across
+      the major indexes, extracts every AI deployment, and validates each one against independent
+      sources. What survives goes in the ledger:
+      <span data-count="plain">9,000+</span> verified deployments across
+      <span data-count="companies">3,586</span> public companies, one more every day. A running,
+      checkable map of where AI is actually working, and where it is just window dressing.
+    </div>
+
+    <div class="radar">
+      <img src="/images/radar.png" alt="AI Radar visualization of thousands of companies and verified AI use cases" />
+      <div class="radar-caption">
+        The AI Radar. <span data-count="companies">3,586</span> companies. <span data-count="plain">9,000+</span> use cases. Extracted and scored by AI agents.
+      </div>
     </div>
 
     <div class="stats">
@@ -425,6 +507,16 @@
         <span class="num">+0.02</span>
         <span class="text">Companies with no reported AI activity carry a higher mean Information Ratio than those deploying AI. Most companies are doing AI badly. The quiet ones are outperforming.</span>
       </div>
+    </div>
+
+    <!-- Moved from the homepage: what the ledger reveals -->
+    <div class="findings">
+      <h2>What the ledger reveals</h2>
+      <ul class="lines">
+        <li><a href="/insights/edge.pdf" target="_blank"><strong>Move to the Edge</strong></a> AI is eating the middle of every job. The value is moving to the people closest to the work and the machines doing it. Everything in between gets compressed.</li>
+        <li><a href="/insights/watts.pdf" target="_blank"><strong>Watts, Tokens &amp; Money</strong></a> Value flows downward in the AI economy. Energy wins. Pure software loses. The companies that control watts and silicon will own the next decade.</li>
+        <li><strong>Window Dressing vs. Core</strong> Most AI deployments optimize the wrong thing. They automate the periphery and leave the core business untouched.</li>
+      </ul>
     </div>
 
     <div class="dispatches">
@@ -516,7 +608,7 @@
     <div class="about">
       <p>This is a personal research project. I scan earnings calls and SEC filings for AI deployments, map them to occupations using the U.S. Standard Occupational Classification, and correlate them with risk-adjusted market performance. The goal is to understand where AI is creating value and where it is not.</p>
       <p>The views here are my own. They do not represent my employer or any advisory boards I serve on. This is not investing advice.</p>
-      <p style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.1em; margin-top: 16px;"><span data-count="plain">5,000+</span> VERIFIED DEPLOYMENTS · <span data-count="companies">3,338</span> COMPANIES SCANNED · SCOTT.AI</p>
+      <p style="color: var(--accent); font-size: 0.75rem; letter-spacing: 0.1em; margin-top: 16px;"><span data-count="plain">9,000+</span> VERIFIED DEPLOYMENTS · <span data-count="companies">3,586</span> COMPANIES SCANNED · SCOTT.AI</p>
     </div>
 
     <div class="disclaimer">

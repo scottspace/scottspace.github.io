@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Work. Scott Penberthy.</title>
+  <meta name="description" content="What Scott Penberthy is building now. A studio driving down the cost of generative video, a scanner that tracks what's real in AI, and a direction that points at cancer." />
+  <link rel="canonical" href="https://scott.ai/work" />
+
+  <meta property="og:title" content="The Work. Scott Penberthy." />
+  <meta property="og:description" content="A studio driving down the cost of generative video, a scanner that tracks what's real in AI, and a direction that points at cancer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scott.ai/work" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --bg-surface:#141414;
+      --ink:#ececE6;
+      --ink-soft:rgba(255,255,255,0.74);
+      --muted:#888;
+      --hair:rgba(255,255,255,0.08);
+      --accent:#c9a84c;
+      --measure:65ch;
+      --radius:14px;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'EB Garamond', Charter, Georgia, 'Times New Roman', serif;
+      background:var(--bg); color:var(--ink);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+
+    /* Shared dark nav */
+    .site-nav{
+      position:sticky; top:0; z-index:120;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 28px;
+      background:rgba(10,10,10,0.92);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--hair);
+    }
+    .site-nav .brand{
+      font-family:'EB Garamond',Georgia,serif; font-weight:500; font-size:1.15rem;
+      color:#f0efe9; text-decoration:none; letter-spacing:-0.01em; white-space:nowrap;
+    }
+    .site-nav .links{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+    .site-nav .links a{
+      font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:500;
+      color:rgba(240,239,233,0.62); text-decoration:none; transition:color .15s; white-space:nowrap;
+    }
+    .site-nav .links a:hover, .site-nav .links a[aria-current="page"]{ color:#fff; }
+    .site-nav .links a.sub{ color:var(--accent); }
+    .site-nav .links a.sub:hover{ color:#f4e6b8; }
+
+    /* Hero */
+    .hero{
+      background:radial-gradient(120% 140% at 20% 0%, #17171a 0%, #0a0a0a 60%);
+      border-bottom:1px solid var(--hair);
+      padding:66px 28px 64px;
+    }
+    .hero-inner{ max-width:760px; margin:0 auto; }
+    .kicker{
+      font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:600;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:20px;
+    }
+    .hero h1{
+      font-weight:500; font-size:clamp(2rem,5vw,3.2rem); line-height:1.1;
+      letter-spacing:-0.015em; margin-bottom:22px; max-width:20ch;
+    }
+    .hero .subline{
+      font-family:'Inter',sans-serif; font-size:clamp(1rem,2.2vw,1.16rem);
+      line-height:1.6; color:rgba(239,238,232,0.78); max-width:56ch;
+    }
+
+    /* Body */
+    .essay{ padding:0 28px 40px; }
+    .measure{ max-width:var(--measure); margin:0 auto; }
+    section{ padding:50px 0 6px; }
+    .eyebrow{
+      font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:14px;
+    }
+    .essay h2{
+      font-weight:500; font-size:clamp(1.6rem,3.4vw,2.05rem); line-height:1.15;
+      letter-spacing:-0.01em; margin-bottom:22px; color:var(--ink);
+    }
+    .essay p{ font-size:1.24rem; line-height:1.72; color:var(--ink-soft); margin-bottom:22px; }
+    .essay p b{ color:var(--ink); font-weight:600; }
+    .essay a{
+      color:var(--ink); text-decoration:underline;
+      text-decoration-color:rgba(184,145,47,0.5); text-underline-offset:3px; transition:text-decoration-color .15s;
+    }
+    .essay a:hover{ text-decoration-color:var(--accent); }
+
+    .figure{ margin:32px 0; }
+    .figure img{
+      width:100%; height:auto; display:block; border-radius:10px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.4); background:#0b0f1a;
+      border:1px solid var(--hair);
+    }
+    .figure.people img{
+      height:300px; object-fit:cover; object-position:center 72%;
+    }
+    .figure figcaption{
+      font-style:italic; font-size:1rem; line-height:1.5;
+      color:rgba(255,255,255,0.5); margin-top:12px; max-width:60ch;
+    }
+
+    .actions{ display:flex; gap:12px; flex-wrap:wrap; margin:6px 0 26px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 22px; border-radius:9px; text-decoration:none; font-weight:600; font-size:0.92rem;
+      font-family:'Inter',sans-serif; transition:transform .15s, box-shadow .15s;
+    }
+    .btn-primary{ background:var(--accent); color:#0a0a0a; }
+    .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(201,168,76,0.25); }
+    .btn-secondary{ background:transparent; color:#efeee8; border:1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover{ transform:translateY(-1px); border-color:var(--accent); }
+
+    /* End matter */
+    .endmatter{
+      background:var(--bg-surface); color:rgba(240,239,233,0.65);
+      border-top:1px solid var(--hair); padding:44px 28px 56px; font-family:'Inter',sans-serif;
+    }
+    .endmatter .measure{ max-width:640px; }
+    .endmatter h3{ font-family:'EB Garamond',Georgia,serif; color:#efeee8; font-size:1.4rem; font-weight:500; margin-bottom:8px; }
+    .endmatter p{ font-size:0.95rem; line-height:1.6; margin-bottom:18px; }
+    .foot-links{ font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .foot-links a{ color:rgba(240,239,233,0.55); text-decoration:none; }
+    .foot-links a:hover{ color:#fff; }
+
+    @media (max-width:600px){
+      .hero{ padding:46px 20px 48px; }
+      .essay, .endmatter{ padding-left:20px; padding-right:20px; }
+      .essay p{ font-size:1.14rem; }
+      .site-nav{ flex-direction:column; align-items:stretch; gap:10px; padding:12px 18px; }
+      .site-nav .brand{ white-space:nowrap; }
+      .site-nav .links{ width:100%; justify-content:space-between; gap:6px 10px; padding-top:10px; border-top:1px solid var(--hair); }
+      .site-nav .links a{ font-size:0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Primary">
+    <a class="brand" href="/">Scott Penberthy</a>
+    <div class="links">
+      <a href="/era">The Idea</a>
+      <a href="/work" aria-current="page">The Work</a>
+      <a href="/insights/">The Ledger</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">The Work</div>
+      <h1>What I'm building now.</h1>
+      <p class="subline">Every job has been the same bet in a new place. Here is where the bet sits today.</p>
+    </div>
+  </header>
+
+  <main class="essay">
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">Generative video</div>
+        <h2>Driving the cost of generated video down.</h2>
+        <p>Right now I lead a studio driving down the cost of generative video, on purpose, because that's the door into biology. My work drives the price of generating video down by orders of magnitude. When a second of generated video costs a fraction of a cent, so does a second of simulated biology.</p>
+        <figure class="figure">
+          <img src="/images/era/era-worldmodel.jpg" alt="A hand on a joystick, a coherent world rendering itself frame by frame" loading="lazy" />
+          <figcaption>Generated video is a world rendering itself frame by frame. Biology is the next world to render.</figcaption>
+        </figure>
+        <p>That is the bet. <a href="/era">The Idea</a> explains why it works.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">The scanner</div>
+        <h2>Tracking what's real in AI.</h2>
+        <p>I also track what's real in AI. My scanner has verified nearly 10,000 deployments across 3,500 companies in seven months. That's how I watched the easy ground fill in and the value move to the problems you can't fake.</p>
+        <figure class="figure">
+          <img src="/images/era/radar.jpg" alt="AI Radar visualization of thousands of companies and verified AI use cases" loading="lazy" />
+          <figcaption>The AI Radar. Every AI mention, extracted by agents, validated, and scored for how real it is.</figcaption>
+        </figure>
+        <div class="actions">
+          <a class="btn btn-secondary" href="/insights/">Open the Ledger</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="measure">
+        <div class="eyebrow">The direction</div>
+        <h2>Starting with cancer.</h2>
+        <p>The hardest, most important problem I know is human biology. I'm starting with cancer. I lost my mom to cancer at 57. This is the promise I'm keeping.</p>
+        <figure class="figure people">
+          <img src="/images/hero.png" alt="Scott Penberthy on stage with Lee Hood at the Cancer AI Symposium" loading="lazy" />
+          <figcaption>With Lee Hood at the AI Cancer Forum I started.</figcaption>
+        </figure>
+        <p>I also bring this work to the stage. If you want it in front of your audience, see <a href="/speaking">Speaking</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="endmatter">
+    <div class="measure">
+      <h3>Follow the journey.</h3>
+      <p>One email when it matters. Where AI meets biology, made clear.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://scottpenberthy.substack.com/subscribe" target="_blank" rel="noopener">Follow the journey</a>
+        <a class="btn btn-secondary" href="/about">About Scott</a>
+      </div>
+      <div class="foot-links">Dr. Scott Penberthy · <a href="/">scott.ai</a> · MIT · PhD in AI · Building since 1993</div>
+    </div>
+  </footer>
+
+</body>
+</html>
