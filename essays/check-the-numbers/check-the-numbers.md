@@ -8,9 +8,9 @@ Canonical: https://scott.ai/essays/check-the-numbers/
 
 ---
 
-On February 20, 1962, John Glenn sat strapped inside a capsule the size of a phone booth, on top of an Atlas rocket like one he had watched explode three years earlier. Reentry was a corridor a few degrees wide. Too shallow meant skipping off the atmosphere into space. Too steep meant burning. NASA's new IBM computer had calculated his trajectory. He would not go.
+On February 20, 1962, John Glenn sat strapped inside a capsule the size of a phone booth, on top of an Atlas rocket like one he had watched explode three years earlier. Reentry was a corridor a few degrees wide. Too shallow meant skipping off the atmosphere into space. Too steep meant burning. NASA's new IBM computer had calculated his trajectory. He was in that seat only because of a demand he had made during the preflight checklist.
 
-He asked for a person instead. "Get the girl to check the numbers." Her name was Katherine Johnson. Her job title was Computer. The machine had already taken her title. What did she still have, that a man would bet his life on?
+He would not fly on the machine's word alone. "Get the girl to check the numbers." Her name was Katherine Johnson. Her job title was Computer. The machine had already taken her title. What did she still have, that a man would bet his life on?
 
 ## The Unsolvable
 
@@ -72,7 +72,7 @@ The era that opened 250 years ago with rules nobody could solve is closing at it
 
 ## What She Still Had
 
-Return to the question. Glenn's machine was hundreds of thousands of times faster than Katherine Johnson. He asked for her anyway. Her check took a day and a half at a desk calculator, until her numbers matched the machine's.
+Return to the question. Glenn's machine was hundreds of thousands of times faster than Katherine Johnson. He asked for her anyway. For a day and a half she reran the entire flight at her desk calculator, until her numbers matched the machine's. "If she says they're good," he told the engineers, "then I'm ready to go."
 
 Look at the era's promise. Anything, not everything. A machine this capable cannot choose what is worth doing. What should it do for us? Will the answer leave our lives better? The machine never asks. Choosing is judgment, and judgment is taste.
 
@@ -86,7 +86,7 @@ Every idea you shelved because it needed fifty people and ten years is back with
 
 So I leave you with the question. When anything is possible, what will you say is worth doing? When the answer must be right, what will they turn to you for? What is your Katherine Johnson moment?
 
-Katherine worked thirty-three more years, helped put men on the Moon, and lived to one hundred and one. The man who would not launch without her went back to space at seventy-seven. The machine took her title. It never touched her.
+Katherine worked twenty-four more years, helped put men on the Moon, and lived to one hundred and one. The man who would not launch without her went back to space at seventy-seven. The machine took her title. It never touched her.
 
 John Glenn knew his answer. He made it an order.
 
