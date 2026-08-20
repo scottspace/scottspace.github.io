@@ -60,11 +60,22 @@
       color:var(--ink-mute); margin-bottom:26px; max-width:58ch;
     }
     .byline{
+      display:flex; align-items:center; gap:18px; flex-wrap:wrap;
       font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:500;
       letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-mute);
       padding-bottom:34px; border-bottom:1px solid var(--line);
     }
     .byline b{ color:var(--ink); font-weight:600; }
+    .dl-link{
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:600;
+      letter-spacing:0.08em; text-transform:none;
+      color:#efeee8; text-decoration:none;
+      border:1px solid var(--line-dark); border-radius:8px; padding:8px 16px;
+      margin-left:auto; white-space:nowrap;
+      transition:border-color .15s;
+    }
+    .dl-link:hover{ border-color:var(--accent); }
 
     /* ---------- Essay body ---------- */
     .essay{ padding:26px 0 40px; }
@@ -169,7 +180,10 @@
       <div class="eyebrow">Essays · For the Marconi Association</div>
       <h1>Check the Numbers</h1>
       <p class="standfirst">A machine took Katherine Johnson's job title in 1962. John Glenn bet his life on what she still had. The same question is now on every desk.</p>
-      <div class="byline"><b>Scott Penberthy</b> &nbsp;·&nbsp; August 2026 &nbsp;·&nbsp; 1,200 words</div>
+      <div class="byline">
+        <span><b>Scott Penberthy</b> &nbsp;·&nbsp; August 2026 &nbsp;·&nbsp; 1,350 words</span>
+        <a class="dl-link" href="check-the-numbers.md" download="check-the-numbers.md">Download markdown ↓</a>
+      </div>
     </div>
   </header>
 
@@ -184,7 +198,7 @@
 
       <h2 class="eyebrow-h">The Unsolvable</h2>
 
-      <p>The reentry equations could not be solved exactly. Most of nature's equations cannot. The universe writes laws it does not answer. So Katherine stepped them. Take a tiny step. Ask the rule where things are heading. Step again. Every step is slightly wrong, yet the full path brought Glenn home. She fought to put her name on that trajectory report, at a laboratory where women rarely received credit. Remember the name.</p>
+      <p>The reentry equations could not be solved exactly. Most of nature's equations cannot. The universe gives us its rules. It does not give us the answers. So Katherine stepped them. Take a tiny step. Ask the rule where things are heading. Step again. Every step is slightly wrong, yet the full path brought Glenn home. She fought to put her name on that trajectory report, at a laboratory where women rarely received credit. Remember the name.</p>
 
       <h2 class="eyebrow-h">Reading History Backward</h2>
 
@@ -219,7 +233,7 @@
         <span class="eq-caption">The same move · one new term · the action</span>
       </div>
 
-      <p>Six formulations. One move. Watch what is being approximated as the ladder rises. A trajectory. A minimum. A sequence. A distribution. A consequence. Each rung trades an exactness we cannot have for a step we can afford. None of the six knew they were building the same machine. Only from here, after the answer is in hand, does the ladder look like one ladder. I call the time we live in <a href="/era">the Approximation Era</a>.</p>
+      <p>Six formulations. One move. Watch what is being approximated as the ladder rises. A trajectory. A minimum. A sequence. A distribution. A consequence. Every rung makes the same bargain. Give up the exact answer no one can compute. Take a small step anyone can. None of the six knew they were building the same machine. Only from here, after the answer is in hand, does the ladder look like one ladder. I call the time we live in <a href="/era">the Approximation Era</a>.</p>
 
       <p>Readers of this periodical know the climb in their bones. In 1901, Marconi pushed a signal across the Atlantic before physics said it could arrive. The waves should have flown straight off the curve of the Earth. The ionosphere caught them, though no one could yet say why. He climbed in the fog. The trail appeared later.</p>
 
@@ -227,7 +241,7 @@
 
       <p>The mathematics waited on hardware. In 1989, Cybenko proved that a large enough neural network can approximate any continuous function. The theorem was a map with no ship. In 2012, three researchers in Toronto entered a photo contest with a network that ran on two gaming cards. It nearly halved the error rate overnight. The theorem had become cheap. Anything you can observe, it can learn to understand.</p>
 
-      <p>In 2022 the public met the generator, which is approximation run in reverse. Anything it understands, it can create. And now the actor closes the loop. A robot hand pours coffee. A surgical tool holds steady. The samplers stepping the motors still carry Euler's name. Observe, understand, generate, act, then observe again. This community wrote the theory of that loop and called it feedback.</p>
+      <p>In 2022 the public met the generator, which is approximation run in reverse. Anything it understands, it can create. Now the actor closes the loop. Anything it can create, it can act on. A robot hand pours coffee. A surgical tool holds steady. The samplers stepping the motors still carry Euler's name. Observe, understand, generate, act, then observe again. This community wrote the theory of that loop and called it feedback.</p>
 
       <figure class="figure">
         <img src="/images/essays/check-the-numbers/chalk-hand.jpg" alt="A robotic hand holding a piece of chalk up to a vast dark blackboard lit by a warm desk lamp" loading="lazy" />
@@ -242,7 +256,11 @@
 
       <p>So return to the question. Glenn's machine was hundreds of thousands of times faster than Katherine Johnson. He asked for her anyway.</p>
 
-      <p>Her check took a day and a half at a desk calculator. She recomputed the entire flight, digit against digit, until her numbers matched the machine's. Here is what the machine cannot do. It risks nothing. Because it can stake nothing, it can be trusted with nothing. Trust is granted to someone who can be wrong at a cost. Her name on that report became the one thing no machine could produce.</p>
+      <p>Her check took a day and a half at a desk calculator. She recomputed the entire flight, digit against digit, until her numbers matched the machine's.</p>
+
+      <p>Now look closely at the era's promise. Anything you can observe. Anything, not everything. A machine this capable still cannot choose what is worth doing. What should these machines do for us? Which problems deserve them? Will the answer leave our lives better? The machine never asks. Choosing is judgment, and judgment is taste.</p>
+
+      <p>And every choice needs someone to answer for it. The machine risks nothing. It has no family, no career, no aspirations, no reputation. A person who signs puts all of those on the table. That is a great deal to stake, and it is exactly why the signature means something. Trust is granted to someone who can be wrong at a cost. Katherine's name on that report became the one thing no machine could produce.</p>
 
       <p><b>Judgment. Accountability. Trust.</b> That is what she still had. That is what we still have.</p>
 
@@ -252,7 +270,7 @@
 
       <p>That is where you come in. Somewhere in your work there is a launch that will not happen until someone the crew trusts says the numbers are right. Not the fastest mind in the room. The one who signs.</p>
 
-      <p>So I leave you with the question I ask every room. When the answer has to be right, what will they turn to you for? What is your Katherine Johnson moment?</p>
+      <p>So I leave you with the question I ask every room. When anything is possible, what will you say is worth doing? When the answer has to be right, what will they turn to you for? What is your Katherine Johnson moment?</p>
 
       <p>Katherine kept working for thirty-three years after the machine took her title, helped put men on the Moon, and lived to one hundred and one. The man who refused to launch without her went back to space at seventy-seven, still the oldest human ever to orbit the Earth. The machine took her title. It never touched her.</p>
 
@@ -267,6 +285,7 @@
   <footer class="endmatter">
     <div class="measure">
       <p><b style="color:#efeee8;">About this essay.</b> Written for the Marconi Association's periodical. Adapted from "Check the Numbers," a talk in the Google Greyglers Legends series, built on <a href="/era">the Approximation Era</a> thesis. The views here are my own.</p>
+      <p>Editing this for print? <a href="check-the-numbers.md" download="check-the-numbers.md">Download the markdown ↓</a> It carries the full text and links to both images.</p>
       <div class="foot-links">
         Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/essays/">Essays</a> · <a href="/insights/">The Ledger</a> · <a href="/speaking">Speaking</a>
       </div>
