@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essays — Scott Penberthy</title>
+  <meta name="description" content="Essays on the Approximation Era: the mathematics, the machines, and the people they cannot replace." />
+  <link rel="canonical" href="https://scott.ai/essays/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --paper:#0a0a0a;
+      --paper-2:#141414;
+      --ink:#ececE6;
+      --ink-soft:rgba(255,255,255,0.74);
+      --ink-mute:rgba(255,255,255,0.5);
+      --line:rgba(255,255,255,0.09);
+      --accent:#c9a84c;
+      --measure:65ch;
+    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    body{
+      font-family:'EB Garamond', Charter, Georgia, 'Times New Roman', serif;
+      background:var(--paper); color:var(--ink);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .measure{ max-width:var(--measure); margin:0 auto; padding:0 28px; }
+
+    .titleblock{ padding:72px 0 26px; }
+    .eyebrow{
+      font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase; color:var(--accent);
+      margin-bottom:18px;
+    }
+    .titleblock h1{
+      font-weight:500; font-size:clamp(2.2rem,5vw,3.1rem);
+      line-height:1.1; letter-spacing:-0.01em; margin-bottom:18px;
+    }
+    .titleblock p{
+      font-size:1.24rem; line-height:1.7; color:var(--ink-soft); max-width:58ch;
+    }
+
+    .essay-list{ padding:26px 0 90px; }
+    .essay-card{
+      display:block; text-decoration:none; color:inherit;
+      border-top:1px solid var(--line);
+      padding:34px 0 36px;
+      transition:background .15s;
+    }
+    .essay-card:last-child{ border-bottom:1px solid var(--line); }
+    .essay-card .meta{
+      font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:600;
+      letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-mute);
+      margin-bottom:12px;
+    }
+    .essay-card h2{
+      font-weight:500; font-size:1.7rem; line-height:1.2; margin-bottom:12px;
+      color:var(--ink);
+    }
+    .essay-card:hover h2{ color:var(--accent); }
+    .essay-card p{
+      font-size:1.14rem; line-height:1.65; color:var(--ink-soft); max-width:60ch;
+    }
+    .essay-card .read{
+      display:inline-block; margin-top:14px;
+      font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600;
+      color:var(--accent);
+    }
+
+    .endmatter{
+      background:var(--paper-2); border-top:1px solid var(--line);
+      padding:44px 28px 56px; font-family:'Inter',sans-serif;
+      color:rgba(240,239,233,0.65);
+    }
+    .endmatter .measure{ max-width:640px; padding:0; }
+    .endmatter .foot-links{ font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .endmatter .foot-links a{ color:rgba(240,239,233,0.55); text-decoration:none; }
+    .endmatter .foot-links a:hover{ text-decoration:underline; }
+  </style>
+
+  <link rel="stylesheet" href="/css/site-nav.css" />
+</head>
+<body>
+
+  <!-- ===== Shared dark nav ===== -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Idea</a>
+        <a href="/work">The Work</a>
+        <a href="/insights/">The Ledger</a>
+        <a href="/essays/" aria-current="page">Essays</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="titleblock">
+    <div class="measure">
+      <div class="eyebrow">Essays</div>
+      <h1>The era, in words.</h1>
+      <p>Longer pieces on the Approximation Era. The mathematics, the machines, and the people they cannot replace.</p>
+    </div>
+  </header>
+
+  <main class="essay-list">
+    <div class="measure">
+
+      <a class="essay-card" href="/essays/check-the-numbers/">
+        <div class="meta">August 2026 · For the Marconi Association</div>
+        <h2>Check the Numbers</h2>
+        <p>A machine took Katherine Johnson's job title in 1962. John Glenn bet his life on what she still had. Six formulations, 250 years, one move, and the question now on every desk.</p>
+        <span class="read">Read the essay →</span>
+      </a>
+
+      <a class="essay-card" href="/era">
+        <div class="meta">Ongoing · The flagship thesis</div>
+        <h2>The Approximation Era</h2>
+        <p>Compute is replacing calculus. Not a tech trend. A phase change. The full thesis, with the evidence, updated as the era lands.</p>
+        <span class="read">Read the thesis →</span>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="endmatter">
+    <div class="measure">
+      <div class="foot-links">
+        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/insights/">The Ledger</a> · <a href="/speaking">Speaking</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

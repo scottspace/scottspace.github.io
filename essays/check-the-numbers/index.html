@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check the Numbers — Scott Penberthy</title>
+  <meta name="description" content="A machine took Katherine Johnson's job title in 1962. John Glenn bet his life on what she still had. Six formulations, one move, and the question now on every desk." />
+  <link rel="canonical" href="https://scott.ai/essays/check-the-numbers/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Check the Numbers" />
+  <meta property="og:description" content="A machine took Katherine Johnson's job title in 1962. John Glenn bet his life on what she still had. The same question is now on every desk." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://scott.ai/essays/check-the-numbers/" />
+  <meta property="og:image" content="https://scott.ai/images/essays/check-the-numbers/summit.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-dark:#0a0a0a;
+      --bg-surface:#141414;
+      --paper:#0a0a0a;
+      --paper-2:#141414;
+      --ink:#ececE6;
+      --ink-soft:rgba(255,255,255,0.74);
+      --ink-mute:rgba(255,255,255,0.5);
+      --line:rgba(255,255,255,0.09);
+      --line-dark:rgba(255,255,255,0.08);
+      --accent:#c9a84c;
+      --accent-ink:#c9a84c;
+      --measure:65ch;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      font-family:'EB Garamond', Charter, 'Bitstream Charter', Georgia, 'Times New Roman', serif;
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .measure{ max-width:var(--measure); margin:0 auto; padding:0 28px; }
+
+    /* ---------- Title block ---------- */
+    .titleblock{ padding:72px 0 10px; }
+    .titleblock .eyebrow{ margin-bottom:20px; }
+    .titleblock h1{
+      font-weight:500; font-size:clamp(2.3rem,5.5vw,3.4rem);
+      line-height:1.08; letter-spacing:-0.01em; color:var(--ink);
+      margin-bottom:22px;
+    }
+    .standfirst{
+      font-size:1.34rem; line-height:1.55; font-style:italic;
+      color:var(--ink-mute); margin-bottom:26px; max-width:58ch;
+    }
+    .byline{
+      font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:500;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-mute);
+      padding-bottom:34px; border-bottom:1px solid var(--line);
+    }
+    .byline b{ color:var(--ink); font-weight:600; }
+
+    /* ---------- Essay body ---------- */
+    .essay{ padding:26px 0 40px; }
+    .essay h2.eyebrow-h{
+      font-family:'Inter',sans-serif;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--accent-ink); margin:52px 0 20px;
+    }
+    .eyebrow{
+      font-family:'Inter',sans-serif;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--accent-ink);
+    }
+    .essay p{
+      font-size:1.24rem; line-height:1.72; color:var(--ink-soft);
+      margin-bottom:22px;
+    }
+    .essay p b{ color:var(--ink); font-weight:600; }
+    .essay a{
+      color:var(--ink); text-decoration:underline;
+      text-decoration-color:rgba(184,145,47,0.5); text-underline-offset:3px;
+      transition:text-decoration-color .15s;
+    }
+    .essay a:hover{ text-decoration-color:var(--accent); }
+
+    .figure{ margin:38px 0; }
+    .figure img{
+      width:100%; height:auto; display:block;
+      border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      background:#111;
+    }
+    .figure figcaption{
+      font-style:italic; font-size:1.0rem; line-height:1.5;
+      color:var(--ink-mute); margin-top:12px; max-width:60ch;
+    }
+
+    .equation{
+      text-align:center; margin:36px 0;
+      font-size:1.5rem; font-style:italic; color:var(--ink);
+    }
+    .equation sub{ font-size:0.6em; font-style:normal; }
+    .equation .action{ color:var(--accent); font-weight:600; }
+    .equation .eq-caption{
+      display:block; font-family:'Inter',sans-serif; font-style:normal;
+      font-size:0.68rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--ink-mute); margin-top:12px;
+    }
+
+    .anthem{
+      text-align:center; font-style:italic;
+      font-size:clamp(1.55rem,4vw,2.05rem); line-height:1.3; color:var(--ink);
+      margin:56px auto 20px; max-width:24ch;
+    }
+    .anthem::before{
+      content:""; display:block; width:52px; margin:0 auto 30px;
+      border-top:1px solid var(--accent);
+    }
+
+    /* ---------- End matter ---------- */
+    .endmatter{
+      background:var(--bg-surface); color:rgba(240,239,233,0.65);
+      border-top:1px solid var(--line-dark);
+      padding:48px 28px 60px; font-family:'Inter',sans-serif;
+      margin-top:60px;
+    }
+    .endmatter .measure{ max-width:640px; padding:0; }
+    .endmatter p{ font-size:0.9rem; line-height:1.65; margin-bottom:14px; }
+    .endmatter a{ color:var(--accent); text-decoration:none; }
+    .endmatter a:hover{ text-decoration:underline; }
+    .endmatter .foot-links{ margin-top:22px; font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .endmatter .foot-links a{ color:rgba(240,239,233,0.55); }
+
+    @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+    @media (max-width:600px){
+      .titleblock{ padding-top:52px; }
+      .essay p{ font-size:1.14rem; }
+      .standfirst{ font-size:1.18rem; }
+      .equation{ font-size:1.3rem; }
+    }
+  </style>
+
+  <link rel="stylesheet" href="/css/site-nav.css" />
+</head>
+<body>
+
+  <!-- ===== Shared dark nav ===== -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Idea</a>
+        <a href="/work">The Work</a>
+        <a href="/insights/">The Ledger</a>
+        <a href="/essays/" aria-current="page">Essays</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="titleblock">
+    <div class="measure">
+      <div class="eyebrow">Essays · For the Marconi Association</div>
+      <h1>Check the Numbers</h1>
+      <p class="standfirst">A machine took Katherine Johnson's job title in 1962. John Glenn bet his life on what she still had. The same question is now on every desk.</p>
+      <div class="byline"><b>Scott Penberthy</b> &nbsp;·&nbsp; August 2026 &nbsp;·&nbsp; 1,200 words</div>
+    </div>
+  </header>
+
+  <main class="essay">
+    <div class="measure">
+
+      <p>On February 20, 1962, John Glenn sat strapped inside a capsule the size of a phone booth, on top of an Atlas rocket like one he had watched explode three years earlier. Reentry was a corridor a few degrees wide. Too shallow meant skipping off the atmosphere into space. Too steep meant burning. The most advanced computer on Earth had calculated his trajectory. He would not go.</p>
+
+      <p>He asked for a person instead. "Get the girl to check the numbers." Her name was Katherine Johnson. The title printed on her badge was Computer. The machine had already taken her title. What did she still have, that a man would bet his life on?</p>
+
+      <p>Hold that question. It is now everyone's question.</p>
+
+      <h2 class="eyebrow-h">The Unsolvable</h2>
+
+      <p>The reentry equations could not be solved exactly. Most of nature's equations cannot. The universe writes laws it does not answer. So Katherine stepped them. Take a tiny step. Ask the rule where things are heading. Step again. Every step is slightly wrong, yet the full path brought Glenn home. She fought to put her name on that trajectory report, at a laboratory where women rarely received credit. Remember the name.</p>
+
+      <h2 class="eyebrow-h">Reading History Backward</h2>
+
+      <p>Here is the strange privilege of writing this in 2026. We already know the answer. Knowing the answer changes what we can see in the beginning. History is a trail walked in fog. You only see the trail from the summit.</p>
+
+      <figure class="figure">
+        <img src="/images/essays/check-the-numbers/summit.jpg" alt="A switchback mountain trail at dawn descending into a valley of fog, the upper stretches catching golden light" loading="lazy" />
+        <figcaption>History is a trail walked in fog. The whole path is visible only from the summit.</figcaption>
+      </figure>
+
+      <p>From the summit, 250 years of mathematics collapse into a single move, taken six times.</p>
+
+      <p>In 1687, Newton and Leibniz wrote the laws of nature as differential equations. A law became a local rule of change. Then came the catch. Almost none of these equations can be solved in closed form.</p>
+
+      <p>In 1768, Euler answered them anyway. His method gives up the exact solution and approximates the trajectory. The next state equals this state, plus a small step in the direction the rule points. Each step carries a small error that stays bounded when the steps stay small. This is the equation Katherine used.</p>
+
+      <div class="equation">
+        x<sub>t+1</sub> = x<sub>t</sub> + &epsilon;&thinsp;f&hairsp;(x<sub>t</sub>)
+        <span class="eq-caption">Six formulations · 250 years · one move</span>
+      </div>
+
+      <p>In 1847, Cauchy turned the same step on optimization. To find the bottom of a valley you cannot see, measure the slope where you stand and step downhill. Gradient descent is Euler's method applied to an error surface. Every neural network alive today is trained by this rule.</p>
+
+      <p>In 1948, Shannon turned the step on language. He treated English as a stochastic process and asked how well a machine could approximate the distribution of the next symbol, given the symbols before it. His instruments were novels and coin flips. The modern language model is his estimator, scaled beyond anything Bell Labs could have powered.</p>
+
+      <p>In 2021, Song and colleagues turned the step around. Their diffusion models learn the local structure of a data distribution, then integrate backward from pure noise toward the data, removing a little noise at each step. The sampler that takes those steps is named for Euler. This is the mathematics inside image generators and AlphaFold&nbsp;3.</p>
+
+      <p>And now a sixth rung. Vision-language-action models put the world's state and the machine's action into one formulation. The next state equals this state, plus a small step, given the action taken. One new term. The step becomes a policy. The machine no longer approximates only what the world is doing. It approximates what the world will do if it acts.</p>
+
+      <div class="equation">
+        x<sub>t+1</sub> = x<sub>t</sub> + &epsilon;&thinsp;f&hairsp;(x<sub>t</sub>, <span class="action">a<sub>t</sub></span>)
+        <span class="eq-caption">The same move · one new term · the action</span>
+      </div>
+
+      <p>Six formulations. One move. Watch what is being approximated as the ladder rises. A trajectory. A minimum. A sequence. A distribution. A consequence. Each rung trades an exactness we cannot have for a step we can afford. None of the six knew they were building the same machine. Only from here, after the answer is in hand, does the ladder look like one ladder. I call the time we live in <a href="/era">the Approximation Era</a>.</p>
+
+      <p>Readers of this periodical know the climb in their bones. In 1901, Marconi pushed a signal across the Atlantic before physics said it could arrive. The waves should have flown straight off the curve of the Earth. The ionosphere caught them, though no one could yet say why. He climbed in the fog. The trail appeared later.</p>
+
+      <h2 class="eyebrow-h">From Theorem to Machine</h2>
+
+      <p>The mathematics waited on hardware. In 1989, Cybenko proved that a large enough neural network can approximate any continuous function. The theorem was a map with no ship. In 2012, three researchers in Toronto entered a photo contest with a network that ran on two gaming cards. It nearly halved the error rate overnight. The theorem had become cheap. Anything you can observe, it can learn to understand.</p>
+
+      <p>In 2022 the public met the generator, which is approximation run in reverse. Anything it understands, it can create. And now the actor closes the loop. A robot hand pours coffee. A surgical tool holds steady. The samplers stepping the motors still carry Euler's name. Observe, understand, generate, act, then observe again. This community wrote the theory of that loop and called it feedback.</p>
+
+      <figure class="figure">
+        <img src="/images/essays/check-the-numbers/chalk-hand.jpg" alt="A robotic hand holding a piece of chalk up to a vast dark blackboard lit by a warm desk lamp" loading="lazy" />
+        <figcaption>After 250 years, the step learned to take itself. Now it is learning to act.</figcaption>
+      </figure>
+
+      <p>One honest limit remains. Chaos is real. Lorenz showed in 1963 that some systems amplify any error in the last digit until the forecast is worthless. No approximator will ever step a single true path through a month of weather. The era's answer is to change the object of approximation once more. Where one future cannot be known, the distribution of futures can. GenCast learned that distribution and now beats the best physical ensemble forecast on Earth. Chaos does not end the era. It tells the era what to approximate.</p>
+
+      <p>A wrong sentence costs a blush. A wrong motion can cost a hand. We are all back on the pad.</p>
+
+      <h2 class="eyebrow-h">What She Still Had</h2>
+
+      <p>So return to the question. Glenn's machine was hundreds of thousands of times faster than Katherine Johnson. He asked for her anyway.</p>
+
+      <p>Her check took a day and a half at a desk calculator. She recomputed the entire flight, digit against digit, until her numbers matched the machine's. Here is what the machine cannot do. It risks nothing. Because it can stake nothing, it can be trusted with nothing. Trust is granted to someone who can be wrong at a cost. Her name on that report became the one thing no machine could produce.</p>
+
+      <p><b>Judgment. Accountability. Trust.</b> That is what she still had. That is what we still have.</p>
+
+      <h2 class="eyebrow-h">Your Katherine Johnson Moment</h2>
+
+      <p>Every idea you set aside because it needed fifty people and ten years has quietly come back within reach. I watched one person, in two days, draft regulatory submissions for sixty-three countries in seven languages. Notice what was missing. It was not code. Code has become cheap. What was missing was a signature.</p>
+
+      <p>That is where you come in. Somewhere in your work there is a launch that will not happen until someone the crew trusts says the numbers are right. Not the fastest mind in the room. The one who signs.</p>
+
+      <p>So I leave you with the question I ask every room. When the answer has to be right, what will they turn to you for? What is your Katherine Johnson moment?</p>
+
+      <p>Katherine kept working for thirty-three years after the machine took her title, helped put men on the Moon, and lived to one hundred and one. The man who refused to launch without her went back to space at seventy-seven, still the oldest human ever to orbit the Earth. The machine took her title. It never touched her.</p>
+
+      <p>John Glenn knew his answer. He made it an order.</p>
+
+      <p class="anthem">Be the one they won't launch&nbsp;without.</p>
+
+    </div>
+  </main>
+
+  <!-- ===== End matter ===== -->
+  <footer class="endmatter">
+    <div class="measure">
+      <p><b style="color:#efeee8;">About this essay.</b> Written for the Marconi Association's periodical. Adapted from "Check the Numbers," a talk in the Google Greyglers Legends series, built on <a href="/era">the Approximation Era</a> thesis. The views here are my own.</p>
+      <div class="foot-links">
+        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/essays/">Essays</a> · <a href="/insights/">The Ledger</a> · <a href="/speaking">Speaking</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
