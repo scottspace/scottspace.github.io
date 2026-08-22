@@ -272,7 +272,7 @@
       <div class="links">
         <a href="/era" aria-current="page">The Idea</a>
         <a href="/work">The Work</a>
-        <a href="/insights/">The Ledger</a>
+        <a href="/insights/">The Scanner</a>
         <a href="/essays/">Essays</a>
         <a href="/about">About</a>
       </div>
@@ -299,7 +299,7 @@
 
         <p><span class="lead-in">I have been working through this thesis for a decade.</span> I call it the Approximation Era because that is what it actually is. Not everybody believes it. Walk through it with me and make up your own mind.</p>
 
-        <p>The core claim is simple. A large enough neural network is a universal approximator of any relationship in the observable universe. A large enough generative model is a universal generator of any sequence in that universe. Together, they let us trade differential equations for GPUs. We compute our way to answers that used to require closed-form solutions, across creativity, science, biology, and physics, all with the same underlying machinery.</p>
+        <p>The core claim is simple. A large enough neural network is a universal approximator of any relationship in the observable universe. A large enough generative model is a universal generator of any sequence in that universe. And a large enough action model is a universal actor: anything it can create, it can act on. Together, they let us trade differential equations for GPUs. We compute our way to answers that used to require closed-form solutions, across creativity, science, biology, and physics, all with the same underlying machinery.</p>
 
         <p>If that is true, then AGI and ASI are not the destination. They are checkpoints on a much longer route, where every discipline becomes computable through observation rather than derivation.</p>
 
@@ -309,7 +309,7 @@
 
         <p>Nobody could find a closed-form solution for the path from orbit through the atmosphere. The calculus was beyond us. Johnson reached for an old technique, the Euler method. She did not know the equation either. Instead, every second or so, she figured out where the capsule was, adjusted, and stepped forward. Zero, one, two, three. Each step a small straight line approximating a curve she could not write down.</p>
 
-        <p>The real equation lived in four dimensions: three of space plus time. Her approximation was piecewise and linear. Wrong in the sense that Newtonian physics is wrong. Right in the sense that John Glenn came home. The technique she developed brought Gemini home too, and was carried forward into Apollo. I imagine John asking, before he climbed into the capsule, whether Katherine had run the numbers.</p>
+        <p>The real equation lived in four dimensions: three of space plus time. Her approximation was piecewise and linear. Wrong in the sense that Newtonian physics is wrong. Right in the sense that John Glenn came home. The technique she developed brought Gemini home too, and was carried forward into Apollo. And John did not leave the checking to imagination. During the preflight checklist he asked the engineers to get the girl to check the numbers. For a day and a half she reran the machine's trajectory at her desk calculator, and his condition is on the record: "If she says they're good, then I'm ready to go."</p>
 
         <figure class="figure">
           <img src="/images/era/hero-chalkboard.jpg" alt="A chalkboard covered in handwritten orbital reentry equations and Euler's method curves" loading="lazy" />
@@ -324,7 +324,7 @@
     <section id="mechanism">
       <div class="measure">
         <div class="eyebrow">The Mechanism</div>
-        <h2>Approximation, then reasoning, then generation.</h2>
+        <h2>Approximation, then generation, then action.</h2>
 
         <p><span class="lead-in">The reason approximation works at all</span> is that the universe we can see is unreasonably friendly to it. Three properties make this true.</p>
 
@@ -360,7 +360,7 @@
           <figcaption>Diffusion in a single still. Order rising from chaos, learned by reversing the destruction.</figcaption>
         </figure>
 
-        <p>Two sides of the same coin. Together they form a universal generator. Given enough observation, any sequence becomes producible. We now have both pieces: a universal approximator and a universal generator. That is the engine of the Approximation Era.</p>
+        <p>Two sides of the same coin. Together they form a universal generator. Given enough observation, any sequence becomes producible. And in the last two years a third piece arrived. Vision-language-action models add one term to the old equation, the action taken, so the machine learns what the world will do if it acts. Approximator, generator, actor. Understand, create, act. That is the engine of the Approximation Era.</p>
 
         <p>The engine is not one fixed architecture. Each new domain has demanded its own innovations. Reinforcement learning from human feedback for language. Equivariant networks for proteins. Latent diffusion for images. Joint action-frame models for robotics. What is universal is the technique, not the wiring. Gradient descent on parameterized nonlinear stacks, scaled until it works, applied to the data of the problem in front of you. The wiring is engineering. The technique is the era.</p>
       </div>
@@ -389,7 +389,7 @@
           <span class="asof" data-count-updated>as of 2026-07-12</span>
         </div>
 
-        <p>What the scanner shows lines up with what the thesis predicts. Vertical AI wins. Physical AI wins. The places that touch atoms, regulation, time-locked data, costly failure, and scarce expertise are where the returns concentrate. The companies running approximators against problems the universe is structured to allow are the ones the market is rewarding. The quarterly analysis is published as <a href="/insights/">The Ledger</a>. I do not yet know where the next year of logging takes us. I know it will be epic.</p>
+        <p>What the scanner shows lines up with what the thesis predicts. Vertical AI wins. Physical AI wins. The places that touch atoms, regulation, time-locked data, costly failure, and scarce expertise are where the returns concentrate. The companies running approximators against problems the universe is structured to allow are the ones the market is rewarding. The quarterly analysis is published at <a href="/insights/">the Scanner</a>. I do not yet know where the next year of logging takes us. I know it will be epic.</p>
 
         <figure class="figure">
           <img src="/images/era/radar.jpg" alt="AI Radar visualization of thousands of companies and verified AI use cases" loading="lazy" />
@@ -402,18 +402,26 @@
     <section id="boundaries">
       <div class="measure">
         <div class="eyebrow">The Boundaries</div>
-        <h2>Where approximation fails.</h2>
+        <h2>Where approximation bends, and where it ends.</h2>
 
         <p><span class="lead-in">There are corners where this breaks.</span> Turbulence resists low-dimensional compression. High-energy physics climbs back into very high dimensions. Some combinatorial problems refuse to be smooth. The thesis here is not that approximation works on every problem in the universe. It is that approximation works on <em>enough</em> of the universe to remake civilization. That is a smaller claim, and a more defensible one.</p>
+
+        <p>Even chaos only bends the era. Lorenz proved that no model can step a single true path through a month of weather. So the era changed what it approximates: not the one future, but the distribution of futures, and it now beats the best physical ensemble forecasts doing exactly that. Chaos tells the era what to approximate. It does not tell the era to stop.</p>
 
         <p>The other limit is not mathematical. It is physical. The constraint is not algorithms. It is power. Assume an AGI can be served by an eight-way H100 box: sixty kilograms, the kind of thing they are now talking about putting in satellites. Assume one for every human and one for every robot roaming a warehouse. A billion of each. Each chip pulls about seven hundred watts, the same as a vacuum cleaner. Eight chips per box is roughly fifty-six hundred watts. Two billion users at that draw is around ten terawatts. The planet generates about 9.8.</p>
 
         <p>This is not theoretical. Inside Google, working on a video project, I could not get enough compute. I was hitting daily limits by ten or eleven in the morning, then bartering for tokens with other teams to keep going. The grid is the bottleneck. Tokens and watts are the currency of the next twenty years.</p>
 
+        <p>So the scanner watches the grid itself now. Every day it ingests the published power deals, the ISOs, the transmission lines, the battery farms, the solar farms, the plants, the water, and the data centers, and connects each one to the companies behind it. Ten thousand gigawatts of operating capacity, mapped and tied to owners, with the queue of what is coming next.</p>
+
         <figure class="figure">
-          <img src="/images/era/era-power.jpg" alt="A vast dark data center feeding into a distant power grid and turbines" loading="lazy" />
-          <figcaption>The era's hard limit. Algorithms are not the bottleneck. Power is.</figcaption>
+          <img src="/images/era/power-map.jpg" alt="The Global Power Map: a dark globe showing 10,448 GW of operating capacity by fuel type, 3,594 data centers, and 789 GW queued" loading="lazy" />
+          <figcaption>The Global Power Map, live in the scanner. 10,448 GW operating, 3,594 data centers, 789 GW in the queue, every site tied to the companies behind it.</figcaption>
         </figure>
+
+        <p>The deepest boundary is neither mathematical nor electrical. Everything above rests on one hidden assumption: looking is free. We observe the world, and the world does not notice. At the quantum scale that assumption dies. You cannot copy an unknown quantum state. Measure it, and you change the answer. Looking stops being a window and becomes a transaction. There is no dataset at the bottom of physics. Machines that learn behind that veil, holding quantum memory and measuring gently, are just now being built, and one has already learned some things exponentially faster than any classical observer. That is not this era. That is the next one.</p>
+
+        <p>Which is how I know what this era is. It opened 250 years ago, when Newton wrote rules nobody could solve and Euler stepped them anyway. It is closing at its pinnacle: before it ends, we will understand, create, and act on more of the observable world than centuries of instruments revealed. That is not a trophy. That is the new baseline. The next era will stand on it the way Katherine stood on Euler.</p>
 
         <!--
           TODO(scott): The Boundaries section above draws on the "corners where this breaks"
@@ -446,7 +454,7 @@
         </figure>
 
         <h3>Robotics</h3>
-        <p>Another team took the video model and added one input: a joystick. Up, down, left, right, fire. Three bits. Then they trained on video games, asking the model to guess both the next frame and the next button press. That became Genie. Rewire your joystick into the model, and now you are exploring a world the model is imagining frame by frame, consistent with both your inputs and the physics it has learned. Three bits per second of control, and a coherent world appears. Now imagine that with kilobits or megabits of control input instead of three. We are just getting started.</p>
+        <p>Another team took the video model and added one input: a joystick. Up, down, left, right, fire. Three bits. Then they trained on video games, asking the model to guess both the next frame and the next button press. That became Genie. Rewire your joystick into the model, and now you are exploring a world the model is imagining frame by frame, consistent with both your inputs and the physics it has learned. Three bits per second of control, and a coherent world appears. Now imagine that with kilobits or megabits of control input instead of three. Those three bits were the seed of the actor. Today's vision-language-action models are the tree: perception, instruction, and motion in one network, driving real arms and real tools. We are just getting started.</p>
 
         <figure class="figure">
           <img src="/images/era/era-worldmodel.jpg" alt="A hand on a joystick, a coherent world rendering itself frame by frame" loading="lazy" />
@@ -481,6 +489,7 @@
           <tbody>
             <tr><td>Newtonian</td><td>Closed-form equations</td><td>What humans can derive</td></tr>
             <tr><td>Approximation</td><td>High-dimensional piecewise nonlinear approximation</td><td>Tokens and watts</td></tr>
+            <tr><td>Quantum, next</td><td>Learning behind the veil of measurement</td><td>Observation itself</td></tr>
           </tbody>
         </table>
 
@@ -492,11 +501,13 @@
 
         <p><b>If you are a patient, or you love one,</b> the implication is the most important. We are not promising cures. We are promising treatments. The distinction matters. Diabetes is not cured. It is managed, and a person with diabetes today lives a full life because of a hundred years of incremental wins. Cancer is on the same trajectory, only faster, because the engine is no longer the bench scientist alone. It is the bench scientist plus the approximator. Pull on enough threads and many cancers stop being lethal even when they are not eliminated. The arc bends from terminal to chronic to managed.</p>
 
+        <p><b>And for everyone,</b> one line the engine will never cross on its own. Anything is not everything. The machine cannot choose what is worth doing, and it cannot answer for the choice: it has no family, no career, no reputation to stake. Judgment, accountability, and trust stay with people. Behind every verified deployment in the scanner, someone signed. I made the full argument in an essay, <a href="/essays/check-the-numbers/">Check the Numbers</a>, on what Katherine Johnson still had after the machine took her job title.</p>
+
         <p>The science being possible is not the same as the treatment being delivered. Translation through clinical trials, regulatory review, manufacturing, payer adoption, and physician practice takes years on its own clock. The era moves the science. The institutions still have to do their work. I am building toward both.</p>
 
         <h3>Why I count</h3>
 
-        <p><span class="lead-in">The ledger has a spine and a brain.</span> The spine is Day N, the daily discipline of writing down what is real. The brain is the thesis you just read. But neither is the reason I show up. This is.</p>
+        <p><span class="lead-in">The scanner has a spine and a brain.</span> The spine is Day N, the daily discipline of writing down what is real. The brain is the thesis you just read. But neither is the reason I show up. This is.</p>
 
         <div class="promise-block">
           <p>My mother died of cancer at 57. Before she went, she made my brother and me promise to find a better way. He became an oncologist. I became the AI guy. The Approximation Era is how we finally keep the promise.</p>
@@ -526,7 +537,7 @@
       <p><b style="color:#efeee8;">About this work.</b> The thesis is mine. The Nobel Prizes belong to the people who proved the math. The work ahead belongs to whoever can keep the lights on. The views here are my own and do not represent my employer or any advisory boards I serve on. Nothing here is investing advice.</p>
       <p>Prefer the formatted PDF? <a class="pdf-link" href="/insights/the-approximation-era.pdf" target="_blank" rel="noopener">Read The Approximation Era (PDF) ↓</a></p>
       <div class="foot-links">
-        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/insights/">The Ledger</a> · <a href="/speaking">Speaking</a>
+        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/insights/">The Scanner</a> · <a href="/speaking">Speaking</a>
       </div>
     </div>
   </footer>
