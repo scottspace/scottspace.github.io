@@ -12,11 +12,12 @@
   <meta property="og:description" content="I build video models to help cure cancer. Those two things sound unrelated. They are the same problem. Here's the story." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scott.ai" />
+  <meta property="og:image" content="https://scott.ai/images/era/cinema-to-bio.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,16 +27,17 @@
       --bg:#0a0a0a;
       --bg-surface:#141414;
       --ink:#e8e8e8;
+      --soft:rgba(255,255,255,0.75);
       --muted:#888;
       --dim:#555;
       --hair:rgba(255,255,255,0.08);
       --accent:#c9a84c;
       --shadow: 0 16px 50px rgba(0,0,0,0.5);
       --radius:14px;
+      --container:1096px;
     }
 
     *{ margin:0; padding:0; box-sizing:border-box; }
-
     html{ scroll-behavior:smooth; }
 
     body{
@@ -47,237 +49,203 @@
       text-rendering:optimizeLegibility;
     }
 
-    .wrap{
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 20px 28px 80px;
-    }
+    .container{ max-width:var(--container); margin:0 auto; padding:0 28px; }
 
-    /* Sticky header */
-    .top{
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;
+      min-height:clamp(540px, 80vh, 840px);
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding: 18px 28px 14px;
-      margin: 0 -28px 20px;
-      background: var(--bg);
-      border-bottom: 1px solid var(--hair);
+      align-items:flex-end;
+      overflow:hidden;
+      border-bottom:1px solid var(--hair);
     }
-
-    .top.stuck{
-      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    .hero-bg{
+      position:absolute; inset:0;
+      background:url('/images/era/cinema-to-bio.jpg') center 32% / cover no-repeat;
     }
-
-    .name{
+    .hero-scrim{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.62) 42%, rgba(10,10,10,0.18) 100%),
+        linear-gradient(to top, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.35) 42%, rgba(10,10,10,0.45) 100%);
+    }
+    .hero-inner{
+      position:relative; width:100%;
+      max-width:var(--container); margin:0 auto;
+      padding:140px 28px 84px;
+    }
+    .hero .eyebrow{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--accent); font-weight:500; margin-bottom:22px;
+    }
+    .hero h1{
       font-family:'EB Garamond',Georgia,serif;
       font-weight:500;
-      font-size:1.32rem;
-      letter-spacing:-0.01em;
-    }
-
-    .icons{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    .icons a{
-      color:var(--dim);
-      text-decoration:none;
-      font-size:1.05rem;
-      transition: color .15s ease, transform .15s ease;
-    }
-
-    .icons a:hover{
-      color:var(--ink);
-      transform: translateY(-1px);
-    }
-
-    /* Primary nav (top-right) */
-    .site-nav-links{
-      display:flex;
-      gap:22px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .site-nav-links a{
-      font-size:0.82rem;
-      font-weight:500;
-      color:var(--muted);
-      text-decoration:none;
-      letter-spacing:0.01em;
-      white-space:nowrap;
-      transition:color .15s ease;
-    }
-    .site-nav-links a:hover,
-    .site-nav-links a[aria-current="page"]{ color:var(--ink); }
-    .site-nav-links a.sub{ color:var(--accent); }
-    .site-nav-links a.sub:hover{ color:#f4e6b8; }
-
-    /* Hero */
-    .hero-lead{
-      padding: 24px 0 34px;
-      border-bottom: 1px solid var(--hair);
-      margin-bottom: 34px;
-    }
-    .eyebrow{
-      font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-    .hero-h1{
-      font-family:'EB Garamond',Georgia,serif;
-      font-weight:500;
-      font-size:clamp(2.3rem,6vw,3.6rem);
-      line-height:1.06;
+      font-size:clamp(2.6rem, 5.4vw, 4.3rem);
+      line-height:1.05;
       letter-spacing:-0.02em;
-      margin-bottom:20px;
+      max-width:16ch;
+      margin-bottom:22px;
+      text-wrap:balance;
     }
-    .hero-sub{
-      font-size:clamp(1.02rem,2.3vw,1.22rem);
+    .hero p{
+      font-size:clamp(1.05rem, 1.6vw, 1.24rem);
       line-height:1.6;
-      color:rgba(255,255,255,0.78);
-      max-width:58ch;
-      margin-bottom:26px;
+      color:var(--soft);
+      max-width:46ch;
+      margin-bottom:30px;
     }
     .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; }
 
-    /* Visuals */
-    .visual{
-      margin: 30px 0 6px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--hair);
-      background: #0b0f1a;
+    /* ===== Proof band ===== */
+    .stats{
+      border-bottom:1px solid var(--hair);
+      background:rgba(255,255,255,0.015);
     }
-    .visual img{
-      width: 100%;
-      height: auto;
-      display: block;
+    .stats-inner{
+      max-width:var(--container); margin:0 auto; padding:0 28px;
+      display:grid; grid-template-columns:repeat(4, 1fr); gap:32px;
     }
-    .visual.people img{
-      height: 280px;
-      object-fit: cover;
-      object-position: center 72%;
+    .stat{ padding:30px 0 26px; }
+    .stat + .stat{ border-left:1px solid var(--hair); padding-left:32px; }
+    .stat .n{
+      font-family:'EB Garamond',Georgia,serif;
+      font-size:clamp(1.7rem, 2.6vw, 2.3rem);
+      font-weight:500; color:var(--ink);
+      font-variant-numeric:tabular-nums;
+      line-height:1.15;
     }
-    .visual-caption{
-      padding: 10px 14px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--hair);
-      color: var(--muted);
-      font-size: 0.85rem;
-      line-height: 1.5;
+    .stat .l{
+      font-size:0.72rem; font-weight:600; letter-spacing:0.14em;
+      text-transform:uppercase; color:var(--muted); margin-top:6px;
     }
-    .section-visual{ margin: 4px 0 24px; }
 
-    /* Typography */
+    /* ===== Story rows ===== */
+    .story{ padding:26px 0 8px; }
+    .row{
+      display:grid;
+      grid-template-columns:1.02fr 0.98fr;
+      gap:64px;
+      align-items:center;
+      padding:58px 0;
+    }
+    .row + .row{ border-top:1px solid var(--hair); }
+    .row .text{ max-width:56ch; }
+    .row.media-left .media{ order:-1; }
+
+    .section-label{
+      font-size:0.72rem; font-weight:600; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--accent); margin-bottom:16px;
+    }
     .prose{
-      font-size: 1.0rem;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.75);
-      max-width: 100%;
-      margin-bottom: 24px;
+      font-size:1.02rem; line-height:1.85; color:var(--soft);
+      margin-bottom:20px;
     }
-
-    .prose strong{
-      color: var(--ink);
-      font-weight: 600;
-    }
-
+    .prose strong{ color:var(--ink); font-weight:600; }
     .prose a{
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-color: rgba(255,255,255,0.2);
-      transition: text-decoration-color .15s;
+      color:var(--ink); text-decoration:underline; text-underline-offset:3px;
+      text-decoration-color:rgba(255,255,255,0.2); transition:text-decoration-color .15s;
+    }
+    .prose a:hover{ text-decoration-color:rgba(255,255,255,0.6); }
+    .row .btn{ margin-top:6px; }
+
+    .media{ min-width:0; }
+    .media .frame{
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow); border:1px solid var(--hair);
+      background:#0b0f1a;
+    }
+    .media img{ width:100%; height:auto; display:block; }
+    .media.portrait img{ height:430px; object-fit:cover; object-position:center 72%; }
+    .media .visual-caption{
+      padding:10px 14px; background:var(--bg-surface);
+      border-top:1px solid var(--hair);
+      color:var(--muted); font-size:0.85rem; line-height:1.5;
     }
 
-    .prose a:hover{
-      text-decoration-color: rgba(255,255,255,0.6);
+    /* Full-width visual band */
+    .band{
+      padding:10px 0 58px;
+    }
+    .band .frame{
+      border-radius:var(--radius); overflow:hidden;
+      box-shadow:var(--shadow); border:1px solid var(--hair);
+    }
+    .band img{ width:100%; height:auto; display:block; }
+    .band .visual-caption{
+      padding:10px 14px; background:var(--bg-surface);
+      border-top:1px solid var(--hair);
+      color:var(--muted); font-size:0.85rem; line-height:1.5;
     }
 
-    .rule{
-      border: none;
-      border-top: 1px solid var(--hair);
-      margin: 32px 0;
+    /* Pull quote */
+    .pull{
+      border-block:1px solid var(--hair);
+      padding:72px 28px;
+      text-align:center;
+    }
+    .pull .section-label{ margin-bottom:22px; }
+    .pull blockquote{
+      font-family:'EB Garamond',Georgia,serif;
+      font-style:italic; font-weight:500;
+      font-size:clamp(1.4rem, 2.6vw, 1.9rem);
+      line-height:1.45; color:var(--ink);
+      max-width:34ch; margin:0 auto;
+      text-wrap:balance;
+    }
+    .pull .rest{
+      max-width:52ch; margin:22px auto 0;
+      font-size:1.0rem; line-height:1.8; color:var(--soft);
     }
 
-    .section-title{
-      font-size:0.72rem;
-      font-weight:600;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
+    /* Promise block */
+    .promise{
+      border-left:2px solid var(--accent);
+      padding:6px 0 6px 20px;
+      margin:26px 0 6px;
+      font-family:'EB Garamond',Georgia,serif;
+      font-size:1.18rem; line-height:1.6; color:var(--ink);
     }
 
-    .section-actions{ margin: 4px 0 8px; }
+    /* Quiet aside */
+    .aside{
+      border-top:1px solid var(--hair);
+      padding:64px 28px;
+    }
+    .aside-inner{ max-width:62ch; margin:0 auto; text-align:left; }
+    .aside .section-label{ text-align:center; }
 
     /* Buttons */
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 24px;
-      border-radius: 10px;
-      text-decoration:none;
-      font-weight:600;
-      font-size:0.92rem;
-      transition: transform .15s ease, box-shadow .15s ease;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 24px; border-radius:10px; text-decoration:none;
+      font-weight:600; font-size:0.92rem;
+      transition:transform .15s ease, box-shadow .15s ease;
       user-select:none;
     }
-
-    .btn-primary{
-      background: #fff;
-      color: #0a0a0a;
-      border: none;
-    }
-
-    .btn-primary:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(255,255,255,0.12);
-    }
-
-    .btn-secondary{
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .btn-secondary:hover{
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.4);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
+    .btn-primary{ background:#fff; color:#0a0a0a; border:none; }
+    .btn-primary:hover{ transform:translateY(-1px); box-shadow:0 8px 24px rgba(255,255,255,0.12); }
+    .btn-secondary{ background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,0.2); }
+    .btn-secondary:hover{ transform:translateY(-1px); border-color:rgba(255,255,255,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.3); }
 
     /* Follow */
+    .cta-wrap{ border-top:1px solid var(--hair); padding:64px 28px 8px; }
     .cta-block{
-      margin: 40px 0;
-      padding: 36px 32px;
-      background: var(--bg-surface);
-      border: 1px solid var(--hair);
-      border-radius: var(--radius);
-      text-align: center;
-      scroll-margin-top: 90px;
+      max-width:680px; margin:0 auto 56px;
+      padding:40px 36px;
+      background:var(--bg-surface); border:1px solid var(--hair);
+      border-radius:var(--radius); text-align:center;
+      scroll-margin-top:90px;
     }
-
+    .cta-block .cta-title{
+      font-family:'EB Garamond',Georgia,serif;
+      font-size:1.55rem; color:var(--ink); margin-bottom:10px;
+    }
     .cta-block p{
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
+      color:rgba(255,255,255,0.7); font-size:0.95rem; line-height:1.7; margin-bottom:20px;
     }
-
     .signup-form{ display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; }
     .signup-form input{
       flex:1; min-width:200px; padding:13px 16px; border-radius:10px;
@@ -297,61 +265,52 @@
 
     /* Footer */
     .footer{
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 1px solid var(--hair);
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--dim);
+      max-width:var(--container); margin:0 auto;
+      padding:18px 28px 0;
+      border-top:1px solid var(--hair);
+      display:flex; justify-content:space-between; align-items:baseline;
+      flex-wrap:wrap; gap:8px;
+      font-size:0.82rem; color:var(--dim);
     }
+    .footer a{ color:var(--dim); text-decoration:none; transition:color .15s; }
+    .footer a:hover{ color:var(--ink); }
+    .footer-left{ font-family:'EB Garamond',Georgia,serif; letter-spacing:-0.01em; }
+    .footer-links{ display:flex; gap:14px; align-items:baseline; flex-wrap:wrap; }
+    .footer-sep{ opacity:0.3; }
 
-    .footer a{
-      color: var(--dim);
-      text-decoration: none;
-      transition: color 0.15s;
+    .icons{
+      display:flex; gap:16px; flex-wrap:wrap;
+      justify-content:center; padding:26px 0 60px;
     }
-
-    .footer a:hover{
-      color: var(--ink);
+    .icons a{
+      color:var(--dim); text-decoration:none; font-size:1.05rem;
+      transition:color .15s ease, transform .15s ease;
     }
+    .icons a:hover{ color:var(--ink); transform:translateY(-1px); }
 
-    .footer-left{
-      font-family:'EB Garamond',Georgia,serif;
-      letter-spacing: -0.01em;
-    }
-
-    .footer-links{
-      display: flex;
-      gap: 14px;
-      align-items: baseline;
-      flex-wrap: wrap;
-    }
-
-    .footer-sep{
-      opacity: 0.3;
-    }
-
-    @media (max-width: 620px){
-      .wrap{ padding: 20px 16px 68px; }
-      .top{
-        flex-direction: column; align-items: stretch; gap: 10px;
-        padding: 12px 16px 10px; margin: 0 -16px 16px;
-      }
-      .name{ white-space: nowrap; font-size: 1.18rem; }
-      .site-nav-links{
-        width: 100%; justify-content: space-between; gap: 6px 10px;
-        padding-top: 10px; border-top: 1px solid var(--hair);
-      }
-      .site-nav-links a{ font-size: 0.8rem; }
-      .cta-block{ padding: 28px 20px; }
-      .ledger-module{ padding: 22px 18px; }
+    /* ===== Responsive ===== */
+    @media (max-width: 920px){
+      .row{ grid-template-columns:1fr; gap:26px; padding:44px 0; }
+      .row.media-left .media{ order:0; }
+      .row .text{ max-width:100%; }
+      .media.portrait img{ height:320px; }
+      .stats-inner{ grid-template-columns:repeat(2, 1fr); gap:0 28px; }
+      .stat{ padding:20px 0 16px; }
+      .stat + .stat{ border-left:none; padding-left:0; }
+      .stat:nth-child(even){ border-left:1px solid var(--hair); padding-left:28px; }
+      .stat:nth-child(n+3){ border-top:1px solid var(--hair); }
+      .hero-inner{ padding:120px 20px 56px; }
+      .pull{ padding:56px 20px; }
+      .aside{ padding:48px 20px; }
+      .container{ padding:0 20px; }
+      .cta-block{ padding:28px 20px; }
     }
   </style>
   <link rel="stylesheet" href="/css/site-nav.css" />
+  <style>
+    /* Homepage runs a wider column than the 820px default; keep the nav aligned with it. */
+    .site-nav-inner{ max-width:var(--container); }
+  </style>
 </head>
 
 <body>
@@ -368,161 +327,176 @@
     </div>
   </nav>
 
-  <div class="wrap">
-
-    <!-- === HERO === -->
-
-    <section class="hero-lead">
+  <!-- === HERO === -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-inner">
       <div class="eyebrow">Scott Penberthy</div>
-      <h1 class="hero-h1">I build video models to help cure cancer.</h1>
-      <p class="hero-sub">Those two things sound unrelated. They are the same problem. Hold that thought while I tell you the story.</p>
+      <h1>I build video models to help cure cancer.</h1>
+      <p>Those two things sound unrelated. They are the same problem. Hold that thought while I tell you the story.</p>
       <div class="hero-actions">
         <a href="#follow" class="btn btn-primary">Follow the journey</a>
         <a href="/era" class="btn btn-secondary">The idea</a>
       </div>
-      <div class="visual">
-        <img src="/images/era/cinema-to-bio.jpg" alt="Video on a phone flowing through equations into DNA and folded proteins" />
+    </div>
+  </header>
+
+  <!-- === PROOF BAND === -->
+  <div class="stats" aria-label="The scanner, by the numbers">
+    <div class="stats-inner">
+      <div class="stat"><div class="n"><span data-count="plain">7,600+</span></div><div class="l">Verified AI deployments</div></div>
+      <div class="stat"><div class="n"><span data-count="companies">3,600+</span></div><div class="l">Public companies read daily</div></div>
+      <div class="stat"><div class="n">10,448&thinsp;GW</div><div class="l">Of world power mapped</div></div>
+      <div class="stat"><div class="n">3,594</div><div class="l">Data centers tracked</div></div>
+    </div>
+  </div>
+
+  <!-- === THE JOURNEY: one story, top to bottom === -->
+  <main class="story">
+    <div class="container">
+
+      <!-- The decade -->
+      <section class="row">
+        <div class="text">
+          <div class="section-label">The decade</div>
+          <p class="prose">Every job has been the same bet in a new place. MIT at sixteen. A PhD in AI. Then ten years building AI at Google. I founded Applied AI at Google Cloud, closed billion dollar deals, and sat with more than 300 companies. As a Distinguished Engineer in the CTO office, I watched where the value went.</p>
+          <p class="prose">Watching wasn't enough. I wanted to see it in data nobody could argue with.</p>
+          <a href="/about" class="btn btn-secondary">About</a>
+        </div>
+        <div class="media portrait">
+          <div class="frame">
+            <img src="/images/hero.png" alt="Scott Penberthy on stage with Lee Hood at the Cancer AI Symposium" loading="lazy" />
+            <div class="visual-caption">With Lee Hood at the AI Cancer Forum I started.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The scanner -->
+      <section class="row media-left">
+        <div class="text">
+          <div class="section-label">The scanner</div>
+          <p class="prose">So I built a scanner. It reads what 3,000 public companies say and do about AI, every day, from earnings calls and SEC filings, checked against independent sources. In seven months it verified almost 10,000 real deployments. AI went from curiosity to commodity while most people were still debating it.</p>
+          <p class="prose">Now it watches the physical world too. Every day it maps the global power grid, the water, the live contracts, and the data centers: every published power deal, the ISOs, the power lines, the battery farms, the solar farms, the plants. Ten thousand gigawatts, tied to the companies behind them.</p>
+          <p class="prose">That data is an edge. It shows where value is moving before the market agrees, and it turns the art of the possible into something you can trade on. Applying AI for market returns is how I fund everything else on this page.</p>
+          <a href="/insights/" class="btn btn-secondary">Open the Scanner</a>
+        </div>
+        <div class="media">
+          <div class="frame">
+            <img src="/images/era/radar.jpg" alt="AI Radar visualization of thousands of companies and verified AI use cases" loading="lazy" />
+            <div class="visual-caption">The AI Radar. Every AI mention, extracted by agents, validated, and scored for how real it is.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Global Power Map, full width -->
+      <div class="band">
+        <div class="frame">
+          <img src="/images/era/power-map.jpg" alt="The Global Power Map: a dark globe showing 10,448 GW of operating capacity by fuel type, 3,594 data centers, and 789 GW queued" loading="lazy" />
+          <div class="visual-caption">The Global Power Map, live in the scanner. 10,448 GW operating, 3,594 data centers, 789 GW in the queue, every site tied to the companies behind it.</div>
+        </div>
       </div>
-    </section>
 
-    <!-- === THE JOURNEY: one story, top to bottom === -->
-
-    <div class="section-title">The decade</div>
-    <div class="prose">
-      Every job has been the same bet in a new place. MIT at sixteen. A PhD in AI. Then ten years building AI at Google. I founded Applied AI at Google Cloud, closed billion dollar deals, and sat with more than 300 companies. As a Distinguished Engineer in the CTO office, I watched where the value went.
-    </div>
-    <div class="prose">
-      Watching wasn't enough. I wanted to see it in data nobody could argue with.
-    </div>
-    <div class="visual people section-visual">
-      <img src="/images/hero.png" alt="Scott Penberthy on stage with Lee Hood at the Cancer AI Symposium" loading="lazy" />
-      <div class="visual-caption">With Lee Hood at the AI Cancer Forum I started.</div>
-    </div>
-    <div class="section-actions">
-      <a href="/about" class="btn btn-secondary">About</a>
     </div>
 
-    <hr class="rule" />
-
-    <!-- === THE SCANNER === -->
-
-    <div class="section-title">The scanner</div>
-    <div class="prose">
-      So I built a scanner. It reads what 3,000 public companies say and do about AI, every day, from earnings calls and SEC filings, checked against independent sources. In seven months it verified almost 10,000 real deployments. AI went from curiosity to commodity while most people were still debating it.
-    </div>
-    <div class="prose">
-      Now it watches the physical world too. Every day it maps the global power grid, the water, the live contracts, and the data centers: every published power deal, the ISOs, the power lines, the battery farms, the solar farms, the plants. Ten thousand gigawatts, tied to the companies behind them.
-    </div>
-    <div class="prose">
-      That data is an edge. It shows where value is moving before the market agrees, and it turns the art of the possible into something you can trade on. Applying AI for market returns is how I fund everything else on this page.
-    </div>
-    <div class="visual section-visual">
-      <img src="/images/era/radar.jpg" alt="AI Radar visualization of thousands of companies and verified AI use cases" loading="lazy" />
-      <div class="visual-caption">The AI Radar. Every AI mention, extracted by agents, validated, and scored for how real it is.</div>
-    </div>
-    <div class="section-actions">
-      <a href="/insights/" class="btn btn-secondary">Open the Scanner</a>
+    <!-- The insight, as a pull quote -->
+    <div class="pull">
+      <div class="section-label">The insight</div>
+      <blockquote>The easy ground filled in fast. The value moved to the problems you can't fake.</blockquote>
+      <p class="rest">Then the data pointed somewhere. Plain software is the easy part now. The value is moving to <strong>physical AI</strong>. It is moving to fields that are heavily regulated and starved of data. It is moving to the stack that turns watts into tokens.</p>
     </div>
 
-    <hr class="rule" />
+    <div class="container">
 
-    <!-- === THE INSIGHT === -->
+      <!-- Why cancer -->
+      <section class="row">
+        <div class="text">
+          <div class="section-label">Why cancer</div>
+          <p class="prose">That insight points straight at cancer. So I picked it. Cancer is going digital. Programmable mRNA and CAR-T immunotherapies are code for the body, and designing them needs a model that watches a whole body over time. Longitudinal. Multimodal. Very large. I went looking for where that model would be born. The answer was video. So I jumped in with both feet.</p>
+          <p class="prose">I advise the Lustgarten Foundation and Stanford Medicine. I want to make your body clear to you. Then I'll track AI for cancer the way I tracked AI adoption, one verified advance at a time, and let the data show the way again.</p>
+          <div class="promise">I lost my mom to cancer at 57. This is the promise I'm keeping.</div>
+        </div>
+        <div class="media">
+          <div class="frame">
+            <img src="/images/era/era-defense.jpg" alt="Immune cells with glowing keys locking onto a dark cancer cell" loading="lazy" />
+            <div class="visual-caption">Programmable defense. The same machinery that learns cat-or-not is now reading DNA and designing the molecules that hunt cancer.</div>
+          </div>
+        </div>
+      </section>
 
-    <div class="section-title">The insight</div>
-    <div class="prose">
-      Then the data pointed somewhere. Plain software is the easy part now. The value is moving to <strong>physical AI</strong>. It is moving to fields that are heavily regulated and starved of data. It is moving to the stack that turns watts into tokens. The easy ground filled in fast. The value moved to the problems you can't fake.
     </div>
 
-    <hr class="rule" />
+    <!-- As AGI arrives, a quiet aside -->
+    <aside class="aside">
+      <div class="section-label">As AGI arrives</div>
+      <div class="aside-inner">
+        <p class="prose">There's one more question I care about. What happens to the rest of us. I think the future belongs to small teams. One to four people, powered by suites of agents, built on trust, judgment, and often physical labor. The electrician, the machinist, the nurse, the builder. The local trades hold exactly what AI can't fake, and agents will hand them the leverage that used to take a company of hundreds.</p>
+        <p class="prose">Helping those people cross into that future matters to me as much as any market. I run suites of agents every day to build experiences nobody has seen yet, and I want that power in ordinary hands.</p>
+      </div>
+    </aside>
 
-    <!-- === WHY CANCER === -->
+    <div class="container">
 
-    <div class="section-title">Why cancer</div>
-    <div class="prose">
-      That insight points straight at cancer. So I picked it. Cancer is going digital. Programmable mRNA and CAR-T immunotherapies are code for the body, and designing them needs a model that watches a whole body over time. Longitudinal. Multimodal. Very large. I went looking for where that model would be born. The answer was video. So I jumped in with both feet.
-    </div>
-    <div class="prose">
-      I advise the Lustgarten Foundation and Stanford Medicine. I want to make your body clear to you. Then I'll track AI for cancer the way I tracked AI adoption, one verified advance at a time, and let the data show the way again.
-    </div>
-    <div class="prose">
-      I lost my mom to cancer at 57. This is the promise I'm keeping.
-    </div>
-    <div class="visual section-visual">
-      <img src="/images/era/era-defense.jpg" alt="Immune cells with glowing keys locking onto a dark cancer cell" loading="lazy" />
-      <div class="visual-caption">Programmable defense. The same machinery that learns cat-or-not is now reading DNA and designing the molecules that hunt cancer.</div>
-    </div>
+      <!-- The reveal -->
+      <section class="row media-left" style="border-top:none;">
+        <div class="text">
+          <div class="section-label">That thought again</div>
+          <p class="prose">Here is that thought again. Pixels over time. Nucleotides over time. Same trick. Intelligence is information learning to predict and generate itself over time. Teach it on video and you get worlds. Teach it on molecules and you get biology. Teach it to act and you get robots. That is why video and cancer are one problem.</p>
+          <p class="prose">I spent six years on that bet. People laughed. They've stopped. The full argument is <strong>the Approximation Era</strong>: compute replacing calculus, one field after another becoming computable through observation rather than derivation, from the math that brought John Glenn home to the treatments for cancer.</p>
+          <a href="/era" class="btn btn-secondary">Read the essay</a>
+        </div>
+        <div class="media">
+          <div class="frame">
+            <img src="/images/era/catmemes-cancer.jpg" alt="A cat meme on a phone and a folded protein rendered from the same stream of math" loading="lazy" />
+            <div class="visual-caption">Same machine, different inputs. From cat memes to cancer.</div>
+          </div>
+        </div>
+      </section>
 
-    <hr class="rule" />
-
-    <!-- === AS AGI ARRIVES === -->
-
-    <div class="section-title">As AGI arrives</div>
-    <div class="prose">
-      There's one more question I care about. What happens to the rest of us. I think the future belongs to small teams. One to four people, powered by suites of agents, built on trust, judgment, and often physical labor. The electrician, the machinist, the nurse, the builder. The local trades hold exactly what AI can't fake, and agents will hand them the leverage that used to take a company of hundreds.
-    </div>
-    <div class="prose">
-      Helping those people cross into that future matters to me as much as any market. I run suites of agents every day to build experiences nobody has seen yet, and I want that power in ordinary hands.
-    </div>
-
-    <hr class="rule" />
-
-    <!-- === THE REVEAL === -->
-
-    <div class="section-title">That thought again</div>
-    <div class="prose">
-      Here is that thought again. Pixels over time. Nucleotides over time. Same trick. Intelligence is information learning to predict and generate itself over time. Teach it on video and you get worlds. Teach it on molecules and you get biology. Teach it to act and you get robots. That is why video and cancer are one problem.
-    </div>
-    <div class="prose">
-      I spent six years on that bet. People laughed. They've stopped. The full argument is <strong>the Approximation Era</strong>: compute replacing calculus, one field after another becoming computable through observation rather than derivation, from the math that brought John Glenn home to the treatments for cancer.
-    </div>
-    <div class="visual section-visual">
-      <img src="/images/era/catmemes-cancer.jpg" alt="A cat meme on a phone and a folded protein rendered from the same stream of math" loading="lazy" />
-      <div class="visual-caption">Same machine, different inputs. From cat memes to cancer.</div>
-    </div>
-    <div class="section-actions">
-      <a href="/era" class="btn btn-secondary">Read the essay</a>
     </div>
 
     <!-- === FOLLOW === -->
-
-    <div class="cta-block" id="follow">
-      <p style="font-family:'EB Garamond',Georgia,serif; font-size:1.5rem; color:var(--ink); margin-bottom:10px;">Are you choosing what to build?</p>
-      <p>Let's talk. I show leadership teams what AI can do for them right now. Then I open a laptop, and we build one of those things before the day ends. I take board and advisory seats, keynote on the Approximation Era, and still write the code. Reach me at <a href="mailto:scott@scott.ai" style="color:var(--ink);">scott@scott.ai</a>, or follow the journey below. One email when it matters.</p>
-      <form class="signup-form" id="signupForm" onsubmit="return handleSignup(event)">
-        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
-        <button type="submit">Follow</button>
-      </form>
-      <div class="signup-thanks" id="signupThanks">Thanks. Confirm your subscription in the tab that just opened.</div>
-    </div>
-
-    <div class="footer">
-      <div class="footer-left">Scott Penberthy <span class="footer-sep">/</span> MIT. PhD in AI. Building since 1993.</div>
-      <div class="footer-links">
-        <a href="https://scottpenberthy.substack.com" target="_blank" rel="noopener">Substack</a>
-        <span class="footer-sep">/</span>
-        <a href="https://www.youtube.com/@ScottPenberthy" target="_blank" rel="noopener">YouTube</a>
-        <span class="footer-sep">/</span>
-        <a href="https://www.linkedin.com/in/scottpenberthy/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="footer-sep">/</span>
-        <a href="https://www.tiktok.com/@ScottPenberthy" target="_blank" rel="noopener">TikTok</a>
-        <span class="footer-sep">/</span>
-        <a href="/speaking">Speaking</a>
-        <span class="footer-sep">/</span>
-        <a href="mailto:scott@scott.ai">scott@scott.ai</a>
+    <div class="cta-wrap">
+      <div class="cta-block" id="follow">
+        <p class="cta-title">Are you choosing what to build?</p>
+        <p>Let's talk. I show leadership teams what AI can do for them right now. Then I open a laptop, and we build one of those things before the day ends. I take board and advisory seats, keynote on the Approximation Era, and still write the code. Reach me at <a href="mailto:scott@scott.ai" style="color:var(--ink);">scott@scott.ai</a>, or follow the journey below. One email when it matters.</p>
+        <form class="signup-form" id="signupForm" onsubmit="return handleSignup(event)">
+          <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+          <button type="submit">Follow</button>
+        </form>
+        <div class="signup-thanks" id="signupThanks">Thanks. Confirm your subscription in the tab that just opened.</div>
       </div>
     </div>
 
-    <div class="icons" aria-label="Social links" style="justify-content:center; margin-top:24px;">
-      <a href="https://www.linkedin.com/in/scottpenberthy/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://twitter.com/scottpenberthy" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://www.youtube.com/@ScottPenberthy" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@ScottPenberthy" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/tensordoc" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="mailto:scott@scott.ai" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
+  </main>
 
+  <div class="footer">
+    <div class="footer-left">Scott Penberthy <span class="footer-sep">/</span> MIT. PhD in AI. Building since 1993.</div>
+    <div class="footer-links">
+      <a href="https://scottpenberthy.substack.com" target="_blank" rel="noopener">Substack</a>
+      <span class="footer-sep">/</span>
+      <a href="https://www.youtube.com/@ScottPenberthy" target="_blank" rel="noopener">YouTube</a>
+      <span class="footer-sep">/</span>
+      <a href="https://www.linkedin.com/in/scottpenberthy/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="footer-sep">/</span>
+      <a href="https://www.tiktok.com/@ScottPenberthy" target="_blank" rel="noopener">TikTok</a>
+      <span class="footer-sep">/</span>
+      <a href="/speaking">Speaking</a>
+      <span class="footer-sep">/</span>
+      <a href="mailto:scott@scott.ai">scott@scott.ai</a>
+    </div>
   </div>
 
+  <div class="icons" aria-label="Social links">
+    <a href="https://www.linkedin.com/in/scottpenberthy/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://twitter.com/scottpenberthy" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/@ScottPenberthy" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@ScottPenberthy" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/tensordoc" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="mailto:scott@scott.ai" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+
+  <script src="/js/live.js" defer></script>
   <script>
     (function(){
       var nav = document.querySelector('.site-nav');
