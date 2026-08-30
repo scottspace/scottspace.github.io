@@ -5,7 +5,7 @@ facts table straight out of it, so the PDF can never drift from the page. Rewrit
 bio on the page, run this, and the PDF follows.
 
 The PDF is deliberately LIGHT while the web page is dark. A host forwards this to a
-designer or drops it in a programme packet, and a dark document prints badly and eats
+designer or drops it in a program packet, and a dark document prints badly and eats
 toner. Same reason the portrait switches to the light-ground version here.
 
 Usage:  python3 build_pdf.py
@@ -64,6 +64,7 @@ for th, td in re.findall(r"<tr><th>(.*?)</th><td>(.*?)</td></tr>", src, re.S):
     facts.append((label, value))
 
 creds = re.findall(r"<li><b>(.*?)</b>\s*(.*?)</li>", src, re.S)
+role = re.search(r'<p class="role">(.*?)</p>', src, re.S).group(1).strip()
 
 
 def wc(blocks):
@@ -85,6 +86,8 @@ body{font-family:'EBG',Georgia,serif;font-size:10.6pt;line-height:1.52;color:#1a
 header{display:grid;grid-template-columns:1fr 30mm;gap:9mm;align-items:start;
        border-bottom:.7pt solid #cdc7ba;padding-bottom:6mm;margin-bottom:7mm}
 h1{font-size:27pt;font-weight:400;line-height:1;letter-spacing:-.01em;margin:1.5mm 0 2mm}
+.role{font-size:11.4pt;line-height:1.45;color:#3d3a34;max-width:78mm;margin:1mm 0 2.5mm}
+.role b{color:#1a1917;font-weight:600}
 .said{font-family:'InterV',sans-serif;font-size:8pt;color:#6d6a62}
 .said b{color:#9a7f30;font-weight:600;letter-spacing:.03em}
 header img{width:30mm;height:30mm;object-fit:cover;border:.7pt solid #cdc7ba}
@@ -116,6 +119,7 @@ footer .url{color:#9a7f30;font-weight:600}
   <div>
     <div class="eyebrow">Speaker kit</div>
     <h1>Scott Penberthy</h1>
+    <p class="role">%(ROLE)s</p>
     <div class="said">Said <b>Pen-ber-thee</b></div>
     <ul class="creds">%(CREDS)s</ul>
   </div>
@@ -124,7 +128,7 @@ footer .url{color:#9a7f30;font-weight:600}
 
 <div class="sec" style="margin-top:0">
   <div class="hd"><h2>The bio</h2><span class="rule"></span><span class="len">%(NFULL)d words</span></div>
-  <div class="note">For a programme, a website, or a conference listing. This is the default.</div>
+  <div class="note">For a program, a website, or a conference listing. This is the default.</div>
   %(FULL)s
 </div>
 
@@ -141,7 +145,7 @@ footer .url{color:#9a7f30;font-weight:600}
 </div>
 
 <div class="sec tight">
-  <div class="hd"><h2>The details programmes ask for</h2><span class="rule"></span></div>
+  <div class="hd"><h2>The details programs ask for</h2><span class="rule"></span></div>
   <table>%(FACTS)s</table>
 </div>
 
@@ -161,6 +165,7 @@ page = PAGE % dict(
     EBGI=read(os.path.join(HERE, "EBGaramond-Italic.b64")).strip(),
     INTER=read(os.path.join(HERE, "Inter.b64")).strip(),
     PHOTO=photo,
+    ROLE=role,
     CREDS="".join("<li><b>%s</b>%s</li>" % (a, b.strip()) for a, b in creds),
     FULL="".join("<p>%s</p>" % p for p in full),
     SHORT="".join("<p>%s</p>" % p for p in short),
