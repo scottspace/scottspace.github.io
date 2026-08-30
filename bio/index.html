@@ -67,6 +67,17 @@
     }
     .saying b{ color:var(--accent); font-weight:600; letter-spacing:0.04em; }
 
+    /* Some hosts want a file to forward rather than a page to copy from. */
+    .kit{
+      display:inline-flex; align-items:baseline; gap:11px; margin-top:24px;
+      font-family:'Inter',sans-serif; font-size:0.86rem; font-weight:500;
+      color:var(--ink); text-decoration:none;
+      border:1px solid rgba(201,168,76,0.45); padding:12px 20px;
+      transition:border-color .15s, background .15s;
+    }
+    .kit:hover, .kit:focus-visible{ border-color:var(--accent); background:rgba(201,168,76,0.07); outline:none; }
+    .kit span{ font-size:0.76rem; color:var(--ink-mute); }
+
     /* ---------- blocks ---------- */
     section{ margin-top:64px; }
     .sechead{ display:flex; align-items:baseline; gap:16px; margin-bottom:8px; }
@@ -178,6 +189,7 @@
         <li><b>25 years</b> chasing one problem</li>
       </ul>
       <p class="saying">Said <b>Pen-ber-thee</b>.</p>
+      <a class="kit" href="/bio/scott-penberthy-bio.pdf" download>Download the whole kit as a PDF <span>2 pages, print ready</span></a>
     </header>
 
     <!-- ===================== FULL BIO ===================== -->
@@ -190,7 +202,7 @@
           <p><span class="name">Scott Penberthy</span> went to MIT at sixteen and finished a PhD in computer science and artificial intelligence at the University of Washington. In the early nineties he was technical assistant to Lou Gerstner at IBM. He saw the web coming in 1992 and built IBM&rsquo;s first web browser and first web server. It started with four people. It grew to two hundred, and became IBM&rsquo;s hosting and middleware businesses, earning four billion and thirteen billion dollars a year by the time he left.</p>
           <p>He ran engineering at Photobucket next. Fifty million people kept their photos there and a hundred thousand more arrived every day, on machines the team built and ran themselves. He was there when it sold for three hundred million. Then he moved PwC to the cloud across a hundred and sixty countries, the first deal of its kind in financial services.</p>
           <p>He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. He aimed it at science and regulated industries, because those were the hardest and the barriers were highest. A decade later that bet is paying. Science came first, two dozen projects with NASA, from minerals on the Moon to landing sites on Mars. In 2019 he turned to healthcare, where next generation sequencing convinced him that medicine could be programmed. Using AI to support patients and customers, he has landed two billion dollars of business.</p>
-          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He sits on the board of the Lustgarten Foundation, which funds pancreatic cancer research and backed early work on KRAS, a target called undruggable for forty years. In August 2026 the first targeted RAS therapy for pancreatic cancer was approved. It nearly doubles survival.</p>
+          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He sits on the board of the Lustgarten Foundation, which funds pancreatic cancer research and backed early work on KRAS, a target called undruggable for forty years. In August 2026 the first drug to hit that target was approved for pancreatic cancer. It nearly doubles survival.</p>
           <p>The missing piece now is a model that understands change over time. So he works in digital video, where YouTube gives him the data to build it faster. Then he brings it back to cancer.</p>
         </div>
         <div class="copy">
@@ -262,6 +274,7 @@
         <tr><th>The thesis</th><td><a href="/era">The Approximation Era</a>, which most talks build on</td></tr>
         <tr><th>Speaking</th><td><a href="/speaking">scott.ai/speaking</a></td></tr>
         <tr><th>This page</th><td>scott.ai/bio</td></tr>
+        <tr><th>Everything as a PDF</th><td><a href="/bio/scott-penberthy-bio.pdf" download>scott.ai/bio/scott-penberthy-bio.pdf</a></td></tr>
       </table>
     </section>
 
