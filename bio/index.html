@@ -37,10 +37,9 @@
     }
     ::selection{ background:var(--accent); color:#0a0a0a; }
 
-    .wrap{ max-width:820px; margin:0 auto; padding:0 28px 120px; }
+    .wrap{ max-width:880px; margin:0 auto; padding:0 28px 120px; }
 
     /* ---------- masthead ---------- */
-    .masthead{ padding:74px 0 0; border-bottom:1px solid var(--line); padding-bottom:38px; }
     .eyebrow{
       font-family:'Inter',sans-serif; font-size:0.66rem; font-weight:600;
       letter-spacing:0.28em; text-transform:uppercase; color:var(--accent);
@@ -49,8 +48,6 @@
       font-weight:400; font-size:clamp(2.6rem,7vw,3.9rem); line-height:1.02;
       letter-spacing:-0.015em; margin:0.28em 0 0.24em; text-wrap:balance;
     }
-    .standfirst{ font-size:1.19rem; line-height:1.55; color:var(--ink-soft); max-width:52ch; }
-    .standfirst b{ color:var(--ink); font-weight:500; }
 
     /* A host scanning this page wants reassurance before they want prose. */
     .creds{ list-style:none; display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; }
@@ -80,18 +77,11 @@
 
     /* ---------- blocks ---------- */
     section{ margin-top:64px; }
-    .sechead{ display:flex; align-items:baseline; gap:16px; margin-bottom:8px; }
-    .sechead .rule{ flex:1; height:1px; background:var(--line); position:relative; top:-4px; }
     .sechead .len{
       font-family:'Inter',sans-serif; font-size:0.66rem; letter-spacing:0.16em;
       text-transform:uppercase; color:var(--ink-mute); white-space:nowrap;
     }
     h2{ font-weight:400; font-size:1.62rem; letter-spacing:-0.01em; }
-    .use{
-      font-family:'Inter',sans-serif; font-size:0.86rem; line-height:1.65;
-      color:var(--ink-mute); margin:6px 0 20px; max-width:58ch;
-    }
-    .use b{ color:var(--ink-soft); font-weight:500; }
 
     .block{
       background:var(--paper-2); border:1px solid var(--line);
@@ -120,11 +110,6 @@
     .copy .count{ font-family:'Inter',sans-serif; font-size:0.74rem; color:var(--ink-mute); }
 
     /* ---------- headshot ---------- */
-    .shot{ display:grid; grid-template-columns:220px 1fr; gap:30px; align-items:start; }
-    .shot img{
-      width:220px; height:220px; object-fit:cover; display:block;
-      border:1px solid var(--line); filter:grayscale(0.15);
-    }
     .shot .files{ display:flex; flex-direction:column; gap:11px; margin-top:16px; }
     .shot a.file{
       font-family:'Inter',sans-serif; font-size:0.86rem; color:var(--ink-soft);
@@ -159,6 +144,76 @@
     .foot-links{ margin-top:16px; font-family:'Inter',sans-serif; font-size:0.82rem; color:var(--ink-mute); }
 
     @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } * { transition:none !important; } }
+  
+    /* ---------- hero ---------- */
+    .hero{
+      display:grid; grid-template-columns:1fr 236px; column-gap:48px; row-gap:30px;
+      align-items:center; padding:70px 0 34px; border-bottom:1px solid var(--line);
+    }
+    .hero .creds{ grid-column:1 / -1; }
+    .hero .portrait{
+      width:236px; height:276px; object-fit:cover; display:block;
+      border:1px solid var(--line);
+    }
+    h1{
+      font-weight:400; font-size:clamp(2.5rem,6vw,3.6rem); line-height:1.0;
+      letter-spacing:-0.018em; margin:0.2em 0 0.16em; text-wrap:balance;
+    }
+    .role{ font-size:1.22rem; line-height:1.5; color:var(--ink-soft); max-width:36ch; margin:0 0 4px; }
+    .role b{ color:var(--ink); font-weight:500; }
+    .said{ font-family:'Inter',sans-serif; font-size:0.82rem; color:var(--ink-mute); margin-top:14px; }
+    .said b{ color:var(--accent); font-weight:600; letter-spacing:0.04em; }
+    .creds{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+    .creds li{
+      font-family:'Inter',sans-serif; font-size:0.78rem; color:var(--ink-mute);
+      border:1px solid var(--line); padding:7px 12px;
+    }
+    .creds li b{ color:var(--accent); font-weight:600; margin-right:6px; }
+    @media (max-width:720px){
+      .hero{ grid-template-columns:1fr; gap:30px; padding-top:52px; }
+      .hero .portrait{ width:180px; height:210px; order:-1; }
+    }
+
+    /* ---------- the bio, as the page's actual content ---------- */
+    .lede{ padding:26px 0 8px; }
+    .lede .kicker{
+      font-family:'Inter',sans-serif; font-size:0.78rem; color:var(--ink-mute);
+      margin-bottom:22px; display:flex; gap:14px; align-items:baseline; flex-wrap:wrap;
+    }
+    .lede .kicker b{ color:var(--accent); font-weight:600; letter-spacing:0.16em;
+                     text-transform:uppercase; font-size:0.66rem; }
+    .lede p{ font-size:1.24rem; line-height:1.66; color:var(--ink); max-width:60ch; }
+    .lede p + p{ margin-top:1.05em; }
+    .lede .name{ font-weight:600; }
+
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:30px; }
+    .actions .meta{ font-family:'Inter',sans-serif; font-size:0.74rem; color:var(--ink-mute); }
+
+    /* ---------- secondary versions ---------- */
+    .more{ margin-top:76px; }
+    .more > .lab{
+      font-family:'Inter',sans-serif; font-size:0.66rem; font-weight:600; letter-spacing:0.26em;
+      text-transform:uppercase; color:var(--ink-mute);
+      padding-bottom:12px; border-bottom:1px solid var(--line); display:block; margin-bottom:30px;
+    }
+    .alt{ margin-bottom:34px; }
+    .alt .hd{ display:flex; align-items:baseline; gap:14px; margin-bottom:5px; }
+    .alt h2{ font-weight:400; font-size:1.34rem; }
+    .alt .hd .len{ font-family:'Inter',sans-serif; font-size:0.68rem; letter-spacing:0.14em;
+                   text-transform:uppercase; color:var(--ink-mute); white-space:nowrap; }
+    .alt .use{ font-family:'Inter',sans-serif; font-size:0.82rem; line-height:1.6;
+               color:var(--ink-mute); margin:0 0 14px; max-width:56ch; }
+    .alt .use b{ color:var(--ink-soft); font-weight:500; }
+
+    /* ---------- photo strip ---------- */
+    .strip{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:6px; }
+    .strip figure{ margin:0; }
+    .strip img{ width:100%; aspect-ratio:1; object-fit:cover; display:block; border:1px solid var(--line); }
+    .strip figcaption{ font-family:'Inter',sans-serif; font-size:0.76rem; color:var(--ink-mute); margin-top:9px; line-height:1.5; }
+    .strip a{ color:var(--ink-soft); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.16); }
+    .strip a:hover{ color:var(--accent); border-color:var(--accent); }
+    @media (max-width:640px){ .strip{ grid-template-columns:1fr; gap:22px; } }
+
   </style>
   <link rel="stylesheet" href="/css/site-nav.css" />
 </head>
@@ -179,103 +234,85 @@
 
   <div class="wrap">
 
-    <header class="masthead">
-      <div class="eyebrow">For event hosts</div>
-      <h1>Bio</h1>
-      <p class="standfirst">Three versions, a headshot, and the details programs always ask for. <b>Take what you need.</b> No need to write ahead for it.</p>
-      <ul class="creds">
-        <li><b>300+</b> keynotes given</li>
-        <li><b>2016</b> started Google Cloud&rsquo;s first applied AI team</li>
-        <li><b>25 years</b> chasing one problem</li>
-      </ul>
-      <p class="saying">Said <b>Pen-ber-thee</b>.</p>
-      <a class="kit" href="/bio/scott-penberthy-bio.pdf" download>Download the whole kit as a PDF <span>2 pages, print ready</span></a>
+    <header class="hero">
+      <div>
+        <div class="eyebrow">For event hosts</div>
+        <h1>Scott Penberthy</h1>
+        <p class="role">Thirty years early to the web, the cloud, and AI. <b>Now building video models to use against cancer.</b></p>
+        <p class="said">Said <b>Pen-ber-thee</b>.</p>
+      </div>
+      <img class="portrait" src="/img/scott-portrait-dark.jpg" alt="Scott Penberthy" width="236" height="276">
+      <ul class="creds"><li><b>300+</b> keynotes given</li><li><b>2016</b> started Google Cloud&rsquo;s first applied AI team</li><li><b>25 years</b> chasing one problem</li></ul>
     </header>
 
-    <!-- ===================== FULL BIO ===================== -->
-    <section id="full">
-      <div class="sechead"><h2>The bio</h2><span class="rule"></span><span class="len">221 words</span></div>
-      <p class="use">For a program, a website, or a conference listing. <b>This is the default.</b> If you only take one thing from this page, take this.</p>
-
-      <div class="block">
-        <div id="t-full">
+    <section class="lede" id="full">
+      <div class="kicker"><b>The bio</b><span>221 words, and the one to use if you only take one thing.</span></div>
+      <div id="t-full">
           <p><span class="name">Scott Penberthy</span> went to MIT at sixteen and finished a PhD in computer science and artificial intelligence at the University of Washington. In 1992, before most people had heard of the web, he built IBM&rsquo;s first browser and first web server. He was Lou Gerstner&rsquo;s technical assistant at the time. Four people became two hundred, and two businesses earning four and thirteen billion dollars a year.</p>
           <p>He ran engineering at Photobucket at fifty million users, then moved PwC to the cloud across a hundred and sixty countries, the first deal of its kind in financial services. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. Two dozen projects with NASA. Then healthcare, where he has landed two billion dollars of business.</p>
           <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He sits on the board of the Lustgarten Foundation, which funded early work on KRAS when that target was still called undruggable. The first drug to hit it was approved this August. It nearly doubles survival. He advises ClinPGx at Stanford, which matches medicines to a person&rsquo;s genes.</p>
           <p>He works in digital video now, because video teaches a machine how things change. Then he brings it back to cancer.</p>
-        </div>
-        <div class="copy">
-          <button type="button" data-copy="t-full">Copy this bio</button>
-          <span class="count">221 words &middot; plain text</span>
-        </div>
+      </div>
+      <div class="actions">
+        <button type="button" data-copy="t-full">Copy this bio</button>
+        <a class="kit" href="/bio/scott-penberthy-bio.pdf" download>Download the whole kit <span>PDF, 2 pages</span></a>
       </div>
     </section>
 
-    <!-- ===================== SHORT ===================== -->
-    <section id="short">
-      <div class="sechead"><h2>Short version</h2><span class="rule"></span><span class="len">120 words</span></div>
-      <p class="use">For a panel listing, a slide, or anywhere with a tight word count.</p>
+    <div class="more">
+      <span class="lab">Other versions</span>
 
-      <div class="block">
-        <p id="t-short"><span class="name">Scott Penberthy</span> was Lou Gerstner&rsquo;s technical assistant at IBM when he built its first web browser and web server in 1992. Four people became two hundred, and two businesses earning four and thirteen billion dollars a year. He ran engineering at Photobucket at fifty million users, then moved PwC to the cloud. He joined Google Cloud in 2016 and started its first applied AI team, first with NASA, then in healthcare, where he has landed two billion dollars of business. Twenty five years ago his mother asked him to help with her cancer. He sits on the board of the Lustgarten Foundation, which backed early KRAS research when that target was still called undruggable. He is still working on it.</p>
-        <div class="copy">
-          <button type="button" data-copy="t-short">Copy short version</button>
-          <span class="count">120 words &middot; plain text</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SPOKEN ===================== -->
-    <section id="spoken">
-      <div class="sechead"><h2>Spoken introduction</h2><span class="rule"></span><span class="len">about 70 seconds</span></div>
-      <p class="use">Written to be read aloud from a stage. Short sentences, nothing that trips the tongue. <b>The surname is said Pen-ber-thee.</b> It ends on the handover, so whoever is introducing me knows exactly where to stop.</p>
-
-      <div class="block">
-        <div id="t-spoken">
-          <p>Our speaker went to MIT at sixteen. In the early nineties he was Lou Gerstner&rsquo;s technical assistant at IBM, and he built the company&rsquo;s first web browser and first web server before most people had heard of the web. Four people became two hundred. That became two businesses earning four billion and thirteen billion dollars a year.</p>
-          <p>He ran engineering at Photobucket. Fifty million users, a hundred thousand more every day, on machines they ran themselves. He moved PwC to the cloud across a hundred and sixty countries. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. Two dozen projects with NASA, then healthcare, where he has landed two billion dollars of business.</p>
-          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He sits on the board of the Lustgarten Foundation, which backed early KRAS research when that target was still called undruggable. He is still working on it. Please welcome Scott Penberthy.</p>
-        </div>
-        <div class="copy">
-          <button type="button" data-copy="t-spoken">Copy introduction</button>
-          <span class="count">175 words &middot; plain text</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== HEADSHOT ===================== -->
-    <section id="headshot">
-      <div class="sechead"><h2>Photographs</h2><span class="rule"></span><span class="len">free to use</span></div>
-      <p class="use">Take any of them. No credit needed.</p>
-      <div class="shot">
-        <img src="/img/scott-portrait-dark.jpg" alt="Scott Penberthy" width="220" height="220" />
-        <div>
-          <p style="font-size:1.02rem;line-height:1.6;color:var(--ink-soft);max-width:46ch;">Three to choose from. The first is the safe one for a printed program. The second is the same portrait on a dark ground, for anywhere the page is dark. The third is on stage, if the piece needs motion rather than a face.</p>
-          <div class="files">
-            <a class="file" href="/img/scott-portrait.jpg" download>Portrait on light grey <span>&middot; 1008 &times; 1046 JPG</span></a>
-            <a class="file" href="/img/scott-portrait-dark.jpg" download>Portrait on charcoal <span>&middot; 1008 &times; 1046 JPG</span></a>
-            <a class="file" href="/img/scott-speaking.jpg" download>On stage, Google Cloud Summit <span>&middot; 1024 &times; 1024 JPG</span></a>
+      <div class="alt" id="short">
+        <div class="hd"><h2>Short version</h2><span class="len">120 words</span></div>
+        <p class="use">For a panel listing, a slide, or anywhere with a tight word count.</p>
+        <div class="block">
+          <p id="t-short"><span class="name">Scott Penberthy</span> was Lou Gerstner&rsquo;s technical assistant at IBM when he built its first web browser and web server in 1992. Four people became two hundred, and two businesses earning four and thirteen billion dollars a year. He ran engineering at Photobucket at fifty million users, then moved PwC to the cloud. He joined Google Cloud in 2016 and started its first applied AI team, first with NASA, then in healthcare, where he has landed two billion dollars of business. Twenty five years ago his mother asked him to help with her cancer. He sits on the board of the Lustgarten Foundation, which backed early KRAS research when that target was still called undruggable. He is still working on it.</p>
+          <div class="copy">
+            <button type="button" data-copy="t-short">Copy short version</button>
+            <span class="count">120 words &middot; plain text</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===================== DETAILS ===================== -->
-    <section id="details">
-      <div class="sechead"><h2>The details programs ask for</h2><span class="rule"></span></div>
-      <table class="facts">
-        <tr><th>Name</th><td>Scott Penberthy</td></tr>
-        <tr><th>How to say it</th><td>Penberthy is said <b style="color:#c9a84c;">Pen-ber-thee</b></td></tr>
-        <tr><th>How to introduce him</th><td>Scott, or Dr. Penberthy in writing</td></tr>
-        <tr><th>Speaking experience</th><td>More than 300 keynotes</td></tr>
-        <tr><th>Boards and advisory</th><td>Lustgarten Foundation for pancreatic cancer research, Stanford&rsquo;s cancer tumor board advisory, and ClinPGx at Stanford with Teri Klein</td></tr>
-        <tr><th>Site</th><td><a href="/">scott.ai</a></td></tr>
-        <tr><th>The thesis</th><td><a href="/era">The Approximation Era</a>, which most talks build on</td></tr>
-        <tr><th>Speaking</th><td><a href="/speaking">scott.ai/speaking</a></td></tr>
-        <tr><th>This page</th><td>scott.ai/bio</td></tr>
-        <tr><th>Everything as a PDF</th><td><a href="/bio/scott-penberthy-bio.pdf" download>scott.ai/bio/scott-penberthy-bio.pdf</a></td></tr>
-      </table>
-    </section>
+      <div class="alt" id="spoken">
+        <div class="hd"><h2>Spoken introduction</h2><span class="len">about 70 seconds</span></div>
+        <p class="use">Written to be read aloud from a stage. <b>The surname is said Pen-ber-thee.</b> It ends on the handover, so whoever is introducing me knows exactly where to stop.</p>
+        <div class="block">
+          <div id="t-spoken">
+          <p>Our speaker went to MIT at sixteen. In the early nineties he was Lou Gerstner&rsquo;s technical assistant at IBM, and he built the company&rsquo;s first web browser and first web server before most people had heard of the web. Four people became two hundred. That became two businesses earning four billion and thirteen billion dollars a year.</p>
+          <p>He ran engineering at Photobucket. Fifty million users, a hundred thousand more every day, on machines they ran themselves. He moved PwC to the cloud across a hundred and sixty countries. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. Two dozen projects with NASA, then healthcare, where he has landed two billion dollars of business.</p>
+          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He sits on the board of the Lustgarten Foundation, which backed early KRAS research when that target was still called undruggable. He is still working on it. Please welcome Scott Penberthy.</p>
+          </div>
+          <div class="copy">
+            <button type="button" data-copy="t-spoken">Copy introduction</button>
+            <span class="count">175 words &middot; plain text</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="more" id="photos">
+      <span class="lab">Photographs, free to use, no credit needed</span>
+      <div class="strip">
+        <figure>
+          <img src="/img/scott-portrait.jpg" alt="Scott Penberthy, portrait on light grey">
+          <figcaption>For print and light pages.<br><a href="/img/scott-portrait.jpg" download>Download JPG</a></figcaption>
+        </figure>
+        <figure>
+          <img src="/img/scott-portrait-dark.jpg" alt="Scott Penberthy, portrait on charcoal">
+          <figcaption>For dark pages and slides.<br><a href="/img/scott-portrait-dark.jpg" download>Download JPG</a></figcaption>
+        </figure>
+        <figure>
+          <img src="/img/scott-speaking.jpg" alt="Scott Penberthy speaking at Google Cloud Summit">
+          <figcaption>On stage, if the piece needs motion.<br><a href="/img/scott-speaking.jpg" download>Download JPG</a></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="more" id="details">
+      <span class="lab">The details programs ask for</span>
+      <table class="facts"><tr><th>Name</th><td>Scott Penberthy</td></tr><tr><th>How to say it</th><td>Penberthy is said <b style="color:#c9a84c;">Pen-ber-thee</b></td></tr><tr><th>How to introduce him</th><td>Scott, or Dr. Penberthy in writing</td></tr><tr><th>Speaking experience</th><td>More than 300 keynotes</td></tr><tr><th>Boards and advisory</th><td>Lustgarten Foundation for pancreatic cancer research, Stanford&rsquo;s cancer tumor board advisory, and ClinPGx at Stanford with Teri Klein</td></tr><tr><th>Site</th><td><a href="/">scott.ai</a></td></tr><tr><th>The thesis</th><td><a href="/era">The Approximation Era</a>, which most talks build on</td></tr><tr><th>Speaking</th><td><a href="/speaking">scott.ai/speaking</a></td></tr><tr><th>This page</th><td>scott.ai/bio</td></tr><tr><th>Everything as a PDF</th><td><a href="/bio/scott-penberthy-bio.pdf" download>scott.ai/bio/scott-penberthy-bio.pdf</a></td></tr></table>
+    </div>
 
     <footer class="endmatter">
       <p>Views here are his own and do not represent his employer or any advisory board he serves on.</p>
@@ -288,13 +325,13 @@
 
   <script>
     (function () {
-      document.querySelectorAll('.copy button[data-copy]').forEach(function (btn) {
+      document.querySelectorAll('button[data-copy]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var el = document.getElementById(btn.getAttribute('data-copy'));
           if (!el) return;
 
           // Multi-paragraph blocks keep their breaks, so what lands in the host's
-          // document looks like what is on the page. Single blocks flatten as before.
+          // document looks like what is on the page.
           var paras = el.querySelectorAll('p');
           var text = paras.length
             ? Array.prototype.map.call(paras, function (para) {
@@ -303,7 +340,6 @@
             : el.textContent.replace(/\s+/g, ' ').trim();
 
           var label = btn.textContent;
-
           function done() {
             btn.textContent = 'Copied';
             btn.setAttribute('data-done', '1');
@@ -312,25 +348,17 @@
               btn.removeAttribute('data-done');
             }, 1800);
           }
-
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(done, fallback);
-          } else {
-            fallback();
-          }
-
-          // Older browsers, and any page not served over https.
           function fallback() {
             var ta = document.createElement('textarea');
-            ta.value = text;
-            ta.setAttribute('readonly', '');
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy'); done(); } catch (e) { /* leave the label alone */ }
+            ta.value = text; ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
             document.body.removeChild(ta);
           }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+          } else { fallback(); }
         });
       });
     })();
