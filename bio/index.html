@@ -80,7 +80,8 @@
       border-left:2px solid var(--accent); padding:28px 30px 22px; position:relative;
     }
     .block p{ font-size:1.14rem; line-height:1.66; color:var(--ink); max-width:var(--measure); }
-    .block p + p{ margin-top:0.85em; }
+    .block p + p{ margin-top:1.05em; }
+    .block > div > p + p{ margin-top:1.05em; }
     .block .name{ font-weight:600; }
 
     .copy{
@@ -173,14 +174,19 @@
 
     <!-- ===================== FULL BIO ===================== -->
     <section id="full">
-      <div class="sechead"><h2>The bio</h2><span class="rule"></span><span class="len">276 words</span></div>
+      <div class="sechead"><h2>The bio</h2><span class="rule"></span><span class="len">273 words</span></div>
       <p class="use">For a programme, a website, or a conference listing. <b>This is the default.</b> If you only take one thing from this page, take this.</p>
 
       <div class="block">
-        <p id="t-full"><span class="name">Scott Penberthy</span> went to MIT at sixteen and finished a PhD in computer science and artificial intelligence at the University of Washington. In the early nineties he was technical assistant to Lou Gerstner at IBM. He saw the web coming in 1992 and built IBM&rsquo;s first web browser and first web server. It started with four people and grew to two hundred. Those became IBM&rsquo;s hosting and middleware businesses, earning four billion and thirteen billion dollars a year by the time he left. He went to mobile next, ran engineering at Photobucket, and sold it for three hundred million. Then he moved PwC to the cloud across a hundred and sixty countries, the first deal of its kind in financial services. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. He aimed it at science and regulated industries, because those were the hardest and the barriers were highest. A decade later that bet is paying. He went to science first, running two dozen projects with NASA, from finding minerals on the Moon to picking landing sites on Mars. In 2019 he turned to healthcare, where next generation sequencing convinced him that medicine could be programmed. Using AI to support patients and customers, he has landed two billion dollars of business. Twenty five years ago he lost his mother to cancer. She asked him to help. The missing piece is a model that understands change over time, so he works in digital video now, where YouTube gives him the data to build it faster. Then he brings it back to cancer.</p>
+        <div id="t-full">
+          <p><span class="name">Scott Penberthy</span> went to MIT at sixteen and finished a PhD in computer science and artificial intelligence at the University of Washington. In the early nineties he was technical assistant to Lou Gerstner at IBM. He saw the web coming in 1992 and built IBM&rsquo;s first web browser and first web server. It started with four people. It grew to two hundred, and became IBM&rsquo;s hosting and middleware businesses, earning four billion and thirteen billion dollars a year by the time he left.</p>
+          <p>He went to mobile next, ran engineering at Photobucket, and sold it for three hundred million. Then he moved PwC to the cloud across a hundred and sixty countries, the first deal of its kind in financial services.</p>
+          <p>He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. He aimed it at science and regulated industries, because those were the hardest and the barriers were highest. A decade later that bet is paying. Science came first, two dozen projects with NASA, from finding minerals on the Moon to picking landing sites on Mars. In 2019 he turned to healthcare, where next generation sequencing convinced him that medicine could be programmed. Using AI to support patients and customers, he has landed two billion dollars of business.</p>
+          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. The missing piece is a model that understands change over time, so he works in digital video now, where YouTube gives him the data to build it faster. Then he brings it back to cancer.</p>
+        </div>
         <div class="copy">
           <button type="button" data-copy="t-full">Copy this bio</button>
-          <span class="count">276 words &middot; plain text</span>
+          <span class="count">273 words &middot; plain text</span>
         </div>
       </div>
     </section>
@@ -205,7 +211,11 @@
       <p class="use">Written to be read aloud from a stage. Short sentences, nothing that trips the tongue. <b>It ends on the handover</b>, so whoever is introducing me knows exactly where to stop.</p>
 
       <div class="block">
-        <p id="t-spoken">Our speaker went to MIT at sixteen. In the early nineties he was Lou Gerstner&rsquo;s technical assistant at IBM, and he built the company&rsquo;s first web browser and first web server before most people had heard of the web. Four people became two hundred. That became two businesses earning four billion and thirteen billion dollars a year. He sold Photobucket for three hundred million. He moved PwC to the cloud across a hundred and sixty countries. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. Two dozen projects with NASA, finding minerals on the Moon and landing sites on Mars. Then healthcare, where he has landed two billion dollars of business. Twenty five years ago he lost his mother to cancer. She asked him to help. He is still working on it. Please welcome Scott Penberthy.</p>
+        <div id="t-spoken">
+          <p>Our speaker went to MIT at sixteen. In the early nineties he was Lou Gerstner&rsquo;s technical assistant at IBM, and he built the company&rsquo;s first web browser and first web server before most people had heard of the web. Four people became two hundred. That became two businesses earning four billion and thirteen billion dollars a year.</p>
+          <p>He sold Photobucket for three hundred million. He moved PwC to the cloud across a hundred and sixty countries. He joined Google Cloud in 2016, when it was doing less than half a billion dollars a year, and started its first applied AI team. Two dozen projects with NASA, finding minerals on the Moon and landing sites on Mars. Then healthcare, where he has landed two billion dollars of business.</p>
+          <p>Twenty five years ago he lost his mother to cancer. She asked him to help. He is still working on it. Please welcome Scott Penberthy.</p>
+        </div>
         <div class="copy">
           <button type="button" data-copy="t-spoken">Copy introduction</button>
           <span class="count">152 words &middot; plain text</span>
@@ -258,7 +268,16 @@
         btn.addEventListener('click', function () {
           var el = document.getElementById(btn.getAttribute('data-copy'));
           if (!el) return;
-          var text = el.textContent.replace(/\s+/g, ' ').trim();
+
+          // Multi-paragraph blocks keep their breaks, so what lands in the host's
+          // document looks like what is on the page. Single blocks flatten as before.
+          var paras = el.querySelectorAll('p');
+          var text = paras.length
+            ? Array.prototype.map.call(paras, function (para) {
+                return para.textContent.replace(/\s+/g, ' ').trim();
+              }).filter(Boolean).join('\n\n')
+            : el.textContent.replace(/\s+/g, ' ').trim();
+
           var label = btn.textContent;
 
           function done() {
