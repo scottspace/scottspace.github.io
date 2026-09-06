@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eight Billion Vacuums — Scott Penberthy</title>
+  <meta name="description" content="Every person on earth owns a thinking machine that drinks like a vacuum cleaner. Thinking is free. So what is left for a person to sell? Nonfiction, written from 2040." />
+  <link rel="canonical" href="https://scott.ai/essays/eight-billion-vacuums/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Eight Billion Vacuums" />
+  <meta property="og:description" content="Thinking is free. So what is left for a person to sell? Nonfiction, written from 2040." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://scott.ai/essays/eight-billion-vacuums/" />
+  <meta property="og:image" content="https://scott.ai/images/essays/eight-billion-vacuums/vacuum.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg-dark:#0a0a0a;
+      --bg-surface:#141414;
+      --paper:#0a0a0a;
+      --paper-2:#141414;
+      --ink:#ececE6;
+      --ink-soft:rgba(255,255,255,0.74);
+      --ink-mute:rgba(255,255,255,0.5);
+      --line:rgba(255,255,255,0.09);
+      --line-dark:rgba(255,255,255,0.08);
+      --accent:#c9a84c;
+      --accent-ink:#c9a84c;
+      --measure:65ch;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      font-family:'EB Garamond', Charter, 'Bitstream Charter', Georgia, 'Times New Roman', serif;
+      background:var(--paper);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .measure{ max-width:var(--measure); margin:0 auto; padding:0 28px; }
+
+    /* ---------- Title block ---------- */
+    .titleblock{ padding:72px 0 10px; }
+    .titleblock .eyebrow{ margin-bottom:20px; }
+    .titleblock h1{
+      font-weight:500; font-size:clamp(2.3rem,5.5vw,3.4rem);
+      line-height:1.08; letter-spacing:-0.01em; color:var(--ink);
+      margin-bottom:22px;
+    }
+    .standfirst{
+      font-size:1.34rem; line-height:1.55; font-style:italic;
+      color:var(--ink-mute); margin-bottom:26px; max-width:58ch;
+    }
+    .byline{
+      display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+      font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:500;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-mute);
+      padding-bottom:34px; border-bottom:1px solid var(--line);
+    }
+    .byline b{ color:var(--ink); font-weight:600; }
+    .dl-link{
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:600;
+      letter-spacing:0.08em; text-transform:none;
+      color:#efeee8; text-decoration:none;
+      border:1px solid var(--line-dark); border-radius:8px; padding:8px 16px;
+      margin-left:auto; white-space:nowrap;
+      transition:border-color .15s;
+    }
+    .dl-link:hover{ border-color:var(--accent); }
+
+    /* ---------- Essay body ---------- */
+    .essay{ padding:26px 0 40px; }
+    .essay h2.eyebrow-h{
+      font-family:'Inter',sans-serif;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--accent-ink); margin:52px 0 20px;
+    }
+    .eyebrow{
+      font-family:'Inter',sans-serif;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--accent-ink);
+    }
+    .essay p{
+      font-size:1.24rem; line-height:1.72; color:var(--ink-soft);
+      margin-bottom:22px;
+    }
+    .essay p b{ color:var(--ink); font-weight:600; }
+    .essay a{
+      color:var(--ink); text-decoration:underline;
+      text-decoration-color:rgba(184,145,47,0.5); text-underline-offset:3px;
+      transition:text-decoration-color .15s;
+    }
+    .essay a:hover{ text-decoration-color:var(--accent); }
+
+    .figure{ margin:38px 0; }
+    .figure img{
+      width:100%; height:auto; display:block;
+      border-radius:10px; box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      background:#111;
+    }
+    .figure figcaption{
+      font-style:italic; font-size:1.0rem; line-height:1.5;
+      color:var(--ink-mute); margin-top:12px; max-width:60ch;
+    }
+
+    .equation{
+      text-align:center; margin:36px 0;
+      font-size:1.5rem; font-style:italic; color:var(--ink);
+    }
+    .equation sub{ font-size:0.6em; font-style:normal; }
+    .equation .action{ color:var(--accent); font-weight:600; }
+    .equation .eq-caption{
+      display:block; font-family:'Inter',sans-serif; font-style:normal;
+      font-size:0.68rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--ink-mute); margin-top:12px;
+    }
+
+    .anthem{
+      text-align:center; font-style:italic;
+      font-size:clamp(1.55rem,4vw,2.05rem); line-height:1.3; color:var(--ink);
+      margin:56px auto 20px; max-width:24ch;
+    }
+    .anthem::before{
+      content:""; display:block; width:52px; margin:0 auto 30px;
+      border-top:1px solid var(--accent);
+    }
+
+    /* ---------- End matter ---------- */
+    .endmatter{
+      background:var(--bg-surface); color:rgba(240,239,233,0.65);
+      border-top:1px solid var(--line-dark);
+      padding:48px 28px 60px; font-family:'Inter',sans-serif;
+      margin-top:60px;
+    }
+    .endmatter .measure{ max-width:640px; padding:0; }
+    .endmatter p{ font-size:0.9rem; line-height:1.65; margin-bottom:14px; }
+    .endmatter a{ color:var(--accent); text-decoration:none; }
+    .endmatter a:hover{ text-decoration:underline; }
+    .endmatter .foot-links{ margin-top:22px; font-size:0.82rem; color:rgba(240,239,233,0.4); }
+    .endmatter .foot-links a{ color:rgba(240,239,233,0.55); }
+
+    @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+    @media (max-width:600px){
+      .titleblock{ padding-top:52px; }
+      .essay p{ font-size:1.14rem; }
+      .standfirst{ font-size:1.18rem; }
+      .equation{ font-size:1.3rem; }
+    }
+
+    .laws-box{ border:1px solid var(--line); border-radius:10px; padding:20px 24px; margin:34px 0; background:var(--paper-2); }
+    .laws-head{ font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+    .laws-box ol{ margin:0; padding-left:20px; }
+    .laws-box li{ margin-bottom:10px; line-height:1.55; }
+    .notes{ padding-left:20px; font-size:0.95rem; line-height:1.55; color:var(--ink-soft); }
+    .notes li{ margin-bottom:10px; }
+    sup{ font-size:0.65em; color:var(--accent); }
+  </style>
+
+  <link rel="stylesheet" href="/css/site-nav.css" />
+</head>
+<body>
+
+  <!-- ===== Shared dark nav ===== -->
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a class="brand" href="/">Scott Penberthy</a>
+      <div class="links">
+        <a href="/era">The Idea</a>
+        <a href="/work">The Work</a>
+        <a href="/insights/">The Scanner</a>
+        <a href="/essays/" aria-current="page">Essays</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </nav>
+
+    <header class="titleblock">
+    <div class="measure">
+      <div class="eyebrow">Essays · For the GPU World Contest</div>
+      <h1>Eight Billion Vacuums</h1>
+      <p class="standfirst">Every person on earth owns a thinking machine that drinks like a vacuum cleaner. Thinking is free. So what is left for a person to sell? Nonfiction, written from 2040.</p>
+      <div class="byline">
+        <span><b>Scott Penberthy</b> &nbsp;·&nbsp; September 2026 &nbsp;·&nbsp; 2,200 words</span>
+        <a class="dl-link" href="eight-billion-vacuums.pdf" download="eight-billion-vacuums.pdf">Download PDF ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="essay">
+    <div class="measure">
+
+      <p>My granddaughter asked me last month what a programmer was. I told her it was a person who wrote instructions for computers by hand, one line at a time, and that I had been one. She looked at me the way I once looked at my grandfather when he described shoeing a horse. That look is how you know a map has changed. Children stop recognizing the old jobs.</p>
+
+      <p>I built my first starship simulator in 1977, when I was twelve, and wrote code for the next fifty years, at MIT, at IBM, at Google. In 2027 my own agents passed my level. The thing I was best at became free while I watched. I want to tell you how that became the best thing that ever happened to me. But first, the vacuums.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/vacuum.jpg" alt="The only technical fact this essay needs." loading="lazy" /><figcaption>The only technical fact this essay needs.</figcaption></figure>
+
+      <h2 class="eyebrow-h">The Vacuums</h2>
+
+      <p>A serious AI chip drinks between seven hundred and fourteen hundred watts. Call it a thousand once it is fed and cooled, which is to say a vacuum cleaner.<sup>2</sup> The models stopped getting smarter in September of 2026. We call it the plateau now.<sup>1</sup> The factories never got the memo and ran fourteen more years. Now everyone on earth has one, working around the clock. Eight billion thinking vacuums, humming out of sight.<sup>4</sup></p>
+
+      <p>Together they drink about eight terawatts. In 2026 the world's power plants delivered under four terawatts on an average day.<sup>3</sup> Feeding the vacuums meant building more new electricity in fourteen years than humanity had built in all the years before. That was the loud part. The quiet part was the villain.</p>
+
+      <h2 class="eyebrow-h">The Villain</h2>
+
+      <p>The villain of this story has no face. It has a price. Free.</p>
+
+      <p>Free does not fight you, and Free does not fire you. Free simply makes the thing you sell worth nothing, then lets you discover it on your own schedule. It came for code, then analysis, then design, then most of what my friends and I traded for houses and pride. Nobody sent a memo. The invoices just got smaller.</p>
+
+      <h2 class="eyebrow-h">Three Maps, Three Laws</h2>
+
+      <p>I panicked like everyone else. Then I did what old engineers do and went looking for precedent. I found the method in Daniel Yergin's books. <i>The Prize</i> won a Pulitzer telling how oil ran a century. His 2020 sequel, <i>The New Map</i>, went to press before the plateau.<sup>5</sup> Draw where the age's resource sits and who controls its path, and you can see power directly. History gave Yergin three maps to read. The plateau drew a fourth, and I gave it a name.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/first-map.jpg" alt="The first map. Good dirt, ports, and the ships between them. Kings ruled this for ten thousand years." loading="lazy" /><figcaption>The first map. Good dirt, ports, and the ships between them. Kings ruled this for ten thousand years.</figcaption></figure>
+
+      <p>For ten thousand years wealth was land. Good dirt, a river, a port. The winner was the conqueror, a man with a wall around a valley and a story about God. Then coal machined the world, cheap steamship grain made farmland worth less, and the lords went broke.<sup>6</sup> The coal age's winner was the mine owner, a sooty man the lords laughed at until the houses changed hands. He never dug. He owned the hole.</p>
+
+      <p>Oil moved the map a third time, and the winner was Rockefeller, a bookkeeper. The wildcatters who found the oil went bust. He owned the refineries every barrel had to pass through.</p>
+
+      <p>Three maps, with three laws sitting in them like fossils.</p>
+
+      <div class="laws-box"><div class="laws-head">The Three Laws</div><ol><li>The winner never makes the exciting thing. He holds what it must pass through.</li><li>When a machine takes a craft, the human version becomes an art. The loom made couture. The car made equestrian.</li><li>Every winner looks like a joke to the winner before.</li></ol></div>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/fourth-map.jpg" alt="The fourth map. Drawn in watts, not code." loading="lazy" /><figcaption>The fourth map. Drawn in watts, not code.</figcaption></figure>
+
+      <h2 class="eyebrow-h">The Fourth Map</h2>
+
+      <p>The fourth map was never drawn in software, because Free eats software. It was drawn in watts, land, water, and chips. A gigawatt line in the desert became the new port. Taiwan became the new strait. The winners were the landlords, fleece vests signing twenty year power contracts like land deeds. Boring paper. Total power.</p>
+
+      <p>The first trillionaire arrived by the plateau. Elon Musk makes a model too, Grok, but the fortune came from rockets, batteries, and factories, and then from the swarm, selling the sky's sunlight to machines.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/pay-ceiling.jpg" alt="The pay ceiling, and the man who burst it." loading="lazy" /><figcaption>The pay ceiling, and the man who burst it.</figcaption></figure>
+
+      <p>Carnegie and Rockefeller topped out near three hundred billion in the dollars of the plateau year, a ceiling that held for two centuries until Musk burst it. At the plateau he stood at one trillion, and Augustus still towered above him near four, because the emperor never owned a company. He owned Egypt.<sup>7</sup> Emperor money comes from owning a map. The swarm reads like a bid for one. Somewhere in the thirties, with the robots working and the sky paying rent, the old Roman finally lost his crown.<sup>8</sup></p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/swarm.jpg" alt="The pilot was a million satellites. It was 0.1 percent of the stated goal." loading="lazy" /><figcaption>The pilot was a million satellites. It was 0.1 percent of the stated goal.</figcaption></figure>
+
+      <p>Each AI satellite is a server rack with wings, and the pilot swarm was a million of them, a tenth of one percent of the dream.<sup>9</sup> Satellites don't retire. They're cremated, each into about 30 kilos of aluminum oxide, and alumina in the high sky is our generation's carbon argument.<sup>10</sup> Every map smokes. Somebody always gets rich cleaning it up.</p>
+
+      <h2 class="eyebrow-h">What Free Gave Back</h2>
+
+      <p>Free gave with the same hand it took. What was rich became the norm. In 1975 only a wealthy family had a driver, a tutor, a doctor at midnight, and someone minding the money. Now everyone alive has that staff. In Nakuru a farmer named Amina runs two hundred acres with that same staff. Her daughter is on a waiting list to become a midwife. In my century, the waiting lists were for computer science.</p>
+
+      <h2 class="eyebrow-h">The Ladder</h2>
+
+      <p>Line up the maps and a ladder appears. People worked the field and sold muscle, then the factory and hands, then the desk and heads. Rung by rung the machines took the work, and rung by rung it came back as a luxury. Muscle became the gym. The horse became a rich kid's riding lesson. So when my rung went, I knew what was coming. Human thinking came back with a premium label. Recorded music had been free for decades, and people still filled stadiums.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/ladder.jpg" alt="Where people worked, and what they sold. The top rung was blank." loading="lazy" /><figcaption>Where people worked, and what they sold. The top rung was blank.</figcaption></figure>
+
+      <p>It had happened before. A century earlier calls were connected by hand, almost entirely by young women, and the phone company's own math said that at projected growth every young woman in America would eventually be needed at a switchboard.<sup>11</sup> So the companies machined the job, and a new sound told callers the machine was ready. Every dial tone you ever heard was the ghost of a machined job, humming politely. The operators' granddaughters got better jobs. Ours would too.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/operators.jpg" alt="The dial tone was the ghost of a machined job, humming politely." loading="lazy" /><figcaption>The dial tone was the ghost of a machined job, humming politely.</figcaption></figure>
+
+      <h2 class="eyebrow-h">Ninety Minutes with Steve</h2>
+
+      <p>What does a person sell when the head is free? I heard the answer in 2006.</p>
+
+      <p>I had built a startup called Bling, an app store for the BREW and J2ME handsets of the day, full of small apps that did one thing beautifully. That summer I spent ninety minutes alone with Steve Jobs, and he spent the first ten yelling at me about what a stupid idea it was. Steve wasn't angry. He was probing for a leak in his own plans. Satisfied, he put his feet up and grinned. “We have eighty minutes now. Ask me anything. You're a smart guy with a really dumb idea. This could be fun.”</p>
+
+      <p>Seven months later Steve announced the iPhone.<sup>12</sup> I had been right about the store and the apps, and wrong about the only thing that mattered. I built a layer on everyone else's handsets. Steve rethought the phone. My layer was destined to be free. His phone became the most valuable choke point on earth. The software layer always goes free. The choke point always wins.</p>
+
+      <p>But that is not what I carry from that room. I asked Steve what led to his success. Quoting from memory, more or less. “I'm not a programmer like you, Scott. I don't know how most of it works. But I have two things. I have taste. I know what I like, and I'm a complete a**hole until I get what I want. And I have heart. You gotta have heart. It's what connects you to people. It's what matters in the end. That's it. Heart. It's what I surround myself with. People with heart.”</p>
+
+      <p>The machines learned to imitate his taste. They never touched his heart, because heart was never a skill. It is a connection, and a connection cannot be copied. It lives between them. Not the head. The heart.</p>
+
+      <p>Say it practically, because heart sounds soft and the invoices are not. I know, because heart is my whole ledger now. This essay is free, licensed to anyone, because the recording sells the concert. What I charge for is the room, the talk nobody records, and half the reason people come is that nobody records it. Founders pay for the call, do this and not that, with my name staked behind it. My Truckee neighbors run on the good word, an introduction from someone who has never steered a friend wrong.</p>
+
+      <p>And my hours with cancer patients are free. They will always be free. Giving away the thing that costs me the most is how anyone knows the rest is real. The signature, the room, the call, the good word, and care. Five products. Every one needs a person with something to lose.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/ladder-heart.jpg" alt="The top rung, filled in." loading="lazy" /><figcaption>The top rung, filled in.</figcaption></figure>
+
+      <h2 class="eyebrow-h">Back to the Field</h2>
+
+      <p>That is what most of us sell now, and here is the joke history played to deliver it. The machines took the remote jobs. What could not go through the wire was presence. The bedside, the build site, the classroom, the kitchen, the stage. We argued about working from home for a decade, and the machines settled it by taking the part that could stay home. We went back to the field.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/field.jpg" alt="Where we began is where we ended up." loading="lazy" /><figcaption>Where we began is where we ended up.</figcaption></figure>
+
+      <p>I mean the field in the oldest sense and the newest. Field medicine. Field engineering. In the field. We left it selling muscle and came back selling heart.</p>
+
+      <p>The word holds one more meaning, the one that excites me most. Physics says the whole universe is one connected field.<sup>13</sup> The friend who calls the moment you think of them. Deja vu. Love at first sight. Connection from afar, felt but never explained. Heart seems to reach beyond space and time. The machines are helping us look. Nobody can prove it yet. Heart may be what is next, waiting in the field.</p>
+
+      <p>The serious money reads like a medieval court roster. Watt brokers. Water rights lawyers. Queue traders. Token merchants selling intelligence by the vacuum minute.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/court.jpg" alt="The new court. Same throne room, new props." loading="lazy" /><figcaption>The new court. Same throne room, new props.</figcaption></figure>
+
+      <p>My granddaughter's school teaches the power game the way mine taught typing. Not code. The old human arts. Moving people, assembling resources, holding a focus, history read through a power lens. The smartest heads are free for everyone now, so thinking is no longer the work. Choosing the focus and holding it is. Her generation lives on a map where watts, land, water, and chips decide everything built above them. Almost medieval, because it is. The fourth map is the first map, and the children are raised to read it.</p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/tuesday.jpg" alt="The view from the meditation window. The night shift, clocking out quietly." loading="lazy" /><figcaption>The view from the meditation window. The night shift, clocking out quietly.</figcaption></figure>
+
+      <h2 class="eyebrow-h">A Tuesday in 2040</h2>
+
+      <p>Here is a Tuesday from the inside. We live in Truckee, above Lake Tahoe, with a small place in Silicon Valley for days that need a handshake. I rise at five and meditate by the big window, lake and mountains beyond, while my agents finish their night shift. Then I exercise with friends. For two hours I do the only work that still needs me, choosing what my AIs propose and signing what I will stand behind. My name is the product now.</p>
+
+      <p>Most of my Truckee friends run the same rhythm, partly my doing. I sold them their back office desks, so the builder builds, the guide guides, and the baker bakes while the machines do the paper. Afternoons are for friends. Some days I stand on a stage and explain the maps, or sit with cancer patients. The machines plan the protocol perfectly. It still takes a human hand for the fear. Evenings the house fills and nobody checks a screen, because the screens are staffed. For fifty years I squeezed the human part into the margins. Now it is the schedule, and the margins belong to work.</p>
+
+      <p>My granddaughter will never sell her head. The vacuums took that market before she could walk, and I have stopped grieving it. Her muscle is for play. Her hands are for making what she loves. Her head is for choosing. And her heart, if we raise her right, will be worth more than my whole career. The job I lost was the last rung of an old ladder. She starts at the top.</p>
+
+      <p>The dial tone hums. The field is open.</p>
+
+      <h2 class="eyebrow-h">A Disclosure, and a Small Irony</h2>
+
+      <p>This contest asks about a world with intelligence on tap, and discourages using any to write the answer. That is like honoring a computer on every desk with an essay finished on a typewriter.</p>
+
+      <p>So, plainly. The taste is mine. I chose the subject, the storyline, and every idea that stayed. The mechanics were me working directly with Claude, Gemini, Google Search, NVIDIA GPUs, and Google TPUs, riding Google Cloud and PG&E watts, on a Mac, at my kitchen table, on a Sunday. The images were generated as well, each subject and the final selection mine, in a style that tips its hat to Tim Urban's Wait But Why.<sup>14</sup></p>
+
+      <figure class="figure"><img src="/images/essays/eight-billion-vacuums/kitchen.jpg" alt="How this essay was made." loading="lazy" /><figcaption>How this essay was made.</figcaption></figure>
+
+      <p>The signature, the part that stakes something, is mine alone. The heart is mine. As it will be for all of us.</p>
+
+      <h2 class="eyebrow-h">Notes and Sources</h2>
+
+      <ol class="notes"><li>The premise, a plateau in September 2026 and one advanced GPU per person by 2040, is the <a href="https://www.gpuworld.org/">GPU World contest prompt</a>.</li><li>Chip power. <a href="https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/">NVIDIA's Blackwell Ultra B300</a> draws about 1,400 watts per chip, and a 72 chip GB300 rack draws about 120 kilowatts. Google TPU v6 class parts sit near the lower end of the essay's range. The all-in kilowatt per chip includes cooling and power delivery.</li><li>World electricity in 2026, roughly ten terawatts of installed generating capacity and under four terawatts of average delivered power, per the <a href="https://www.iea.org/reports/world-energy-outlook-2025">IEA World Energy Outlook</a> and <a href="https://ember-energy.org/data/electricity-data-explorer/">Ember's electricity data</a>. The essay compares the swarm's continuous draw to average generation.</li><li>The <a href="https://population.un.org/wpp/">United Nations World Population Prospects</a> projects world population above nine billion by 2040. The essay keeps the contest's one chip per person frame and the round eight billion, which makes its arithmetic conservative.</li><li>The maps method is Daniel Yergin's. <a href="https://en.wikipedia.org/wiki/The_Prize:_The_Epic_Quest_for_Oil,_Money,_and_Power"><i>The Prize</i></a>, 1991, won the Pulitzer. <a href="https://en.wikipedia.org/wiki/Daniel_Yergin"><i>The New Map</i></a>, 2020, went to press before the plateau. Churchill's conversion of the Royal Navy to oil and Rockefeller's hold on refining are both told in <i>The Prize</i>.</li><li>The collapse of British land rents in the agricultural depression of the 1870s to 1890s, and the transatlantic marriages that followed, are told in <a href="https://en.wikipedia.org/wiki/David_Cannadine">David Cannadine's</a> <a href="https://www.amazon.com/Decline-Fall-British-Aristocracy/dp/0375703683"><i>The Decline and Fall of the British Aristocracy</i></a>, 1990. Male ownership of land in agrarian societies, inherited through fathers, is documented in <a href="https://en.wikipedia.org/wiki/Gerda_Lerner">Gerda Lerner's</a> <a href="https://en.wikipedia.org/wiki/The_Creation_of_Patriarchy"><i>The Creation of Patriarchy</i></a>, 1986. The conqueror in this essay is a man because the deeds were.</li><li><a href="https://en.wikipedia.org/wiki/Augustus">Augustus's</a> personal control of Egypt and his wealth near four trillion in 2026 dollars follow published estimates by historians and are treated here as an order of magnitude. The Carnegie and Rockefeller figures near three hundred billion are standard inflation adjusted estimates, also rough.</li><li><a href="https://en.wikipedia.org/wiki/Wealth_of_Elon_Musk">Elon Musk's crossing of the trillion dollar line</a> followed the performance award approved by Tesla shareholders in late 2025, as reported in the financial press in 2026. His passing of Augustus in the 2030s is the essay's own speculation, consistent with the premise.</li><li>The satellite numbers come from SpaceX's application to the FCC filed January 30, 2026 for an Orbital Data Center System of up to one million solar powered satellites, projecting about 100 gigawatts of compute per million tonnes launched per year, <a href="https://www.yahoo.com/news/science/articles/spacex-wants-million-ai-satellites-160000227.html">as covered in the press</a>, and echoed in SpaceX's SEC disclosure referencing AI compute satellites. The 100 terawatt ambition is from Musk's public statements. Satellite service life near five years is per SpaceX's Starlink design life statements.</li><li>The alumina figures, about 30 kilograms from a 250 kilogram satellite, 17 tonnes from 2022's reentries, and a swarm scenario above 360 tonnes per year against a natural rate near 56, are from <a href="https://doi.org/10.1029/2024GL109280">Ferreira and colleagues, Geophysical Research Letters, June 2024</a>, summarized well at <a href="https://phys.org/news/2024-06-satellite-megaconstellations-jeopardize-recovery-ozone.html">phys.org</a>. The finding that 1 in 10 stratospheric aerosol particles already carry spacecraft metals, possibly heading to half, is from <a href="https://doi.org/10.1073/pnas.2313374120">Murphy and colleagues, PNAS, October 2023</a>.</li><li>The <a href="https://en.wikipedia.org/wiki/Switchboard_operator">switchboard story</a>, including the projection that operator growth would consume the female workforce, is Bell System history, retold in the New York Times obituary of Bell Labs researcher <a href="https://en.wikipedia.org/wiki/John_E._Karlin">John E. Karlin</a>, February 2013. Automatic switching began with Strowger's 1891 patent, and the <a href="https://en.wikipedia.org/wiki/Dial_tone">dial tone</a> spread with machine switching.</li><li>The iPhone was <a href="https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/">announced January 9, 2007</a>. The Bling meeting is the author's recollection of summer 2006, and the Jobs quote is reconstructed from memory, as the text says.</li><li>The universe described as one connected quantum field is standard physics. The felt connections are human testimony, not findings, and the essay says so plainly. AI's role in quantum research is real and growing.</li><li>All drawings were generated at the kitchen table, subjects and selection by the author, in a style inspired by <a href="https://waitbutwhy.com/">Tim Urban's Wait But Why</a>. They are deliberately silly.</li></ol>
+
+    </div>
+  </main>
+
+  <!-- ===== End matter ===== -->
+    <footer class="endmatter">
+    <div class="measure">
+      <p><b style="color:#efeee8;">About this essay.</b> Written on the author's own time for the GPU World writing contest, September 2026, and shared here under CC BY-NC 4.0. The ideas are the author's alone and do not represent his employer or any nonprofit or other organization he is associated with. The drawings were generated at the kitchen table, in a style that tips its hat to Tim Urban's Wait But Why. Built on <a href="/era">the Approximation Era</a> thesis.</p>
+      <p>Reading offline? <a href="eight-billion-vacuums.pdf" download="eight-billion-vacuums.pdf">Download the PDF ↓</a> or the <a href="eight-billion-vacuums.md" download="eight-billion-vacuums.md">markdown ↓</a></p>
+      <div class="foot-links">
+        Dr. Scott Penberthy · <a href="/">scott.ai</a> · <a href="/essays/">Essays</a> · <a href="/insights/">The Scanner</a> · <a href="/speaking">Speaking</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
